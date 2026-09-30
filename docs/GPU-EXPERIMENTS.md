@@ -49,6 +49,8 @@ These are not preferences. Each one is a rule that was learned by getting it wro
 | 8 | Cross-runtime conformance at scale | `xruntime-conformance` | yes, moderately | part-done |
 | 9 | Self-play vs table lookup as ground truth | `ladder` | yes, strongly | not started |
 | 10 | Critical mass in a cellular opinion system | `murmuration` | yes, moderately | running |
+| 11 | **Transfer gap vs I/O determinacy (the Cog Thesis)** | `quilt-dba` + `exoj` | yes, moderately | **queued — highest novelty** |
+| 12 | Faithfulness of a cell's I/O simulation | `quilt-dba` | no (CPU) | queued |
 
 **The single highest-value item is #1, and #1 is nearly finished.** Everything else is a
 scaling of it.
@@ -230,6 +232,51 @@ line. **The d+1 law could be entirely a threshold artefact.**
 | Equalising thresholds changes the law | **It was an artefact. Retract the d+1 claim and report the threshold sensitivity as the finding.** This is the most likely outcome and it is not a failure. |
 | The law survives equalised thresholds | The dimension effect is real and the threshold was not carrying it. Then the mechanism (dimension changes what "local agreement" means geometrically) is worth a real writeup. |
 | Seed count matters more than dimension | The original seeding bug again. Fix and re-run before interpreting anything. |
+
+---
+
+## 2b. Experiments 11–12 — the Cog Thesis
+
+> "A component inside a cellular system is learnable from simulated data when its role is
+> computable from its own I/O contract, and the surrounding system filters enough that
+> simulating the I/O is faithful."
+
+**Why this is the most novel item in the queue.** Synthetic data is normally unfaithful to
+the real distribution — that is the whole reason distillation is hard. This says the
+objection does not apply inside a cellular system, for a structural reason: **a cell's role
+is not a label someone assigned, it is a consequence of what can enter it and what leaves
+it.** So faithfulness is available *by construction* rather than by luck.
+
+**The measure.** `determinacy(c) = 1 - output entropy under fixed input`. How much freedom
+does the cell still have given this input? A router with 3 declared outputs scores near 1.0.
+A value cell carrying arbitrary content scores near 0.
+
+**The prediction, which is the experiment:** the transfer gap between a simulated-trained and
+a real-trained component should be a **decreasing function of `determinacy`**. That
+correlation is the test. Nine cells in `quilt-dba/engine/cells/` — `ai api formula io
+listener program router sensor value` — supply the range.
+
+| Result | What it means |
+|---|---|
+| Gap falls monotonically with `determinacy` | **Thesis supported.** There is a principled, measurable criterion for which parts of a cellular system can be trained synthetically. That is a genuinely useful result. |
+| Gap is flat across `determinacy` | Thesis wrong — but **check the range first.** A flat result where all nine cells sit close together is *uninformative*, not a refutation. Say which. |
+| Gap high everywhere, including `determinacy → 1` | **The measure is wrong, not the thesis.** A cell can be structurally constrained and still depend on temporal context a static I/O view does not capture. That is an interesting finding about the limits of the I/O view. |
+| `determinacy` unstable across input distributions | The measure does not exist as stated. **Report the instability; do not average it away.** |
+
+**The control, and it is the thing most likely to invalidate this:** train on a
+**deliberately mismatched** simulator — one whose input distribution is wrong. **If the
+transfer gap does not widen, nothing was tested**, because the original simulator was not
+carrying the signal in the first place. That is the most likely outcome, because real and
+simulated distributions may simply be too similar to distinguish.
+
+**GPU-specific:** the matched-budget rule is not optional here. Train both arms with the
+same architecture, optimiser, budget, and seeds. The earlier nonlinear-vs-linear comparison
+was inconclusive *precisely because* the budgets were not matched — do not repeat that.
+
+**Full write-up:** [`fleet-triage/docs/COG-THESIS.md`](https://github.com/SuperInstance/fleet-triage/blob/main/docs/COG-THESIS.md)
+(pushed to `quilt-dba/docs/` and `exoj/docs/` as well).
+
+**Nothing here has been measured.** It is a hypothesis with a test.
 
 ---
 
