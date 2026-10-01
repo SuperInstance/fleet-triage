@@ -63,9 +63,9 @@ This is the part to read twice.
 
 ### Experiment 1 — Can a network absorb minimax composition, with zero search?
 
-**Repo:** `pie-minimax` · **Ground truth:** exact, 180,361 reachable our-turn states
+**Repo:** `pie-minimax` · **Ground truth:** exact, 5,478 reachable states (2,423 with us to move)
 **Result so far:** a 9→9 linear model, 81 parameters, top-1 **0.1807**. Random floor
-**0.1431**. Set-recall 0.1748. **14.7% of states (26,505) have multiple optimal moves.**
+**0.1431**. Set-recall 0.1748. **48.6% of the 2,423 us-to-move states have multiple optimal moves.**
 
 The linear model beats chance by 0.037. That is a small, real, *uninteresting* margin.
 
@@ -85,7 +85,7 @@ just a number.
 ### Experiment 2 — The decision-tree ceiling
 
 **Not started, and it gates Experiment 1.** No conclusion about neural capacity is valid
-without it. Fit a decision tree to the same 180,361 states and measure its top-1. A shallow
+without it. Fit a decision tree to the same 5,478 reachable states (2,423 with us to move) and measure its top-1. A shallow
 tree, if it beats the linear model substantially, says the task is *nonlinearly separable but
 shallowly structured* — a different and more actionable claim than "neural nets are bad at
 this." A deep tree matching the linear model says minimax is not a simple function of local
@@ -305,3 +305,21 @@ Every experiment reports, in this order:
    it is the finding.
 
 No adjectives. A number, a ceiling, a variance, and a branch. Everything else is narrative.
+
+
+---
+
+## CORRECTION — the state count was impossible
+
+This document previously said **180,361 reachable our-turn states**. That number cannot exist: a 3x3 board has 3^9 = 19,683 distinct states, so even labelling every one with whose turn gives at most 39,366. **180,361 is larger than the entire state space by a factor of 4.6.**
+
+The real numbers, from the repo's own `enumerate_reachable()`:
+
+- **5,478** reachable board states in total
+- **2,423** of them with US to move — this is the training set size
+- **1,177 (48.6%)** have more than one optimal move, not 14.7%
+- optimal-set sizes run 1 to 9; 456 positions have 3 optimal moves, 116 have 5
+
+The multi-optimal fraction matters more than the raw count: **a label set that picks one optimal move relabels 48.6% of positions as errors.** Any accuracy measured with single-move labels on this dataset is measuring agreement with an arbitrary tie-break, not correctness.
+
+The number was wrong in the same way as the fleet's `historybloat` signal — a figure that nobody checked against the size of the space it claims to count. **3^9 = 19,683 is a fact you can check in your head; the number should have been checked against it before it was written down.**
