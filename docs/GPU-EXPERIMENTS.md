@@ -41,11 +41,11 @@ These are not preferences. Each one is a rule that was learned by getting it wro
 |---|---|---|---|---|
 | 1 | Can a network absorb minimax with zero search? | `pie-minimax` | **yes, strongly** | part-done |
 | 2 | The decision-tree ceiling on 3×3 | `pie-minimax` | no (CPU) | **DONE — VERIFIED multi-beam** (pie-minimax `CEILING-VERIFY.md`, wave-63) |
-| 3 | Composition test, carried to 4×4 | `ga4444` | yes, moderately | blocked on data |
+| 3 | Composition test, carried to 4×4 | `ga4444` | yes, moderately | **partition re-derived (wave-63: `ga4444/PARTITION-44.md`); GPU sweep must sample LATE boards — run.py's ply≤9 walk makes the composition class structurally empty** |
 | 4 | Capacity vs representation on 4×4 | `ga4444` | **yes, strongly** | blocked on data |
 | 5 | What is a discrete judge actually good at? | `selectlib` | no | done; extend |
 | 6 | Glyph/braille as an agentic observation | `voxelglyph` | yes, moderately | inconclusive |
-| 7 | Set-valued labels on a 7-wide move space | `connect4` | yes, strongly | blocked on data |
+| 7 | Set-valued labels on a 7-wide move space | `connect4` | yes, strongly | unblocked (54,166 positions; digest 0x4ef8351a5c319637) |
 | 8 | Cross-runtime conformance at scale | `xruntime-conformance` | yes, moderately | part-done |
 | 9 | Self-play vs table lookup as ground truth | `ladder` | yes, strongly | not started |
 | 10 | Critical mass in a cellular opinion system | `murmuration` | yes, moderately | running |
