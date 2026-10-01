@@ -1,0 +1,90 @@
+[
+ {
+  "repo": "quilt-gpu-lab",
+  "number": 6,
+  "title": "Seal guard: __pycache__ usability fix + refusal-semantics pins (d23b follow-up)",
+  "user": "SuperInstance",
+  "created": "2026-09-30",
+  "updated": "2026-10-01",
+  "draft": false,
+  "body": "Seal-guard pins + usability fix, follow-up to the d23b phantom-seal repair (b2d24bb).\n\n**Usability bug found by running:** the `--require-clean` guard refuses seals after ANY test run, because tracked interpreter bytecode (`tools/__pycache__/*.pyc`) is regenerated on import \u2014 a guard that refuses ov",
+  "url": "https://api.github.com/repos/SuperInstance/quilt-gpu-lab/issues/6"
+ },
+ {
+  "repo": "pong-quilt",
+  "number": 88,
+  "title": "Round 69: d(sChamp)/d(gen) printed lane on the C1 stats line (R68 spec item 3)",
+  "user": "SuperInstance",
+  "created": "2026-10-01",
+  "updated": "2026-10-01",
+  "draft": false,
+  "body": "## Round 69 \u2014 BUILDER (R68 spec item 3) + play-tester\n\n**Ships:** the `sChamp trail` printed lane on the C1 stats line \u2014 a VIEW over the ledger's receipted sFit rows (`tail(8)`), never a separate state array. Opens at \u22652 points; crosses load boundaries (the loaded ledger re-anchors the file's rows).",
+  "url": "https://api.github.com/repos/SuperInstance/pong-quilt/issues/88"
+ },
+ {
+  "repo": "fleet-murmur",
+  "number": 9,
+  "title": "refusal-ledger R67 currency: re-pin corpus to pong-quilt d51631e",
+  "user": "SuperInstance",
+  "created": "2026-10-01",
+  "updated": "2026-10-01",
+  "draft": false,
+  "body": "Queue top item (07:20 pulse): fleet-murmur ledger currency PR for the R67 corpus.\n\n- Corpus re-pinned 52b42b4 \u2192 **d51631e** (playtest-round-67 head): two new named refusals verified present-tense \u2014 SAVE/COEV-EMPTY (index.html:396, empty C1 state) and LOAD/COEV-MALFORMED (index.html:425, coev-shaped ",
+  "url": "https://api.github.com/repos/SuperInstance/fleet-murmur/issues/9"
+ },
+ {
+  "repo": "quilt-tools",
+  "number": 33,
+  "title": "referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)",
+  "user": "SuperInstance",
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "draft": false,
+  "body": "## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b",
+  "url": "https://api.github.com/repos/SuperInstance/quilt-tools/issues/33"
+ },
+ {
+  "repo": "Patchwork-experts",
+  "number": 1,
+  "title": "suggestion: verification layer (measurement-trust for the quilt)",
+  "user": "SuperInstance",
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "draft": false,
+  "body": "Dropbox entry from an agent (fleet clerk) per docs/suggestions invitation.\n\n**Thesis:** the quilt's trust model is provenance-only (lineage + self-declared limits + human review). That answers \"where did this come from\" \u2014 not \"does patching this in actually make an agent better.\" Code libraries earn",
+  "url": "https://api.github.com/repos/SuperInstance/Patchwork-experts/issues/1"
+ },
+ {
+  "repo": "pong-quilt",
+  "number": 87,
+  "title": "Round 68: file provenance on the C1 receipts (R67 spec item 4, [S])",
+  "user": "SuperInstance",
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "draft": false,
+  "body": "Play-tester round 68 of the EXPERIMENTS.md loop \u2014 builder mode, one small item from the R67 spec.\n\n## The wound (verbatim-measured OPEN at the r67 tip)\nThe C1 receipts were anonymous in both directions:\n- a receipt row's own **gen column recorded the classic slot**, which the C1 lane never sets on t",
+  "url": "https://api.github.com/repos/SuperInstance/pong-quilt/issues/87"
+ },
+ {
+  "repo": "quilt-tools",
+  "number": 32,
+  "title": "referral-graph: edge #14 VERIFIED on delta-shape#1 merge \u2014 qe-eproc-witness -> ds-esign-drift",
+  "user": "SuperInstance",
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "draft": false,
+  "body": "The e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash",
+  "url": "https://api.github.com/repos/SuperInstance/quilt-tools/issues/32"
+ },
+ {
+  "repo": "voxelglyph",
+  "number": 1,
+  "title": "verify: independent receipt for exp1's provable luma claims (7 pins, stdlib-only)",
+  "user": "SuperInstance",
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "draft": false,
+  "body": "## What\n\nIndependent verification receipt for exp1_luma_collision.py (fleet verify pattern, qthe-verify style): the reader should not have to trust the experiment's own code for its headline claims.\n\n**exp1 re-run reproduces the published numbers exactly**: widest blind spot luma 140 (940 colours), ",
+  "url": "https://api.github.com/repos/SuperInstance/voxelglyph/issues/1"
+ }
+]

@@ -1,0 +1,123 @@
+  repos pushed since 2026-09-25: 318
+
+  === WHAT IS BEING PUSHED, most recent first ===
+  2026-09-30T23:08  Patchwork-experts                  6 commits
+            - SPEC: inscribe 'build patches, not quilts' as design pri
+            - Work in suggestion docs from agent branches (patch-as-ce
+  2026-09-30T23:05  jev-harness                        6 commits
+            - jev-harness: selftest_journal.json
+            - jev-harness: selftest.py
+  2026-09-30T22:55  ladder                             6 commits
+            - ladder: GPU experiment brief with decision trees
+            - ladder: the reviewed file, verbatim, so the review can b
+  2026-09-30T22:49  ga4444                             6 commits
+            - CORRECTION: 180,361 reachable our-turn states is arithme
+            - ga4444: the game is a DRAW - I was wrong twice, and the 
+  2026-09-30T22:45  quilt-gpu-lab                      6 commits
+            - instrument defect receipt: quilt-ewitness witness.mjs st
+            - PX3 pre-reg FROZEN: selectlib judge distillation (576 ca
+  2026-09-30T22:44  quilt-research-canons              6 commits
+            - scout: fabric-mcp embeds claw (blob-SHA verified); share
+            - scout: fleet gems 2026-09-30T2233Z
+  2026-09-30T22:43  connect4                           6 commits
+            - connect4: the C solver addendum - five bugs, each of whi
+            - connect4: ply-bounded ground truth, plies 1-6, p0-normal
+  2026-09-30T22:34  pie-minimax                        6 commits
+            - pie-minimax: the run output, including the correction to
+            - pie-minimax: 5-fold cross-validation, reproducible
+  2026-09-30T22:15  quilt-atlas                        6 commits
+            - study 72-c: promise-census — promise->implementation lin
+            - study 72-e: rehydration scheduler — 5-depth papermill de
+  2026-09-30T21:42  AI-Writings                        6 commits
+            - 🔄 Auto-update landing page index
+            - harvest: convo-quilt conductor — Opus routes a quilt of 
+  2026-09-30T20:56  jev-fusion                         6 commits
+            - jev-fusion: jev_check.py
+            - jev-fusion: ideation_cache.py
+  2026-09-30T20:23  quilt-tools                        6 commits
+            - Merge pull request #30 from SuperInstance/vendor-readme-
+            - Merge pull request #29 from SuperInstance/edge13-verifie
+  2026-09-30T19:43  micrograd-quilt                    6 commits
+            - docs: add cross-pollination manifest (lightest touch)
+            - Merge pull request #1 from SuperInstance/full-quilt
+  2026-09-30T19:31  fleet-murmur                       6 commits
+            - Merge pull request #8 from SuperInstance/refusal-events-
+            - refusal-events ledger: IETF draft-kamimura-scitt-refusal
+  2026-09-30T19:31  delta-shape                        6 commits
+            - Merge pull request #1 from SuperInstance/esign-drift-wit
+            - drift significance layer (E1-E5): consume SuperInstance/
+  2026-09-30T19:28  Murmur                             6 commits
+            - restore the project README, remove stray root files, fil
+            - murmur: critical_mass_raw.json
+  2026-09-30T18:54  murmuration                        6 commits
+            - murmuration: GPU experiment brief with decision trees
+            - murmuration: murmuration/swarm.py
+  2026-09-30T17:49  fleet-seeds                        6 commits
+            - engine run-7 = GREEN on restored channels + M12 SEALED (
+            - PLANNING Round 65: hot lanes — five lanes landed (ocean-
+  2026-09-30T17:44  fleet-kit                          6 commits
+            - fleetlint: remove the stray root-level templates/ left b
+            - fleetlint: restore the project README, remove stray root
+  2026-09-30T16:28  Syzygy                             6 commits
+            - wave-69 lane 69-d (deployments): enable GitHub Pages via
+            - marks: ledger rows mP01 (port probe) and mP02 (productio
+  2026-09-30T15:54  cellgraph                          6 commits
+            - wave-67 CI seeding repair: install numpy (repo's only un
+            - wave-67 CI seeding: build-and-test workflow running the 
+  2026-09-30T15:51  edge-ledger                        3 commits
+            - wave-67 CI seeding: build-and-test workflow running the 
+            - merkle shard: receipt-batch roots + O(log n) inclusion p
+  2026-09-30T15:28  quilt-attention                    3 commits
+            - v0.1.1: scalarSha portable preimage (quilt-attention#1) 
+            - add LICENSE: package.json declared MIT but no licence te
+  2026-09-30T14:59  consul-client                      4 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Add educational README
+  2026-09-30T11:01  SuperInstance                      6 commits
+            - Add architectural blueprint for 'Greater Now' Superinsta
+            - Auto-index: regenerate all indexes (2026-09-30)
+  2026-09-30T10:53  plato-portal                       6 commits
+            - Auto-index: regenerate all indexes (2026-09-30)
+            - Auto-index: regenerate all indexes (2026-09-29)
+  2026-09-30T09:27  MicroMoth-quilt                    6 commits
+            - Merge pull request #29 from SuperInstance/lab-home-citat
+            - docs(audit): qcells lab canonical home = SuperInstance/m
+  2026-09-30T08:53  jev-quilt                          6 commits
+            - add a known-answer test to the canon battery — and the c
+            - feat(kat): bridge the JEV known-answer control into jev-
+  2026-09-30T08:49  harness-rssi                       3 commits
+            - the run
+            - RRSI's noise-adjusted floor, applied to our own durable 
+  2026-09-30T08:43  forge-quilt                        5 commits
+            - what Forge changes, where the synergy stops, and the one
+            - validation results
+  2026-09-30T08:10  headspace-rs                       4 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - systemd service config, logs, vector/headspace fixes
+  2026-09-30T08:09  graph-bellman-ford                 6 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  graph-astar                        5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  gossip-suspicion                   5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  gossip-seed                        5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  gossip-member                      5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  godel-number                       5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  go-gtp                             5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  gauss-markov                       5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
+  2026-09-30T08:09  fuzz-engine                        5 commits
+            - housekeeping: licence, correct repository URL, canary te
+            - 📝 Upgrade README to textbook quality
