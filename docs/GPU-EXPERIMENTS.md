@@ -40,7 +40,7 @@ These are not preferences. Each one is a rule that was learned by getting it wro
 | # | experiment | repo | needs GPU? | status |
 |---|---|---|---|---|
 | 1 | Can a network absorb minimax with zero search? | `pie-minimax` | **yes, strongly** | part-done |
-| 2 | The decision-tree ceiling on 3×3 | `pie-minimax` | no (CPU) | **not started** |
+| 2 | The decision-tree ceiling on 3×3 | `pie-minimax` | no (CPU) | **DONE — VERIFIED multi-beam** (pie-minimax `CEILING-VERIFY.md`, wave-63) |
 | 3 | Composition test, carried to 4×4 | `ga4444` | yes, moderately | blocked on data |
 | 4 | Capacity vs representation on 4×4 | `ga4444` | **yes, strongly** | blocked on data |
 | 5 | What is a discrete judge actually good at? | `selectlib` | no | done; extend |
@@ -75,7 +75,7 @@ The linear model beats chance by 0.037. That is a small, real, *uninteresting* m
 | Nonlinear closes a *little* (0.25–0.40) | Capacity helps a bit; representation is still the binding constraint. Report the gap to the decision-tree ceiling — **the number that matters is the ratio to that ceiling, not the raw accuracy.** |
 | Nonlinear approaches the tree ceiling | Minimax composition is learnable by a small net. Surprising, and a real result. |
 | **Any model beats the decision-tree ceiling** | **Stop. Something is wrong with the labels, not the model.** The tree is an exact computation. Beating it means the evaluation leaked. This branch is the most important one. |
-| Accuracy collapses on COMPOSED states (≥2 simultaneous wins) | **The prediction carried forward from 3×3 holds.** You have isolated the mechanism: local voting handles single threats, fails on threat *counts*. This is the cleanest result available in the whole queue. |
+| Accuracy collapses on COMPOSED states (≥2 simultaneous wins) | **The prediction carried forward from 3×3 holds.** You have isolated the mechanism: local voting handles single threats, fails on threat *counts*. This is the cleanest result available in the whole queue. ⚠️ *Wave-63 correction: at 3×3 this row could not be executed as pre-registered — the corrected threat definition (blocked lines excluded) leaves n=22 trivial COMPOSED single-optimal boards (`pie-minimax/CEILING-VERIFY.md` M2/M3). Re-derive the partition on 4×4 before relying on it.* |
 
 **Pre-registered test, carried forward:** partition states into **SIMPLE** (0 or 1 immediate
 win available — expressible by one linear term) and **COMPOSED** (≥2 simultaneous wins —
@@ -92,6 +92,8 @@ this." A deep tree matching the linear model says minimax is not a simple functi
 structure at all.
 
 **Without this, Experiment 1's numbers are uninterpretable.** Do this first. It is CPU work.
+
+> **RESULT (wave-63, VERIFIED multi-beam — `pie-minimax/CEILING-VERIFY.md` + receipts).** On the 2,423 distinct our-turn boards: custom Gini tree-16 **0.7879 ± 0.0224**, custom linear **0.7148 ± 0.0170** (re-run reproduces the committed numbers exactly); independent sklearn beams **0.7907 ± 0.0313 / 0.6888 ± 0.0119** pass the registered bands — after an empty-cell-aware scoring fix (argmax over all 9 classes auto-misses occupied-cell picks; below-floor artifact receipted). Floor 0.5753. Landed branch: **nonlinearly separable but shallowly structured**; the tree saturates by depth 12; linear fills ~0.84–0.91 of the tree depending on column. Two corrections travel with it: (1) `is_simple()` counts BLOCKED lines as threats — under the fixed definition the COMPOSED class nearly vanishes on single-optimal (n=22, all trivial), so Experiment 1's COMPOSED-collapse test is **not executable as pre-registered at 3×3** and the 4×4 rung must re-derive the partition before consuming it; (2) the partition contrast is training-protocol-sensitive (class-internal vs full-train booked; tree shows no composition penalty in all three beams, the linear penalty deflates from 43% to small-or-absent). Dataset canon now pinned: `receipts/exp2-distinct-boards.txt` (sha256 `ae19d8ad…`, FNV `0x65a75b94d9804cfd`).
 
 ### Experiment 3 — Composition test on 4×4 four-in-a-row
 
@@ -288,6 +290,8 @@ achievable." Without it, Experiment 1's 0.1807 has no interpretation — 0.1807 
 the ceiling or 90% of it, and those imply opposite conclusions.
 
 **A number without a ceiling is not a result. It is a number.**
+
+*(Wave-63 update: the ceiling exists now — see the RESULT block under Experiment 2. The GPU experiments should plot against tree-16 ≈ 0.79 on all boards and ≈ 0.68 on the single-optimal subset.)*
 
 ---
 
