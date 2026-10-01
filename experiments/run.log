@@ -1,0 +1,38 @@
+==============================================================================
+PROJECTION-DOCTRINE EXPERIMENT
+==============================================================================
+
+  ground truth 54166 positions, plies 1-6
+  value distribution {-1: 19924, 1: 34242}
+
+  --- encoding verification (a wrong decode poisons everything) ---
+  gravity violations            0 / 54166
+  |p0|-|p1| out of range       0
+  p0 not a subset of mask       0
+  1-ply values                  {-1: 7}  (expect all -1)
+  max stones held by one player 3  (<4 required for 0 wins to be correct)
+
+  --- observation ladder ---
+    L0 lossless                      84 cols
+    L1 colour-collapsed              42 cols
+    L3 coarse colour-preserving      36 cols
+    L4 hash64 irreversible           64 cols
+    L5 stone count only               4 cols
+
+  random  train 43332 / test 10834
+  by-ply  train 2424 (plies 1-4) / test 51742 (plies 5-6)
+
+==============================================================================
+  OBSERVATION                  LEARNER     random     by-ply     gap
+==============================================================================
+  L0 lossless                 logreg    0.7541      0.7591     -0.0050
+                              knn       0.7581      0.5725     +0.1855
+                              mlp       0.8497      0.7680     +0.0818
+                              rf-logreg 0.7669      0.7115     +0.0555
+  L1 colour-collapsed         logreg    0.7436      0.7320     +0.0116
+                              knn       0.7893      0.6168     +0.1726
+                              mlp       0.7963      0.7443     +0.0520
+                              rf-logreg 0.6844      0.6933     -0.0089
+  L3 coarse colour-preserving logreg    0.7943      0.5466     +0.2477
+                              knn       0.8292      0.5501     +0.2791
+                              mlp       0.8541      0.6312     +0.2228

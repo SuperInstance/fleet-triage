@@ -1,0 +1,26 @@
+==============================================================================
+POSITIVE CONTROL - a LOCAL task on the same boards
+  label: "p0 has at least one immediate winning move"
+==============================================================================
+
+  computing control labels by brute force over 54,166 boards...
+  control label distribution: {-1: 6768, 1: 19171}
+
+  CROSS-CHECK against the solver's full-depth label:
+    p0 has an immediate win but solver says p0 loses : 0
+    p0 has NO immediate win but solver says p0 wins  : 0
+    -> consistent: an immediate win implies +1. My decoder is sound.
+
+  ==============================================================================
+  CONTROL TASK RECOVERY  (ceiling should be near 1.0 from L0)
+==============================================================================
+  observation                       logreg       knn       mlp
+  L0 lossless                       0.8944    0.8393    0.9486
+  L1 colour-collapsed               0.8879    0.9362    0.9391
+  L3 coarse colour-preserving       0.7690    0.8552    0.8593
+
+  VERDICT:
+    FAIL - only 0.9486 on a task a learner should solve. The harness
+    is broken and the projection ladder means nothing. Do not publish it.
+
+  saved /tmp/c4/control_results.npy
