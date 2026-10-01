@@ -1,0 +1,29 @@
+{
+ "instruments": [
+  {
+   "name": "fail-open harness, as measured (11/13 share one bug)",
+   "recall_mean": 0.0
+  },
+  {
+   "name": "fail-open harness, after the one-rule fix",
+   "recall_mean": 1.0
+  },
+  {
+   "name": "fail-open harness, partially instrumented (85%)",
+   "recall_mean": 0.8784
+  }
+ ],
+ "memorisation": {
+  "random_split": 1.0,
+  "grouped_split": 0.7752,
+  "gap": 0.2248,
+  "real_experiment_gap": 0.454
+ },
+ "n_eff": 0.385,
+ "n_eff_over_k": 0.128,
+ "monotone": true,
+ "method_notes": [
+  "detection_power originally returned the base rate, not recall",
+  "two leak models were wrong before the third: memorisation needs 1-NN"
+ ]
+}
