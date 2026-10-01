@@ -1,3 +1,45 @@
+> ## ⚠️ WITHDRAWN IN PART — 2026-10-01, after a mathematical audit and a prior-art scout
+>
+> **A lane was tasked to break this document. It broke seven things, two of them
+> load-bearing, and the strongest claim did not survive. The root error is mine and
+> it is elementary:**
+>
+> **"Cross is mixture" is false.** A cross is a *product* `p ⊗ q` — a coupling that
+> fixes the phase. A mixture `(p+q)/2` is a *marginal* — what you get by **forgetting
+> the phase**. The F1 analogy is about the product; my whole collapse argument is
+> about the mixture. **The mixture is precisely the operation that discards the
+> information F1 creates**, so §1 was arguing from the wrong object.
+>
+> **And the F1 variance is exactly `0`, not `Var₀/2`.** The F1 cross is two *fixed*
+> homozygous lines with **no sampling at all**, so every F1 individual is identical.
+> The collapse is total in one generation, and `Var_n = Var₀·2^(−n)` is the wrong
+> law — it describes i.i.d. resampling of parents, which is not what a cross is.
+> The true rate is `1 − 4D sin²(π/N)`, **∝ N²/D**: larger fleets are *further* from
+> uniform, not closer. Wrong by about 10³×.
+>
+> **Four further corrections, all in the audit:**
+> - `σ²/2k` is correct **in one dimension** and wrong by up to 6.4× in `d`, and it
+>   **is** topology-dependent. My "not by the topology" was wrong.
+> - **"Unreachable rather than slow" is refuted** — across all 8 operators tested,
+>   the uniform state stays reachable and absorbing. My strongest card is gone.
+> - **"Randomness must be independent of `eᵢ`" is inverted.** The thesis-compliant
+>   operator is the *only* one that collapses.
+> - **My F2 was `σξ`, which is a noisy F1** — the exact thing the document says it
+>   is not. Self-contradictory, and central.
+>
+> **What survives is genuinely worth keeping** and is stated in full in §9 of the
+> audit. The short version: averaging is a linear projection with a non-trivial
+> kernel, and the between-participant component of private data is annihilated by
+> it — a theorem, not a heuristic. The equilibrium is a *designed balance*, which is
+> the best instinct in the document, though not `σ²/2k`. And deterministic averaging
+> really does reach the uniform state — just 2.3×10³ times more slowly than I said.
+>
+> **Read the audit before the document.** [`F1-AUDIT.md`](../F1-AUDIT.md) ·
+> [`SCOUT-PRIORART.md`](../SCOUT-PRIORART.md)
+>
+> **I am keeping the wrong text visible rather than quietly editing it.** A document
+> that only shows its corrections is a document that cannot be checked.
+
 # F1, F2, and the chaotic-diffuse: what a federated system does to its own variance
 
 **Status: a thesis with a derivation and a test. Nothing here has been measured.** The
