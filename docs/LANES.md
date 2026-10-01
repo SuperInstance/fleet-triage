@@ -11,7 +11,7 @@ reproduces it.
 | L3 the judge as a router (fusion claim 4) | jev-fusion | **DONE** | all 4 claims are prior art; only #4 worth building |
 | L4 3x3 scaffolding bugs | pie-minimax | **DONE** | 3 bugs, all silent, all recorded |
 | L5 4x4 four-in-a-row + composition | ga4444 | **BLOCKED** | solver correct; 7-ply generation too slow. **needs the C solver** |
-| L6 connect4 ground truth | connect4 | **BLOCKED** | same. needs a ply-bounded C export |
+| L6 connect4 ground truth | connect4 | **DONE** | **54,166 positions, plies 1-6, digest 0x4ef8351a5c319637** |
 | L7 why does dimension change stability | murmuration | **RUNNING** | scout dispatched, report unread |
 | L8 cutting-edge math, 4 axes | — | **RUNNING** | scout dispatched, report unread |
 | L9 vision model reads the text | voxelglyph | **BLOCKED** | `mcode-tools` returns `invalid signature` |
@@ -27,6 +27,41 @@ reproduces it.
 | L19 release safety, 17 first-party autopublishers | fleet-triage | **RUNNING** | W2a. 11 of 17 have ZERO tests |
 | L20 disposition of 10 empty repos | fleet-triage | **RUNNING** | W2b. stub, or referenced-and-broken? |
 | L21 history-bloat, corrected | fleet-triage | **DONE** | **106 flagged -> 36 real. instrument was 66% false** |
+| L22 GPU experiment queue + decision trees | fleet-triage | **DONE** | 10 experiments, verified live in 9 repos' docs/ |
+| L23 the Cog Thesis: trainable cells | quilt-dba + exoj | **QUEUED** | hypothesis + falsifiable test. **nothing measured yet** |
+| L24 I/O determinacy across 9 cells | quilt-dba | **QUEUED** | unblocks L23. needs the mismatched-simulator control |
+| L25 neural extraction on Connect 4 | connect4 | **QUEUED** | **unblocked now.** ground truth exists, labels are exact |
+
+## L23/L24 — the Cog Thesis (Casey, 2026-09-30 23:57)
+
+> "quilt-dba and exoj are two sides of the same coin... both can be grown into something that
+> can have parts trained easily using simulated data because the smaller nuclear routes and
+> objects have a defined role from the view of the inputs and outputs connected to it and the
+> job is inside a cellular neural system so the simulation data has a lot of filters working
+> leading in and out and lots of ways to distill and teach a cell beyond random generation
+> being a definable cog in a system."
+
+**The thesis, sharpened:** a component inside a cellular system is learnable from simulated
+data when its role is **computable from its own I/O contract**, and the surrounding system
+filters enough that simulating the I/O is faithful. Synthetic data is normally unfaithful;
+this claims faithfulness is available *by construction* rather than by luck, because the
+system constrains the socket.
+
+**The falsifiable prediction, and the experiment:** define `determinacy(c) = 1 - output
+entropy under fixed input`. **The transfer gap between simulated-trained and real-trained
+should be a decreasing function of `determinacy`.** That correlation *is* the test. Nine cells
+in `quilt-dba/engine/cells/` (`ai api formula io listener program router sensor value`) give
+the range; `exoj`'s formalism (Field as a category, observers as functors) is what makes
+"computable from its I/O" precise rather than intuitive. **Neither repo alone can test it.**
+
+**A control that cannot fail is the obvious failure mode here.** Train on a deliberately
+mismatched simulator: if the transfer gap does not widen, the original simulator was not
+carrying the signal and the thesis is **untested, not supported**. It is also the most likely
+outcome, because real and simulated distributions may be too similar to distinguish.
+
+**Full doc:** [`fleet-triage/docs/COG-THESIS.md`](https://github.com/SuperInstance/fleet-triage/blob/main/docs/COG-THESIS.md)
+
+**NOTHING HERE HAS BEEN MEASURED.** This is a hypothesis with a test, not a result.
 
 ## Wave 1 — the fleet, instrumented before it is judged
 
@@ -84,6 +119,36 @@ The sweep's sharpest structural finding. Of the 500 most-active repos:
   source files, 1 test). The other 18 autopublishers are forks inheriting upstream CI and
   are **not** a finding — the fork flag is the discriminator, and without it this looks like
   a fleet-wide crisis instead of 17 repos.
+
+## L6 is DONE — and the C solver is the lesson
+
+**54,166 positions, plies 1–6, both known-answer checks passing, all export controls
+passing, digest `0x4ef8351a5c319637`.** Labels are solved to FULL depth, not to the export
+horizon, so a label is the true game value and not an artefact of how deep we looked.
+Normalised to player zero: p0's stones, p0's value, every row, regardless of ply parity.
+
+**I wrote it myself because the subagent produced no artifact.** Fifth time. Rule stands.
+
+**Five bugs, and every single one ran to completion and produced a plausible number:**
+1. **C precedence** — `b + 1 << 27` is `(b+1) << 27`. Accidentally right on an empty board,
+   silently wrong after the first stone.
+2. **The column masks were not column masks** — column 1's evaluated to `0`. Every column
+   except column 0 read as "height zero, always playable"; the search explored a board that
+   does not exist.
+3. **The perspective swap double-counted the stone** — opponent is `mask ^ pos`, not
+   `m2 ^ pos`. **The two known-answer checks did NOT catch this** because `has_won()` fires
+   before the recursion. The export's stone-count control caught it.
+4. **The export's sign flipped with row parity** — every 1-ply row +1, every 2-ply row −1,
+   which looks exactly like signal.
+5. **My own new control was vacuous** — `rewind()` on a `fclose()`d `FILE*` read nothing and
+   reported `OK (0 rows)`. **A control that passes on zero rows is not a control.**
+
+Plus two controls wrong in the *other* direction: the first stone-count check asserted "p1 has
+at most one stone", trivially true at ply 1 and false at ply 6 where both have three — so it
+**rejected a correct export for being correct.** The invariant is `|p0 − p1| ≤ 1`.
+
+**THE PLAN WAS WRONG.** The brief said extend the Python bitboard. Five bugs, each producing
+a number, is the evidence against that. C is where the bitboard is checkable *and* fast.
 
 ## The two real blockers
 
