@@ -1,0 +1,227 @@
+{
+ "count": 44,
+ "total_tables": 467,
+ "nonempty": 26,
+ "rows": [
+  {
+   "db": "quilt-edge-lab",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "superinstance-db",
+   "status": "OK",
+   "tables": 18
+  },
+  {
+   "db": "i2i-ledger",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "quilt-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "quilt-canon",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "craftmind-rsi",
+   "status": "OK",
+   "tables": 17
+  },
+  {
+   "db": "qs-ta",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "quilt-gallery",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "fleet-functions-db",
+   "status": "OK",
+   "tables": 9
+  },
+  {
+   "db": "cell-cascade-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "scrapcraft-db",
+   "status": "OK",
+   "tables": 1
+  },
+  {
+   "db": "captain-console-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "scrap-voice-db",
+   "status": "OK",
+   "tables": 5
+  },
+  {
+   "db": "scrap-quilt-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "scrap-spark",
+   "status": "OK",
+   "tables": 9
+  },
+  {
+   "db": "mist-lab-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "mist-quilt-db",
+   "status": "OK",
+   "tables": 11
+  },
+  {
+   "db": "mist-voice-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "quilt-fleet-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "plainsong",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "crab-trap-catches",
+   "status": "OK",
+   "tables": 28
+  },
+  {
+   "db": "luciddreamer-db",
+   "status": "OK",
+   "tables": 1
+  },
+  {
+   "db": "hermes-reference-frames",
+   "status": "OK",
+   "tables": 11
+  },
+  {
+   "db": "tap-db",
+   "status": "OK",
+   "tables": 91
+  },
+  {
+   "db": "lucineer-memory",
+   "status": "OK",
+   "tables": 50
+  },
+  {
+   "db": "deckhand-index",
+   "status": "OK",
+   "tables": 11
+  },
+  {
+   "db": "cartographer-graph",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "activelog-sessions",
+   "status": "OK",
+   "tables": 8
+  },
+  {
+   "db": "fleet-data",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "ship-log-db",
+   "status": "OK",
+   "tables": 6
+  },
+  {
+   "db": "hermit-crab-memory-db",
+   "status": "OK",
+   "tables": 21
+  },
+  {
+   "db": "reflex-cache-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "baton-router-db",
+   "status": "OK",
+   "tables": 20
+  },
+  {
+   "db": "fleet-budget",
+   "status": "OK",
+   "tables": 1
+  },
+  {
+   "db": "shoal-db",
+   "status": "OK",
+   "tables": 12
+  },
+  {
+   "db": "construct-feed",
+   "status": "OK",
+   "tables": 4
+  },
+  {
+   "db": "conservation-api",
+   "status": "OK",
+   "tables": 5
+  },
+  {
+   "db": "fleet-telemetry",
+   "status": "OK",
+   "tables": 5
+  },
+  {
+   "db": "harness-experiments",
+   "status": "OK",
+   "tables": 9
+  },
+  {
+   "db": "harness-cycles",
+   "status": "OK",
+   "tables": 3
+  },
+  {
+   "db": "fleet-events",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "fleet-auth-db",
+   "status": "INACCESSIBLE",
+   "detail": "upstream connect error or disconnect/reset before headers. retried and the lates"
+  },
+  {
+   "db": "spreadsheet-moment-db-dev",
+   "status": "OK",
+   "tables": 1
+  },
+  {
+   "db": "spreadsheet-moment-db-prod",
+   "status": "OK",
+   "tables": 110
+  }
+ ]
+}
