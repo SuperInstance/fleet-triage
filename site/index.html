@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quilt — measured work, with the reproduction path</title>
+<style>
+  :root{
+    --bg:#0e0f11; --panel:#16181c; --line:#262a30; --ink:#e6e8ec; --dim:#8b939f;
+    --ok:#3fb950; --bad:#f85149; --warn:#d29922; --accent:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  header{padding:44px 24px 20px;border-bottom:1px solid var(--line);max-width:960px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--dim);font-size:14px;margin:0}
+  main{max-width:960px;margin:0 auto;padding:24px}
+  section{margin:0 0 34px}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);
+     margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin:0 0 12px}
+  .row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .name{font-weight:600}
+  .num{color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .meta{color:var(--dim);font-size:13px;margin-top:7px}
+  code{background:#0b0c0e;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:13px}
+  .ok{color:var(--ok)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+  pre{background:#0b0c0e;border:1px solid var(--line);border-radius:6px;padding:12px;
+      overflow-x:auto;font-size:13px;line-height:1.5;margin:10px 0 0}
+  .bar{height:6px;background:#0b0c0e;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:9px}
+  .bar>i{display:block;height:100%}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:500}
+  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:var(--accent)}
+  .note{color:var(--dim);font-size:13px;margin:9px 0 0}
+  .fix{color:var(--warn)}
+  /* the luma collision demo */
+  .swatch{display:inline-block;width:20px;height:20px;border-radius:3px;vertical-align:-4px;
+          border:1px solid #0006;margin:0 2px}
+  canvas{width:100%;height:150px;background:#0b0c0e;border:1px solid var(--line);border-radius:6px;display:block}
+  .verdict{border-left:3px solid var(--accent);padding-left:12px;margin:0 0 12px;color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Quilt — measured work, with the reproduction path</h1>
+  <p class="sub">Every number on this page is reproducible from a public repo. Nothing here is a claim without a command.</p>
+</header>
+<main>
+
+<section>
+  <h2>The luma collision — try to break it</h2>
+  <div class="card">
+    <div class="row"><span class="name">Syzygy's feature stack is a function of luma.</span></div>
+    <p class="meta" style="margin:10px 0 0">
+      <span class="swatch" style="background:rgb(0,240,0)"></span> and
+      <span class="swatch" style="background:rgb(255,60,255)"></span>
+      are <b>403 RGB units apart</b> and both render to luma <b>140</b>. To Syzygy they are one colour.
+      Type two hex codes and the script below computes the truth rather than asserting it.
+    </p>
+    <p class="meta"><code>luma = (77·R + 150·G + 29·B) &gt;&gt; 8</code> &nbsp;·&nbsp; weights sum to exactly 256, so this is exact, not approximate.</p>
+    <p class="meta" style="margin:12px 0 4px">
+      <input id="a" value="00F000" maxlength="6" spellcheck="false"
+             style="width:9ch;background:#0b0c0e;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:5px;text-transform:uppercase">
+      <input id="b" value="FF3CFF" maxlength="6" spellcheck="false"
+             style="width:9ch;background:#0b0c0e;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:5px;text-transform:uppercase">
+      <span id="out" style="margin-left:10px"></span>
+    </p>
+    <canvas id="plot" width="900" height="300"></canvas>
+    <p class="note">Each dot is one sampled RGB triple, positioned at (luma, luma). Everything on the same vertical line is a colour the encoder cannot tell apart. The 256 classes hold up to <b>940</b> distinct colours each.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Exact game ground truth — computed, not labelled</h2>
+  <div class="verdict">A solver is a claim. A solver with known-answer checks and an independent
+  second implementation is a measurement.</div>
+  <div class="card">
+    <div class="row"><span class="name">connect4 — 7×6, four in a row</span><span class="num ok">54,166 positions</span></div>
+    <div class="meta">plies 1–6 · labels solved to <b>full depth</b>, so a label is the true game value, not an artefact of how deep we looked · FNV-1a 64 <code>0x4ef8351a5c319637</code></div>
+    <pre>check 1  empty board, value for P1 = -1   expected -1   OK
+check 2  three in the centre, value for P1 = +1   expected +1   OK</pre>
+  </div>
+  <div class="card">
+    <div class="row"><span class="name">ga4444 — 4×4, four in a row</span><span class="num ok">3,338 positions = the COMPLETE tree</span></div>
+    <div class="meta">the longest game is 9 plies; every ply from 10 on is empty · FNV-1a 64 <code>0xcdc9636c704a7ba2</code> · byte-identical across two runs</div>
+    <p class="meta" style="margin-top:9px"><b class="warn">The game is a draw.</b> I asserted the empty board was <code>+1</code>. My solver said <code>-1</code>. <b>Both were wrong.</b> A retrograde table over all 161,029 reachable states and a plain max-min with no negation both say <code>0</code>.</p>
+    <p class="meta">Independent differential: <b>2,000 random legal positions, 2,000 agreements, 0 disagreements</b> against a solver that shares no representation with it.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The ceiling, and what the original number actually meant</h2>
+  <div class="card">
+    <p class="meta" style="margin-top:0">3×3 tic-tac-toe, 5-fold cross-validated. Variance is across <b>data folds</b>, not seeds — seed variance was exactly 0 for every model, and a zero-variance result is inconclusive, never a pass.</p>
+    <table>
+      <tr><th>model</th><th class="n">top-1, single-optimal</th><th class="n">lift over chance</th></tr>
+      <tr><td>random empty cell (floor)</td><td class="n">0.4206 ± 0.0284</td><td class="n">—</td></tr>
+      <tr><td><b>linear 9×9</b></td><td class="n">0.5708 ± 0.0175</td><td class="n">1.36×</td></tr>
+      <tr><td class="ok"><b>decision tree, depth 16</b></td><td class="n bad">0.6793 ± 0.0289</td><td class="n">1.62×</td></tr>
+      <tr><td>exact solver (ceiling)</td><td class="n">1.0000</td><td class="n">2.38×</td></tr>
+    </table>
+    <p class="meta"><b>The linear model reaches 0.840 of the best tree.</b> So the original headline
+    — "0.1807" — was never "a neural net is bad at minimax." It was <b>"a linear map is bad at minimax,"</b>
+    which is true and much less interesting, and it was reported without the number that would have said so.</p>
+    <p class="meta"><b>A number without a ceiling is not a result. It is a number.</b></p>
+  </div>
+  <div class="card">
+    <p class="meta" style="margin-top:0">The pre-registered SIMPLE / COMPOSED split — does accuracy collapse where the right move depends on a <b>count</b> of separate threats rather than one local term?</p>
+    <table>
+      <tr><th>subset</th><th class="n">chance</th><th class="n">tree</th><th class="n">headroom closed</th></tr>
+      <tr><td>SIMPLE (0–1 own threat)</td><td class="n">0.2547</td><td class="n">0.6685</td><td class="n">55.5%</td></tr>
+      <tr><td>COMPOSED (2+ own threats)</td><td class="n">0.5395</td><td class="n">0.8008</td><td class="n bad">56.7%</td></tr>
+    </table>
+    <p class="meta"><b>The penalty is real for the linear model (39.7% → 22.6%) and absent for the tree (55.5% → 56.7%).</b> It is a property of <b>additivity</b>, not of the task. And the naive version of this contrast has the <b>wrong sign</b>, because a position with two own threats is structurally a <i>late</i> position with a high chance level already.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What the measurement got wrong about itself</h2>
+  <div class="card">
+    <p class="meta" style="margin-top:0">A census of 500 repos flagged <b>106</b> as bloated by git history. <b>36 were real.</b> The signal divided by <code>src_bytes</code>, which is <b>zero for any repo with no source files</b> — so every docs-only and media-only repo was flagged <b>by construction</b>. A ratio whose denominator can be zero is not a measurement; it is a construction that always produces a finding.</p>
+    <p class="meta">Found by refusing to accept an impossible number: one repo reported <b>344 MB of files inside a 291 MB repo</b>. It was not a GitHub quirk. The instrument was wrong, and it was mine.</p>
+    <p class="meta">A second one: I had carried <b>180,361 reachable states</b> for a 3×3 board. A 3×3 board has 3⁹ = <b>19,683</b> distinct states, so even labelling every one with whose-turn gives at most 39,366. <b>The figure exceeded the entire state space by 4.6×.</b> The real numbers: 5,478 reachable, 2,423 with us to move, and <b>48.6%</b> — not 14.7% — have more than one optimal move.</p>
+  </div>
+  <div class="card">
+    <p class="meta" style="margin-top:0"><b>A verification layer that did not verify anything.</b> <code>voxelglyph</code> shipped 7 pins, all green — and never once executed the experiment it was verifying. Measured with an <code>atexit</code> counter: <b>0 executions.</b> Two mutations of the flagship line survived: turning <code>max()</code> into <code>min()</code> (so the product reported the <i>narrowest</i> class as the widest blind spot) and coarsening the sweep from 140,608 triples to 8.</p>
+    <p class="meta">The worst of them was a test named <code>test_weights_sum_256</code> whose body asserted
+    <code>77 + 150 + 29 == 256</code> — arithmetic on literals in its own source. Setting the real weights to something summing to <b>294</b> left it green. <b>A test whose name asserts a property of the product while its body asserts nothing about the product is worse than no test.</b></p>
+    <p class="meta">Fixed: the product now returns its result, the path is no longer hardcoded to one machine, and all three mutations now fail. 11 tests, green.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Reproduce all of it</h2>
+  <div class="card">
+<pre>git clone https://github.com/SuperInstance/connect4   &amp;&amp; cd connect4   &amp;&amp; cc -O3 -o ctool ctool.c  &amp;&amp; ./ctool 6
+git clone https://github.com/SuperInstance/ga4444    &amp;&amp; cd ga4444    &amp;&amp; cc -O3 -o gt4444 gt4444.c &amp;&amp; python3 verify.py 2000
+git clone https://github.com/SuperInstance/pie-minimax &amp;&amp; cd pie-minimax &amp;&amp; python3 run3.py
+git clone https://github.com/SuperInstance/voxelglyph  &amp;&amp; cd voxelglyph  &amp;&amp; python3 -m unittest tests.test_exp1_verification</pre>
+    <p class="note">Each repository's <code>FINDINGS.md</code> / <code>CEILING.md</code> records the failures
+    found on the way, not only the results — including the five ways the C bitboard lied while
+    producing a plausible number every time.</p>
+  </div>
+</section>
+
+</main>
+<script>
+/* luma, hand-rolled to match syzygy_port.py exactly */
+function luma8(r,g,b){ return ((77*r + 150*g + 29*b) >> 8) & 0xff; }
+function parse(h){
+  h = h.replace(/[^0-9a-f]/gi,'').slice(0,6).padEnd(6,'0');
+  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+}
+function dist(p,q){ return Math.hypot(p[0]-q[0], p[1]-q[1], p[2]-q[2]); }
+
+function draw(){
+  const A = parse(document.getElementById('a').value);
+  const B = parse(document.getElementById('b').value);
+  const la = luma(...A), lb = luma(...B), d = dist(A,B);
+  const o = document.getElementById('out');
+  const same = la === lb;
+  o.innerHTML = 'luma <b>'+la+'</b> vs <b>'+lb+'</b> · distance <b>'+d.toFixed(0)+'</b> · '
+    + (same && d>0
+        ? '<span class="bad">SAME COLOUR TO THE ENCODER</span>'
+        : d<2 ? '<span class="ok">near-identical anyway</span>'
+        : '<span class="ok">distinguishable</span>');
+
+  const c = document.getElementById('plot'), x = c.getContext('2d');
+  x.clearRect(0,0,c.width,c.height);
+  // every 4th value of each channel keeps the count readable and matches STEP
+  for(let r=0;r<256;r+=4) for(let g=0;g<256;g+=4) for(let b=0;b<256;b+=4){
+    const L = luma8(r,g,b);
+    x.fillStyle = 'rgba(88,166,255,0.16)';
+    x.fillRect(L*c.width/256, (1 - b/255)*c.height - 1, 2, 2);
+  }
+  for(const [P,col] of [[A,'#3fb950'],[B,'#f85149']]){
+    const L = luma(...P);
+    x.fillStyle = col;
+    x.beginPath(); x.arc(L*c.width/256, (1-P[2]/255)*c.height, 6, 0, 6.284); x.fill();
+  }
+  x.fillStyle = '#8b939f'; x.font = '12px monospace';
+  x.fillText('0', 2, c.height-3); x.fillText('luma 255', c.width-62, c.height-3);
+  x.fillText('blue channel', 2, 14);
+}
+['a','b'].forEach(id => document.getElementById(id).addEventListener('input', draw));
+draw();
+</script>
+</body>
+</html>
