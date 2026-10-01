@@ -87,6 +87,15 @@ hard anyone iterates.** `σ=0` recovers the F1 collapse. `k→0` recovers total 
 one blob. The interesting regimes are the ones in between, and they are *reachable by
 choosing parameters* rather than by hoping.
 
+> **CORRECTION (2026-10-01, after the scout lane).** I presented this as a result. **It is
+> textbook.** `Var(∞) = σ²/2k` is **mutation–selection balance**: de Vladar & Barton (2014),
+> *Genetics* 204(2) — *"the genetic variance that is maintained by mutation–selection balance
+> is `2μ/S` per locus"*. Substitute `σ² ↔ 2μ` and `k ↔ S` and the equation above **is** the
+> standard equilibrium, and **the factor of 2 is a convention, not a consequence.** The knob
+> is real and the closed form is right. **It is not new, and I should have known that before
+> writing it up as a derivation.** What is unclaimed is the *transfer* — reinterpreting it as
+> a design parameter for a federated system rather than a fact about breeding.
+
 **Casey's "many many generations to stabilize and cross-mix to have a true chaotic-diffuse"**
 is this curve. Not a metaphor for it. The curve, with the plateau being the F2 equilibrium
 and the overshoot being the chaotic transient before selection re-establishes the band.
@@ -192,9 +201,59 @@ centroid — a population in which **the parents differ**, so the children are n
 
 **The last row is the load-bearing one and it is cheap to test.**
 
+## 7b. Prior art — what the scout lane found, and what it took away
+
+I sent a lane to try to break this. **It succeeded, in four places, and I am recording all of
+them rather than the flattering parts.**
+
+### Taken away
+
+1. **`σ²/2k` is 50-year-old textbook.** Mutation–selection balance, `2μ/S` per locus. See
+   the correction in §3. I derived it as if it were new.
+2. **The phenomenon is already named in the federated literature.** Tian, Al-Ars, Kitsak &
+   Hofstee (2024), *"Vanishing Variance Problem in Fully Decentralized Neural-Network
+   Systems"*, arXiv:2404.04616. **The observation is not new.** I had not heard of it.
+3. **The "destruction" reading is weakened inside the genetic frame.** The Bulmer effect
+   redistributes variance among loci rather than destroying it, so variance per locus is not
+   conserved under the mechanism I invoked. I overstated.
+4. **"Fruit-fly decomposition" is not a body of work I want.** The scout traced it to FFOA
+   (Fly-Finder/Open-Alpha of a literature) and VMD. **Zero occurrences in the fleet.** The
+   term should be dropped rather than reclaimed.
+
+### Surviving, and sharper for having been attacked
+
+1. **The framing gap is real and the scout verified it.** Eight targeted searches across arXiv
+   and OpenAlex: **every paper frames non-IID heterogeneity as slow convergence, never as
+   information loss.** SCAFFOLD (arXiv:1910.06378, 709 citations) names it *client drift* and
+   means **gradient** variance. FedAvg (McMahan et al., 5,115 citations) does not treat
+   heterogeneity as a loss of information at all. **Concept-space variance is a different
+   quantity from gradient variance, and nobody is conflating them because nobody is claiming
+   it.**
+2. **Tian et al. frame it as an optimisation defect** — vanishing variance breaks Xavier
+   initialisation and kills activations. My claim is that it is an **information** defect. The
+   same arithmetic, a different reading, and the information reading is the one that does not
+   go away when you fix the optimiser.
+3. **The mean-field machinery has not been applied here.** OpenAlex
+   `title.search:"mean field federated learning"` returns **15 works total.** The tools to
+   reason about this exist; nobody has pointed them at it.
+4. **The operator distinction — deterministic averaging versus stochastic recombination — is
+   the part no paper makes.** That is where the contribution is, and it is narrower than the
+   whole document but it is defensible.
+
+### A fleet finding that is not about me
+
+The scout checked the 26xx.* arXiv IDs the fleet cites and found **two that return 404**:
+`2610.00001` and `2609.50000`, both cited twice. Four more resolved to real papers but with
+**titles the fleet did not match** — one is described in the fleet as a memory-poisoning
+defence and is actually *"Injection-Execution Dissociation"*; another is cited as "Music-JEPA
+with LeCun" and is *"Music-JEPA: Learning a World Model of Sound"*. **Something in the
+citation path is generating plausible identifiers.** Six checked, two fabricated, two
+mismatched, two honest.
+
 ## 8. What I do not know
 
-- Whether this is already named somewhere. I am not going to assert novelty.
+- **Whether this is already named somewhere — ANSWERED, and the answer is partly yes.** See
+  §7b. The phenomenon is named; the framing and the operator distinction are not.
 - Whether "movement of information across weight" in the sociological literature means what
   I have made it mean here.
 - Whether the F2 recombination reading survives contact with a real substrate, or whether
