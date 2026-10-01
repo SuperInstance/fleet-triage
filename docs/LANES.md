@@ -10,7 +10,7 @@ reproduces it.
 | L2 what a discrete judge is good for | selectlib | **DONE** | coarse (seam) yes, fine selection no. 10/10 tests |
 | L3 the judge as a router (fusion claim 4) | jev-fusion | **DONE** | all 4 claims are prior art; only #4 worth building |
 | L4 3x3 scaffolding bugs | pie-minimax | **DONE** | 3 bugs, all silent, all recorded |
-| L5 4x4 four-in-a-row + composition | ga4444 | **BLOCKED** | solver correct; 7-ply generation too slow. **needs the C solver** |
+| L5 4x4 four-in-a-row + composition | ga4444 | **DONE** | **3,338 positions = the COMPLETE tree. The game is a DRAW** |
 | L6 connect4 ground truth | connect4 | **DONE** | **54,166 positions, plies 1-6, digest 0x4ef8351a5c319637** |
 | L7 why does dimension change stability | murmuration | **RUNNING** | scout dispatched, report unread |
 | L8 cutting-edge math, 4 axes | — | **RUNNING** | scout dispatched, report unread |
@@ -30,7 +30,11 @@ reproduces it.
 | L22 GPU experiment queue + decision trees | fleet-triage | **DONE** | 10 experiments, verified live in 9 repos' docs/ |
 | L23 the Cog Thesis: trainable cells | quilt-dba + exoj | **QUEUED** | hypothesis + falsifiable test. **nothing measured yet** |
 | L24 I/O determinacy across 9 cells | quilt-dba | **QUEUED** | unblocks L23. needs the mismatched-simulator control |
-| L25 neural extraction on Connect 4 | connect4 | **QUEUED** | **unblocked now.** ground truth exists, labels are exact |
+| L25 neural extraction on Connect 4 | connect4 | **QUEUED** | **unblocked.** ground truth exists, labels are exact |
+| L26 4x4 composition: does the 3x3 effect replicate? | ga4444 | **QUEUED** | **unblocked. complete tree, max 9 plies** |
+| L27 decision-tree ceiling on 3x3 | pie-minimax | **DONE** | tree 0.6793 vs linear 0.5708 vs floor 0.4206 |
+| L28 subagent spawn probe | — | **BLOCKED** | 9 dispatches, 0 artifacts. probe dispatched, no reply |
+| L29 depth-matched COMPOSED vs SIMPLE | pie-minimax | **QUEUED** | the naive version has the WRONG SIGN |
 
 ## L23/L24 — the Cog Thesis (Casey, 2026-09-30 23:57)
 
@@ -149,6 +153,74 @@ at most one stone", trivially true at ply 1 and false at ply 6 where both have t
 
 **THE PLAN WAS WRONG.** The brief said extend the Python bitboard. Five bugs, each producing
 a number, is the evidence against that. C is where the bitboard is checkable *and* fast.
+
+## L5 is DONE — and the answer was not the one I asserted
+
+**3,338 positions. That is the COMPLETE 4x4 four-in-a-row game tree** — the longest game is
+9 plies and every ply from 10 on is empty. Labels exact, p0-normalised, FNV-1a 64 digest
+`0xcdc9636c704a7ba2`, byte-identical across two runs.
+
+**The game is a DRAW.** I asserted `+1` into the known-answer check before establishing it.
+My solver said `-1`. **Both were wrong.** Two independent methods — a retrograde table over
+all 161,029 reachable states, and a plain max-min with no negation — both say `0`.
+
+**The lesson is not that I had a bug. It is that the known-answer check was the wrong
+instrument.** I was one step from editing the solver to match my guess. Checking
+independently turned a coin flip into a measurement. **Asserting a known answer you have not
+established is how a wrong number survives.**
+
+The bug that made it wrong: the C only detected a win by the *player to move*, and checked
+the previous mover's line only when the board was full. On a board where games end by ply 9
+with two-thirds empty, the search carried on from ended games. Invisible on 7x6.
+
+**`verify.py` ships in the repo.** 2000 random legal positions, 2000 agreements, 0
+disagreements. A check you can only run once on the day you write the code is a comment.
+
+**A fact worth having:** all four one-ply positions are 0. After *any* first move the
+position is still a draw. The 4x4 opening is not a winning attempt at all.
+
+## L27 is DONE — and it retires the original headline
+
+**Decision-tree ceiling on 3×3, 5-fold cross-validated, variance across DATA FOLDS:**
+
+| model | all 2,423 | single-optimal only (n=1246) |
+|---|---|---|
+| random empty cell (floor) | 0.5753 ± 0.0212 | 0.4206 ± 0.0284 |
+| **linear 9×9** | 0.7148 ± 0.0170 | **0.5708 ± 0.0175** |
+| **decision tree, depth 16** | **0.7879 ± 0.0224** | **0.6793 ± 0.0289** |
+
+**The linear model reaches 0.840 of the best tree.** So 0.1807 was never "a neural net is bad
+at minimax" — it was **"a linear map is bad at minimax"**, true and much less interesting,
+and it was reported without the number that would have said so.
+
+### The state count I had been carrying was impossible
+
+**180,361 reachable our-turn states** — a 3×3 board has 3⁹ = **19,683** distinct states, so
+even with whose-turn labelled the ceiling is 39,366. **The figure exceeded the entire state
+space by 4.6×.** Real numbers: **5,478** reachable states, **2,423** with us to move,
+**48.6%** (not 14.7%) with more than one optimal move. Corrected in 4 repos.
+
+Same failure family as the fleet `historybloat` signal: **a count nobody checked against the
+size of the space it claims to count.** 3⁹ = 19,683 is checkable in your head.
+
+### The composition penalty is a property of ADDITIVITY, not of the task
+
+Pre-registered SIMPLE/COMPOSED split, normalised by fraction of headroom closed:
+
+```
+subset                     chance     tree   linear     tree fills  linear fills
+SIMPLE   (0-1 own threat)    0.2547   0.6685   0.5509          55.5%         39.7%
+COMPOSED (2+ own threats)    0.5395   0.8008   0.6435          56.7%         22.6%
+```
+
+**The tree shows NO composition penalty (55.5% vs 56.7%, indistinguishable). The linear model
+loses ~43% of its closed headroom.** So minimax composition is not beyond these models — it
+is beyond *this representation*. A sum of local votes cannot represent a count over separate
+lines; a model that can form intermediate conjunctions can, and does.
+
+**And the naive version of this contrast has the WRONG SIGN.** A position with two own
+threats is structurally a *late* position, so its chance level is already 0.54 and raw
+accuracy reads as "COMPOSED is harder" when it is not. L29 is the depth-matched version.
 
 ## The two real blockers
 
