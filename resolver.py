@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import subprocess
@@ -45,10 +46,10 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-# Other lanes share this repo and this machine. Keep our state in our own
-# directory and write it atomically, so a concurrent agent cannot truncate
-# the index out from under a scan.
-CACHE = HERE / "resolver_state"
+# State lives OUTSIDE every repo root. Keeping it inside fleet-triage meant the
+# tool indexed its own clone cache, so a cloned `logtensor` appeared twice and
+# every bare `rubiks.py` citation became spuriously ambiguous.
+CACHE = Path(os.environ.get("RESOLVER_STATE", "/workspace/.resolver-state"))
 CLONES = CACHE / "clones"
 INDEX_FILE = CACHE / "repo_index.json"
 CENSUS_FILE = CACHE / "fleet_census.json"
@@ -66,6 +67,8 @@ SKIP_DIRS = {
     "__pycache__", ".cache", ".turbo", "vendor", "coverage", ".pytest_cache",
     ".mypy_cache", ".ruff_cache", "out", ".gradle", ".idea", ".vscode",
     "site-packages", ".terraform", "bin", "obj", ".svelte-kit", ".parcel-cache",
+    # our own state must never be indexed as if it were fleet source
+    "resolver_state", "resolver_cache", ".resolver-state",
 }
 
 # Extensions we are willing to treat as a file reference.
@@ -157,18 +160,37 @@ def walk_tree(root: Path) -> list[str]:
 
 
 WALK_ERRORS: list[str] = []
+LOCAL_SCAN_COUNT = 0
 
 
 def find_local_repos(roots: list[Path]) -> dict[str, Path]:
-    """Directory name -> path, for every repo already on this machine."""
+    """Directory name -> path, for every repo already on this machine.
+
+    Counts what it saw. A network mount that briefly fails `is_dir()` will
+    otherwise make whole repos vanish from the index without any error, and a
+    short index turns every citation in the corpus into a false positive.
+    """
     found: dict[str, Path] = {}
+    scanned = 0
     for r in roots:
         if not r.is_dir():
             continue
-        for child in sorted(r.iterdir()):
-            if child.is_dir() and not child.name.startswith("."):
-                if child.name.lower() not in found:
-                    found[child.name.lower()] = child
+        try:
+            children = sorted(r.iterdir())
+        except OSError:
+            continue
+        for child in children:
+            if child.name.startswith("."):
+                continue
+            scanned += 1
+            try:
+                isdir = child.is_dir()
+            except OSError:
+                continue
+            if isdir and child.name.lower() not in found:
+                found[child.name.lower()] = child
+    global LOCAL_SCAN_COUNT
+    LOCAL_SCAN_COUNT = scanned
     return found
 
 
@@ -203,7 +225,7 @@ def build_index(local_roots: list[Path], extra_names: list[str], jobs: int = 8,
     like a broken one, so a suspiciously small index is rebuilt, not trusted.
     """
     census = load_census()
-    index: dict = {}
+    best: dict = {}
     for attempt in range(1, attempts + 1):
         WALK_ERRORS.clear()
         index = {}
@@ -216,13 +238,30 @@ def build_index(local_roots: list[Path], extra_names: list[str], jobs: int = 8,
                 "files": files, "n_files": len(files), "source": "local",
             }
         if len(index) >= min_repos:
+            best = index
             break
+        if len(index) > len(best):
+            best = index
         print(f"  [warn] pass {attempt}: only {len(index)} repos indexed "
-              f"({len(WALK_ERRORS)} walk errors) — retrying", file=sys.stderr)
-        for e in WALK_ERRORS[:5]:
+              f"({len(WALK_ERRORS)} walk errors, {LOCAL_SCAN_COUNT} dirs scanned)"
+              f" — retrying", file=sys.stderr)
+        for e in WALK_ERRORS[:3]:
             print(f"         {e}", file=sys.stderr)
-        time.sleep(5)
+        time.sleep(10)
 
+    if len(best) < min_repos:
+        # Never overwrite a good index with a broken one: a short index makes
+        # every citation look unresolved, which is the worst possible failure.
+        if INDEX_FILE.exists():
+            old = json.loads(INDEX_FILE.read_text())
+            if len(old) > len(best):
+                print(f"  [warn] keeping existing index ({len(old)} repos) — "
+                      f"this pass only reached {len(best)}", file=sys.stderr)
+                return old
+        sys.exit(f"index build only reached {len(best)} repos; the filesystem "
+                 f"is not readable right now. Refusing to write a bad index.")
+
+    index = best
     wanted = sorted({n for n in extra_names if n in census and n not in index})
     if wanted:
         def work(n: str):
@@ -241,18 +280,27 @@ def build_index(local_roots: list[Path], extra_names: list[str], jobs: int = 8,
 
     CACHE.mkdir(parents=True, exist_ok=True)
     write_atomic(INDEX_FILE, json.dumps(index))
+    # keep a known-good copy: the workspace is a network mount
+    try:
+        write_atomic(INDEX_FILE.with_suffix(".good.json"), json.dumps(index))
+    except OSError:
+        pass
     return index
 
 
 def load_index(min_repos: int = 50) -> dict:
-    if not INDEX_FILE.exists():
-        sys.exit(f"no repo index at {INDEX_FILE}; run: resolver.py index")
-    idx = json.loads(INDEX_FILE.read_text())
-    if len(idx) < min_repos:
-        sys.exit(f"index at {INDEX_FILE} holds only {len(idx)} repos "
-                 f"(expected >= {min_repos}); it was clobbered — rerun: "
-                 f"resolver.py index")
-    return idx
+    good = INDEX_FILE.with_suffix(".good.json")
+    for p in (INDEX_FILE, good):
+        if not p.exists():
+            continue
+        try:
+            idx = json.loads(p.read_text())
+        except ValueError:
+            continue
+        if len(idx) >= min_repos:
+            return idx
+    sys.exit(f"no usable repo index (looked at {INDEX_FILE} and {good}); "
+             f"run: resolver.py index")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -326,7 +374,9 @@ class Citation:
     line_a: int | None
     line_b: int | None
     line_note: str = ""  # the literal text of the line anchor, for reproduction
-    symbol: str = ""     # a backticked identifier named alongside the anchor
+    symbol: str = ""     # nearest backticked identifier named alongside the anchor
+    symbols: list = field(default_factory=list)  # all of them, nearest first
+    ctx: str = ""        # surrounding text, for disambiguating bare filenames
 
 BARE_IDENT = re.compile(r"`([A-Za-z_][A-Za-z0-9_]{2,60})`")
 
@@ -405,13 +455,12 @@ def extract_citations(text: str, doc: str) -> list[Citation]:
 
         line = text.count("\n", 0, m.start()) + 1
 
-        # A bare identifier named in the same breath as the anchor. The
-        # document says "update_certainty at line 281 of rubiks.py" — the
-        # symbol is part of the claim and must be checkable too. Take the
-        # NEAREST such identifier, and only if it is genuinely adjacent:
-        # grabbing one from the previous paragraph is how a resolver starts
-        # inventing findings.
-        sym = ""
+        # Bare identifiers named alongside the anchor. A claim like
+        # "In the `propagate_change` method of `PermutationTensor`
+        # (line 295 of `permutation.py`)" names TWO symbols; taking only the
+        # nearest one is a coin flip, so keep them all and require that none
+        # of them lands on the cited line before calling it a mismatch.
+        syms: list[str] = []
         if line_a is not None:
             win_start = max(0, m.start() - 120)
             win = text[win_start: m.end() + 120]
@@ -422,13 +471,18 @@ def extract_citations(text: str, doc: str) -> list[Citation]:
                     continue
                 if cand == os.path.basename(path):
                     continue
-                cands.append((abs((win_start + im.start()) - m.start()), cand))
-            if cands:
-                cands.sort()
-                if cands[0][0] <= 80:
-                    sym = cands[0][1]
+                dist = abs((win_start + im.start()) - m.start())
+                if dist <= 80:
+                    cands.append((dist, cand))
+            seen_s: set = set()
+            for _, cand in sorted(cands):
+                if cand not in seen_s:
+                    seen_s.add(cand)
+                    syms.append(cand)
+        sym = syms[0] if syms else ""
 
-        out.append(Citation(doc, line, m.group(0), path, line_a, line_b, note, sym))
+        out.append(Citation(doc, line, m.group(0), path, line_a, line_b, note, sym,
+                            syms, text[max(0, m.start() - 400): m.end() + 400]))
     return out
 
 
@@ -533,7 +587,13 @@ class Resolver:
             self.dirs[lname] = dirs
 
     def _norm(self, p: str) -> str:
-        return os.path.normpath(p).replace(os.sep, "/").lstrip("./")
+        # NOT lstrip("./"): that strips a CHARACTER SET, so the dotfile path
+        # `.github/workflows/ci.yml` silently became `github/workflows/ci.yml`
+        # and then matched an unrelated repo's CI file.
+        p = os.path.normpath(p).replace(os.sep, "/")
+        while p.startswith("./"):
+            p = p[2:]
+        return p
 
     def _doc_root(self, c: Citation) -> Path | None:
         r = self.doc_repo.get(c.doc)
@@ -547,23 +607,30 @@ class Resolver:
         the cited line is not where it is defined — so the reader can check it
         with a single grep.
         """
-        if not c.symbol:
+        if not c.symbols and not c.symbol:
             return None
         defs = def_lines(ap)
-        where = defs.get(c.symbol)
-        if not where:
-            return None                       # not a definition here; not our claim
-        if any(abs(need - w) <= 2 for w in where):
-            return None                       # the anchor is right
-        actual = self._line_text(ap, need) or "<blank>"
-        return Finding(
-            "citation", "SYMBOL_MISMATCH", c.doc, c.docline, c.raw, rel_norm,
-            f"document cites `{c.symbol}` at line {need}, but `{c.symbol}` is "
-            f"defined at line(s) {', '.join(map(str, where[:5]))} — line {need} "
-            f"is inside a different definition",
-            f"grep -n 'def {c.symbol}' {ap} && sed -n '{need}p' {ap}",
-            f"L{need}: {actual[:120]}  ||  def {c.symbol} at L{','.join(map(str, where[:5]))}",
-        )
+        named = c.symbols or ([c.symbol] if c.symbol else [])
+        # if ANY named symbol is defined right here, the anchor is fine
+        for nm in named:
+            where = defs.get(nm)
+            if where and any(abs(need - w) <= 2 for w in where):
+                return None
+        # otherwise report the one that IS a definition in this file
+        for nm in named:
+            where = defs.get(nm)
+            if not where:
+                continue
+            actual = self._line_text(ap, need) or "<blank>"
+            return Finding(
+                "citation", "SYMBOL_MISMATCH", c.doc, c.docline, c.raw, rel_norm,
+                f"document cites `{nm}` at line {need}, but `{nm}` is "
+                f"defined at line(s) {', '.join(map(str, where[:5]))} — line {need} "
+                f"is inside a different definition",
+                f"grep -n 'def {nm}' {ap} && sed -n '{need}p' {ap}",
+                f"L{need}: {actual[:120]}  ||  def {nm} at L{','.join(map(str, where[:5]))}",
+            )
+        return None
 
     def _line_text(self, abs_path: Path, n: int | None) -> str:
         """The actual bytes at the cited line — so a reader can check the claim
@@ -601,6 +668,22 @@ class Resolver:
         repo_qualified = parts[0].lower() in self.index and parts[0].lower() not in GENERIC_SEG
         cands = {x for x in cands if x[0] == repo_key} if repo_qualified else cands
         cands = {x for x in cands if x[0] == repo_key} or (cands if not repo_qualified else set())
+        if not cands and not repo_qualified:
+            # No suffix match at any fixed depth. A basename that occurs
+            # exactly ONCE in the citing repo is still a unique resolution:
+            # `docs/agents/alpha-roadmap.md` really lives at
+            # `docs/archive/agent-reports/alpha-roadmap.md`, three levels down,
+            # which no 2- or 3-component suffix rule would find.
+            base = os.path.basename(c.path)
+            here = [f for f in self.index[repo_key]["files"]
+                    if os.path.basename(f) == base]
+            if len(here) == 1:
+                return Finding(
+                    "citation", "PATH_PRECISE_ONLY", c.doc, c.docline, c.raw, c.path,
+                    f"file exists but at a deeper path: {here[0]}",
+                    f"find {self.index[repo_key]['path']} -name '{base}'",
+                    f"cited: {c.path} | actual: {here[0]}",
+                )
         if not cands:
             return None
         here = {x for x in cands if x[0] == repo_key}
@@ -744,12 +827,24 @@ class Resolver:
         )
 
     def _near_miss(self, repo_key: str, rel_norm: str) -> tuple[str, str] | None:
-        """Same path, different repo — or same basename, different repo."""
-        tail = rel_norm.split("/", 1)[1] if "/" in rel_norm else None
-        if tail:
-            for lname, info in self.index.items():
-                if lname != repo_key and tail in set(info["files"]):
-                    return lname, tail
+        """Same path, different repo — or same basename, different repo.
+
+        The tail is matched by SUFFIX, not equality: a citation to
+        `murmur/transforms/rubiks.py` names a tail `transforms/rubiks.py`,
+        which is how `logtensor/logtensor/transforms/rubiks.py` spells it.
+        A ONE-component tail is just a basename, and matching on it picks an
+        arbitrary repo out of the hundreds that own a README.md — so it is
+        never attempted.
+        """
+        parts = rel_norm.split("/")
+        tail = "/".join(parts[1:]) if len(parts) > 1 else None
+        if tail and "/" in tail:
+            for lname, info in sorted(self.index.items()):
+                if lname == repo_key or lname in GENERIC_SEG:
+                    continue
+                for f in info["files"]:
+                    if f == tail or f.endswith("/" + tail):
+                        return lname, f
         base = os.path.basename(rel_norm)
         hits = {lname for lname, _ in self.basenames.get(base, [])
                 if lname != repo_key and lname not in GENERIC_SEG}
@@ -771,6 +866,33 @@ class Resolver:
         rk = os.path.basename(root).lower() if root else None
         own = set(self.index[rk]["files"]) if rk in self.index else set()
 
+        # A bare filename preceded by exactly one named repo belongs to THAT
+        # repo, not to the document's. This must be decided before the
+        # "is it in the citing repo?" shortcut below, or `README.md:109` in a
+        # paragraph about the eisenstein crate silently resolves to the citing
+        # repo's own README and reports a confident, wrong LINE_OOR on a
+        # citation that is in fact exactly right.
+        if BARE_FILE.match(c.path) and len(segs) == 1 and c.ctx:
+            locs_all = dict(self.basenames.get(c.path, []))
+            # Context only matters when the name is genuinely ambiguous.
+            # `rubiks.py` lives in exactly one repo; no prose can make that
+            # ambiguous. `README.md` lives in hundreds.
+            if len(locs_all) > 1:
+                named = [(w.lower().strip("`'\"()[].,:;"), m.start())
+                         for m in re.finditer(r"\b[A-Za-z][A-Za-z0-9._-]{2,}\b", c.ctx)
+                         for w in [m.group(0)]]
+                centre = len(c.ctx) // 2
+                ranked = sorted(((abs(pos - centre), r) for w, pos in named
+                                 if (r := w) in self.index and r not in GENERIC_SEG))
+                if ranked and ranked[0][0] <= 220 and rk != ranked[0][1]:
+                    cr = ranked[0][1]
+                    if cr in locs_all:
+                        return self._check_file(
+                            c, cr, locs_all[cr],
+                            f"bare name ({len(locs_all)} repos have it) resolved to "
+                            f"the repo named nearest in the same passage: "
+                            f"'{self.index[cr]['name']}/{locs_all[cr]}'")
+
         # (1) The document's own repo. This comes FIRST: a citation like
         #     `docs/ARCHITECTURE.md` names a directory, not a fleet repo that
         #     happens to be called "docs". Only when the citing repo does not
@@ -786,7 +908,11 @@ class Resolver:
         # (2) Repo-qualified: `murmur/transforms/rubiks.py`. The first segment
         #     is a fleet repo name and the citing repo does not hold the path.
         if first in self.index and first not in GENERIC_SEG:
-            return self._check_file(c, first, c.path,
+            # `eisenstein/README.md` names a file at the REPO ROOT: the repo
+            # segment is a qualifier, not part of the path. Checking the whole
+            # string would miss the file and then blame some other repo's
+            # README for it.
+            return self._check_file(c, first, "/".join(segs[1:]) or c.path,
                                     f"repo-qualified -> {self.index[first]['name']}")
         if first in self.census and first not in GENERIC_SEG:
             return Finding(
@@ -877,7 +1003,10 @@ RATIO_CLAIM = re.compile(
 OPERANDS = re.compile(rf"\(\s*({NUM})\s*(?:vs\.?|versus|to)\s*({NUM})\s*\)", re.I)
 
 # "59841/10428" written out, and "\frac{2}{\sqrt{3}}", in a sentence with a claim.
-EXPLICIT_FRAC = re.compile(rf"(?<![\d.])(\d{{1,9}})\s*/\s*(\d{{1,9}})(?![\d.])")
+# The lookbehind forbids a preceding word character, which is what stops
+# `3.35e12 / 48` being read as `12 / 48`. The optional sign keeps
+# `-5/3 = -1.667` from looking like 5/3 equalling -1.667.
+EXPLICIT_FRAC = re.compile(r"(?<![\w.])(-?\d{1,9})\s*/\s*(-?\d{1,9})(?![\d.])")
 LATEX_FRAC = re.compile(r"\\d?frac\{([^{}]{1,40})\}\{([^{}]{1,40})\}")
 SQRT_FRAC = re.compile(r"(\d+(?:\.\d+)?)\s*/\s*(?:√|\\sqrt\{\s*(\d+)\s*\}|\s*sqrt\(\s*(\d+)\s*\))")
 NEAR_DECIMAL = re.compile(rf"(?<![\d.])(-?\d+(?:\.\d+)?)(?![\d.])")
@@ -919,31 +1048,45 @@ def extract_numeric_claims(text: str, doc: str) -> list[Finding]:
         lineno = text.count("\n", 0, off) + 1
         off += len(raw_line)
         line = raw_line.strip()
-        if not line or len(line) < 25:
+        if not line or len(line) < 12:
             continue
         prose = _strip_math(line)
 
         # -- A: stated ratio vs. the operands the same sentence supplies -------
-        ops = OPERANDS.search(prose)
-        if ops:
-            a, b = _tofloat(ops.group(1)), _tofloat(ops.group(2))
-            rc = RATIO_CLAIM.search(prose)
-            if a and b and b != 0 and rc:
+        # The ratio claim and its operands must describe the SAME quantity.
+        # `wins speed (2.33x) AND quality (12.4 vs 11.8)` has both shapes in
+        # one line and is not a contradiction; the conjunction is the tell.
+        ops_all = list(OPERANDS.finditer(prose))
+        rc_all = list(RATIO_CLAIM.finditer(prose))
+        for om in ops_all:
+            a, b = _tofloat(om.group(1)), _tofloat(om.group(2))
+            if not (a and b) or b == 0:
+                continue
+            for rc in rc_all:
                 claim_s = rc.group("r") or rc.group("r2")
                 claim = _tofloat(claim_s)
-                if claim:
-                    actual = a / b
-                    rel = abs(actual - claim) / max(abs(claim), 1e-12)
-                    if rel > 0.02:
-                        out.append(Finding(
-                            "numeric", "RATIO_MISMATCH", doc, lineno, line[:300],
-                            f"{ops.group(1)} vs {ops.group(2)}",
-                            f"document claims {claim}×; the operands it gives "
-                            f"({a:,.0f} / {b:,.0f}) = {actual:.4f}×",
-                            f"python3 -c \"print({int(a)}/{int(b)})\"",
-                            f"claimed {claim} | computed {actual:.4f} "
-                            f"| off by {rel*100:.1f}%",
-                        ))
+                if not claim:
+                    continue
+                if rc.start() < om.start():
+                    gap = prose[rc.end():om.start()]
+                else:
+                    gap = prose[om.end():rc.start()]
+                if len(gap) > 70:
+                    continue
+                if re.search(r"\b(?:and|AND|but|while|whereas|though|although)\b", gap):
+                    continue
+                actual = a / b
+                rel = abs(actual - claim) / max(abs(claim), 1e-12)
+                if rel > 0.02:
+                    out.append(Finding(
+                        "numeric", "RATIO_MISMATCH", doc, lineno, line[:300],
+                        f"{om.group(1)} vs {om.group(2)}",
+                        f"document claims {claim}×; the operands it gives "
+                        f"({a:,.0f} / {b:,.0f}) = {actual:.4f}×",
+                        f"python3 -c \"print({a}/{b})\"",
+                        f"claimed {claim} | computed {actual:.4f} "
+                        f"| off by {rel*100:.1f}%",
+                    ))
 
         # -- B: an expression the line ASSERTS equals a number ----------------
         #    Only a claim if the document joins them with = / ~= / ~. Bare
@@ -953,7 +1096,11 @@ def extract_numeric_claims(text: str, doc: str) -> list[Finding]:
             if abs(claimed) < 1e-9 or abs(val) < 1e-9:
                 continue
             rel = abs(claimed - val) / abs(claimed)
-            if rel > 0.01:
+            # prose rounds: 26.67% is legitimately written "27%"
+            if round(val, max(0, 2 - int(math.floor(math.log10(abs(val)))) - 1)) \
+                    == claimed:
+                rel = 0.0
+            if rel > 0.02:
                 out.append(Finding(
                     "numeric", "EXPR_MISMATCH", doc, lineno, line[:300], expr,
                     f"line asserts {claimed:g} but {expr} = {val:.6g}",
@@ -1009,7 +1156,7 @@ def _claimed_equalities(line: str) -> list[tuple[float, str, float]]:
     exprs: list[tuple[float, str]] = []
     for m in EXPLICIT_FRAC.finditer(line):
         n, d = _tofloat(m.group(1)), _tofloat(m.group(2))
-        if n is not None and d and d != 0 and n / d not in (0.0,):
+        if n is not None and d and d != 0 and abs(n / d) > 1e-9:
             exprs.append((n / d, m.group(0)))
     for m in re.finditer(r"\\d?frac\{([^{}]{1,40})\}\{([^{}]{1,40})\}", line):
         v = _eval_latex_frac(m.group(1), m.group(2))
@@ -1026,18 +1173,40 @@ def _claimed_equalities(line: str) -> list[tuple[float, str, float]]:
             exprs.append((a / float(rad) ** 0.5, m.group(0).strip()))
 
     out = []
+    # The asserted value must be the WHOLE right-hand side and carry no unit.
+    # `8/20 = 40%` is a percent conversion, `343/20000 ~ 17mm` is a unit
+    # conversion, `2 x 49 x \frac{4}{3} = 98 + 130.6` quotes a sub-expression.
+    # None of those is an arithmetic error, and all three read as one.
+    UNIT_AFTER = re.compile(
+        r"^\s*(?:%|‰|×|x"
+        r"|(?:mm|cm|km|nm|um|s|ms|us|ns|hz|kHz|MHz|GHz|GB|MB|KB|TB|W|J|V|A|m|b"
+        r"|px|pt|em|rem|deg|rad)\b)", re.I)
+    # `\\[timescdot]` matches the backslash plus ONE letter, which is enough
+    # to cover \\times, \\cdot and \\cdotp. A trailing \\b there would be
+    # unsatisfiable: `\\times` consumes only the `t`, and `i` is still a word
+    # character, so there is no boundary.
+    TIMES = r"\\(?:times|cdot|cdotp)\b"
+    MULT_PREFIX = re.compile(
+        rf"(?:\d+\s*(?:[×x*]|{TIMES})\s*"
+        rf"|[×x*]|{TIMES}\s*\d+\s*"
+        rf"|[\w.)\]}}]+\s*(?:[×x*]|{TIMES})\s*)$")
+    TAIL_OP = re.compile(rf"^\s*(?:[+\-*/×x^]|{TIMES})")
+
     for val, expr in exprs:
         esc = re.escape(expr)
-        # EXPR <relop> NUMBER
-        for m in re.finditer(rf"{esc}\s*{RELOP}\s*(-?\d+(?:\.\d+)?)", line):
+        for m in re.finditer(rf"{esc}\s*{RELOP}\s*(-?\d+(?:\.\d+)?)(?![\d.])", line):
             c = _tofloat(m.group(1))
-            if c is not None:
-                out.append((val, expr, c))
-        # NUMBER <relop> EXPR
-        for m in re.finditer(rf"(-?\d+(?:\.\d+)?)\s*{RELOP}\s*{esc}", line):
-            c = _tofloat(m.group(1))
-            if c is not None:
-                out.append((val, expr, c))
+            if c is None:
+                continue
+            tail = line[m.end(): m.end() + 12]
+            if UNIT_AFTER.match(tail):
+                continue                       # percent or unit conversion
+            if TAIL_OP.match(tail):
+                continue                       # "= 98 + 130.6" — a sum
+            pre = line[max(0, m.start() - 24): m.start()]
+            if MULT_PREFIX.search(pre):
+                continue                       # "2 x 49 x \frac{4}{3}" — partial
+            out.append((val, expr, c))
     return out
     return out
 
@@ -1079,40 +1248,109 @@ def cluster_constants(docs: dict[str, str], min_files: int = 2) -> list[dict]:
 ARXIV = re.compile(r"\b(?:arXiv[:\s/]*|arxiv\.org/(?:abs|pdf)/)"
                    r"(\d{4}\.\d{4,5})(v\d+)?", re.I)
 DOI = re.compile(r"\b(?:doi[:\s]*|https?://(?:dx\.)?doi\.org/)"
-                 r"(10\.\d{4,9}/[^\s\"'<>,;)\]]+)", re.I)
+                 r"(10\.\d{4,9}/[^\s\"'<>]+)", re.I)
+
+
+def _trim_doi(s: str) -> str:
+    """DOIs legitimately contain parentheses: 10.1016/S0167-2789(00)00030-0.
+
+    Two failure modes to absorb:
+      * markdown wrapping, e.g. `(**10.1103/PhysRevLett.85.461)**`, which
+        would otherwise 404 on a DOI that resolves perfectly well;
+      * a dangling `(`, which is a truncated DOI and is genuinely unresolvable.
+    Balance the parentheses left-to-right and drop anything after a close that
+    has no matching open.
+    """
+    s = s.rstrip(".,;")
+    depth = 0
+    cut = len(s)
+    for i, ch in enumerate(s):
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+            if depth < 0:          # a close with no open: markdown, not DOI
+                cut = i
+                break
+    s = s[:cut].rstrip(".,;}*")
+    return s
 URL = re.compile(r"https?://[A-Za-z0-9._~:/?#@!$&()*+,;=%-]+")
 
 UA = "fleet-resolver/1.0 (claim-resolution checker)"
 
+EXT_CACHE_FILE = CACHE / "external_cache.json"
+
+
+def _load_ext_cache() -> dict:
+    try:
+        return json.loads(EXT_CACHE_FILE.read_text())
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_ext_cache() -> None:
+    CACHE.mkdir(parents=True, exist_ok=True)
+    write_atomic(EXT_CACHE_FILE, json.dumps(EXT_CACHE))
+
 
 def _fetch(url: str, timeout: int = 20, method: str = "HEAD") -> tuple[str, str]:
+    """Only a 404/410 means 'dead'.
+
+    401/403 means we were not allowed to look (a private repo reads as 404 to
+    an anonymous client, but 403/401 are plainly 'we could not check'), 429 is
+    rate limiting, and 5xx is the far end having a bad day. Reporting any of
+    those as a broken reference is a false positive by construction.
+    """
     req = urllib.request.Request(url, method=method, headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return "OK", f"HTTP {r.status}"
     except urllib.error.HTTPError as e:
-        return ("RESOLVES" if e.code < 400 else "DEAD"), f"HTTP {e.code}"
+        if e.code in (404, 410):
+            return "DEAD", f"HTTP {e.code}"
+        if e.code in (401, 403):
+            return "UNVERIFIABLE", f"HTTP {e.code} (not authorised — may be private)"
+        if e.code == 429:
+            return "UNVERIFIABLE", "HTTP 429 (rate limited)"
+        if e.code == 405:
+            return "UNVERIFIABLE", "HTTP 405 (HEAD not allowed)"
+        if 400 <= e.code < 500:
+            return "DEAD", f"HTTP {e.code}"
+        return "UNVERIFIABLE", f"HTTP {e.code} (server error)"
     except Exception as e:                       # noqa: BLE001
         return "UNVERIFIABLE", f"{type(e).__name__}: {e}"
 
 
-def arxiv_batch_check(ids: list[str]) -> dict[str, tuple[str, str]]:
-    """arXiv's id_list API answers many IDs in one call."""
+def arxiv_batch_check(ids: list[str], attempts: int = 3) -> dict[str, tuple[str, str]]:
+    """arXiv's id_list API answers many IDs in one call.
+
+    A whole chunk can come back empty when the API rate-limits; that is a
+    transport failure, not evidence that 50 papers do not exist. Retry the
+    chunk, and only report DEAD for ids that survive a successful call.
+    """
     out: dict[str, tuple[str, str]] = {}
-    for i in range(0, len(ids), 50):
-        chunk = ids[i:i + 50]
+    for i in range(0, len(ids), 40):
+        chunk = ids[i:i + 40]
         url = ("http://export.arxiv.org/api/query?id_list="
                + ",".join(chunk) + "&max_results=100")
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=45) as r:
-                body = r.read().decode("utf-8", "replace")
-        except Exception as e:                   # noqa: BLE001
+        body, err = None, ""
+        for attempt in range(attempts):
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    body = r.read().decode("utf-8", "replace")
+                if "<entry>" in body or "<opensearch:totalResults" in body:
+                    break
+                body = None
+                err = "empty response"
+            except Exception as e:               # noqa: BLE001
+                body, err = None, f"{type(e).__name__}: {e}"
+            time.sleep(4 * (attempt + 1))
+        if body is None:
             for a in chunk:
-                out[a] = ("UNVERIFIABLE", f"{type(e).__name__}: {e}")
+                out[a] = ("UNVERIFIABLE", f"arXiv API unreachable: {err}")
             continue
         found = set(re.findall(r"<id>http://arxiv\.org/abs/(\d{4}\.\d{4,5})", body))
-        err = re.search(r"<summary>(.*?)</summary>", body, re.S)
         for a in chunk:
             if a in found:
                 out[a] = ("RESOLVES", "listed by arXiv API")
@@ -1121,7 +1359,19 @@ def arxiv_batch_check(ids: list[str]) -> dict[str, tuple[str, str]]:
     return out
 
 
+EXT_CACHE: dict = {}
+
+
 def check_external(docs: dict[str, str], urls: bool = True) -> list[Finding]:
+    global EXT_CACHE
+    EXT_CACHE = _load_ext_cache()
+    try:
+        return _check_external(docs, urls)
+    finally:
+        _save_ext_cache()
+
+
+def _check_external(docs: dict[str, str], urls: bool = True) -> list[Finding]:
     arx_ids: dict[str, list[tuple[str, int, str]]] = defaultdict(list)
     dois: dict[str, list[tuple[str, int, str]]] = defaultdict(list)
     url_hits: dict[str, list[tuple[str, int, str]]] = defaultdict(list)
@@ -1133,10 +1383,11 @@ def check_external(docs: dict[str, str], urls: bool = True) -> list[Finding]:
             for m in ARXIV.finditer(raw):
                 arx_ids[m.group(1)].append((doc, lineno, m.group(0).strip()))
             for m in DOI.finditer(raw):
-                dois[m.group(1).rstrip(".")].append((doc, lineno, m.group(0).strip()))
+                dois[_trim_doi(m.group(1))].append((doc, lineno, m.group(0).strip()))
             if urls:
                 for m in URL.finditer(raw):
-                    u = m.group(0).rstrip(".,);:")
+                    # markdown emphasis clings to the URL: `(link)**`
+                    u = m.group(0).rstrip(".,);:*}>]\"'")
                     if re.search(r"(arxiv|doi\.org)", u, re.I):
                         continue
                     url_hits[u].append((doc, lineno, m.group(0).strip()))
@@ -1165,9 +1416,24 @@ def check_external(docs: dict[str, str], urls: bool = True) -> list[Finding]:
 
     def one_url(item):
         u, hits = item
-        st, note = _fetch(u)
-        if st == "UNVERIFIABLE":
-            st, note = _fetch(u, method="GET")
+        cached = EXT_CACHE.get(u)
+        if cached is not None:
+            st, note = cached
+        else:
+            st, note = _fetch(u)
+            if st == "UNVERIFIABLE":
+                st, note = _fetch(u, method="GET")
+            EXT_CACHE[u] = [st, note]
+        # A github.com/SuperInstance/<name> 404 from an anonymous client is
+        # weak evidence: the org has thousands of private repos. We hold a
+        # census of it, so consult that before calling it dead.
+        gm = re.match(r"https?://github\.com/SuperInstance/([^/#?]+)", u, re.I)
+        if gm and st == "DEAD":
+            slug = gm.group(1).removesuffix(".git").lower()
+            if slug in load_census() or slug in load_index():
+                st, note = "UNVERIFIABLE", (
+                    "HTTP 404 anonymously, but this repo is in the fleet "
+                    "census — private or transient, not a broken reference")
         doc, lineno, raw = hits[0]
         return Finding("external", "URL_" + st, doc, lineno, raw, u[:120], note,
                        f"curl -sIL '{u}'", f"cited in {len(hits)} place(s)")
