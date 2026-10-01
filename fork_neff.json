@@ -1,0 +1,26 @@
+{
+ "A_parallel (baseline)": {
+  "n": 7,
+  "mean_off_diag": 0.846,
+  "n_eff": 0.165,
+  "n_eff_over_k": 0.024
+ },
+ "B_refracted CHAIN": {
+  "n": 6,
+  "mean_off_diag": 0.797,
+  "n_eff": 0.201,
+  "n_eff_over_k": 0.033
+ },
+ "C_FORK round1": {
+  "n": 7,
+  "mean_off_diag": 0.829,
+  "n_eff": 0.167,
+  "n_eff_over_k": 0.024
+ },
+ "C_FORK round2 (endpoints)": {
+  "n": 7,
+  "mean_off_diag": 0.763,
+  "n_eff": 0.179,
+  "n_eff_over_k": 0.026
+ }
+}
