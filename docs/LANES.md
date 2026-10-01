@@ -33,7 +33,14 @@ reproduces it.
 | L25 neural extraction on Connect 4 | connect4 | **QUEUED** | **unblocked.** ground truth exists, labels are exact |
 | L26 4x4 composition: does the 3x3 effect replicate? | ga4444 | **QUEUED** | **unblocked. complete tree, max 9 plies** |
 | L27 decision-tree ceiling on 3x3 | pie-minimax | **DONE** | tree 0.6793 vs linear 0.5708 vs floor 0.4206 |
-| L28 subagent spawn probe | — | **BLOCKED** | 9 dispatches, 0 artifacts. probe dispatched, no reply |
+| L28 subagent spawn probe | — | **DONE** | **I WAS WRONG. subagents work. I checked at 15 min and called them dead** |
+| L30 W1a: 62 no-language repos | fleet-triage | **DONE** | HOLLOW.md, 33 KB. all 62 read, 0 unreadable |
+| L31 W2b: 10 low-blob repos | fleet-triage | **DONE** | STUBS.md, 16 KB. privox is empty AND load-bearing |
+| L32 TEAM: organizer | fleet-triage | **RUNNING** | PR ordering + the conflict map |
+| L33 TEAM: playtester | fleet-triage | **RUNNING** | mutation testing, 5 repos |
+| L34 TEAM: researcher | fleet-triage | **RUNNING** | d+1 mechanism + prior art |
+| L35 TEAM: builder | fleet-triage | **RUNNING** | set-valued Connect-4 labelling |
+| L36 TEAM: creative | fleet-triage | **RUNNING** | doctrine vs measurement, in friction |
 | L29 depth-matched COMPOSED vs SIMPLE | pie-minimax | **QUEUED** | the naive version has the WRONG SIGN |
 
 ## L23/L24 — the Cog Thesis (Casey, 2026-09-30 23:57)
@@ -221,6 +228,74 @@ lines; a model that can form intermediate conjunctions can, and does.
 **And the naive version of this contrast has the WRONG SIGN.** A position with two own
 threats is structurally a *late* position, so its chance level is already 0.54 and raw
 accuracy reads as "COMPOSED is harder" when it is not. L29 is the depth-matched version.
+
+## I WAS WRONG ABOUT MY OWN TEAM — correction on the record
+
+I told Casey "nine dispatches, zero artifacts" and built the whole board on that. **It was
+false.** `HOLLOW.md` (33 KB) and `STUBS.md` (16 KB) had both landed; I checked at ~15 minutes,
+saw an empty directory, and concluded the lane was dead. **The lane was running the whole
+time.** I have raised my own check interval, and the board rule is now: *a lane that looks dead
+at 15 minutes is not evidence of a dead lane.*
+
+**The subagent also caught a real error in my brief:** I told it `GITHUB_TOKEN` would be in its
+environment. It was not — subagents do not inherit it. It worked around that unauthenticated at
+60 req/hr and, crucially, **documented that its "no references" cells were qualified rather than
+binary, because `/search/code` 401s without auth.** That qualification is the most valuable
+sentence in the report and it came from noticing my error.
+
+**What the two reports actually found, which corrects my framing:**
+
+- **`privox` is not an empty repo. It is an empty repo that 8 repos depend on.** Zero commits,
+  zero blobs — and `knowledge-vault` ships `examples/with_privox.rs` calling
+  `privox::{PatternSet, PrivacyRedactor}`. It 404s on crates.io. **Empty AND load-bearing is a
+  different defect class from empty.**
+- **Three repos have real content stranded on a non-default `master`** with unrelated histories.
+  `algebra-explorer` is a finished 22,730-byte HTML demo on `master`; `main` is a 151-byte
+  README. `agent-priming` and `agent-priming-toolkit` are the same shape. **A one-blob census
+  calls these empty; they are misfiled.**
+- **`starter-shell` is published to npm and PyPI and its `main` is broken** — `package.json`
+  points at `index.js`, which is in neither the repo nor the published tarball, so `require()`
+  throws.
+- **`loom-caching-rollout` advertises "🚨 Automatic rollback" with the real command commented out**
+  and replaced by `sleep 1  # Simulate rollback delay`.
+- **The `hermes-memory-mcp` disease is rarer than I implied** — only 1 of 62 is genuinely broken
+  by the dangling-entry test. 40 of the 62 are forks inheriting upstream extensions.
+
+**My "these repos are empty" framing was wrong on 5 of 10.** The right frame is *what is the
+promise, and is anything behind it.*
+
+## SPRINT — opened after 4 papers scouts + the iteration-2 wave
+
+**The convergence.** Seven independent agents, seven repos, one failure mode, stated the same way:
+
+> **A well-formed, checkable, wrong artifact, and no instrument that can say so.**
+
+**The sharpest instance.** `01-conservation-law-of-intelligence.md:224` claims Eisenstein triples
+give **6.8×** higher density than Pythagorean triples. Truth: `59841/10428 = 5.74`; the paper's own
+asymptotic gives `2/√3 = 1.155`; direct counting shows the ratio **decaying toward** 1.155. **The
+identical wrong constant is in `eisenstein/README.md:25`, `CONTRIBUTING.md:68`, `src/lib.rs:32`, and
+`tests/algebraic_properties.rs:636,688`** — in a crate with **real CI and real property tests** — and
+paper 01 `:203` cites that crate as its verification.
+
+> **A wrong number passed through a passing test suite into a paper as authority.**
+
+| lane | role | doing | blocked on |
+|---|---|---|---|
+| SPRINT-1 | builder | **the claim resolver** — every `path:line` and numeric derivation resolved to the thing it names | nothing |
+| SPRINT-2 | builder | **13 repos fail open silently**; 11 are one `try/except` in a 6-line file; 10 in `substrate-*`; zero CI | nothing |
+| SPRINT-3 | builder | **8 CRDT ports, not 4**; 5 byte-identical below the type; make `crdt-core` canonical. Plus the tile-algebra dispute the formalisation **cannot arbitrate** — the paper has no `tags` field | nothing |
+
+**SPRINT-1 is the important one.** One instrument would have caught every paper finding tonight,
+including `murmur/transforms/rubiks.py` **line 437**, which I verified by hand: `murmur` is a
+37-file Next.js app with **no `transforms/` directory**, and a fleet-wide search for
+`transforms/rubiks.py` returns **0 files.**
+
+### What the scouts got right that I had wrong
+
+- **The site UNDER-publishes: 19 published : 2,295 contained ≈ 1:121, and zero of the three spine papers appear on the website at all.** I hypothesised the published surface overstated the artifact surface. **Refuted.** The problem is the opposite.
+- **`04-Pythagorean-Geometric-Tensors.md:77-85`** — "Theorem 2.1 (Orthogonality of Pythagorean Basis)", certified by its README as "Proven orthogonality via Frobenius inner product" — is false twice: the paper's own Definition 2.1 makes `T:T = 2` for every triple, cross terms are `cos(2Δ) ≈ 0.879`, and **four basis vectors in a 2-D space cannot be mutually orthogonal.**
+- **The message record is a workflow document that was not executed**: 308 files, **1 commit, 1 human**; the `## From:/## To:/## Status` headers its own README specifies are used in **2 of 308**; round-16 promised 12 docs (**0 exist**), round-17 named 5 evidence files (**0/5**); "auth middleware connected to `server.ts`" with **0 `auth` references in `server.ts`**; **0 `conflict_*.md`** for disagreements, which the README names as the mechanism.
+- **3 research findings are now stale with the commit that staled them**, and 4 live defects are reported-not-patched.
 
 ## The two real blockers
 
