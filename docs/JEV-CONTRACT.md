@@ -82,3 +82,68 @@ curl -s -X POST https://api.typesafe.ai/v1/systemone \
        "questions":{"c":{"type":"choice","instructions":"What color is the barn?",
        "criteria":{"red":null,"green":null,"grey":null}}}}'
 ```
+
+## THE THREE PRIMITIVES HAVE THREE DIFFERENT CONTRACTS — verified live
+
+Found the hard way, and I am writing it down before anyone builds a `score` call
+on my word. A third round of guessing produced four 422s and a **contradictory**
+error — the server reported `score.criteria` missing *while discarding the
+`score` object I had supplied* as unknown.
+
+### `choice` — select from a defined set
+
+```json
+{"kind": {"type":"choice",
+  "instructions":"Is the super-cell a set of hexagonal cells that share edges?",
+  "criteria": {"hexagonal cells sharing edges": null,
+               "a single large cell": null}}}
+```
+→ `{"choice":"hexagonal cells sharing edges","confidence":1.0,
+    "probabilities":{"hexagonal cells sharing edges":1.0,"a single large cell":0.0}}`
+
+### `score` — position on an ORDERED scale of descriptive levels
+
+**Not `criteria`. Not an object. `levels`, a list of strings, ordered.**
+
+```json
+{"severity": {"type":"score",
+  "question":"How severe is the reported issue?",
+  "levels":["Cosmetic; no impact to functionality",
+            "Broken or degraded feature, but workaround exists",
+            "Blocking issue; no workaround exists"],
+  "shortLevels":["Cosmetic","Workaround","Blocking"]}}
+```
+→ `{"score":1.43,"confidence":0.35,
+    "legend":{"0":"Cosmetic…","1":"Broken…","2":"Blocking…"},
+    "probabilities":{"0":0.0,"1":0.57,"2":0.43}}`
+
+**The score is a continuous position between the levels, not a bucket**, and
+`legend` maps it back. `shortLevels` is a display convenience.
+
+### `noul` — is this statement true
+
+```json
+{"ishex": {"type":"noul",
+  "instructions":"Is the super-cell a set of hexagonal cells that share edges?"}}
+```
+→ `{"noul":0.97}`
+
+### THE PART THAT MATTERS MOST, and it is the whole project
+
+That severity call is `score 1.43` on a **`0.57 / 0.43` split, with
+`confidence 0.35`.** The middle answer carries *less* confidence than a
+near-categorical one, because **confidence tracks the separation of the
+distribution, not its height.** The model is saying *I do not know, route this
+to a human.*
+
+**`abstain-gate` is a documented primitive and we built it by hand.** So are
+double-checking citations (the resolver), intent routing, and composite scoring.
+About four of roughly twenty published patterns, hand-rolled.
+
+### The lesson from the four failed guesses
+
+**Asking is cheap. Asking the *right* question is not free — the vantage point
+carries a disambiguation cost.** Reading `primitives.md` got me nothing; it is
+React-rendered and the prose sits inside component source. Fetching
+`primitives/score.md` got it in one request. The disambiguation was not free,
+it was just cheaper than the alternative.
