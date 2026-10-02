@@ -46,6 +46,38 @@ keep a green badge are **the ones that survive `got = expected`.**
 **Score: 5 kept · 5 false, all but one mine · 1 half-false · 1 unresolved —
 and one already-false claim in a document I have not yet corrected.**
 
+## A prediction, made and then refuted by reading the source
+
+**Claim 15 — SETTLED WRONG, and I am recording it because the ledger is only
+worth anything if it is willing to say this.** I predicted, from the projection
+ladder (L1 colour-collapsed 0.8947 vs L0 lossless 0.8831), that *for this game
+the char arm and the colour arm would be nearly equally informative.*
+
+**`Rasterizer.cs:129-131` settles it. I was backwards.**
+
+```csharp
+console.Data[i, j]  = fogString[fogId];                              // depth only
+console.Color[i, j] = ColorTo8Bit(triangle.Texture.Sample(uv)*...);   // identity
+```
+
+**The character is a function of `z` and knows nothing about what object it is
+looking at. Colour is the only channel carrying identity.** In the ladder's task
+colour was *redundant* and its discard was cheap; **here it is load-bearing, and
+the L1 drop will be catastrophic rather than slight.**
+
+> **The same projection is cheap in one substrate and fatal in another, and you
+> cannot tell which without knowing what each channel carries.**
+
+**The generalisable error, and it is one I have made before:** *I generalised a
+measurement from a task without checking the structure of the new one.* That is
+the same move as calling `BattenSpline` prose-only from ten greps. **Claim 6's
+lesson — do not generalise from a count you did not complete — has a sibling:
+do not generalise a result from a task whose structure you did not check.**
+
+**It also kills a design:** "tile makers" keyed on glyph is not viable, because
+the glyph is a depth reading with a false identity attached. **Tiles key on
+colour; the character is demoted to a depth cue.**
+
 ## The metric bug I hit writing this
 
 The first version of the classifier above counted `keep = 0`, because the string
