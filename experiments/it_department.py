@@ -94,18 +94,26 @@ RUBRIC = {
 
 # ── JEV ─────────────────────────────────────────────────────────────────────
 def jev(state, questions, max_items=6):
-    body = {"state": state, "questions": questions}
+    # RECOVERED 2026-10-02 from achimala/jev-paint web/jev.mjs; see
+    # JEV-CONTRACT.md. Three errors: model is "jev-latest" not "jev-1.13.0",
+    # criteria values are null not descriptions, and type is a required union
+    # discriminator -- "choice" is the tag, "string" is not a tag.
+    body = {"model": "jev-latest", "state": state, "questions": questions}
     req = urllib.request.Request(JEV, data=json.dumps(body).encode(),
         headers={"Authorization": f"Bearer {K}", "Content-Type": "application/json",
                  "User-Agent": "it-department"}, method="POST")
-    for t in range(3):
+    for t in range(4):
         try:
             with urllib.request.urlopen(req, timeout=150) as r:
                 d = json.loads(r.read())
             return d
         except urllib.error.HTTPError as e:
             if e.code in (429, 500, 502, 503): time.sleep(4 + 3 * t); continue
-            return {"__err__": f"{e.code}"}
+            return {"__err__": f"{e.code}", "body": e.read()[:200].decode("utf8","replace")}
+        except Exception as e:
+            # The endpoint returns TLS EOF intermittently. A transport failure is
+            # NOT evidence about the request shape; retry before concluding.
+            time.sleep(4 + 3 * t)
         except Exception:
             time.sleep(4)
     return {"__err__": "exhausted"}
@@ -117,9 +125,9 @@ def ask_arms(p):
              f"Answer strictly from the team corpus above. If the corpus does not "
              f"contain the answer, say UNANSWERABLE. Be specific: numbers, file names, "
              f"commit hashes. Under 70 words.")
-    qs = {"q": {"type": "string", "instructions": "Answer the question from the team corpus. "
+    qs = {"q": {"type": "choice", "instructions": "Answer the question from the team corpus. "
             "If the corpus lacks the answer, return UNANSWERABLE.",
-            "criteria": {"answer": "The team's answer, under 70 words."}}}
+            "criteria": {"answer": None}}}
     A = jev(state, qs).get("answers", {}).get("q", {})
 
     # B: refracted -- the proposal under test
@@ -163,15 +171,19 @@ def judge(answers: dict, state_hint: str):
     listing = "\n".join(f"  candidate {k}: {v[:600]}" for k, v in answers.items() if v)
     st = ("You are the systems analyst for a software team, reviewing three candidate "
           "answers to the same internal question. Judge each on its own merits.\n\n" + listing)
-    qs = {"review": {"type": "string",
+    qs = {"review": {"type": "choice",
           "instructions": "Rate EACH named candidate separately against each criterion. "
                          "Candidate A is 'A_single'. Candidate B is 'B_refracted'. "
                          "Candidate C is 'C_free'. Do not consider a candidate that is "
                          "listed as absent. Rate 1-5.",
-          "criteria": {k: f"Score 1-5 for how well this answer meets: {v}"
-                       for k, v in RUBRIC.items()}}}
-    d = jev(st, qs).get("answers", {}).get("review", {})
-    return d if isinstance(d, dict) else {}
+          "criteria": {k: None for k in RUBRIC}}}
+    raw = jev(st, qs)
+    if "__err__" in raw:
+        # A FAILED judge call is not the same as a judge that scored nothing.
+        # Collapsing the two is how a broken instrument reports a clean run.
+        return {"__err__": raw["__err__"], "body": raw.get("body", "")[:200]}
+    d = raw.get("answers", {}).get("review", {})
+    return d if isinstance(d, dict) else {"__err__": "review answer missing"}
 
 def truth_ok(ans, truth):
     if not ans: return None
@@ -202,7 +214,13 @@ def main():
         arms = {a: v[a] for a in ("A_single", "B_refracted", "C_free")}
         jd = judge(arms, k)
         # prefer the JEV probability map for the model's ranking
+        if "__err__" in jd:
+            print(f"    JUDGE CALL FAILED on {k[:34]}: {jd['__err__']} {jd.get('body','')[:90]}")
+            judge_failures += 1
+            continue
         probs = jd.get("probabilities", {}) if isinstance(jd, dict) else {}
+        if not probs:
+            print(f"    judge returned no probabilities for {k[:34]} (keys: {list(jd)[:4]})")
         scored = {a: {"truth": truth_ok(v[a], v["truth"])} for a in arms}
         for a in arms:
             sc = probs.get(a)
@@ -212,6 +230,7 @@ def main():
 
     # ── the cumulative ledger. THIS is the self-improvement. ────────────────
     tally = Counter(); tscore = Counter(); jscore = Counter(); disagree = 0; judged = 0
+    judge_failures = 0
     for k, scored, truth in rows:
         for a, s in scored.items():
             tally[a] += 1
@@ -221,6 +240,7 @@ def main():
 
     # A scoring block that reports all zeros is a BROKEN INSTRUMENT, not a result.
     # This run is invalid and must say so rather than print an empty ledger.
+    print(f"\n  judge calls that FAILED outright: {judge_failures}")
     if not any(v.get("judge") for _, sc, _ in rows for v in sc.values()):
         print("\n  INVALID RUN: the judge produced no scores at all.")
         print("  Every number below would be an artifact of a broken harness.")
