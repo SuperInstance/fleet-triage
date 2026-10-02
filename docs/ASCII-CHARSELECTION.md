@@ -144,3 +144,70 @@ testing the central doctrine.
 "far" from the glyph. What it cannot do is tell "monster" from "wall" from the
 glyph alone. **Both halves of that sentence are results, and the second one is
 the one that matters.**
+
+---
+
+## RETRACTION (same day, 30 min later) — the churn finding was WRONG
+
+`grep -n "offset\[" ASCII_FPS/Geometry/Rasterizer.cs` returns **two lines: 36 and
+129.** Line 36 is the *only* write, and it is in the **constructor**. Line 129 is
+the only read. `Raster()` resets `console.Data`, `console.Color`, `zBuffer`,
+`bBuffer`, `tBuffer` — **it does not touch `offset`.**
+
+```csharp
+public Rasterizer(Console console) {
+    rand = new Random();
+    ...
+    offset[i, j] = (float)rand.NextDouble() - 0.5f;   // line 36 — ONCE, ever
+}
+```
+
+**So the dither is a FIXED SPATIAL PATTERN, not a per-frame redraw. My churn
+experiment redrew it every frame, which is an algorithm the code does not run.**
+
+### What is retracted
+
+- ❌ "92.9% near-field churn" — wrong by construction.
+- ❌ "the informative band and the unstable band are the same band" — the
+  instability was mine, not the game's.
+- ❌ "reading characters near the player is reading noise" — false. **It is
+  reading a stable dithered depth ramp.**
+
+### What survives, and it is the part that mattered
+
+- ✅ **The character is a pure function of `z` and carries no identity.**
+  `Data[i,j] = fogString[fogId(z)]`, nothing else. **This is untouched by the
+  retraction** — it is a statement about what the channel contains, and the
+  channel contains depth and only depth.
+- ✅ **`z^10` flattens the ramp: ~79% of uniform-depth cells read `@`.** A
+  property of the ramp function, independent of dither timing.
+- ✅ **The game is non-deterministic ACROSS RUNS**, because `new Random()` is
+  unseeded and the dither pattern differs per process. **Still true — but the
+  mechanism is the dither *pattern*, not frame-to-frame flicker.** Within a run
+  the character channel is perfectly stable.
+
+### The better instrument, and the reason it was better
+
+> **A time series over a STATIC scene is the strongest test of "is this channel
+> carrying information?"** I reached for the right instrument and then fed it the
+> wrong algorithm. **The right reading: within a run, with the scene held still,
+> the character channel should be perfectly still — and it is, and that is exactly
+> why it is useless for identity. Its stability is the evidence, not the churn.**
+
+### Why this is the sixth instrument, and the common factor is still me
+
+`detection_power` scoring a perfect instrument 0.242 · `selectlib` printing a
+ranking from `seeds=(0,)` · a Connect-4 policy metric at 0/12 for a policy
+measured 0.9871 · a claim-classifier returning "zero standing" on a string prefix
+· a bucket/churn figure disagreeing with its own per-cell figure by two orders of
+magnitude · **and now an experiment that simulated a redraw the source does not
+perform.**
+
+**Four of these are a *simplification* error, not a measurement error, and that is
+a new sub-pattern worth naming: the easiest way to get a dramatic result is to
+model a more dramatic thing than the code does.** The other two were arithmetic.
+**`grep` for every write to every field a claim depends on, before modelling it.**
+That check takes one second and it would have caught this.
+
+**The identity finding is the one that survives, and it was never in doubt:
+`console.Data[i,j] = fogString[fogId]` reads `z` and `offset` and nothing else.**

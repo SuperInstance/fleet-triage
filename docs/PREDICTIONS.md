@@ -115,3 +115,27 @@ checkable in about a minute, which is exactly why all four were avoidable.
   wrong.** If it cannot say, the number does not go in.
 - **A retraction lands in the document that made the claim**, not only in a
   ledger. Claim 2 is still wrong in `DOCTRINE.md`; fixing it is owed.
+
+## A retraction of my own finding, 30 minutes after making it
+
+I built a temporal experiment on the dither and reported a 92.9% near-field churn
+figure. **`grep -n "offset\[" Rasterizer.cs` returns two lines, and one of them is
+the only write — in the constructor.** The dither is a fixed spatial pattern drawn
+once per process. **My experiment redrew it per frame, which the code never does.**
+
+Retracted: the churn number, "informative band == unstable band", and "characters
+near the player are noise."
+**Survives: the character is a pure function of depth and carries no identity —
+that claim never depended on the dither timing, and it is the claim that matters.**
+
+**And the instrumentation lesson, which is new and worth more than the finding:**
+
+> **Four of tonight's six bad instruments were a _simplification_ error, not an
+> arithmetic one. The easiest way to get a dramatic result is to model a more
+> dramatic thing than the code does.** `grep` every write to every field a claim
+> depends on, *before* modelling it. One second. It would have caught this.
+
+**And the correct use of the time series, which I had right for the wrong reason:**
+hold the scene still, and if a channel is *stable* while carrying only depth, that
+stability is the evidence that it is useless for identity — not that it is noisy.
+**I had the right instrument and fed it the wrong algorithm.**
