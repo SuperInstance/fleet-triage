@@ -1,2 +1,0 @@
-refs/heads/claude/document-studylog-guidelines-RgiJf	b73306f64697dd6261b4ee16adf534d9418e994a
-refs/heads/claude/init-project-CtFw9	7bda2b5b1d9d329933779305ed0e5d7f297a7dba

@@ -1,2 +1,0 @@
-refs/heads/canon-canonical-sync	b14a821c14be218a38c8340cb1affe58e1fc857b
-refs/heads/master	c634a9c282d7e920c9d5ce8d417a674fa8b344a3

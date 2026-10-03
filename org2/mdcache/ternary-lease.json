@@ -1,1 +1,0 @@
-{"ternary-lease-master/Cargo.toml": "[package]\nname = \"ternary-lease\"\nversion = \"0.1.0\"\nedition = \"2021\"\ndescription = \"Distributed lease management for GPU resources with ternary states. {+1=held, 0=expired, -1=revoked}. Renewal, revocation, deadlock detection.\"\nlicense = \"Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/ternary-lease\"\n"}

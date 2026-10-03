@@ -1,6 +1,0 @@
-refs/heads/feat/add-linter	1a0aa4a8158d4d89f51984bf5902240bed0f58c1
-refs/heads/feat/deps-system	66d64baded4088e0dbb8dbcdec1bdd8ea97dbbc9
-refs/heads/feat/openclaw-plugin	313f4b24a3ea952ae0d07eb3f15c2b9e81fea331
-refs/heads/main	d6e9c64c82a6c56d84b0f9923dd9b7a7e44f8dd5
-refs/heads/openprose-forme	ccd5d5f54accd935d7c310c372448749b0a28bc4
-refs/heads/rfc/run-type	80fb1dc0a1275722bd90e5ac92ee3f757e2a5e18

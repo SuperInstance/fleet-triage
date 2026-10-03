@@ -1,3 +1,0 @@
-refs/heads/fiber-duality	1e2369aaae6f6baac57e5bdb394fe1e52ca814c4
-refs/heads/main	e37fa5a3d1fe54e803bc36c2df65484727ab4fbd
-refs/heads/master	79e13ccae9986de13cbf4e457935af72ec092fab

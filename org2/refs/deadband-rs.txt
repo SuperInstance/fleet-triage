@@ -1,3 +1,0 @@
-refs/heads/benchmark/eisenstein-norm	63b313cc31f5fb4f90b6b70b92d3736728ea0a39
-refs/heads/docs/session-status-may-21	5bd5a8a3763fbc64e4e85668b221069f6a45bbe9
-refs/heads/main	2cbda44219fa30c5cd3635cfe554a138b5396d01

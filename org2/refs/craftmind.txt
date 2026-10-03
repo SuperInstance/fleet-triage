@@ -1,2 +1,0 @@
-refs/heads/craftmind-upgrade-tminus-event	660d140a4fea73b75a0572a3432296b8566d724a
-refs/heads/main	c59b029a17b77071d9babd65fd456ace4df6bbd7

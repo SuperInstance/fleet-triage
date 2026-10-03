@@ -1,3 +1,0 @@
-refs/heads/gh-pages	f000b3ab969e5038c3d0ab2ff2deab1e8070990a
-refs/heads/main	cd80635691f792985fa00ba5b034a6e4227c2209
-refs/heads/master	cd80635691f792985fa00ba5b034a6e4227c2209

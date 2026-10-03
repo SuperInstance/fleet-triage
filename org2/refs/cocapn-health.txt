@@ -1,4 +1,0 @@
-refs/heads/canon-md	f8dd688da284df6a6a6c42c8884467863082008d
-refs/heads/canon-stub	b26377c32f2d31b978534d00e095e3731709937b
-refs/heads/fix/ruff-format	913dfa73cc808fd15c98842b6a48e91d11c18756
-refs/heads/main	d368e9ad839acbf238a426972217bdd15d50b433

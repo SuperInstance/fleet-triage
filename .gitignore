@@ -3,14 +3,16 @@ __pycache__/
 node_modules/
 target/
 .wrangler/
+CONFORM/
 
-# ORPHANED FLEET CLONES - 28,771 files, 252 MB. Regenerable by re-cloning, and
-# committing them would put 252 MB of duplicated history into this repository
-# permanently. They are census scratch: org2/auditclones, org_scratch/*.json.
-# Re-create with a clone script; do not commit.
+# ORPHANED FLEET CLONES - 28,771 files, 252 MB of census scratch. Regenerable by
+# re-cloning. They are ALSO removed from the index in the commit that added this
+# file, because a .gitignore does not untrack anything.
+#
+#   A MITIGATION THAT DOES NOT CHANGE THE TRACKED TREE IS NOT A MITIGATION.
+#   CHECK `git ls-files`, NOT `.gitignore`.
+#
+# This has now bitten four separate times in this project. The blobs remain in
+# history, which is why this is a removal rather than a filter.
 org2/
 org_scratch/
-
-# A nested git repo with 0 commits and 0 tracked files. It is why `git add -A`
-# kept refusing: git cannot add a repository inside a repository.
-CONFORM/

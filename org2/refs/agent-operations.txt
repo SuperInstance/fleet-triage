@@ -1,8 +1,0 @@
-refs/heads/main	5f8d9572b9dd19f884dc2c8dfafc0d67c130796f
-refs/heads/master	871778f59156d0c8d79bcb703c93fad92b3eef70
-refs/heads/research/a2a-agents	3106f69516d7ec99b613b872337d56c6bb804be9
-refs/heads/research/ecosystem-trends	2eaf05a087d528d4e57f24388e53c21f887d447f
-refs/heads/research/loom-heddle-synergy	8bd326addd5d2a0a71f973887958a9ba64e9942b
-refs/heads/research/synergy-matrix	35a0d47768e0188c323b29d16ab0410a1bb371d1
-refs/heads/research/topology-energy	35a0d47768e0188c323b29d16ab0410a1bb371d1
-refs/heads/research/trending-repos	35a0d47768e0188c323b29d16ab0410a1bb371d1

@@ -1,9 +1,0 @@
-{
-  "receipt": "frontier-tier-mem-dei-design",
-  "algo": "sha256",
-  "file": "experiments/frontier-tier-mem-dei-design.md",
-  "sha256": "363338e5f74713e5986b806769683f4efcc2b36ec0b44b92234bf73b1d385d1f",
-  "sealed_by": "kimi1 snowball pulse 2026-09-28",
-  "chain": "genesis",
-  "note": "re-derive: sha256sum experiments/frontier-tier-mem-dei-design.md"
-}

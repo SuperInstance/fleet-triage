@@ -1,5 +1,0 @@
-refs/heads/canon-md	2f3f03b9c843cf5870aaa0bb1a171918d276209f
-refs/heads/canon-stub	038fb36917b595fe4a1fbb6851d9caa26869e0f5
-refs/heads/claude/first-season-preset	25e5f6a85cca550249b5010aeaddd66ead6a85c4
-refs/heads/claude/fix-control-wiring	a7a59fec4735e4d61de3c5401bc28d048fe9561f
-refs/heads/main	75fa65fd8aeca3491d3206ea425c204ae4bb9aab

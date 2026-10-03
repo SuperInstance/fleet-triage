@@ -1,2 +1,0 @@
-refs/heads/claude/phase0-worldmodel	8f128b7cc495d52a0f1149298378204c81ad75bc
-refs/heads/main	e69b6fcd306f0973fdb12d213db8f382030f5d26

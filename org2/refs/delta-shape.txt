@@ -1,2 +1,0 @@
-refs/heads/esign-drift-witness	e6a8f24f6bd88f0403fba857eaacc70232b925cf
-refs/heads/main	57c0742612fa59c7430c1c7d09a175cfcf3af8cd

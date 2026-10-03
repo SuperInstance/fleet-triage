@@ -1,1 +1,0 @@
-{"audio-mixer-master/Cargo.toml": "[package]\nname = \"audio-mixer\"\nversion = \"0.1.0\"\ndescription = \"Audio Mixer \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/audio-mixer\"\nedition = \"2021\"\n\nkeywords = [\"audio-mixer\"]\n\n[dependencies]\n"}

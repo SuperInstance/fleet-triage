@@ -1,1 +1,0 @@
-{"ternary-tidepool-main/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-tidepool\"\nname = \"ternary-tidepool\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Small protected environments for agent experimentation in ternary fleets\"\n"}

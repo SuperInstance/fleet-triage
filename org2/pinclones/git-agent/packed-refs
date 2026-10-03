@@ -1,6 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-14f10b0148419b5b8491506e702cfc357f2f3b06 refs/heads/legibility/negative-space-audit
-aed3fd94403f403eb2839e554eed6b9942ee2efe refs/heads/main
-8d6c31a380984d97b7df641937c7d6a181f423ef refs/heads/master
-9b88e7e08d0d13be7500deba49e15d586f244679 refs/heads/quilt-emitter
-27b3e8fb488bf8a7e207f0cada0d62562a4ec836 refs/tags/v0.1.0

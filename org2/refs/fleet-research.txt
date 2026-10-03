@@ -1,4 +1,0 @@
-refs/heads/deepinfra-analysis	2bb1a1668e9b681f73a2e3c8cd4f753f37c82dfd
-refs/heads/main	1795190555a8a0e6139dc5661e5e519a5614cb64
-refs/heads/research-2026-09-23	431f9fbb878081d1c17dab2a55534ddd00d0794e
-refs/heads/research-sweep	3c2f3326facad3ec9589ae8e80d2f35ff53f4f04

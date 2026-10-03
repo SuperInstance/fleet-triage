@@ -1,3 +1,0 @@
-refs/heads/ci-guard	eb3aea275f2e0175fa47219c6d81d288416caa2d
-refs/heads/main	b9c982299b6f95b752641c09450e64c6e5479c64
-refs/heads/quilt-fabric	61609760bbaf42421e0c1a788b03e6159c0d5f51

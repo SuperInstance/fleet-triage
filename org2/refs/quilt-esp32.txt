@@ -1,6 +1,0 @@
-refs/heads/eileen	6ada5347eeda318ebbeac50dd4d70d4f2d06bbef
-refs/heads/main	c851b7ded392e1bcd63da70b148decbeafca4f3f
-refs/heads/master	eec119a5135a99fe000fd2900ea77c08fe82257a
-refs/heads/nmea	ca05e312d5697a2bb928650ff91aa978948188db
-refs/heads/opcodes	7764a922d89e39191c5af3f3aad2bc7abb5bbdf3
-refs/heads/reflex-arc	0b85e21c7dec2942db70c3a9170b2f06536b7c8c

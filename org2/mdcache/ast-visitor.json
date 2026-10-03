@@ -1,1 +1,0 @@
-{"ast-visitor-master/Cargo.toml": "[package]\nname = \"ast-visitor\"\nversion = \"0.1.0\"\ndescription = \"Ast Visitor \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/ast-visitor\"\nedition = \"2021\"\n\nkeywords = [\"ast-visitor\"]\n\n[dependencies]\n"}

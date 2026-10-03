@@ -1,6 +1,0 @@
-refs/heads/canon-edge-sweep-0922	ba38cca05ed90fe523d3b8b6056b61276ceb5f17
-refs/heads/canon-md	921bd28fd5a45008f4ef9218056f5a02749d808b
-refs/heads/canon-target-provenance	f320451f08c178c4c6473f96c036c15ecb106c1a
-refs/heads/choir-retune	6b59112fc667debfcd8447fd9df6f7b0dc860ec4
-refs/heads/lane-ah3-micrograd-quilt	de4bf6ff6bbd195babc92b10e85a0e125c948865
-refs/heads/main	52dfb8e3e0189e3eb51a4c6ffa36c7e5a2f888f0

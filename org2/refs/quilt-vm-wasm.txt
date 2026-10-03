@@ -1,2 +1,0 @@
-refs/heads/claude/docs-vm-wasm	65418ee6243b3b84b3584e71835cde9043462171
-refs/heads/master	001fa53274233796b9cbf21647298d00f2c18510

@@ -1,1 +1,0 @@
-{"blame-tracker-master/Cargo.toml": "[package]\nname = \"blame-tracker\"\nversion = \"0.1.0\"\ndescription = \"Blame Tracker \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/blame-tracker\"\nedition = \"2021\"\n\nkeywords = [\"blame-tracker\"]\n\n[dependencies]\n"}

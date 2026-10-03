@@ -1,5 +1,0 @@
-refs/heads/claude/reflex-arc-earned-standing	591d7a87c49e896daae0cc21dc3ca1e63dea7888
-refs/heads/dependabot/npm_and_yarn/types/node-26.6.3	05409347e7909ad8930ea0fce9f693d7d82cec24
-refs/heads/dependabot/npm_and_yarn/typescript-7.0.2	1195e95ec8af827577e1de4ebb3442f0d44c73e8
-refs/heads/dependabot/npm_and_yarn/vitest-5.0.2	29a5f4b7fa3386a45e3b8a6b3734c047a22dab1d
-refs/heads/main	15fcd53701020daf5e21f285334196a49d83eb9d

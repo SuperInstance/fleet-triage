@@ -1,5 +1,0 @@
-refs/heads/dependabot/npm_and_yarn/vitest/coverage-v8-4.1.2	de4dd28b1b0cc22000bd4b3ec5d6452085ffd346
-refs/heads/fix/cognitive-engine-63-eslint	12045097b63ff92bf1c702e47a70d643a63c293e
-refs/heads/legibility/negative-space-audit	c741858d8cf6bb48e75e7631952f15d8514cd465
-refs/heads/main	d4034f222f93eb0c47e74b6d473477a5cb5dbff6
-refs/heads/master	ff7345c8c1340712a0beec4a31be81946ad57d5f

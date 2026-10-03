@@ -1,3 +1,0 @@
-refs/heads/design/phase-2-intelligence	82bbe47d4211168e879179e31f95438ff91ed914
-refs/heads/feat/phase-0-mvp	57596c67d0b2d283f8b314f307be7f2bf4e8b249
-refs/heads/main	f04ae994ce55ec63e325c55fb2367d1f796bdd8e

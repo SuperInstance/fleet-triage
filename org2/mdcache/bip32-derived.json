@@ -1,1 +1,0 @@
-{"bip32-derived-master/Cargo.toml": "[package]\nname = \"bip32-derived\"\nversion = \"0.1.0\"\ndescription = \"Bip32 Derived \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/bip32-derived\"\nedition = \"2021\"\n\nkeywords = [\"bip32-derived\"]\n\n[dependencies]\n"}

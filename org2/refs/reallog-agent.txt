@@ -1,4 +1,0 @@
-refs/heads/fix-empty-wheel-2026-07-09	49fc4a1ba600d520cd72f69cec4b3730738f2895
-refs/heads/master	6a913e73d51ea543829ecfeebe764759c2b4c781
-refs/heads/narrative-consistency-2026-07-09	79fb6d666dedaa7f65bc6946138ac23382b9daf0
-refs/heads/tone-pass-2026-07-09	2461f8c28ed0063f45d0a13abe79b2843f8c7c32

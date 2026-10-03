@@ -1,2 +1,0 @@
-refs/heads/docs/fleet-readme	c9e4f119ee670fb0bdde0fb9ec365db3b43ad679
-refs/heads/master	5a78dd64218063e67e8a877442ee8bce5b6164e5

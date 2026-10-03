@@ -1,2 +1,0 @@
-refs/heads/main	ac50dc5ce07e4a26e1c20a76625e9709a767c4a1
-refs/heads/receipted-training	6287eb013777983030a482f411ae85f2634b9f84

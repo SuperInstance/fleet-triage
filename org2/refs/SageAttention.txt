@@ -1,7 +1,0 @@
-refs/heads/2.0.0	44f6ea3e42a4d006c7e9b894233a667d627dd9f9
-refs/heads/2.0.1	32c376aff37e5d9e4ad20284cb8a32a55fa45a0c
-refs/heads/hopper_kernel	a37280af946da679e998f96fdb34d3959109aa57
-refs/heads/main	b826f4df154ca587741b7aa71eb3b435a5a5399c
-refs/heads/parallel_compile	90da35b44d1f65ef3d2e58e4ce93c2a6065f8337
-refs/heads/sageattention-1	2bec28a19edaba8cddfba60c0ab87a0f7f9b58f6
-refs/heads/sm120_compilation	cc6586937983bc0a060d1b8a32c5e6219ed16ec5

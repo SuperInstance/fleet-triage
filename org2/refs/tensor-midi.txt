@@ -1,4 +1,0 @@
-refs/heads/claude/clip-gesture-bridge	ca2d3f52ad543c4c671fc9b0132a89910bc76d34
-refs/heads/claude/clip-twist-third-order	a66ecf488eb1f9b6eeaf0a57c9ee8efa6d7e88a5
-refs/heads/main	288ce64ab2f4f6c3d89d3e5a361b7500249f5a38
-refs/heads/pulse-eye	a10af1df1157e4773b66a804a4fe4d7ecc3573fb

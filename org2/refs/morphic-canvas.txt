@@ -1,4 +1,0 @@
-refs/heads/derby-port-a	5bf5994c33e9781beb005a22541c3b0ed18501db
-refs/heads/derby-port-b	05d086b3d22cae272369f172488dfbf18f225638
-refs/heads/main	6fad7e6ba8c2761d4e48af700b349c80f47b4fdf
-refs/heads/substrate-v0	bcb3e2cf75f72464ce16756b379ebbd05b162be9

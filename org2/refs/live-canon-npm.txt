@@ -1,3 +1,0 @@
-refs/heads/canon-71-canonical-sync	9123a02a16f10fc16b380c1329e2e10f81b35223
-refs/heads/main	be371e7d6a8838692db05f9a9672f452aac14058
-refs/heads/master	22f6eeb51eea12f13f9706960cb8bf6b049a815f

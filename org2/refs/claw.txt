@@ -1,8 +1,0 @@
-refs/heads/claw-core-mvp	b31450a33da90cb0a129d3a67050b4edcbce3c95
-refs/heads/clean-publish	c7859367202f8de84498095ffaef73f9d4757d8b
-refs/heads/docs/claw-extensions-docs	59f241be44dc2feaf47adb7ed0c92a7e78fd59fc
-refs/heads/docs/claw-extensions-main	d1a321b6b428f7f3a077d6748805b304bf981c9a
-refs/heads/docs/constrainttheory-local	d1a321b6b428f7f3a077d6748805b304bf981c9a
-refs/heads/local-backup-2026-08-20	d1a321b6b428f7f3a077d6748805b304bf981c9a
-refs/heads/main	f6e4773b483db43d63736d8e453205a460eeaaa2
-refs/heads/master	02d27afd214992cef46aa81a2c4cc441d65b2480

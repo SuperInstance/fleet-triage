@@ -1,3 +1,0 @@
-refs/heads/main	bf3b68566ed0f9b09de64a4073363e92ac71dd44
-refs/heads/narrative-consistency-2026-07-09	073cf313990947826a450d1f4c011a87e3310564
-refs/heads/tone-pass-2026-07-09	0057cbf199f655fad325fd83844d977aea503fa7

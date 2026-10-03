@@ -1,1 +1,0 @@
-{"repo": "coev", "branch": "main", "head": "bed862b6fc42", "commits_first_parent": 3, "merges": {"pr_merge": 2}, "n_merges": 2, "rows": [{"sha": "bed862b6fc42", "subj": "Merge pull request #2 from SuperInstance/gift-53/node24-test-script", "class": "pr_merge"}, {"sha": "b6ad736e3ad0", "subj": "Merge pull request #1 from SuperInstance/ci-seed-52/coev", "class": "pr_merge"}]}

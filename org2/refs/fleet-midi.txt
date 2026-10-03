@@ -1,4 +1,0 @@
-refs/heads/fleet-event-bus-phase1-2026-07-10	0d7fef234269e294c83ca67a5d9731182524d75d
-refs/heads/master	1328d6d95bc5dda3c3f1fa77be0c28730f6905d9
-refs/heads/readme-audit-2026-07-10	0ce8d38d8c41a6691b2d4ca9b5bf8140943b0f6d
-refs/heads/research-fleet-event-bus-2026-07-10	5c1ddec99aac0d5f8217654db73352e9d0588874

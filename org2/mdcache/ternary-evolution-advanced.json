@@ -1,1 +1,0 @@
-{"ternary-evolution-advanced-master/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-evolution-advanced\"\nname = \"ternary-evolution-advanced\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Advanced evolutionary algorithms for ternary optimization\"\n"}

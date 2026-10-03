@@ -1,1 +1,0 @@
-{"repo": "loom-core", "files": 76, "bytes": 304307, "cites": {"quilt": ["loom-core-main/NOTICE", "loom-core-main/README.md"], "quilt-loom": ["loom-core-main/README.md"], "twist-engine": ["loom-core-main/engine/gesture.d.ts", "loom-core-main/engine/gesture.js"]}}

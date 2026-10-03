@@ -1,3 +1,0 @@
-refs/heads/docs-expansion-2026-07-08	2f960fd13118619681c83fbb2dea20a8ed417a9e
-refs/heads/main	1bc736226c7e16efbdd16c9bf494277f48a240e0
-refs/heads/narrative-consistency-2026-07-09	6b0101afb5da1080f121373af3a89726dbbc3650

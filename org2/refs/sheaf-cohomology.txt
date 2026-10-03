@@ -1,3 +1,0 @@
-refs/heads/feature/ecosystem-integration	4b966b061292078fc38ee60cf998feb1b08e7c1b
-refs/heads/main	dc73c5a7bb130d261a4732550cdb4063a73fd0c0
-refs/heads/master	edd82fd3e0ad722a916d3e2cc677311fb22f02a6

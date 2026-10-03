@@ -1,1 +1,0 @@
-{"fenwick-tree-master/Cargo.toml": "[package]\nname = \"fenwick_tree\"\nversion = \"0.1.0\"\ndescription = \"Fenwick Tree \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/fenwick-tree\"\nedition = \"2021\"\n\nkeywords = [\"fenwick-tree\"]\n\n[dependencies]\n"}

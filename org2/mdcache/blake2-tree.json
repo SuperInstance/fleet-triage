@@ -1,1 +1,0 @@
-{"blake2-tree-master/Cargo.toml": "[package]\nname = \"blake2-tree\"\nversion = \"0.1.0\"\nrepository = \"https://github.com/SuperInstance/blake2-tree\"\nedition = \"2021\"\ndescription = \"BLAKE2-tree: merkle tree hashing with BLAKE2b-style compression\"\nlicense = \"MIT\"\n"}

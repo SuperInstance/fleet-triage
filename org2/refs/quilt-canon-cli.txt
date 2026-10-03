@@ -1,6 +1,0 @@
-refs/heads/canon-lint-hardening	fd0141a04aac6da4db837e9ee9cde066fb703a02
-refs/heads/canon-lint-tool	43108dce8f4c2f0da6e397f0c4650c133559cc92
-refs/heads/canon-stub	5feb5ae613d8133eef08a0d21995803cba52a72d
-refs/heads/flux-verifier-p0	7010e9be5b8dad3f285773e1715b28be118722df
-refs/heads/lane-p-verify-gate	f842d96ef63542abbab00ba6722b74d360bb3a36
-refs/heads/master	cd22df1ac8cad548dde45d094a93b10cbd13bdd5

@@ -1,1 +1,0 @@
-{"oxide-epoch-master/Cargo.toml": "[package]\ndescription = \"oxide-epoch - SuperInstance ecosystem crate\"\nrepository = \"https://github.com/SuperInstance/oxide-epoch\"\nname = \"oxide-epoch\"\nversion = \"0.1.0\"\nlicense = \"MIT OR Apache-2.0\"\nedition = \"2021\"\n\n[dependencies]\n"}

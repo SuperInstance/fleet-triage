@@ -1,2 +1,0 @@
-refs/heads/featured-discovery-demo	b19f824bd519a4530c375f00c3e17d684469663e
-refs/heads/main	02af1726d599039ccaa586c41131b67dd5ba1846

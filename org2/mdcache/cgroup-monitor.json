@@ -1,1 +1,0 @@
-{"cgroup-monitor-master/Cargo.toml": "[package]\nname = \"cgroup-monitor\"\nversion = \"0.1.0\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/cgroup-monitor\"\nedition = \"2021\"\ndescription = \"Linux cgroup v2 monitor and resource usage scanner\"\n\nkeywords = [\"cgroup-monitor\"]\n\n[dependencies]\n"}

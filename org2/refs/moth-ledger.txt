@@ -1,6 +1,0 @@
-refs/heads/lane-sign-causes-merkle	cf0ac3c4de6ae0eb25a320df04a777fde43dabaf
-refs/heads/main	35203b9ecfb6368b15fd604a1836925043a6539b
-refs/heads/moth-ledger-v1	e95c786201279d44800f34bf17edb1b391b03710
-refs/heads/moth-ledger-v2-envelopes	a7987b78a3185df62cb50390ec2b72b79a492c1c
-refs/heads/pr-4	4958792355d9ca1a4e3a4373ab1caa62596d3262
-refs/heads/trial-balance	2b2075e3870be7784e3d3fcb9a155acb8045bc40

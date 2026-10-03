@@ -1,4 +1,0 @@
-refs/heads/claude/cross-poll-edu	eff050e7f946f99e44e6455728f1aeaad8946807
-refs/heads/main	eff050e7f946f99e44e6455728f1aeaad8946807
-refs/heads/quilt-ledger	fd66fd162210026b61072920ff64bd500ce1260b
-refs/heads/sync-upstream-0.3.20	9e72571ebc8855111c0c080ce816f66b4feec0be

@@ -1,3 +1,0 @@
-refs/heads/imagery-hero	7e7052c5f75fa1ad4a2d768febe34bd9610b109b
-refs/heads/main	1096bcf704f45643c732889610ae69954aeb5804
-refs/heads/production-round2-2026-07-09	c54f4c72dacf423abd7c26b2d2e781131184a0fd

@@ -1,5 +1,0 @@
-refs/heads/greenhorn/T-010	0fb78db728f8610c78b02a8cd45b349ce81102b1
-refs/heads/main	96884e715a73e562e3309b57b98266cf8defbf75
-refs/heads/superz/T-004	35266ed049e33255de2cd701531f2e179d6f749f
-refs/heads/superz/T-009	05baaef81641966a6c3d65c56ea5ca4dd4de4136
-refs/heads/superz/bugfixes-tests-cron	f87317a5411edbe55ee6684a0c9d0b0545155e50

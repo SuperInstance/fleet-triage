@@ -1,5 +1,0 @@
-refs/heads/candor-first-run-sky	01ca4153883b3a250d7b4e7676fdd950ba757b23
-refs/heads/choir-retune	b54ca7b0b1587cd514490fb16daef4e5b1383a0a
-refs/heads/lane-ai-midden-worldmodel	d37280ca717aacf92a58f0152b847cf698e1c9f9
-refs/heads/main	c0634884e687acda50237e18dd45c87aa5f0c9bb
-refs/heads/room-protocol	520e5e3216fa00cb4793a5bdf172661b5439b9d7

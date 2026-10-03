@@ -1,6 +1,0 @@
-refs/heads/claude/audit-schemas-e91aS	f99916fa5a8522f06ced5966bbc79eed89786208
-refs/heads/claude/autoresearch-fact-checking-c83Uj	8dd8e305778d75ff6149bcbfccf7477d0d66d7d0
-refs/heads/devin/1773816607-synthesis-schemas-and-docs	83923ea17954410fd3234a95fe6d33f7c2f5ad62
-refs/heads/devin/1773818699-review-fixes	4571b250b34b4d831f956f5b4419240e5c43821b
-refs/heads/main	1463d1d8f2ba5a6375b30689a8968b061007d668
-refs/heads/master	07bf1313a69dc86a13d8bcb3c9d2126a7eadcdea

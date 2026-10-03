@@ -1,1 +1,0 @@
-{"ternary-command-master/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-command\"\nname = \"ternary-command\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Command parsing and dispatch for ternary agents\"\n\n[dependencies]\n"}

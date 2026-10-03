@@ -1,1 +1,0 @@
-{"avro-codec-master/Cargo.toml": "[package]\nname = \"avro-codec\"\nversion = \"0.1.0\"\ndescription = \"Avro Codec \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/avro-codec\"\nedition = \"2021\"\n\nkeywords = [\"avro-codec\"]\n\n[dependencies]\n"}

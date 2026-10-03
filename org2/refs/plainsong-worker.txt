@@ -1,2 +1,0 @@
-refs/heads/archive/tapscript-worker-hero-96d669a	96d669ac572799554a6edddbae7aa67807a34f59
-refs/heads/main	d1c3196ef360711e4c70bd57ddce8f1c4bdcb7ac

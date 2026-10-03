@@ -1,3 +1,0 @@
-refs/heads/budget-guardian	3b5f4468f147adc76ab7565c0b658bb0c75559ac
-refs/heads/dev	1a97751e376e00a1897bc3679215ae1c7bd8fd42
-refs/heads/main	760e125f7e8904a9996bb2de62a03882e0ed8f75

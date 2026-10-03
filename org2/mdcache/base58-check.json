@@ -1,1 +1,0 @@
-{"base58-check-master/Cargo.toml": "[package]\nname = \"base58-check\"\nversion = \"0.1.0\"\ndescription = \"Base58 Check \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/base58-check\"\nedition = \"2021\"\n\nkeywords = [\"base58-check\"]\n\n[dependencies]\n"}

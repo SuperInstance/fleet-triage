@@ -1,1 +1,0 @@
-{"crdt-gcounter-master/Cargo.toml": "[package]\nname = \"crdt-gcounter\"\nversion = \"0.1.0\"\ndescription = \"Crdt Gcounter \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/crdt-gcounter\"\nedition = \"2021\"\n\nkeywords = [\"crdt-gcounter\"]\n\n[dependencies]\n"}

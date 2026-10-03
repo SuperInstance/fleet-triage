@@ -1,5 +1,0 @@
-refs/heads/design-audit-2026-07-08	a71408848e8bd1df48aea761c58e8d7a938ec875
-refs/heads/main	93288b37642a626e3610dd5b82fb06f2bfa0031b
-refs/heads/narrative-consistency-2026-07-09	6aa569836d4794f1d82f16371685188792be85d3
-refs/heads/structural-redesign-2026-07-09	2edb5f254f634d25fd514e2b36cbacc6f8d34d06
-refs/heads/tone-pass-2026-07-09	8c129af2cc94732dea184bdc5a8f27eec3948672

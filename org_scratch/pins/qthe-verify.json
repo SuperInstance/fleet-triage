@@ -1,1 +1,0 @@
-{"repo": "qthe-verify", "files": 9, "bytes": 48560, "cites": {"quilt-forge": ["qthe-verify-main/.github/workflows/forge.yml"], "qthe": ["qthe-verify-main/README.md", "qthe-verify-main/corpus/cases.json", "qthe-verify-main/reference/qthe-kernel.mjs"], "qthe-verify.git": ["qthe-verify-main/README.md"]}}

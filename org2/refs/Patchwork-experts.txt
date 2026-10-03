@@ -1,3 +1,0 @@
-refs/heads/claude/suggestion-patch-as-cell	d2b6729a6484487005b573cefad9a1eedfeb19d0
-refs/heads/main	679d5b0b8b816cb58ac4370abce67b0838b2770d
-refs/heads/suggestion-verification-layer	63ebec5f3b96cfbfbdf09a27423f5d80b17302dc

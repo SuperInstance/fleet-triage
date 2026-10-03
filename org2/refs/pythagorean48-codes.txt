@@ -1,2 +1,0 @@
-refs/heads/ci-badge	f3e5fc64bdfcf6a9bc031a57f40b4a2e05998fbc
-refs/heads/main	bbe2331b34284173718048c39b69ddfc4fbb76db

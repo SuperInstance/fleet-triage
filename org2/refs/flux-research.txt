@@ -1,6 +1,0 @@
-refs/heads/chore/add-ci-improve-gitignore	d4f442ed3f97b196f26998e558ca6e8b983edd09
-refs/heads/feat/agentic-compiler-killer-vacuum	72e383dd8480837bbb20ccf60bd1fadf6fe5e255
-refs/heads/main	aa17021e1ece546826752370298e01f235b83442
-refs/heads/master	b2b3203d4caf94bb86f10a1a3e812c11ff3cfc6d
-refs/heads/measurement-theory-foundation	990f826ae6a3c8f6de66cb6302c015b44b34c028
-refs/heads/time-universal-sensor	e4f617ec1e087a4d0f7a1a2671a507e5f3996963

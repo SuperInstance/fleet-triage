@@ -1,7 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-6ada5347eeda318ebbeac50dd4d70d4f2d06bbef refs/heads/eileen
-c851b7ded392e1bcd63da70b148decbeafca4f3f refs/heads/main
-eec119a5135a99fe000fd2900ea77c08fe82257a refs/heads/master
-ca05e312d5697a2bb928650ff91aa978948188db refs/heads/nmea
-7764a922d89e39191c5af3f3aad2bc7abb5bbdf3 refs/heads/opcodes
-0b85e21c7dec2942db70c3a9170b2f06536b7c8c refs/heads/reflex-arc

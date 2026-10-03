@@ -1,1 +1,0 @@
-{"repo": "cocapn-marine", "branch": "main", "head": "1bc736226c7e", "commits_first_parent": 11, "merges": {"other_merge": 2}, "n_merges": 2, "rows": [{"sha": "a9d3e15d15ef", "subj": "merge: narrative-consistency-2026-07-09", "class": "other_merge"}, {"sha": "88ee7deaafc2", "subj": "merge: docs-expansion-2026-07-08 (GLM)", "class": "other_merge"}]}

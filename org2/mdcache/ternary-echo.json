@@ -1,1 +1,0 @@
-{"ternary-echo-master/Cargo.toml": "[package]\ndescription = \"ternary-echo - SuperInstance ecosystem crate\"\nrepository = \"https://github.com/SuperInstance/ternary-echo\"\nname = \"ternary-echo\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\n"}

@@ -1,6 +1,0 @@
-refs/heads/agent-academy	20fc04f2ec41f870f14d7fbd82a5ea364d6d9f42
-refs/heads/annotation-rows	facf600f2b29528b4c3a8b0eda6be2e266b2b97f
-refs/heads/claude/init-1wgqn0	8cb91959698c3da1d4aeb71d22ca4a74d4e8ee59
-refs/heads/dynamics-and-swing	facf600f2b29528b4c3a8b0eda6be2e266b2b97f
-refs/heads/master	653eba2d216e48514d98c51a5bda53795e910dcf
-refs/heads/perf-v1	a17a4aed9bf7bba47f58b0326c9d82476c2d764b

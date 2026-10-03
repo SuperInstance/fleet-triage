@@ -1,3 +1,0 @@
-refs/heads/claude/breed-gesture	1962af2e24ffbe3c8dd9629f72d4c52b833449a3
-refs/heads/claude/embed-gesture-hull	a186ac8eeb8d7c0f22123ee02669503b86544081
-refs/heads/main	346ab0b434568432a13c99ac90f9aff567b61305

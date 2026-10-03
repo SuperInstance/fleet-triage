@@ -1,1 +1,0 @@
-{"ternary-validation-master/Cargo.toml": "[package]\nname = \"ternary-validation\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Validate ternary strategies against constraints\"\nrepository = \"https://github.com/SuperInstance/ternary-validation\"\n"}

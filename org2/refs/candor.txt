@@ -1,2 +1,0 @@
-refs/heads/main	33f9513bcdff3136f0b6756fe70a22bed338a7b0
-refs/heads/wca-claim-discipline-pin	b2f44a00d7b400a5afb405a672a7606b78ebe0cf

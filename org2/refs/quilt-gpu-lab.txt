@@ -1,6 +1,0 @@
-refs/heads/audit/c3-extractor-injectivity	6191d00c1affe95d4e685bb3d55f89a6946521d0
-refs/heads/claude/d1-harness	cc34a7e38c473482fe07ace64afd0a0cfad551e7
-refs/heads/claude/gpu-docket	25dea717adfcc714e99b48e106a331088535be53
-refs/heads/main	20ba1c9a23cd387a018942a7e55499311506aed3
-refs/heads/manifest-d23b-stale-seal-repair	c8faa3204ba4c81b8b29fb0481fb966d1ec86b13
-refs/heads/seal-guard-pins	ddb8491d575958c87284ea0d596489da6eddc2e5

@@ -1,3 +1,0 @@
-refs/heads/master	5a543a4fdc642e5058a4362a962c32a17bea8e7b
-refs/heads/production-round3-2026-07-10	be25fb887317191e316c9e14fd4852ad909eb2aa
-refs/heads/readme-audit-2026-07-10	7c8d4cef3037d8c08066beb139e7421e254b429a

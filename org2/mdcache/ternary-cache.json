@@ -1,1 +1,0 @@
-{"ternary-cache-master/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-cache\"\nname = \"ternary-cache\"\nversion = \"0.1.0\"\nedition = \"2021\"\ndescription = \"Ternary-aware cache with stateful entries\"\nlicense = \"MIT\"\n"}

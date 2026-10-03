@@ -1,6 +1,0 @@
-refs/heads/canon-md	3ce05bf811a4a7a936a8a277f6b786e1522fa5d9
-refs/heads/canon-stub	dc57730fc5224ebd4fc18b4d73e2b4c78725b3e8
-refs/heads/differentiation-cascade	87d50fd1c64bbdf272be580817ae43ddcd26eccc
-refs/heads/docs-round-1-2026-07-09	75bb1b478d92cd4ad02e866e38d42e3d3af9968b
-refs/heads/fix/signal-chain-ci-fmt-clippy-windows	daf3fe0ee14c484714fe78fefe5a25a2cba6b589
-refs/heads/main	b47ef7966134c80b48bf34b06918ca82b1943d1c

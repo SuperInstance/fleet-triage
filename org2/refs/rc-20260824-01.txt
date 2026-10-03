@@ -1,3 +1,0 @@
-refs/heads/lobby-tapestry	c4da2c9e891f150d59e3a41a5784e818acf956af
-refs/heads/master	20ac4c29a64c62925a57bc28a534fd4de6006926
-refs/heads/uscp-sink	e6618693b431e7699857e735083938b85ce1281d

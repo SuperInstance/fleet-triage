@@ -1,2 +1,0 @@
-refs/heads/main	1763184b2a40e20d291d5044cb737f43967b31c9
-refs/heads/whitepapers	f833dffdc8048716891fdec0f1faef50c39530d1

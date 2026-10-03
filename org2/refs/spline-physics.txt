@@ -1,7 +1,0 @@
-refs/heads/master	8de56b983625124294169db1899f73de3b9ddf06
-refs/heads/spline-embedding-deep-maths	5d7c3a8c7a5d16d3ec99635c10b2b8e45b0a1ff1
-refs/heads/spline-embedding-mathematics	ce1a3fa9941f2f17ce2967f1fb975cac0c7a0367
-refs/heads/spline-embedding-prototype	c69c783d632592b83e884ba646e16eda182d838e
-refs/heads/spline-embedding-resonance	f7f2c7fc4b75308763a01977ddceade56b35bd69
-refs/heads/spline-embedding-revolution	15f20ad9ba65d57ac413ba11c07865d62dba8473
-refs/heads/spline-resonance-tomography	23283029db0e726c8a1ce313407f3e1c1bf55969

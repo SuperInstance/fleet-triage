@@ -1,1 +1,0 @@
-{"godel-number-master/Cargo.toml": "[package]\nname = \"godel_number\"\nversion = \"0.1.0\"\ndescription = \"Godel Number \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/godel-number\"\nedition = \"2021\"\n\nkeywords = [\"godel-number\"]\n\n[dependencies]\n"}

@@ -1,2 +1,0 @@
-refs/heads/main	c2cc1516ae1659ebf12b18430a62908a94ce7bb9
-refs/heads/readme-update-0502	788122d34c4c05f1ca112c8ad304300b922fc84f

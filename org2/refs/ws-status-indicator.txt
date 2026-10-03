@@ -1,2 +1,0 @@
-refs/heads/docs/complete-guide	e3424695db7fcd3844bfb7c4675458425fa46cc7
-refs/heads/main	f9cbc2719abf2c04b66b64c076377f28c99caf19

@@ -1,3 +1,0 @@
-refs/heads/greenhorn/T-004-coop-runtime	9b1d4ad8a0535c4ff4972bb83392defa3b3d73f5
-refs/heads/main	62868af9cea04e5be21aead0fa42aba40d03c630
-refs/heads/superz/coop-runtime-tests	9d9b473bdaa93647e0c03b01cfc319d010568562

@@ -1,1 +1,0 @@
-{"repo": "slackwater-quilt", "files": 9, "bytes": 53274, "cites": {"slackwater-lattice": ["slackwater-quilt-main/README.md", "slackwater-quilt-main/slackwater_quilt/__init__.py"], "quilt-qcells": ["slackwater-quilt-main/README.md"]}}
