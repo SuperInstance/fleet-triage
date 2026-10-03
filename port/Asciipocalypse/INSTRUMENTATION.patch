@@ -1,0 +1,355 @@
+# Every edit made to the game, in one file.
+# Upstream: github.com/wonrzrzeczny/Asciipocalypse @ HEAD (cloned 2026-10-02)
+
+## 1. PORT -- project files only, no .cs source edited for the port itself
+--- /tmp/ascii-src/ASCII_FPS/ASCII_FPS.csproj	2026-10-02 20:11:17.709121143 +0000
++++ ASCII_FPS/ASCII_FPS.csproj	2026-10-02 20:11:55.011360734 +0000
+@@ -1,7 +1,7 @@
+-﻿<Project Sdk="Microsoft.NET.Sdk">
++<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+     <OutputType>WinExe</OutputType>
+-    <TargetFramework>netcoreapp3.1</TargetFramework>
++    <TargetFramework>net9.0</TargetFramework>
+     <PublishReadyToRun>false</PublishReadyToRun>
+     <TieredCompilation>false</TieredCompilation>
+   </PropertyGroup>
+@@ -19,14 +19,10 @@
+     <EmbeddedResource Include="Icon.bmp" />
+   </ItemGroup>
+   <ItemGroup>
+-    <MonoGameContentReference Include="Content\Content.mgcb" />
+-  </ItemGroup>
+-  <ItemGroup>
+-    <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
++    
+   </ItemGroup>
+   <ItemGroup>
+     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+-    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
+   </ItemGroup>
+   <ItemGroup>
+     <ProjectReference Include="..\OBJContentPipelineExtension\OBJContentPipelineExtension.csproj" />
+--- /tmp/ascii-src/OBJContentPipelineExtension/OBJContentPipelineExtension.csproj	2026-10-02 20:11:17.733123443 +0000
++++ OBJContentPipelineExtension/OBJContentPipelineExtension.csproj	2026-10-02 20:12:05.161474169 +0000
+@@ -1,61 +1,14 @@
+-﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+-    <ProductVersion>8.0.30703</ProductVersion>
+-    <SchemaVersion>2.0</SchemaVersion>
+-    <ProjectGuid>{FD14C16C-54BC-4F6A-A59C-227A90F849B1}</ProjectGuid>
+-    <OutputType>Library</OutputType>
+-    <AppDesignerFolder>Properties</AppDesignerFolder>
+-    <RootNamespace>OBJContentPipelineExtension</RootNamespace>
++    <TargetFramework>net9.0</TargetFramework>
+     <AssemblyName>OBJContentPipelineExtension</AssemblyName>
+-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+-    <FileAlignment>512</FileAlignment>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
+-    <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
+-    <OutputPath>bin\Debug\</OutputPath>
+-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+-    <ErrorReport>prompt</ErrorReport>
+-    <WarningLevel>4</WarningLevel>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+-    <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
+-    <OutputPath>bin\Release\</OutputPath>
+-    <DefineConstants>TRACE</DefineConstants>
+-    <ErrorReport>prompt</ErrorReport>
+-    <WarningLevel>4</WarningLevel>
++    <RootNamespace>OBJContentPipelineExtension</RootNamespace>
++    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+   </PropertyGroup>
+   <ItemGroup>
+-    <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
+-      <HintPath>..\packages\MonoGame.Framework.Portable.3.7.1.189\lib\portable-net45+win8+wpa81\MonoGame.Framework.dll</HintPath>
+-    </Reference>
+-    <Reference Include="MonoGame.Framework.Content.Pipeline, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
+-      <HintPath>..\packages\MonoGame.Framework.Content.Pipeline.Portable.3.7.1.189\lib\portable-net45+win8+wpa81\MonoGame.Framework.Content.Pipeline.dll</HintPath>
+-    </Reference>
+-    <Reference Include="System" />
+-  </ItemGroup>
+-  <ItemGroup>
+-    <Compile Include="OBJContentReader.cs" />
+-    <Compile Include="OBJContentWriter.cs" />
+-    <Compile Include="OBJImporter.cs" />
+     <Compile Include="OBJFile.cs" />
+-    <Compile Include="OBJProcessor.cs" />
+-    <Compile Include="Properties\AssemblyInfo.cs" />
+   </ItemGroup>
+   <ItemGroup>
+-    <None Include="packages.config" />
++    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+   </ItemGroup>
+-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+-       Other similar extension points exist, see Microsoft.Common.targets.
+-  <Target Name="BeforeBuild">
+-  </Target>
+-  <Target Name="AfterBuild">
+-  </Target>
+-  -->
+-</Project>
+\ No newline at end of file
++</Project>
+
+## 2. INSTRUMENTATION -- Triangle, AsciiTexture, SceneGenerator, audio call sites
+--- /tmp/ascii-src/ASCII_FPS/Geometry/Triangle.cs	2026-10-02 20:11:17.727122868 +0000
++++ ASCII_FPS/Geometry/Triangle.cs	2026-10-02 20:13:20.977864871 +0000
+@@ -15,6 +15,10 @@
+ 
+         public AsciiTexture Texture { get; set; }
+ 
++        // [INSTRUMENTATION 1/5] owner provenance, propagated through clipping
++        public object Tag;
++        public Triangle WithTag(object tag) { Tag = tag; return this; }
++
+         public Vector3 Normal { get; }
+ 
+         public Triangle(Vector3 v0, Vector3 v1, Vector3 v2, AsciiTexture texture, Vector2 uv0, Vector2 uv1, Vector2 uv2)
+--- /tmp/ascii-src/ASCII_FPS/AsciiTexture.cs	2026-10-02 20:11:17.709121143 +0000
++++ ASCII_FPS/AsciiTexture.cs	2026-10-02 20:13:25.134326684 +0000
+@@ -11,6 +11,9 @@
+ 
+         public int ID { get; private set; }
+ 
++        // [INSTRUMENTATION 5/5] provenance label for the headless loader
++        public string Name;
++
+         public AsciiTexture(Texture2D texture)
+         {
+             if (texture.Width != 256 || texture.Height != 256)
+--- /tmp/ascii-src/ASCII_FPS/Scenes/SceneGenerator.cs	2026-10-02 20:11:17.733123443 +0000
++++ ASCII_FPS/Scenes/SceneGenerator.cs	2026-10-02 20:13:20.993470816 +0000
+@@ -9,6 +9,7 @@
+     public abstract class SceneGenerator
+     {
+         public const int size = 5;
++        public static int? RandomSeed = null;
+         public const float tileSize = 100f;
+ 
+         protected readonly Random rand;
+@@ -27,7 +28,8 @@
+         public SceneGenerator(ASCII_FPS game)
+         {
+             this.game = game;
+-            rand = new Random();
++            // [INSTRUMENTATION 4/5] seedable layout (upstream: new Random(), unseeded)
++            rand = RandomSeed.HasValue ? new Random(RandomSeed.Value) : new Random();
+         }
+ 
+ 
+--- /tmp/ascii-src/ASCII_FPS/GameComponents/Collectible.cs	2026-10-02 20:11:17.726122772 +0000
++++ ASCII_FPS/GameComponents/Collectible.cs	2026-10-02 20:20:39.173629295 +0000
+@@ -21,7 +21,7 @@
+ 
+         public void PickUp(PlayerStats playerStats)
+         {
+-            Assets.dingDing.Play();
++            HeadlessAudio.Play("dingDing");
+             Destroy = true;
+             Game.PlayerStats.totalBarrels++;
+             Achievements.UnlockLeveled("Barrel", Game.PlayerStats.totalBarrels, Game.HUD);
+--- /tmp/ascii-src/ASCII_FPS/GameComponents/Enemies/Monster.cs	2026-10-02 20:11:17.726122772 +0000
++++ ASCII_FPS/GameComponents/Enemies/Monster.cs	2026-10-02 20:20:39.212009487 +0000
+@@ -71,7 +71,7 @@
+                 return;
+             }
+ 
+-            Assets.oof.Play();
++            HeadlessAudio.Play("oof");
+             health -= amount;
+             if (health <= 0f)
+             {
+--- /tmp/ascii-src/ASCII_FPS/GameComponents/Enemies/Spooper.cs	2026-10-02 20:11:17.726122772 +0000
++++ ASCII_FPS/GameComponents/Enemies/Spooper.cs	2026-10-02 20:43:09.505174218 +0000
+@@ -73,7 +73,7 @@
+         protected override void Attack(Vector3 towardsTarget)
+         {
+             float volume = 1f - Vector3.Distance(Position, Camera.CameraPos) / 100f;
+-            Assets.beep.Play(volume, (float)random.NextDouble(), 0f);
++            HeadlessAudio.Play("beep");
+             if (Vector3.Distance(Position, Camera.CameraPos) < AttackDistance)
+             {
+                 Game.PlayerStats.DealDamage(damage);
+--- /tmp/ascii-src/ASCII_FPS/GameComponents/Enemies/IceMonster.cs	2026-10-02 20:11:17.726122772 +0000
++++ ASCII_FPS/GameComponents/Enemies/IceMonster.cs	2026-10-02 20:42:27.636707007 +0000
+@@ -1,14 +1,20 @@
+ ﻿using Microsoft.Xna.Framework;
+ using System;
++using ASCII_FPS.Scenes;
+ 
+ namespace ASCII_FPS.GameComponents.Enemies
+ {
+     public class IceMonster : Monster
+     {
++        // [RERENDER FIX] was: rand = new Random();  -- unseeded, and line 42 uses it for
++        // AIM JITTER, not just audio pitch.  So the scene drifted between runs of "the same"
++        // seed.  Seeded from SceneGenerator.RandomSeed so rewind actually rewinds.
++        private static readonly int BaseSeed = SceneGenerator.RandomSeed ?? 0;
++
+         public IceMonster(Vector3 position, float health, float damage)
+             : base(PrimitiveMeshes.Tetrahedron(position, 3f, Assets.iceMonsterTexture), health, damage)
+         {
+-            rand = new Random();
++            rand = new Random(BaseSeed);
+         }
+ 
+ 
+@@ -36,7 +42,7 @@
+                 burstTimer -= deltaTime;
+                 if (burstTimer <= 0f)
+                 {
+-                    Assets.pew.Play(1f, (float)rand.NextDouble() - 0.5f, 0f);
++                    HeadlessAudio.Play("pew");
+ 
+                     Vector3 direction = Vector3.Normalize(Camera.CameraPos - Position);
+                     float delta = (float)rand.NextDouble() * 0.125f - 0.0625f;
+
+## 3. INSTRUMENTATION -- Rasterizer
+--- /tmp/orig_Rasterizer.cs	2026-10-02 20:52:10.097048366 +0000
++++ ASCII_FPS/Geometry/Rasterizer.cs	2026-10-02 20:13:25.128781862 +0000
+@@ -21,10 +21,27 @@
+ 
+         private const string fogString = "@&#8x*,:. ";
+ 
++        // [INSTRUMENTATION 2/5] seedable dither (upstream: new Random(), unseeded)
++        public static int? RandomSeed = null;
++        // [INSTRUMENTATION 3/5] per-cell z / owner provenance, read out after Raster()
++        public float[,] CellZ;
++        public object[,] CellOwner;
++        public int[,] CellTexId;
++        public static Dictionary<string, int> texIds = new Dictionary<string, int>();
++        public static int TexId(AsciiTexture t)
++        {
++            if (t == null) return -1;
++            if (!texIds.ContainsKey(t.Name)) texIds[t.Name] = texIds.Count;
++            return texIds[t.Name];
++        }
++
+         public Rasterizer(Console console)
+         {
+-            rand = new Random();
++            rand = RandomSeed.HasValue ? new Random(RandomSeed.Value) : new Random();
+             this.console = console;
++            CellZ = new float[console.Width, console.Height];
++            CellOwner = new object[console.Width, console.Height];
++            CellTexId = new int[console.Width, console.Height];
+             zBuffer = new float[console.Width, console.Height];
+             tBuffer = new Triangle[console.Width, console.Height];
+             bBuffer = new Vector3[console.Width, console.Height];
+@@ -52,6 +69,9 @@
+                     zBuffer[i, j] = 1;
+                     bBuffer[i, j] = Vector3.Zero;
+                     tBuffer[i, j] = null;
++                    CellZ[i, j] = 1f;
++                    CellOwner[i, j] = null;
++                    CellTexId[i, j] = -1;
+                 }
+             }
+ 
+@@ -62,18 +82,20 @@
+ 
+             // Extract dynamic meshes
+             Matrix cameraSpaceMatrix = camera.CameraSpaceMatrix;
+-            foreach (GameObject gameObject in scene.gameObjects)
++            for (int goIdx = 0; goIdx < scene.gameObjects.Count; goIdx++)
+             {
++                GameObject gameObject = scene.gameObjects[goIdx];
+                 MeshObject mesh = gameObject.MeshObject;
+                 ASCII_FPS.triangleCount += mesh.triangles.Count;
+ 
+                 Matrix meshToCameraMatrix = mesh.WorldSpaceMatrix * cameraSpaceMatrix;
+                 foreach (Triangle triangle in mesh.triangles)
+                 {
++                    triangle.Tag = new object[] { "obj", goIdx, gameObject.GetType().Name, triangle.Texture == null ? "?" : triangle.Texture.Name, gameObject.Position };
+                     Vector3 v0 = Vector3.Transform(triangle.V0, meshToCameraMatrix);
+                     Vector3 v1 = Vector3.Transform(triangle.V1, meshToCameraMatrix);
+                     Vector3 v2 = Vector3.Transform(triangle.V2, meshToCameraMatrix);
+-                    triangles.Add(new Triangle(v0, v1, v2, triangle.Texture, triangle.UV0, triangle.UV1, triangle.UV2));
++                    triangles.Add(new Triangle(v0, v1, v2, triangle.Texture, triangle.UV0, triangle.UV1, triangle.UV2).WithTag(triangle.Tag));
+                 }
+             }
+             
+@@ -118,6 +140,9 @@
+                         // Sample from texture
+                         Vector2 uv = bar.X * triangle.UV0 + bar.Y * triangle.UV1 + bar.Z * triangle.UV2;
+ 
++                        CellZ[i, j] = z;
++                        CellOwner[i, j] = triangle.Tag;
++                        CellTexId[i, j] = TexId(triangle.Texture);
+                         if (EyeEasy)
+                         {
+                             float d = Math.Clamp(1f - (float)Math.Pow(z, 25), 0f, 1f);
+@@ -174,25 +199,25 @@
+                         if (s0 && s1 && s2) // fully beyond
+                             trianglesOut.Add(triangle);
+                         else if (s0 && !s1 && !s2) // one vertex beyond
+-                            trianglesOut.Add(new Triangle(triangle.V0, v2, v1, triangle.Texture, triangle.UV0, uv2, uv1));
++                            trianglesOut.Add(new Triangle(triangle.V0, v2, v1, triangle.Texture, triangle.UV0, uv2, uv1).WithTag(triangle.Tag));
+                         else if (s1 && !s2 && !s0)
+-                            trianglesOut.Add(new Triangle(triangle.V1, v0, v2, triangle.Texture, triangle.UV1, uv0, uv2));
++                            trianglesOut.Add(new Triangle(triangle.V1, v0, v2, triangle.Texture, triangle.UV1, uv0, uv2).WithTag(triangle.Tag));
+                         else if (s2 && !s0 && !s1)
+-                            trianglesOut.Add(new Triangle(triangle.V2, v1, v0, triangle.Texture, triangle.UV2, uv1, uv0));
++                            trianglesOut.Add(new Triangle(triangle.V2, v1, v0, triangle.Texture, triangle.UV2, uv1, uv0).WithTag(triangle.Tag));
+                         else if (!s0 && s1 && s2) // two vertices beyond
+                         {
+-                            trianglesOut.Add(new Triangle(triangle.V2, v1, triangle.V1, triangle.Texture, triangle.UV2, uv1, triangle.UV1));
+-                            trianglesOut.Add(new Triangle(v1, v2, triangle.V1, triangle.Texture, uv1, uv2, triangle.UV1));
++                            trianglesOut.Add(new Triangle(triangle.V2, v1, triangle.V1, triangle.Texture, triangle.UV2, uv1, triangle.UV1).WithTag(triangle.Tag));
++                            trianglesOut.Add(new Triangle(v1, v2, triangle.V1, triangle.Texture, uv1, uv2, triangle.UV1).WithTag(triangle.Tag));
+                         }
+                         else if (!s1 && s2 && s0)
+                         {
+-                            trianglesOut.Add(new Triangle(triangle.V0, v2, triangle.V2, triangle.Texture, triangle.UV0, uv2, triangle.UV2));
+-                            trianglesOut.Add(new Triangle(v2, v0, triangle.V2, triangle.Texture, uv2, uv0, triangle.UV2));
++                            trianglesOut.Add(new Triangle(triangle.V0, v2, triangle.V2, triangle.Texture, triangle.UV0, uv2, triangle.UV2).WithTag(triangle.Tag));
++                            trianglesOut.Add(new Triangle(v2, v0, triangle.V2, triangle.Texture, uv2, uv0, triangle.UV2).WithTag(triangle.Tag));
+                         }
+                         else if (!s2 && s0 && s1)
+                         {
+-                            trianglesOut.Add(new Triangle(triangle.V1, v0, triangle.V0, triangle.Texture, triangle.UV1, uv0, triangle.UV0));
+-                            trianglesOut.Add(new Triangle(v0, v1, triangle.V0, triangle.Texture, uv0, uv1, triangle.UV0));
++                            trianglesOut.Add(new Triangle(triangle.V1, v0, triangle.V0, triangle.Texture, triangle.UV1, uv0, triangle.UV0).WithTag(triangle.Tag));
++                            trianglesOut.Add(new Triangle(v0, v1, triangle.V0, triangle.Texture, uv0, uv1, triangle.UV0).WithTag(triangle.Tag));
+                         }
+                     }
+                 }
+@@ -275,22 +300,25 @@
+         // Render given zone with given bounds and analyze portals leading out of it
+         private void ProcessZone(Camera camera, Zone zone, int boundsLeft, int boundsRight)
+         {
++
+             ASCII_FPS.zonesRendered++;
+             List<Triangle> triangles = new List<Triangle>();
+ 
+             // Extract meshes
+             Matrix cameraSpaceMatrix = camera.CameraSpaceMatrix;
+-            foreach (MeshObject mesh in zone.meshes)
++            for (int meshIdx = 0; meshIdx < zone.meshes.Count; meshIdx++)
+             {
++                MeshObject mesh = zone.meshes[meshIdx];
+                 ASCII_FPS.triangleCount += mesh.triangles.Count;
+ 
+                 Matrix meshToCameraMatrix = mesh.WorldSpaceMatrix * cameraSpaceMatrix;
+                 foreach (Triangle triangle in mesh.triangles)
+                 {
++                    triangle.Tag = new object[] { "zone", zone.Bounds.X + "," + zone.Bounds.Y + "," + zone.Bounds.Width + "," + zone.Bounds.Height, meshIdx, triangle.Texture == null ? "?" : triangle.Texture.Name, Vector3.Zero };
+                     Vector3 v0 = Vector3.Transform(triangle.V0, meshToCameraMatrix);
+                     Vector3 v1 = Vector3.Transform(triangle.V1, meshToCameraMatrix);
+                     Vector3 v2 = Vector3.Transform(triangle.V2, meshToCameraMatrix);
+-                    triangles.Add(new Triangle(v0, v1, v2, triangle.Texture, triangle.UV0, triangle.UV1, triangle.UV2));
++                    triangles.Add(new Triangle(v0, v1, v2, triangle.Texture, triangle.UV0, triangle.UV1, triangle.UV2).WithTag(triangle.Tag));
+                 }
+             }
+ 

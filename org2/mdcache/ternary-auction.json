@@ -1,0 +1,1 @@
+{"ternary-auction-master/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-auction\"\nname = \"ternary-auction\"\nversion = \"0.1.0\"\nedition = \"2021\"\ndescription = \"Mechanism design for ternary {-1,0,+1} resource allocation \u2014 Vickrey auction, VCG, strategy-proof verification\"\nlicense = \"MIT\"\n"}

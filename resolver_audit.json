@@ -1,0 +1,190 @@
+{
+ "AMBIGUOUS": {
+  "population": 4486,
+  "sampled": 60,
+  "checked": 60,
+  "confirmed": 60,
+  "false_positives": 0,
+  "fp_rate": 0.0,
+  "examples": []
+ },
+ "ARXIV_DEAD": {
+  "population": 1,
+  "sampled": 1,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "ARXIV_RESOLVES": {
+  "population": 229,
+  "sampled": 60,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "DOI_DEAD": {
+  "population": 9,
+  "sampled": 9,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "DOI_OK": {
+  "population": 28,
+  "sampled": 28,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "DOI_UNVERIFIABLE": {
+  "population": 11,
+  "sampled": 11,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "FILE_MISSING": {
+  "population": 4789,
+  "sampled": 60,
+  "checked": 60,
+  "confirmed": 60,
+  "false_positives": 0,
+  "fp_rate": 0.0,
+  "examples": []
+ },
+ "LINE_IS_DEF": {
+  "population": 1,
+  "sampled": 1,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "LINE_OOR": {
+  "population": 10,
+  "sampled": 10,
+  "checked": 2,
+  "confirmed": 2,
+  "false_positives": 0,
+  "fp_rate": 0.0,
+  "examples": []
+ },
+ "PATH_PRECISE_ONLY": {
+  "population": 1583,
+  "sampled": 60,
+  "checked": 60,
+  "confirmed": 58,
+  "false_positives": 2,
+  "fp_rate": 0.0333,
+  "examples": [
+   {
+    "target": "scripts/plato-backup.py",
+    "doc": "/workspace/projects/fleet-triage/org_scratch/fleet-murmur/memory/2026-05-07.md",
+    "line": 621,
+    "verdict": "FALSE_POSITIVE",
+    "why": "SuperInstance/scripts/plato-backup.py not found in SuperInstance",
+    "detail": "file exists in repo 'SuperInstance' at scripts/plato-backup.py, not at the path cited"
+   },
+   {
+    "target": "src/spreadsheet/core/Sensation.ts",
+    "doc": "/workspace/projects/fleet-triage/RESOLVER-DEFECT.md",
+    "line": 43,
+    "verdict": "FALSE_POSITIVE",
+    "why": "superinstance-papers/src/spreadsheet/core/Sensation.ts not found in superinstance-papers",
+    "detail": "file exists in repo 'superinstance-papers' at src/spreadsheet/core/Sensation.ts, not at the path cited"
+   }
+  ]
+ },
+ "RATIO_MISMATCH": {
+  "population": 5,
+  "sampled": 5,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "REPO_MISMATCH": {
+  "population": 203,
+  "sampled": 60,
+  "checked": 60,
+  "confirmed": 60,
+  "false_positives": 0,
+  "fp_rate": 0.0,
+  "examples": []
+ },
+ "REPO_NOT_INDEXED": {
+  "population": 806,
+  "sampled": 60,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "REPO_UNKNOWN": {
+  "population": 1267,
+  "sampled": 60,
+  "checked": 60,
+  "confirmed": 60,
+  "false_positives": 0,
+  "fp_rate": 0.0,
+  "examples": []
+ },
+ "SKIP": {
+  "population": 79,
+  "sampled": 60,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "SYMBOL_MISMATCH": {
+  "population": 6,
+  "sampled": 6,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "URL_DEAD": {
+  "population": 380,
+  "sampled": 60,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "URL_OK": {
+  "population": 3014,
+  "sampled": 60,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ },
+ "URL_UNVERIFIABLE": {
+  "population": 800,
+  "sampled": 60,
+  "checked": 0,
+  "confirmed": 0,
+  "false_positives": 0,
+  "fp_rate": null,
+  "examples": []
+ }
+}

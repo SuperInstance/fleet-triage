@@ -1,0 +1,1 @@
+{"repo": "quilt-executor", "branch": "main", "head": "ecb51024564e", "commits_first_parent": 7, "merges": {"pr_merge": 1}, "n_merges": 1, "rows": [{"sha": "ecb51024564e", "subj": "Merge pull request #1 from SuperInstance/quilt-opt-bridge", "class": "pr_merge"}]}

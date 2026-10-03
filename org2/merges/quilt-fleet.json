@@ -1,0 +1,1 @@
+{"repo": "quilt-fleet", "branch": "master", "head": "aba8ac2117ec", "commits_first_parent": 14, "merges": {"other_merge": 1}, "n_merges": 1, "rows": [{"sha": "6b922c98cd20", "subj": "Merge PR #7 (Phase 221: fix 4 production bugs in quilt-fleet, 27 \u2192 17 failing tests)", "class": "other_merge"}]}

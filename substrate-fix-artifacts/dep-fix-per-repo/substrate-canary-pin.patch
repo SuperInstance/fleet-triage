@@ -1,0 +1,67 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index bc18ade..a83599d 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "FNV-1a 64-bit pinned to the fleet canary 0x024a555471370b18d. Cross-language stable.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "fnv1a",
+     "canary",
+@@ -14,6 +17,6 @@
+   "author": "SuperInstance",
+   "license": "MIT",
+   "dependencies": {
+-    "@superinstance/observation-primitive": "file:../observation-primitive"
++    "@superinstance/observation-primitive": "github:SuperInstance/observation-primitive"
+   }
+ }
+diff --git a/test.js b/test.js
+index 6f765b6..36e9eab 100644
+--- a/test.js
++++ b/test.js
+@@ -4,4 +4,5 @@ try {
+   console.log('OK: ' + Object.keys(result).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }

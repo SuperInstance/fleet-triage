@@ -1,0 +1,171 @@
+{
+  "hardware": {
+    "gpu": "ABSENT -- `nvidia-smi` not found on PATH",
+    "cpu_count": 1,
+    "note": "No GPU is available. Every number in this report is CPU. No diffusion checkpoint was executed: LLaDA2.1-mini (diffusion-jev) is an SGLang engine model and neodisco's checkpoints are CUDA/torch. Both are reported from source, not from a run. The only third-party code that actually executed here is diffusion-jev-sglang's scoring.py."
+  },
+  "provenance": {
+    "diffusion_jev_sglang_scoring_py_sha256": "b8fc45634a09f2be2651ed9fece1bf554d25d26cd1042fc07d495b26f854b02c",
+    "scoring_module_imported": true,
+    "note": "JevChoiceChooser imports and calls the real probabilities() and the real confidence formula from the cloned checkout. Verified below."
+  },
+  "m1_swap_diff": {
+    "app_sha256": "58b5cc2e9dd7f4752e18b2ad9a6e39b9eb1abdaf620f26621673449e85846408",
+    "distinct_hashes": 1,
+    "diff": "zero",
+    "per_chooser": {
+      "statistic": {
+        "final": "alloc[triage=6, discharge=4, pharmacy=0] spent=10/11",
+        "deficit": 5,
+        "refusals": 0,
+        "turns": 2
+      },
+      "jev-choice": {
+        "final": "alloc[triage=6, discharge=4, pharmacy=0] spent=10/11",
+        "deficit": 5,
+        "refusals": 0,
+        "turns": 3
+      },
+      "local-policy": {
+        "final": "alloc[triage=6, discharge=4, pharmacy=0] spent=10/11",
+        "deficit": 5,
+        "refusals": 0,
+        "turns": 5
+      },
+      "human": {
+        "final": "alloc[triage=6, discharge=4, pharmacy=0] spent=10/11",
+        "deficit": 5,
+        "refusals": 0,
+        "turns": 2
+      },
+      "generative": {
+        "final": "alloc[triage=0, discharge=0, pharmacy=0] spent=0/11",
+        "deficit": 15,
+        "refusals": 1,
+        "turns": 1
+      }
+    }
+  },
+  "m2_off_catalog": {
+    "n_legal_moves": 6,
+    "all_moves_single_task": true,
+    "compound_alloc": [
+      6,
+      4,
+      0
+    ],
+    "compound_enumerated_ids": [],
+    "app_can_execute_off_catalog": false,
+    "ranker_1turn_deficit": 9
+  },
+  "m3_distribution": {
+    "ranker": {
+      "calls": 1,
+      "ms": 0.047,
+      "n_keys": 6,
+      "sum": 1.0,
+      "confidence": 0.3741967003044552,
+      "pick": "triage+4",
+      "keys_are_option_ids": true
+    },
+    "generator": {
+      "calls": 200,
+      "ms": 113.7,
+      "ms_per_call": 0.57,
+      "probs_field": null,
+      "n_distinct_configs": 4,
+      "empirical": {
+        "(4, 4, 2)": 0.785,
+        "(6, 4, 2)": 0.17,
+        "(6, 2, 2)": 0.025,
+        "(4, 2, 2)": 0.02
+      },
+      "confidence_djs_convention": 0.5227,
+      "confidence_note": "UNDEFINED: djs scoring.py:56 is 1 - H/log(n); on a one-point support log(1)=0. The shared confidence formula does not extend to a converged generator.",
+      "entropy_nats": 0.6617,
+      "refused_steps_total": 0,
+      "noise_budget_sweep": {
+        "0.0": {
+          "distinct": 1,
+          "entropy": -0.0,
+          "confidence": null,
+          "is_point_mass": true
+        },
+        "0.02": {
+          "distinct": 1,
+          "entropy": -0.0,
+          "confidence": null,
+          "is_point_mass": true
+        },
+        "0.06": {
+          "distinct": 1,
+          "entropy": -0.0,
+          "confidence": null,
+          "is_point_mass": true
+        },
+        "0.12": {
+          "distinct": 4,
+          "entropy": 0.644,
+          "confidence": 0.5354,
+          "is_point_mass": false
+        },
+        "0.25": {
+          "distinct": 8,
+          "entropy": 1.2695,
+          "confidence": 0.3895,
+          "is_point_mass": false
+        },
+        "0.5": {
+          "distinct": 19,
+          "entropy": 2.1625,
+          "confidence": 0.2655,
+          "is_point_mass": false
+        }
+      }
+    },
+    "support": {
+      "ranker_support_size": 6,
+      "generator_support_size": 4,
+      "overlap": 0,
+      "off_catalog_fraction": 1.0,
+      "call_ratio": "1 : 200"
+    }
+  },
+  "m4_refusal": {
+    "human_refusals": 1,
+    "human_probs": null,
+    "human_refusal_mechanism": "pick=None (one field, unambiguous)",
+    "generator_pick_when_stuck": null,
+    "generator_probs_when_stuck": null,
+    "generator_confidence_when_stuck": null,
+    "generator_executable_rate": "0/60",
+    "generator_abstain_rate": "0/60 (structurally zero)",
+    "field_collision": "pick=None is overloaded: 'no answer' (ranking) vs 'answer you cannot name' (generative). The interface cannot tell them apart."
+  },
+  "m5_price": {
+    "app_sha_before": "58b5cc2e9dd7f4752e18b2ad9a6e39b9eb1abdaf620f26621673449e85846408",
+    "app_sha_after": "c58b404dc854609f219a63a3ce2673386ae0be87784728b4788822d935fef309",
+    "swap_diff_with_generation": "NON-ZERO",
+    "lines_added": 9,
+    "patch": [
+      "@@ -45,0 +46,9 @@",
+      "+",
+      "+",
+      "+    def commit(self, alloc: tuple[int, ...]) -> State:",
+      "+        \"\"\"A generated configuration arrives as a POINT, not an id. The",
+      "+        app must learn to accept it. This method IS the seam leak: it exists",
+      "+        only because a chooser stopped ranking.\"\"\"",
+      "+        if len(alloc) != len(TASKS):",
+      "+            raise ValueError(\"commit: wrong arity\")",
+      "+        return _mk(tuple(alloc))"
+    ],
+    "generator_first_move_alloc": [
+      4,
+      4,
+      2
+    ],
+    "generator_first_move_deficit": 5,
+    "ranker_best_single_move_deficit": 9,
+    "generator_is_better_first_move": true
+  }
+}

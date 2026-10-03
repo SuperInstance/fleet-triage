@@ -1,0 +1,8 @@
+58db50a3af500723bc8e2f6c315f77fae9a2c5c4 HEAD
+19580ac9828c2c1bac244aa9dcb0869743f48fdd refs/heads/fix/ci-actually-runs-the-tests
+ba32a77f49150f10abd1a649ef025020045745fd refs/heads/fix/entropy-was-not-entropy
+58db50a3af500723bc8e2f6c315f77fae9a2c5c4 refs/heads/main
+980282548d7731e05158c9ff58e3ea4b71c334dd refs/heads/papers-main
+19580ac9828c2c1bac244aa9dcb0869743f48fdd refs/heads/pr64
+19580ac9828c2c1bac244aa9dcb0869743f48fdd refs/heads/pull/64/head
+58db50a3af500723bc8e2f6c315f77fae9a2c5c4 refs/tags/v0.1.0

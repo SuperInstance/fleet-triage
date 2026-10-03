@@ -1,0 +1,1 @@
+{"repo": "quilt-fleet-tools", "branch": "main", "head": "83666b73180e", "commits_first_parent": 5, "merges": {"other_merge": 1}, "n_merges": 1, "rows": [{"sha": "5b3953d173ca", "subj": "merge: integrate GitHub auto-init LICENSE commit", "class": "other_merge"}]}

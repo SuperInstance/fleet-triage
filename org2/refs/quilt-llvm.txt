@@ -1,0 +1,14 @@
+refs/heads/gam-cell-rivalry	327e8875e22f236de87c1fc74f926080e97b369a
+refs/heads/master	72f0337637dd4e9f628957e278a9d3f071dc0abb
+refs/heads/r1-sem-mutants	ec4ca138b323bce85754fcd30a447305c90d63fe
+refs/heads/r1-shape-audit	cb8d2010ce7345ab46980413782c0f476b80a737
+refs/heads/r1-tombstone	d02a1dc0cfd14b2d5530f3f408fdb70375197765
+refs/heads/r2-cocapn-conserve	334e5e40cee5a87500f032f6a8c6684acd4535e4
+refs/heads/r2-ga-corpus	3874865b19b15856577fd936041ac8eadf4d5052
+refs/heads/r2-merkle-weft	57b8baca30f5f19beabeaa579fd0ec4647586ead
+refs/heads/r2-region-spike	3d2c978b73425b811c03d1f1218cc3c68e006f24
+refs/heads/r2-use-tables	88b1247d15dfe9354e4a6e3a79c7f03afb5a6b9f
+refs/heads/r3-lane1-region-edit-kinds	65cf06beacf89590fe1114b82f9feedaa44c9832
+refs/heads/r3-lane3-pass-graduation	ca5b18cd66885b937e7f70da0de2b14518cabdad
+refs/heads/r4-conception	1d844fec32b7488a0b086393bb0015faa2353200
+refs/heads/r4-lane1-external-differential	bb566bb37f19a1754ff28c9ecf2d44296c05201e

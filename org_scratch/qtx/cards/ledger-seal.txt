@@ -1,0 +1,21 @@
+[1mledger-seal[0m — append-only witness ledger + tamper alarm + audit queries
+
+  [32m✓[0m append fence: 5 clean rows accepted
+  [32m✓[0m append fence rejects actorless rows[2m — rows require actor+action[0m
+  [32m✓[0m audit query: bob read the secret twice[2m — seqs 1,4[0m
+  [32m✓[0m chain verifies clean[2m — 5 rows, head 287ecb019443…[0m
+┌─ clean ledger ──────────────────────────────────────────────┐
+│ rows 5                                                    │
+│ head 287ecb019443fc55                                     │
+│ verdict SEALED                                            │
+└────────────────────────────────────────────────────────────┘
+┌─ tamper alarm ──────────────────────────────────────────────┐
+│ edit row seq=2: attempts 5→1, ts −1d (silent)             │
+│ verdict TAMPER DETECTED                                   │
+│ broken at seq=2                                           │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m tamper detected at exactly the edited row[2m — verifier pinned seq=2[0m
+  [32m✓[0m restore heals the chain[2m — head 287ecb019443…[0m
+
+[1m  ══ ledger-seal: [32m6/6 checks green — ready-to-go[0m ══[0m
+

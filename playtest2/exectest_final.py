@@ -1,0 +1,970 @@
+#!/usr/bin/env python3
+"""
+exectest.py — does this suite execute the thing it claims to?
+
+Three signals, cheapest first. The first two are static and run in milliseconds; the
+third is the real test and is opt-in because it mutates the tree.
+
+    Signal 1  IMPORT      does any test file import a module of the product
+                           (not just stdlib / the test framework)?
+    Signal 2  LITERAL-ONLY  does any test function assert only on literals and on
+                           locals it defined itself, with no reference to anything
+                           imported from the package?  (`test_weights_sum_256`
+                           asserting `77 + 150 + 29 == 256`)
+    Signal 3  MUTATION    (--mutate) mutate the README's named mechanism and ask
+                           whether the suite notices.
+
+Exit codes
+    0  the suite executes its product        (or: no suite, and the repo has no
+                                             product to execute — reported, not
+                                             passed)
+    1  the suite does NOT execute its product, or a mutation survived
+    2  COULD-NOT-RUN (no test files, no runner, dependency missing)
+
+Design rules, learned the hard way on 2026-09-30 / 10-01:
+
+  * A linter that flags everything and a linter that flags nothing are the same
+    defect. Every rule here ships with a stated blind spot, and the tool prints
+    its own measured behaviour on the two known-vacuous repos in its selftest.
+  * Signal 2 is a *heuristic on syntax*, not a proof. It is reported as a
+    COUNT with the offending test names, never as a verdict on its own.
+  * Nothing here trusts a green checkmark. Signal 3 is the only signal that can
+    fail a repo on its own; 1 and 2 are evidence.
+
+Usage
+    python3 exectest.py <path/to/repo> [--mutate] [--json] [--selftest]
+
+No network. No mutation unless --mutate is passed. Signal 3 restores the tree.
+"""
+from __future__ import annotations
+
+import argparse
+import ast
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+from dataclasses import dataclass, field, asdict
+from pathlib import Path
+
+STDLIB = set(sys.stdlib_module_names)
+
+# Directories that are never the product under test.
+SKIP_DIRS = {".git", "node_modules", "vendor", "dist", "build", ".venv", "venv",
+             "__pycache__", ".mypy_cache", ".pytest_cache", "target", ".next",
+             "site-packages", "third_party", "3rdparty"}
+
+TEST_DIR_NAMES = {"test", "tests", "spec", "specs", "__tests__", "testing"}
+TEST_FILE_RE = re.compile(r"(^|[._-])(test|tests|spec|specs)[._-]", re.I)
+# A repo may name the single suite plainly: `test.js`, `test.py`, `spec.ts`,
+# sitting at the repo root or in a plain `test/` dir. These are real suites and
+# a detector that misses them under-counts the fleet.
+BARE_TEST_NAMES = {"test.js", "test.mjs", "test.py", "test.ts", "test.go",
+                   "test.rs", "test.rb", "spec.js", "spec.ts", "self-test.js",
+                   "selftest.js", "selftest.py", "run-tests.js",
+                   "run_tests.py", "tests.js", "tests.py"}
+
+# Files that look like tests but are not suites.
+NOT_TESTS = {"conftest.py", "setup.py"}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# repo model
+# ─────────────────────────────────────────────────────────────────────────────
+@dataclass
+class Finding:
+    signal: str
+    severity: str          # "VACUOUS" | "SUSPECT" | "INFO"
+    subject: str
+    detail: str
+
+
+@dataclass
+class Report:
+    repo: str
+    verdict: str                    # EXECUTES-PRODUCT | VACUOUS | NO-SUITE | COULD-NOT-RUN
+    test_files: list = field(default_factory=list)
+    product_modules: list = field(default_factory=list)
+    imported_product_modules: list = field(default_factory=list)
+    findings: list = field(default_factory=list)
+    baseline: dict = field(default_factory=dict)
+    mutation: dict = field(default_factory=dict)
+    notes: list = field(default_factory=list)
+
+    def add(self, signal, severity, subject, detail):
+        self.findings.append(asdict(Finding(signal, severity, subject, detail)))
+
+
+def is_test_file(p: Path, root: Path) -> bool:
+    if p.name in NOT_TESTS or p.suffix not in {".py", ".js", ".mjs", ".ts", ".rs", ".go", ".rb"}:
+        return False
+    if p.name in BARE_TEST_NAMES or p.name.lower() in BARE_TEST_NAMES:
+        return True
+    parts = {x.lower() for x in p.relative_to(root).parts[:-1]}
+    return bool(parts & TEST_DIR_NAMES) or TEST_FILE_RE.search(p.stem) is not None
+
+
+def walk(root: Path):
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS and not d.startswith(".")]
+        for fn in filenames:
+            yield Path(dirpath) / fn
+
+
+def find_tests(root: Path) -> list:
+    return sorted(p for p in walk(root) if is_test_file(p, root))
+
+
+def find_product_modules(root: Path, tests) -> set:
+    """
+    The product = every non-test source file in the repo, minus vendored/builtin.
+    A test "imports the product" if it names one of these.
+    """
+    testset = set(tests)
+    out = set()
+    for p in walk(root):
+        if p in testset:
+            continue
+        if p.suffix in {".py", ".js", ".mjs", ".ts", ".rs", ".go", ".rb"}:
+            out.add(p)
+    return out
+
+
+def module_names(paths, root=None) -> set:
+    """
+    Every name a test might plausibly use to refer to each product file:
+    the bare stem, the dotted dotted path with the repo-relative package
+    prefix, and (for JS/TS) the path WITH its extension, because
+    `import { x } from '../src/mcp.ts'` names the extension explicitly.
+    """
+    names = set()
+    for p in paths:
+        stem = p.stem
+        names.add(stem)
+        names.add(stem.lstrip("."))
+        dotted = ".".join(p.with_suffix("").parts)
+        names.add(dotted)
+        names.add(str(p))                       # src/mcp.ts
+        names.add(p.name)                       # mcp.ts
+        if root is not None:
+            try:
+                rel = p.relative_to(root)
+            except ValueError:
+                rel = p
+            names.add(str(rel))                 # src/mcp.ts (repo-relative)
+            names.add(".".join(rel.with_suffix("").parts))
+    return {n for n in names
+            if n and n not in {"__init__", "index", "setup", "conftest", "."}}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Signal 1 — does the test import the product?
+# ─────────────────────────────────────────────────────────────────────────────
+BUILD_PATH_PARTS = {"tools", "tool", "scripts", "bin", "build", "ci", ".github",
+                    "hack", "examples", "example", "docs", "doc"}
+
+
+def readme_named_modules(root: Path):
+    """
+    The modules the README names, in the order it names them (first = the
+    product the README leads with). This is how we tell "imports a helper"
+    from "imports the thing it claims to test": a suite that imports only
+    `syzygy_port` and never `exp1_luma_collision` has verified a port, not
+    the experiment.
+
+    Build/tooling paths (tools/, scripts/, ci/) are EXCLUDED: a repo that
+    names `tools/prerun.js` first is leading with a checkpoint generator,
+    not with its product. We keep the first name that is not under a build
+    path; if every name is under one, we fall back to the first name overall
+    and mark the case inconclusive rather than guessing.
+    """
+    for name in ("README.md", "readme.md", "README.rst", "README"):
+        p = root / name
+        if p.exists():
+            txt = p.read_text(encoding="utf-8", errors="replace")
+            hits = []
+            for m in re.finditer(r"\b([A-Za-z0-9_][A-Za-z0-9_./-]*\.(?:py|js|mjs|ts|rs|go|rb))\b",
+                                 txt):
+                n = m.group(1)
+                if n not in hits:
+                    hits.append(n)
+            prod = [n for n in hits
+                    if not (set(Path(n).parts[:-1]) & BUILD_PATH_PARTS)
+                    and not Path(n).stem.startswith("test")
+                    and Path(n).stem != "__init__"]
+            return prod or hits, bool(prod)
+    return [], False
+
+
+def signal1_import(root: Path, tests, product_mods, report: Report):
+    prod_names = module_names(product_mods, root)
+    imported = set()
+
+    for tf in tests:
+        if tf.suffix != ".py":
+            try:
+                txt = tf.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                continue
+            # CommonJS: require('./x'), require('../src/y.js')
+            for m in re.finditer(r"""require\s*\(\s*['"](\.[^'"]+)['"]\s*\)""", txt):
+                imported.add(f"js:{m.group(1)}")
+            # ESM: import ... from './x.js'  /  import('./x.js')
+            for m in re.finditer(
+                    r"""\bfrom\s*['"](\.[^'"]+)['"]|\bimport\s*\(\s*['"](\.[^'"]+)['"]""", txt):
+                imported.add("js:" + (m.group(1) or m.group(2)))
+            # ESM bare specifier
+            for m in re.finditer(r"""\bfrom\s*['"]([^'"./][^'"]*)['"]""", txt):
+                if m.group(1).split("/")[0] not in ("node",):
+                    imported.add(f"js:{m.group(1)}")
+            # A test that reads the product's SOURCE with fs.readFileSync is
+            # executing/asserting on it too — count it.
+            for m in re.finditer(
+                    r"""readFileSync\s*\([^)]*['"]([^'"]+\.(?:js|mjs|ts|json|html|py))['"]""",
+                    txt):
+                if not m.group(1).startswith("node:"):
+                    imported.add(f"fs:{m.group(1)}")
+            continue
+
+        try:
+            tree = ast.parse(tf.read_text(encoding="utf-8", errors="replace"))
+        except SyntaxError:
+            report.add("1-IMPORT", "INFO", str(tf.relative_to(root)),
+                       "could not parse (syntax error); signal 1 skipped for this file")
+            continue
+
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for a in node.names:
+                    top = a.name.split(".")[0]
+                    if top not in STDLIB:
+                        imported.add(a.name)
+                        if a.name in prod_names or top in {n.split(".")[0] for n in prod_names}:
+                            imported.add(a.name)
+            elif isinstance(node, ast.ImportFrom):
+                if node.level:      # relative import — same package, i.e. the product
+                    mod = node.module or ""
+                    imported.add(f".{mod}")
+                    for a in node.names:
+                        imported.add(f".{a.name}")
+                    continue
+                mod = node.module or ""
+                top = mod.split(".")[0]
+                if top in STDLIB:
+                    continue
+                imported.add(mod)
+                # `from quilt import auditor, breeder` DOES import the modules
+                # quilt.auditor and quilt.breeder -- the symbol names are module
+                # references here, and dropping them makes a correctly-importing
+                # suite look like it skipped the product.
+                for a in node.names:
+                    imported.add(a.name)
+                    if a.asname:
+                        imported.add(a.asname)
+
+    # resolve which of the imports are actually the product
+    hits = set()
+    prod_top = {n.split(".")[0] for n in prod_names}
+    prod_bare = set()
+    for n in prod_names:
+        prod_bare.add(n.split(".")[-1])
+    for name in imported:
+        if name.startswith(".") or name.startswith("js:.") or name.startswith("fs:"):
+            hits.add(name)
+            continue
+        bare = name[3:] if name.startswith("js:") else name
+        # exact dotted match (quilt.engine), or stem match (engine), or the
+        # first segment is a top-level product module (quilt)
+        stem = bare.split(".")[0]
+        if bare in prod_names or bare in prod_bare or stem in prod_top:
+            hits.add(bare)
+        else:
+            hits.add(f"EXTERNAL:{bare}")
+
+    real = sorted(h for h in hits if not h.startswith("EXTERNAL:"))
+    ext = sorted(h[9:] for h in hits if h.startswith("EXTERNAL:"))
+    report.imported_product_modules = real
+    named, named_is_clean = readme_named_modules(root)
+    if real:
+        report.add("1-IMPORT", "INFO", f"{len(real)} product reference(s)",
+                   ", ".join(real[:8]))
+        # The sharper question: of the modules the README names, which are
+        # actually executed? Importing a helper is not testing the product.
+        prod_stems = {p.stem for p in product_mods}
+
+        def _norm(x):
+            """
+            Canonical key for 'is this the same module?', slash- and dot- and
+            extension-insensitive:
+              quilt_canary_port/python_port.py  -> 'quilt_canary_port.python_port'
+              quilt_canary_port.python_port     -> 'quilt_canary_port.python_port'
+              ../src/mcp.ts                     -> 'src.mcp'
+            """
+            x = x.split(":")[-1]
+            x = x.replace(chr(92), "/")
+            x = x.lstrip(".")
+            x = x.lstrip("/")
+            # Split on SLASHES only, and strip a file extension from the LAST
+            # segment. (Converting dots to slashes first would turn 'a.py' into
+            # 'a/py' and the extension check would never fire.)
+            parts = [p for p in x.split("/") if p and p != "."]
+            if parts and re.search(r"\.(py|js|mjs|ts|rs|go|rb)$", parts[-1]):
+                parts[-1] = parts[-1].rsplit(".", 1)[0]
+            # a dotted module path and a slashed one are the same module
+            flat = ".".join(parts)
+            return flat
+
+        def _suffix_keys(k):
+            """
+            Every identifier a dotted module path could have been imported as:
+            'quilt.auditor' -> {'quilt.auditor', 'quilt', 'auditor'}.
+            Used on BOTH sides of the comparison so that
+            `from quilt import auditor` satisfies a README that says
+            `quilt/auditor.py`. Expanding only one side makes every
+            package/module pair look like a miss.
+            """
+            out = set()
+            segs = k.split(".")
+            for i in range(len(segs)):
+                out.add(".".join(segs[i:]))
+                out.add(segs[i])
+            return out
+
+        named_here = [n for n in named if Path(n).stem in prod_stems]
+        imported_keys = set()
+        for h in real:
+            imported_keys |= _suffix_keys(_norm(h))
+        imported_stems = imported_keys
+        missing = [n for n in named_here
+                   if not (_suffix_keys(_norm(n)) & imported_stems)]
+        lead = named_here[0] if named_here else None
+        if lead and not (_suffix_keys(_norm(lead)) & imported_stems) and named_is_clean:
+            # The README's FIRST-named product module is the product. If the
+            # suite never imports it, the suite does not execute the thing the
+            # repository is about -- whatever else it does import.
+            report.add("1-IMPORT", "VACUOUS", f"README lead module `{lead}` never imported",
+                       f"the README names {len(named_here)} product module(s), led by "
+                       f"{lead}; the suite imports "
+                       f"{', '.join(sorted(imported_stems)[:4]) or 'nothing'} and never "
+                       f"{lead}. Importing a helper is not executing the product.")
+        elif missing:
+            report.add("1-IMPORT", "SUSPECT", f"{len(missing)}/{len(named_here)} README-named modules unimported",
+                       f"not imported: {', '.join(missing[:4])}")
+    else:
+        report.add("1-IMPORT", "VACUOUS", "no product reference",
+                   f"{len(tests)} test file(s) reference no file or module of the "
+                   f"product; external only: {ext[:8]}")
+    return hits
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Signal 2 — literal-only assertions
+# ─────────────────────────────────────────────────────────────────────────────
+# Names that indicate a value came from the module under test rather than
+# from the test body.
+ASSERT_METHODS = {
+    "assertEqual", "assertNotEqual", "assertTrue", "assertFalse", "assertIn",
+    "assertNotIn", "assertIs", "assertIsNot", "assertIsNone", "assertIsNotNone",
+    "assertAlmostEqual", "assertNotAlmostEqual", "assertGreater", "assertLess",
+    "assertGreaterEqual", "assertLessEqual", "assertRegex", "assertRaises",
+    "assertCountEqual", "assertDictEqual", "assertListEqual", "assertSetEqual",
+    "assertTupleEqual", "assertMultiLineEqual", "assertNotRegex", "fail",
+}
+
+
+def signal2_literal_only(root: Path, tests, report: Report):
+    """
+    For each test function: collect (a) names bound by import anywhere in the file,
+    (b) names assigned inside the function, (c) every Name/Attribute/Call the
+    assertions read. If an assertion's operands are ALL literals or names the
+    function itself bound, the assertion is self-contained: it cannot fail
+    because the product is wrong.
+    """
+    offenders = []
+    scanned = 0
+
+    for tf in tests:
+        if tf.suffix != ".py":
+            continue
+        try:
+            tree = ast.parse(tf.read_text(encoding="utf-8", errors="replace"))
+        except SyntaxError:
+            continue
+
+        file_imports = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for a in node.names:
+                    file_imports.add(a.asname or a.name.split(".")[0])
+            elif isinstance(node, ast.ImportFrom):
+                for a in node.names:
+                    file_imports.add(a.asname or a.name)
+
+        # Dynamic loads the static import scan cannot see:
+        #     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+        #     RepoAuditor = mod.RepoAuditor
+        # These bind product names just as a plain `import` would. Collect any
+        # name of the form X = <something>.<Capitalised> and treat it as a
+        # product import -- the capitalisation convention is the signal, and a
+        # lower-case attribute off a dynamic module is not a product class.
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Assign) and len(node.targets) == 1 \
+                    and isinstance(node.targets[0], ast.Name) \
+                    and isinstance(node.value, ast.Attribute) \
+                    and node.value.attr[:1].isupper():
+                file_imports.add(node.targets[0].id)
+
+        for fn in ast.walk(tree):
+            if not isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                continue
+            if not fn.name.startswith("test"):
+                continue
+            scanned += 1
+
+            local = set()
+            for n in ast.walk(fn):
+                if isinstance(n, ast.Name) and isinstance(n.ctx, ast.Store):
+                    local.add(n.id)
+
+            # A local bound to a value that CAME FROM the product is
+            # product-derived, even though the assertion only reads the local.
+            #   result = self.auditor.audit("x"); assertFalse(result["exists"])
+            # reads a local, but the local IS the product's answer. We run a
+            # fixpoint: a name is TAINTED if its binding expression reads any
+            # imported name, any self./cls., or any already-tainted name -- at
+            # any depth, not just at the call head. That is what keeps
+            #   client_a = PlatoClient(secret=..)
+            #   assertNotEqual(client_a._sign(x), client_b._sign(x))
+            # from being reported as literal-only.
+            tainted = set()
+
+            for n in ast.walk(fn):
+                if isinstance(n, ast.withitem) and n.optional_vars is not None:
+                    reads_import = False
+                    for m in ast.walk(n.context_expr):
+                        if isinstance(m, ast.Name) and m.id in file_imports:
+                            reads_import = True
+                        if isinstance(m, ast.Attribute) and \
+                                isinstance(m.value, ast.Name) and \
+                                m.value.id in ("self", "cls"):
+                            reads_import = True
+                    if reads_import:
+                        for t in ast.walk(n.optional_vars):
+                            if isinstance(t, ast.Name):
+                                tainted.add(t.id)
+
+            # A test can exercise the product as a bare STATEMENT, with no
+            # assignment at all:
+            #     crab.register()
+            #     payload = mock_post.call_args[0][1]
+            #     assertEqual(payload["capabilities"], ["builder"])
+            # Nothing is bound from the call, so the fixpoint below would miss
+            # it. If the function calls ANY imported symbol or any
+            # self./cls. attribute, the whole test is product-exercising and
+            # signal 2 must stay silent on it.
+            # NB: assertEqual/assertIn/... are themselves attribute calls on
+            # `self`, so the self./cls. test below must EXCLUDE the assertion
+            # methods themselves -- otherwise every test in the universe looks
+            # like it exercises the product and this rule goes permanently
+            # silent, which is worse than over-firing.
+            exercises_product = False
+            for n in ast.walk(fn):
+                if isinstance(n, ast.Call):
+                    f = n.func
+                    if isinstance(f, ast.Name) and f.id in file_imports:
+                        exercises_product = True
+                    if isinstance(f, ast.Attribute) and \
+                            isinstance(f.value, ast.Name) and \
+                            f.value.id in ("self", "cls") and \
+                            f.attr not in ASSERT_METHODS:
+                        exercises_product = True
+
+            changed, guard = True, 0
+            while changed and guard < 12:
+                changed = False
+                guard += 1
+                for n in ast.walk(fn):
+                    pairs = []
+                    if isinstance(n, ast.Assign):
+                        pairs = [(n.targets, n.value)]
+                    elif isinstance(n, ast.AnnAssign):
+                        pairs = [([n.target], n.value)]
+                    for targets, val in pairs:
+                        if val is None:
+                            continue
+                        reads_tainted = False
+                        for m in ast.walk(val):
+                            if isinstance(m, ast.Name) and (
+                                    m.id in file_imports or m.id in tainted
+                                    or m.id in ("self", "cls")):
+                                reads_tainted = True
+                                break
+                        if not reads_tainted:
+                            continue
+                        for t in targets:
+                            for name in ast.walk(t):
+                                if isinstance(name, ast.Name) and \
+                                        isinstance(name.ctx, ast.Store) and \
+                                        name.id not in tainted:
+                                    tainted.add(name.id)
+                                    changed = True
+
+            # find assertion calls and their first non-`self` argument
+            asserts = []
+            for n in ast.walk(fn):
+                if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) \
+                        and n.func.attr in ASSERT_METHODS:
+                    asserts.append(n)
+            if not asserts:
+                continue
+
+            for call in asserts:
+                operands = [a for a in call.args if not (isinstance(a, ast.Starred))]
+                if not operands:
+                    continue
+                # An assertion that reads `self.<x>` / `cls.<x>` is reading state
+                # the fixture built. If the fixture built it from the product,
+                # the assertion is not self-contained. We cannot see setUp here,
+                # so we treat self./cls. reads as NOT self-contained and stay
+                # silent -- flagging them is the over-fire that would make this
+                # rule noise.
+                reads_self = False
+                for a in operands:
+                    for n in ast.walk(a):
+                        if isinstance(n, ast.Attribute) and isinstance(n.value, ast.Name) \
+                                and n.value.id in ("self", "cls"):
+                            reads_self = True
+                if reads_self:
+                    continue
+
+                # the strict test: operands reference only literals, and locals
+                # that are NOT product-derived
+                names = set()
+                for a in operands:
+                    for n in ast.walk(a):
+                        if isinstance(n, ast.Name):
+                            names.add(n.id)
+                if names & tainted:
+                    continue          # reads a value the product produced
+                outside = {n for n in names
+                           if n not in local and n not in file_imports
+                           and n not in ("self", "cls")}
+                if not outside:
+                    used_import = names & file_imports
+                    if not used_import and not exercises_product:
+                        # Last veto: if the assertion calls a METHOD on any name
+                        # that was constructed from the product
+                        #   client_a = PlatoClient(secret=..)
+                        #   assertNotEqual(client_a._sign(d), client_b._sign(d))
+                        # then the operands are product calls even though they
+                        # are not bare Names. Any tainted name appearing as the
+                        # receiver of a call means the product is being read.
+                        method_on_derived = False
+                        for a in operands:
+                            for n in ast.walk(a):
+                                if isinstance(n, ast.Call) and \
+                                        isinstance(n.func, ast.Attribute):
+                                    recv = n.func.value
+                                    rname = None
+                                    if isinstance(recv, ast.Name):
+                                        rname = recv.id
+                                    elif isinstance(recv, ast.Attribute) and \
+                                            isinstance(recv.value, ast.Name):
+                                        rname = recv.value.id
+                                    if rname and (rname in tainted
+                                                  or rname in file_imports
+                                                  or rname in ("self", "cls")):
+                                        method_on_derived = True
+                        if not method_on_derived:
+                            offenders.append((tf, fn, call, sorted(names)))
+
+    # de-duplicate by (file, function)
+    seen = set()
+    uniq = []
+    for tf, fn, call, names in offenders:
+        key = (str(tf), fn.name)
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append((tf, fn, names))
+
+    for tf, fn, names in uniq:
+        report.add("2-LITERAL-ONLY", "SUSPECT", f"{tf.relative_to(root)}::{fn.name}",
+                   f"assertion(s) reference only literals and self-bound locals {names}; "
+                   f"no name imported from the product is read")
+    report.notes.append(f"signal 2 scanned {scanned} python test function(s), "
+                        f"flagged {len(uniq)}")
+    return uniq
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Signal 3 — mutation of the README's named mechanism
+# ─────────────────────────────────────────────────────────────────────────────
+MUT_PATTERNS = [
+    # (name, regex, replacement) — arithmetic neutralisers
+    ("neutralise-operator", re.compile(r"(?<![\w.])(\*|\+)(?!=)"), "* 0.0"),
+]
+
+
+def readme_mechanism(root: Path):
+    for name in ("README.md", "readme.md", "README.rst", "README"):
+        p = root / name
+        if p.exists():
+            return p
+    return None
+
+
+def signal3_mutation(root: Path, report: Report, runner, extra_timeout=600):
+    """
+    Deliberately conservative. We do NOT try to be clever: we pick the source file
+    the README names first, fall back to the largest non-test source file, and
+    offer a small menu of mechanically-applicable neutralising mutations. Each is
+    applied to a COPY of the repo so the caller's tree is never touched.
+
+    Returns dict with baseline / mutations.
+    """
+    result = {"baseline": None, "mutations": [], "skipped": None}
+
+    r = runner(root)
+    result["baseline"] = r
+    if r["red"] == 0 and r["green"] == 0 and r["exit"] not in (0, 1):
+        result["skipped"] = "runner could not execute the suite"
+        report.add("3-MUTATION", "INFO", "skipped", "runner failed before any mutation")
+        return result
+    if r["red"] > 0:
+        result["skipped"] = f"suite is ALREADY RED at HEAD ({r['red']} red) — mutation would be uninterpretable"
+        report.add("3-MUTATION", "INFO", "ALREADY-RED",
+                   f"{r['red']} failing check(s) at HEAD; mutation signal not applicable")
+        return result
+
+    # choose a target
+    readme = readme_mechanism(root)
+    named = set()
+    if readme:
+        txt = readme.read_text(encoding="utf-8", errors="replace")
+        named = set(re.findall(r"`([A-Za-z0-9_./-]+\.(?:py|js|mjs|ts|rs|go|rb))`", txt))
+        named |= set(re.findall(r"\b([a-z0-9_]+\.(?:py|js|mjs|ts|rs|go|rb))\b", txt))
+    tests = find_tests(root)
+    product = find_product_modules(root, tests)
+    product -= set(tests)
+
+    targets = []
+    for p in product:
+        if p.name in named or str(p.relative_to(root)) in named:
+            targets.insert(0, p)
+    if not targets and product:
+        targets = [max(product, key=lambda p: p.stat().st_size)]
+
+    if not targets:
+        result["skipped"] = "no product source file to mutate"
+        return result
+
+    target = targets[0]
+    tmp = Path(tempfile.mkdtemp(prefix="exectest-"))
+    clone = tmp / "repo"
+    try:
+        shutil.copytree(root, clone, ignore=shutil.ignore_patterns(*SKIP_DIRS, ".git"))
+        rel = target.relative_to(root)
+        f = clone / rel
+        orig = f.read_text(encoding="utf-8", errors="replace")
+
+        cands = build_mutation_candidates(orig, rel.name)
+        if not cands:
+            result["skipped"] = "no mechanical mutation candidate in " + str(rel)
+            report.add("3-MUTATION", "INFO", "skipped",
+                       f"could not construct a neutralising mutation for {rel}")
+            return result
+
+        for cname, newsrc, line_no in cands[:6]:
+            f.write_text(newsrc, encoding="utf-8")
+            m = runner(clone)
+            f.write_text(orig, encoding="utf-8")   # restore between mutations
+            entry = {"mutation": cname, "file": str(rel), "line": line_no,
+                     "red": m["red"], "green": m["green"], "exit": m["exit"],
+                     "caught": m["red"] > 0 or m["exit"] not in (0,)}
+            result["mutations"].append(entry)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+    caught = sum(1 for m in result["mutations"] if m["caught"])
+    total = len(result["mutations"])
+    if total == 0:
+        report.add("3-MUTATION", "INFO", "no candidate", "nothing mechanical to mutate")
+    elif caught == 0:
+        report.add("3-MUTATION", "VACUOUS", f"0/{total} mutations caught",
+                   f"every neutralising mutation of {result['mutations'][0]['file']} "
+                   f"left the suite green — the suite does not execute what it claims")
+    else:
+        report.add("3-MUTATION", "INFO", f"{caught}/{total} mutations caught",
+                   f"mutations of {result['mutations'][0]['file']}: " +
+                   ", ".join(f"{m['mutation']}@L{m['line']}->{'RED' if m['caught'] else 'survived'}"
+                             for m in result["mutations"]))
+    return result
+
+
+def build_mutation_candidates(src: str, filename: str):
+    """
+    Conservative, mechanical, and *reported honestly* when it finds nothing.
+    We only offer mutations where we can point at a line number.
+    """
+    lines = src.split("\n")
+    cands = []
+    ext = Path(filename).suffix
+
+    # 1. return-early neutraliser: make the first `return X` in a function return falsy
+    #    Only for functions that are exported/likely-product (heuristic: name has no _test)
+    for i, ln in enumerate(lines):
+        m = re.match(r"^(\s*)return\s+(.+?)\s*$", ln)
+        if m and not re.search(r"\btest\b", filename, re.I):
+            # don't neutralise `return None` / `return True` constant getters blindly? we DO:
+            # that is exactly the class we want to catch.
+            indent, expr = m.group(1), m.group(2)
+            cands.append((f"return-falsy:{filename}:{i+1}",
+                          "\n".join(lines[:i] + [f"{indent}return False  # MUTANT"] + lines[i + 1:]),
+                          i + 1))
+            break
+
+    # 2. multiply the first non-declaration numeric-returning comparison by 0
+    for i, ln in enumerate(lines):
+        if re.search(r"\*\s*(?!=)", ln) and "0" not in ln:
+            new = re.sub(r"\*\s*(?!=)", "* 0.0 #MUT ", ln, count=1)
+            cands.append((f"mul-zero:{filename}:{i+1}",
+                          "\n".join(lines[:i] + [new] + lines[i + 1:]), i + 1))
+            break
+
+    # 3. `max(` -> `min(` and vice versa (the voxelglyph flagship)
+    for i, ln in enumerate(lines):
+        if re.search(r"\bmax\s*\(", ln):
+            cands.append((f"max-to-min:{filename}:{i+1}",
+                          "\n".join(lines[:i] + [ln.replace("max(", "min(", 1)] + lines[i + 1:]),
+                          i + 1))
+            break
+    for i, ln in enumerate(lines):
+        if re.search(r"\bmin\s*\(", ln) and not re.search(r"\bmax\s*\(", ln):
+            cands.append((f"min-to-max:{filename}:{i+1}",
+                          "\n".join(lines[:i] + [ln.replace("min(", "max(", 1)] + lines[i + 1:]),
+                          i + 1))
+            break
+
+    return cands
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# runner
+# ─────────────────────────────────────────────────────────────────────────────
+def make_runner(root: Path):
+    has_py_tests = any(p.suffix == ".py" for p in find_tests(root))
+    has_node = (root / "package.json").exists() or any(
+        p.suffix in {".js", ".mjs", ".ts"} for p in find_tests(root))
+
+    if has_py_tests:
+        def run(dirpath: Path):
+            # A repo may need a build step before the suite runs.
+            if (dirpath / "package.json").exists():
+                subprocess.run(["npm", "run", "build"], cwd=dirpath,
+                               capture_output=True, text=True, timeout=600)
+            tdir = dirpath / "tests"
+            # Discovery invocation matters and is repo-specific. `discover -s tests`
+            # works without tests/__init__.py; `-t .` requires it. We try the
+            # plausible ones and keep the run that COLLECTED THE MOST TESTS --
+            # because `unittest discover` prints "OK" on zero collected tests,
+            # and a runner that silently collects nothing is worse than no runner.
+            invocations = []
+            if tdir.is_dir():
+                invocations.append([sys.executable, "-m", "unittest", "discover",
+                                    "-s", "tests"])
+                invocations.append([sys.executable, "-m", "unittest", "discover",
+                                    "-s", "tests", "-t", "."])
+            invocations.append([sys.executable, "-m", "unittest", "discover"])
+            invocations.append([sys.executable, "-m", "pytest", "-q"])
+
+            best = None
+            for argv in invocations:
+                try:
+                    r = subprocess.run(argv, cwd=dirpath, capture_output=True,
+                                       text=True, timeout=900)
+                except (subprocess.TimeoutExpired, FileNotFoundError):
+                    continue
+                out = r.stdout + r.stderr
+                m = re.search(r"Ran (\d+) tests? in ([\d.]+)s", out)
+                n = int(m.group(1)) if m else 0
+                red = 0
+                fm = re.search(r"failures=(\d+)", out)
+                em = re.search(r"errors=(\d+)", out)
+                red = int(fm.group(1)) if fm else 0
+                red += int(em.group(1)) if em else 0
+                pm = re.search(r"(\d+) (?:failed|passed).*?(\d+) passed", out)
+                if n == 0 and pm:
+                    n = sum(int(x) for x in pm.groups())
+                if re.search(r"no tests ran|collected 0 items", out):
+                    n = 0
+                if red and n == 0:          # a collection error: 0 ran, but it is RED
+                    n = max(n, red)
+                res = {"ran": n, "red": red, "green": n - red, "exit": r.returncode,
+                       "out": out[-3000:], "cmd": " ".join(argv[2:])}
+                if best is None or res["ran"] > best["ran"]:
+                    best = res
+                if res["ran"] > 0 and res["red"] > 0:
+                    break        # a real red run: stop, we have our answer
+            if best is None:
+                return {"ran": 0, "red": 0, "green": 0, "exit": 127,
+                        "out": "no usable runner", "cmd": None}
+            return best
+        return run
+
+    if has_node:
+        def run(dirpath: Path):
+            # Many repos require a build step before the suite is runnable
+            # (pong-quilt byte-pins site/dist against the source tree).
+            if (dirpath / "package.json").exists():
+                pkg = (dirpath / "package.json").read_text(encoding="utf-8",
+                                                           errors="replace")
+                if '"build"' in pkg and (dirpath / "tools").is_dir():
+                    subprocess.run(["npm", "run", "build"], cwd=dirpath,
+                                   capture_output=True, text=True, timeout=600)
+            tdir = dirpath / "tests"
+            if tdir.is_dir():
+                files = sorted(str(p) for p in tdir.glob("*.test.js")) or \
+                        sorted(str(p) for p in tdir.glob("*.test.mjs"))
+                argv = ["node", "--test"] + (files if files else [str(tdir)])
+            else:
+                argv = ["node", "--test"]
+            r = subprocess.run(argv, cwd=dirpath, capture_output=True, text=True,
+                               timeout=1800)
+            out = r.stdout + r.stderr
+            m = re.search(r"# pass (\d+)", out)
+            f = re.search(r"# fail (\d+)", out)
+            n = int(m.group(1)) if m else 0
+            red = int(f.group(1)) if f else 0
+            return {"ran": n + red, "red": red, "green": n, "exit": r.returncode,
+                    "out": out[-3000:]}
+        return run
+
+    def run(dirpath: Path):
+        return {"ran": 0, "red": 0, "green": 0, "exit": 127,
+                "out": "no runner for this repo"}
+    return run
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# main analysis
+# ─────────────────────────────────────────────────────────────────────────────
+def analyse(root: Path, do_mutate=False, quiet=False) -> Report:
+    root = root.resolve()
+    rep = Report(repo=root.name, verdict="COULD-NOT-RUN")
+
+    tests = find_tests(root)
+    rep.test_files = [str(p.relative_to(root)) for p in tests]
+    if not tests:
+        rep.verdict = "NO-SUITE"
+        rep.notes.append("no test files found under the usual conventions")
+        return rep
+
+    product = find_product_modules(root, tests)
+    rep.product_modules = [str(p.relative_to(root)) for p in sorted(product)][:40]
+
+    signal1_import(root, tests, product, rep)
+    signal2_literal_only(root, tests, rep)
+
+    runner = make_runner(root)
+    if not quiet:
+        print(f"  [{rep.repo}] running baseline suite...", file=sys.stderr)
+    base = runner(root)
+    rep.baseline = {k: v for k, v in base.items() if k != "out"}
+    if base["ran"] == 0:
+        rep.verdict = "COULD-NOT-RUN"
+        rep.notes.append("runner executed ZERO tests (a suite that reports OK on zero "
+                         "collected tests certifies nothing)")
+        return rep
+    if base["red"] > 0:
+        rep.verdict = "ALREADY-RED"
+        rep.notes.append(f"{base['red']} failing check(s) at HEAD")
+        return rep
+
+    if do_mutate:
+        rep.mutation = signal3_mutation(root, rep, runner)
+
+    vacuous = [f for f in rep.findings if f["severity"] == "VACUOUS"]
+    if do_mutate and rep.mutation.get("mutations"):
+        survived = [m for m in rep.mutation["mutations"] if not m["caught"]]
+        if len(survived) == len(rep.mutation["mutations"]) and survived:
+            rep.verdict = "VACUOUS"
+            return rep
+    if vacuous:
+        rep.verdict = "VACUOUS"
+    else:
+        rep.verdict = "EXECUTES-PRODUCT"
+    return rep
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# selftest — the negative control the lane requires
+# ─────────────────────────────────────────────────────────────────────────────
+def selftest():
+    """
+    The tool must FLAG voxelglyph's pre-fix state and STAY SILENT on pong-quilt.
+    If it flags everything it is broken, and this function says so out loud.
+    """
+    here = Path(__file__).resolve().parent
+    cases = [
+        ("voxelglyph-PREFIX (must FLAG)", here / "vg-prefix", {"VACUOUS"}),
+        ("pong-quilt (must NOT flag)", here / "pong-quilt", {"EXECUTES-PRODUCT"}),
+    ]
+    ok = True
+    for label, path, expect in cases:
+        if not path.exists():
+            print(f"  {label}: SKIP — {path} not present")
+            ok = False
+            continue
+        print(f"  {label} ...", end="", flush=True)
+        rep = analyse(path, do_mutate=False, quiet=True)
+        good = rep.verdict in expect
+        ok &= good
+        print(f"\r  {'PASS' if good else 'FAIL'}  {label}: verdict={rep.verdict} "
+              f"(expected {'/'.join(expect)})")
+        for f in rep.findings:
+            if f["severity"] in ("VACUOUS", "SUSPECT"):
+                print(f"          [{f['signal']}] {f['subject']}: {f['detail'][:100]}")
+    if not ok:
+        print("\n  *** SELFTEST FAILED — this tool is not trustworthy as shipped. ***")
+    return ok
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+def main():
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("repo", nargs="?")
+    ap.add_argument("--mutate", action="store_true", help="run signal 3 (copies the repo first)")
+    ap.add_argument("--json", action="store_true")
+    ap.add_argument("--selftest", action="store_true")
+    a = ap.parse_args()
+
+    if a.selftest:
+        return 0 if selftest() else 1
+    if not a.repo:
+        ap.error("need a repo path (or --selftest)")
+
+    rep = analyse(Path(a.repo), do_mutate=a.mutate)
+    if a.json:
+        print(json.dumps(asdict(rep), indent=2))
+    else:
+        print(f"\n{rep.repo}  →  {rep.verdict}")
+        if rep.baseline:
+            print(f"  baseline: {rep.baseline.get('ran')} ran, "
+                  f"{rep.baseline.get('red')} red, exit={rep.baseline.get('exit')}")
+        for f in rep.findings:
+            print(f"  [{f['severity']:8}] {f['signal']:16} {f['subject']}")
+            print(f"             {f['detail']}")
+        for n in rep.notes:
+            print(f"  note: {n}")
+        print()
+    return {"VACUOUS": 1, "COULD-NOT-RUN": 2, "NO-SUITE": 2,
+            "ALREADY-RED": 1, "EXECUTES-PRODUCT": 0}.get(rep.verdict, 2)
+
+
+if __name__ == "__main__":
+    sys.exit(main())

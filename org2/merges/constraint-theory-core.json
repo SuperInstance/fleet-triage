@@ -1,0 +1,1 @@
+{"repo": "constraint-theory-core", "branch": "main", "head": "df9ce6365234", "commits_first_parent": 38, "merges": {"other_merge": 1}, "n_merges": 1, "rows": [{"sha": "b54ade41cabf", "subj": "merge: resolve .gitignore conflict", "class": "other_merge"}]}

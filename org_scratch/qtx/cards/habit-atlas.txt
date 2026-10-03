@@ -1,0 +1,31 @@
+[1mhabit-atlas[0m — momentum as physics: gains are slow, slips decay, rest is free
+
+┌─ week 1 ────────────────────────────────────────────────────┐
+│ days 0-6 6 of 7 done                                      │
+│ streak 3                                                  │
+│ momentum 1                                                │
+│ zone cruising                                             │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m streak counts the run days[2m — run run run (rest) run run run → 3-run streak[0m
+  [32m✓[0m momentum rose through week 1[2m — 1 — cruising[0m
+  [32m✓[0m rest day did not break the streak[2m — miss resets streak (motivation) but momentum barely moved[0m
+  [32m✓[0m misses decay momentum but gently[2m — trough 0.65[0m
+┌─ week 2 ────────────────────────────────────────────────────┐
+│ days 7-13 5 of 7 done (two slips)                         │
+│ momentum 1                                                │
+│ zone cruising                                             │
+│ best streak 4                                             │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m momentum recovered after the wobble[2m — 1 — the system forgives, gradually[0m
+  [32m✓[0m double check-in refused[2m — day already checked in (or out of order)[0m
+  [32m✓[0m retroactive check-in refused[2m — days are append-only, like everything else here[0m
+┌─ the fortnight ─────────────────────────────────────────────┐
+│ check-ins 16 (fenced: 2 refused)                          │
+│ runs 13 of 14                                             │
+│ final momentum 1 (cruising)                               │
+│ head 51742b90751c7395                                     │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m witness chain sealed[2m — 16 days, head 51742b90751c…[0m
+
+[1m  ══ habit-atlas: [32m8/8 checks green — ready-to-go[0m ══[0m
+

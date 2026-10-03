@@ -1,0 +1,10 @@
+19366d2d0816f9474e28acc185b3ef9528c3f094 HEAD
+967e9ed8bd0473e31827ca6bc4882d6eb10fd653 refs/heads/gh-pages
+366e42fb872705c005f91ea7b59fda9d2e212c13 refs/heads/legibility/negative-space-audit
+19366d2d0816f9474e28acc185b3ef9528c3f094 refs/heads/main
+2e8b5e343349df3bfc3257d6c14d91ce2bd2a476 refs/heads/mavis/apache-2-full-text
+dfdfeda9b22806d43bada881e3af586a3c24f5d0 refs/heads/mavis/release-trust-root
+5a0b748543456f3e144e95ce232875fe5bd83d63 refs/heads/mavis/verify-receipt-entrypoint
+f3da9c4c2225025b2a9b43f0e8a352d561067a78 refs/heads/phase-216-c-polyformalism
+6c616c581f115bbda140ebc935ee74a1d78c7cc3 refs/heads/pypi-oidc-publish
+36cfa32ddf5f9623c36fadc42fbabc4ef8c772ab refs/tags/v0.1.0

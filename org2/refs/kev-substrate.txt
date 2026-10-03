@@ -1,0 +1,14 @@
+refs/heads/ci-run-substrate-tests	cfaeff44448e609f982fef06a7dbdf173bd6dcb0
+refs/heads/conventions-encoding-fix	cfaeff44448e609f982fef06a7dbdf173bd6dcb0
+refs/heads/fix/windows-suite-loading	03f32b7a3335585c6bb820978a5f1701faf4e64a
+refs/heads/imgbot	4198a8cdf4b228993c8467bc5155653a03cde3ed
+refs/heads/main	3c0b105ea4437690e07dbc6e910cb2192a117afa
+refs/heads/refactor/canonical-rules	83c751d2671fb54f97ffbde8cf95356f49b9249c
+refs/heads/refactor/checkpoint	1be15a29063ce41e955cd7d130e58f17e4df3d10
+refs/heads/refactor/data-misc	7a569289aa59fbb8672cdfcb352a9e48361d480c
+refs/heads/refactor/metrics-split	ad26abab0361ea3db8411b14fdac90453edde9db
+refs/heads/refactor/research-runner	b3013eacd6441a9e6651728a85d1cbb99c2baf01
+refs/heads/refactor/serve-model	714f16cb6df1d95b976b543ccd2517884f920e89
+refs/heads/refactor/tooling	7bd674a20551df6eeaebaf8406f6ebe1246b0a5f
+refs/heads/refactor/train	58d66dac1ace41f8d95fba41905fff1b6adac950
+refs/heads/research/calibration-audit	ca56eca1ab75b09e8861d99fc2d45906cb6afb72

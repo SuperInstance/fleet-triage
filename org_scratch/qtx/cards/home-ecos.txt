@@ -1,0 +1,25 @@
+[1mhome-ecos[0m — learned baselines, occupancy-aware comfort, gesture-checked power
+
+┌─ overnight ─────────────────────────────────────────────────┐
+│ baseline 83 W (learned from 12 samples)                   │
+│ hvac {"mode":"eco","target":18}                           │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m baseline learned the quiet house[2m — ewma=83 W[0m
+  [32m✓[0m eco mode applied while away
+  [32m✓[0m occupancy flips hvac to heat[2m — target 21.5°C[0m
+┌─ evening ───────────────────────────────────────────────────┐
+│ baseline 1966 W                                           │
+│ gesture bending energy 4535 over last 32 samples (smooth duty cycles bend little)│
+│ events 2                                                  │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m evening draw = one event, not sixty[2m — surges so far: 1 — edge-triggered, the oven coming on is one event[0m
+┌─ 2am ───────────────────────────────────────────────────────┐
+│ baseline 165 W (quiet night)                              │
+│ sample 400 W = 4.2× baseline                              │
+│ verdict SURGE flagged                                     │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m 2am heater caught against the learned baseline[2m — quiet-night baseline ~120 W → 400 W is a wave, not noise (surge #2)[0m
+  [32m✓[0m event ledger sealed[2m — 3 home events, head 8900c149fb26…[0m
+
+[1m  ══ home-ecos: [32m6/6 checks green — ready-to-go[0m ══[0m
+

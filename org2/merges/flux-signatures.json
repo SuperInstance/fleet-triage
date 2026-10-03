@@ -1,0 +1,1 @@
+{"repo": "flux-signatures", "branch": "main", "head": "7d0b843ce73b", "commits_first_parent": 7, "merges": {"pr_merge": 2}, "n_merges": 2, "rows": [{"sha": "7d0b843ce73b", "subj": "Merge pull request #3 from SuperInstance/superz/sig-enhance", "class": "pr_merge"}, {"sha": "baa68c2b86e4", "subj": "Merge pull request #2 from SuperInstance/superz/T-010", "class": "pr_merge"}]}

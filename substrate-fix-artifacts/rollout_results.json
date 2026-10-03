@@ -1,0 +1,194 @@
+[
+  {
+    "repo": "substrate-attest",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": false,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-attest@0.1.0 test\n> node test.js\n\nattestations:\n  jane: {\n  type: 'attestation',\n  id: '06b3813380d06f74',\n  observation_id: 'c0b621ca5eeac343',\n  attestor: 'jane',\n  trust: 0.9,\n  justification: 'confirmed at R10 review',\n  time: 1790902958090,\n  is_irrevocable: true\n}\n  gpt: {\n  type: 'attestation',\n  id: '95c59440319034be',\n  observation_id: 'c0b621ca5eeac343',\n  attestor: 'gpt',\n  trust: 0.7,\n  justification: 'reproduced',\n  time: 1790902958091,\n  is_irrevocable: true\n}\n  qwen: {\n  type: 'attestation',\n  id: '63208b7f35df4869',\n  observation_id: 'c0b621ca5eeac343',\n  attestor: 'qwen',\n  trust: 0.8,\n  justification: 'canary matches',\n  time: 1790902958091,\n  is_irrevocable: true\n}\n\naggregate trust: 0.796\nirrevocable: true",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-bundle",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-bundle@0.1.0 test\n> node test.js\n\nOK: bundle",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-contest",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-contest@0.1.0 test\n> node test.js\n\nOK: contest",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-delegate",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-delegate@0.1.0 test\n> node test.js\n\nOK: delegate",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-merger",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-merger@0.1.0 test\n> node test.js\n\nOK: merge",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-revoke",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-revoke@0.1.0 test\n> node test.js\n\nOK: revoke",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-traverse",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ],
+      [
+        "@superinstance/substrate-witness-log",
+        "file:../substrate-witness-log",
+        "github:SuperInstance/substrate-witness-log"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-traverse@0.1.0 test\n> node test.js\n\nOK: traverse",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-withdraw",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-withdraw@0.1.0 test\n> node test.js\n\nOK: withdraw",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-witness-log",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-witness-log@0.1.0 test\n> node test.js\n\nOK: WitnessLog",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-canary-pin",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-canary-pin@0.1.0 test\n> node test.js\n\nOK: CANARY_INPUT, CANARY_HASH, fnv1a64, fnv1a64Hex, verifyCanary",
+    "stderr": ""
+  },
+  {
+    "repo": "substrate-membership",
+    "cloned": true,
+    "failclosed_applied": true,
+    "exit_fix_present": true,
+    "rewrites": [
+      [
+        "@superinstance/observation-primitive",
+        "file:../observation-primitive",
+        "github:SuperInstance/observation-primitive"
+      ]
+    ],
+    "install": 0,
+    "test": 0,
+    "stdout": "> @superinstance/substrate-membership@0.1.0 test\n> node test.js\n\nOK: membershipIn",
+    "stderr": ""
+  }
+]

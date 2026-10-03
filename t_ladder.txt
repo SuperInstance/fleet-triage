@@ -1,0 +1,12 @@
+pie-minimax
+connect4
+ga4444
+ladder
+murmuration
+jev-harness
+quilt
+quilt-canon-claim
+quilt-canon-feed
+quilt-canon-keywords
+quilt-canon-mcp
+quilt-canon-book

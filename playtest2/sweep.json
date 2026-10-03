@@ -1,0 +1,1955 @@
+[
+ {
+  "repo": "FastGen4quilt",
+  "verdict": "ALREADY-RED",
+  "ntests": 22,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "LLMs-from-scratch-early-version",
+  "verdict": "ALREADY-RED",
+  "ntests": 43,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "QuiltCanary.jl",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "QuiltEgg.jl",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "Tripartite1",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 11,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "agent-writings-archive",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "attention-daemon-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "axum",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 126,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "capitaine-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cell-doctrine",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "circuit-breaker-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-abyss",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-audit",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-coliseum",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-com-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-dry-dock",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-fleetmind",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-garden",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-horizon",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-meta-lab",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-nas",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-observatory",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-platonic-dial",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-workshop",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cocapn-worldmodel",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "connect4",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "connection-pool-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "constraint-theory-papers",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "context-lattice",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "context-limits",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "context-recycler",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "context-serializer",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "coq-unified",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-adaptive-rate",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-bottleneck",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-bytecode-optimizer",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-context-window",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-fleet-health",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-fleet-topology",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-pipeline",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-semantic-router",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "cuda-workflow",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "deckboss-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "deckboss-net-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "deepseek-harness-quilt",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 119,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "diffie-hellman-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "digital-signature-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "dmlog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "dojo-alchemist",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "dojo-builder",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 3,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "dojo-scout",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "dojo-scribe",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "dynamical-systems",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ecc-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "elephant-sim-worker",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ergodic-theory",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "field-evolution-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fishinglog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-automation-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-embed",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-ensemble",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-jepa-midi",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-memory",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-blend",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-collab",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-cycle",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-decode",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-delay",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-drone",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-encode",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-feed",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-filter",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-genetic",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-gliss",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-grammar",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-live",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-mapper",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-pattern",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-pedagogy",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-phase",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-quantum",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-resonance",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-reverb",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-script",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-swarm",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-midi-tremolo",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-orchestra",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 1,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "fleet-static-host",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 3,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "fleet-weather-agent",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "flux-consciousness-engine-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "flux-constraint-py-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "flux-engine-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "flux-reasoner",
+  "verdict": "ALREADY-RED",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "flux-reasoner-engine",
+  "verdict": "ALREADY-RED",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fm-papers",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "forgemaster-docs",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "forgemaster-fleet-comms",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "forgemaster-memory-archive",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "fractal-gen-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ga4444",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "gatekeeper-as-flux-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "git-agent-minimum",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "gpu_bpe4quilt",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [
+   "README lead module `train_on_CPU.py` never imported"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "grand-pattern-chapel",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "grand-pattern-fortran",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "grand-pattern-mojo",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "grand-pattern-mono-go",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "grand-pattern-mono-ts",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "greenhorn-runtime-early-version",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "ideation-games",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "jev-harness",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "keel-early-version",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 3,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "knowledge-graph",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ladder",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-agent-unify",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-animation",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-bridge",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-bridge-tutor",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-camera",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-category-theory",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-challenge",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-collections",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-compilers",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-construct-integration",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 1,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "lau-control-theory",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 1,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "lau-dynamical-systems",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-ergodic-theory",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-error-correcting-codes",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-logic-foundations",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-plato-tutor",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-renormalization",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lau-room-native",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lie-algebra",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "lighthouse-cli-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "live-canon-npm",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "live-canon-pypi",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "llama3-from-scratch-in-quilt",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "logic-foundations",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "luciddreamer-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "madlibs-gan",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "madlibs-gan-npm",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "makerlog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "markov-chain-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "memory-crystal-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "micrograd-quilt",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 2,
+  "vac": [],
+  "sus": 6
+ },
+ {
+  "repo": "mist-game",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "mist-lab",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "mist-quilt",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "murmuration",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "noise-gen-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "opcode-canon",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "operational-fiction",
+  "verdict": "ALREADY-RED",
+  "ntests": 4,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "peanut-gallery",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "peanut-gallery-npm",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "penrose-memory-palace-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "personallog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "pie-minimax",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-alignments-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-calibration-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-hologram-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-stable-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-tile-cache",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-tile-encoder",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "plato-tile-priority",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "playerlog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "polychora",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "polychora-temporal",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "pong-quilt",
+  "verdict": "ALREADY-RED",
+  "ntests": 62,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quf-vhdl",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt",
+  "verdict": "ALREADY-RED",
+  "ntests": 11,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-agent",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-ai",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-apps",
+  "verdict": "ALREADY-RED",
+  "ntests": 6,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-arcade",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-arch",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-attention",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 3,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-bandit",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 3,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "quilt-base",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-bus",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-c",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canary",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canary-port",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-book",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-cli",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 5,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-explorer",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-feed",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-game",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [
+   "README lead module `score.js` never imported"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-keywords",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-mcp",
+  "verdict": "ALREADY-RED",
+  "ntests": 3,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-canon-witness",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-cell",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-cellular-arch",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-chapel",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-cobol",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-conformance",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-core-os",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-cortex",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-crabbox",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 76,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-egg-rust",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-esp32",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-jev-toolkit",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-jev-toolkit-push",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-julia",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-llvm",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-quantumaudio-demo",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-quantumaudio-demo-push",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "quilt-rust",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 12,
+  "vac": [],
+  "sus": 5
+ },
+ {
+  "repo": "quilt-subleq",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "rate-limiter-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "rc-20260824-01",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "rc-20260824-06",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "reallog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-agent-writings-archive",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-elephant-sim-worker",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-fleet-embed",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-fleet-ensemble",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-fleet-jepa-midi",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-fleet-memory",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-ideation-games",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-mist-lab",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-mist-quilt",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-operational-fiction",
+  "verdict": "ALREADY-RED",
+  "ntests": 4,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-scrap-quilt",
+  "verdict": "ALREADY-RED",
+  "ntests": 2,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "recovered-copy-20260824-scrap-voice",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-scrapcraft-world",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-study-smartcomponent",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-superinstance-ai",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-tap-gamenight",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "recovered-copy-20260824-wesley",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "renormalization",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "renormalization-learning-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "scrap-quilt",
+  "verdict": "ALREADY-RED",
+  "ntests": 3,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "scrap-voice",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 2,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "scrapcraft-world",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "sheaf-agents-c",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "sheaf-agents-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "si-knowledge-base",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "si-papers-new",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "spectral-graph-agent-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "study-smartcomponent",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "studylog-ai-pages",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-attest",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-bundle",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-canary-pin",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-contest",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-delegate",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-membership",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-merger",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-revoke",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-traverse",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-withdraw",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "substrate-witness-log",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "superinstance-ai",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "synesis",
+  "verdict": "COULD-NOT-RUN",
+  "ntests": 4,
+  "vac": [
+   "no product reference"
+  ],
+  "sus": 0
+ },
+ {
+  "repo": "tap-gamenight",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "template-fleet-agent",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "terminal-entropy-harness",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "terminal-forecast-harness",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "terminal-hodge-harness",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "terminal-sheaf-harness",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "terminal-spectral-harness",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ternary-criticality",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ternary-forgiveness",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ternary-renormalize",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "ternary-rom",
+  "verdict": "ALREADY-RED",
+  "ntests": 6,
+  "vac": [],
+  "sus": 1
+ },
+ {
+  "repo": "the-plenum-early-version",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "three-forms-of-evidence",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "three-forms-of-forgetting",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "tile-memory-early-version",
+  "verdict": "ALREADY-RED",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "wesley",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "west-african-math-rs",
+  "verdict": "NO-SUITE",
+  "ntests": 0,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "witness-is-prediction",
+  "verdict": "EXECUTES-PRODUCT",
+  "ntests": 1,
+  "vac": [],
+  "sus": 0
+ },
+ {
+  "repo": "zeroclaw-agent-early-version",
+  "verdict": "ALREADY-RED",
+  "ntests": 40,
+  "vac": [],
+  "sus": 5
+ },
+ {
+  "repo": "zeroclaw-dissertation",
+  "verdict": "ALREADY-RED",
+  "ntests": 2,
+  "vac": [
+   "README lead module `research/prototype/switch-test/run_switch.py` never imported"
+  ],
+  "sus": 0
+ }
+]

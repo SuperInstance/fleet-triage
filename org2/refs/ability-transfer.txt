@@ -1,0 +1,5 @@
+refs/heads/fix/ci-remove-failure-masking	e623755849a0d8d2811070f7e599d9a07166766d
+refs/heads/fuel-governance	2b821b746b2396395194881c58dd0a2e983c5ce9
+refs/heads/main	435064b29c2cc2189afc3004cf2ffdaf04437369
+refs/heads/superz/isa-v3-draft	6bd07f764a54344d038d486c86553785430df578
+refs/heads/superz/transfer-enhance	7e54406a09cd00b5344e907bc47bac5cf6747f4b

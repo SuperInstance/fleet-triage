@@ -1,0 +1,14 @@
+refs/heads/canon-md	43311e6fc8a788563e14366865594c6f4bb6bda0
+refs/heads/canon-stub	c82c377c1810ce09137bbb2d38ab55daa266f26d
+refs/heads/dei-champion-gossip-note	add6ae8369dffc52a5206ed9adab6999edf2848e
+refs/heads/docs/deploy-status	f1e7904665c34b02b2ce6e7a02328b26e10e2cc6
+refs/heads/lane-h-deploy-fixes	c854d0315b8ab7ebcc44476f75983c1efbe4e154
+refs/heads/lane-j-landmine-fixes	d14217acea210c5c2c5440e797aa7878ef760471
+refs/heads/lane-l-commune-deep	42f878e757b4cb5040761532a2c9b2a6da4b4d2b
+refs/heads/lane-redqueen-niche-notes	73d9c4f14d117c033e8a3fae315db636dde57a90
+refs/heads/master	8a66ac52e86b1d13dc1cb0132533d3e17f9078d2
+refs/heads/negative-space-gan	d9e6c634d23032b0bc57228b1b0bb8c400ba7f8e
+refs/heads/red-queen-design	3cc87539be16319e27af7dc5ee35073c2d417233
+refs/heads/rescue/readme-vision-audit-20260921	f1e7904665c34b02b2ce6e7a02328b26e10e2cc6
+refs/heads/sycophancy-stress-harness	35428b6c2f8fa62ead4e2d95fc84deaa3abf2b93
+refs/heads/tap-rewire-glm	fe31b9af8b1dc40c7614f174582c30a9e89f6696

@@ -1,0 +1,1 @@
+{"energy-budget-master/Cargo.toml": "[package]\nname = \"energy-budget\"\nversion = \"0.1.0\"\nrepository = \"https://github.com/SuperInstance/energy-budget\"\nedition = \"2021\"\ndescription = \"Energy budget calculation and tracking utilities\"\nlicense = \"MIT OR Apache-2.0\"\n\nkeywords = [\"energy-budget\"]\n\n[dependencies]\n"}

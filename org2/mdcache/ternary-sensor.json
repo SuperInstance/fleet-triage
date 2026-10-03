@@ -1,0 +1,1 @@
+{"ternary-sensor-main/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-sensor\"\nname = \"ternary-sensor\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Sensor data processing with ternary classification\"\n"}

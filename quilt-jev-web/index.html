@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>quilt-jev / web</title>
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#17181c; --line:#2a2c33; --ink:#e6e8ec; --dim:#8a8f98;
+    --alarm:#e83e2c; --amber:#ffd640; --good:#5fb87a;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.5 var(--mono)}
+  header{border-bottom:1px solid var(--line);padding:14px 18px;display:flex;gap:22px;align-items:baseline;flex-wrap:wrap}
+  h1{font-size:14px;letter-spacing:.14em;margin:0;font-weight:600}
+  .k{color:var(--dim);font-size:11px;letter-spacing:.1em}
+  .v{color:var(--ink)}
+  .sha{color:var(--amber)}
+  main{display:grid;grid-template-columns:1fr 380px;gap:0;align-items:start}
+  @media(max-width:900px){main{grid-template-columns:1fr}}
+  #stage{padding:18px;border-right:1px solid var(--line);min-height:70vh}
+  canvas{image-rendering:pixelated;max-width:100%;height:auto;display:block;background:#0e0f12}
+  aside{padding:18px;max-height:90vh;overflow:auto}
+  .banner{padding:10px 12px;border-radius:4px;margin-bottom:16px;font-size:12px;line-height:1.5}
+  .banner.nokey{background:#2a1416;border:1px solid var(--alarm);color:#ffd9d4}
+  .banner.key{background:#12241a;border:1px solid var(--good);color:#cdf0da}
+  fieldset{border:1px solid var(--line);border-radius:4px;margin:0 0 14px;padding:10px 12px}
+  legend{color:var(--dim);font-size:10px;letter-spacing:.16em;padding:0 6px}
+  .proj{display:flex;flex-direction:column;gap:5px}
+  .proj label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;padding:5px;border-radius:3px;border:1px solid transparent}
+  .proj label:hover{background:#1d1f24}
+  .proj label.sel{border-color:var(--amber);background:#221f14}
+  .proj b{font-size:11px;letter-spacing:.06em}
+  .proj i{color:var(--dim);font-style:normal;font-size:10.5px;display:block;line-height:1.45}
+  input[type=range]{width:100%;accent-color:var(--amber)}
+  .row{display:flex;justify-content:space-between;font-size:11px;margin:6px 0 2px}
+  table{width:100%;border-collapse:collapse;font-size:11.5px}
+  td{padding:2px 0;vertical-align:top}
+  td.n{text-align:right;color:var(--dim);width:34px}
+  .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:baseline}
+  .census td.n{color:var(--ink)}
+  .census .al td.n{color:var(--alarm);font-weight:700}
+  .census .am td.n{color:var(--amber);font-weight:700}
+  .census .vd td.n{color:var(--dim)}
+  #readout{border-top:1px solid var(--line);margin-top:14px;padding-top:12px;font-size:11.5px;min-height:150px}
+  #readout .h{color:var(--amber);letter-spacing:.1em;font-size:11px;margin-bottom:6px}
+  .bars div{display:flex;align-items:center;gap:6px;margin:1px 0}
+  .bar{height:9px;border-radius:1px}
+  .num{color:var(--dim);width:46px;text-align:right;font-size:10.5px}
+  .log{color:var(--dim);font-size:10.5px;white-space:pre-wrap;max-height:150px;overflow:auto}
+  .chip{display:inline-block;padding:1px 6px;border-radius:3px;background:#1e2026;color:var(--dim);margin:2px 4px 0 0;font-size:10.5px;cursor:pointer}
+  .chip:hover{color:var(--ink);background:#282b33}
+  .chip.al{color:#ffd9d4;background:#2a1416}
+  button{font:inherit;background:#1e2026;color:var(--ink);border:1px solid var(--line);border-radius:3px;padding:5px 10px;cursor:pointer}
+  button:hover{border-color:var(--dim)}
+  .prow{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>QUILT·JEV / WEB</h1>
+  <span><span class="k">TENSOR </span><span class="v sha" id="h-sha">—</span></span>
+  <span><span class="k">GRID </span><span class="v" id="h-grid">—</span></span>
+  <span><span class="k">CELLS </span><span class="v" id="h-cells">—</span></span>
+  <span><span class="k">JUDGMENTS </span><span class="v" id="h-judg">—</span></span>
+  <span><span class="k">PROJECTION </span><span class="v sha" id="h-proj">—</span></span>
+</header>
+<main>
+  <div id="stage"><canvas id="cv"></canvas></div>
+  <aside>
+    <div class="banner nokey" id="banner">…</div>
+
+    <fieldset><legend>PROJECTION — one tensor, four labelled cuts</legend>
+      <div class="proj" id="proj"></div>
+    </fieldset>
+
+    <fieldset><legend>DIALS</legend>
+      <div class="row"><span>cell</span><span id="v-cell">22px</span></div>
+      <input type="range" id="d-cell" min="8" max="90" value="22">
+      <div class="row"><span>grain</span><span id="v-grain">0.85</span></div>
+      <input type="range" id="d-grain" min="0" max="2" step="0.05" value="0.85">
+      <div class="row"><span>grid size (a fold, not a new image)</span><span id="v-fold">12×8</span></div>
+      <div class="prow" id="folds"></div>
+      <div class="prow" style="margin-top:10px">
+        <button id="b-stitch">stitch: on</button>
+        <button id="b-void">void: shown</button>
+        <button id="b-png">save png</button>
+        <button id="b-json">save tensor</button>
+      </div>
+    </fieldset>
+
+    <fieldset><legend>THE CENSUS — every cell is in exactly one row</legend>
+      <table class="census" id="census"></table>
+    </fieldset>
+
+    <fieldset><legend>LABELS — the grid's vocabulary</legend>
+      <table id="legend"></table>
+    </fieldset>
+
+    <fieldset><legend>CONTESTED — decided AND contested, by coordinate</legend>
+      <div id="chips"></div>
+    </fieldset>
+
+    <div id="readout">hover a patch.</div>
+    <fieldset><legend>TRANSPORT</legend><div class="log" id="log"></div></fieldset>
+  </aside>
+</main>
+<script type="module" src="./src/app.mjs"></script>
+</body>
+</html>

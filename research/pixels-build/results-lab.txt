@@ -1,0 +1,120 @@
+================================================================
+ PIXELS-BUILD LAB — the seed harness, executed
+ rows 24 x cols 40, 960 cells, 4 actions, depth 128
+
+E1  POOL SIZING
+    cells per frame            960   (rows 24 x cols 40)
+    bytes per frame            5760  (mask 960 + glyph 3840 + tone 960)
+    ring depth                 128   SYZ_HISTORY_DEPTH
+    seed pool                  65536  SYZ_BUFFER_SIZE
+    frames the pool can hold   11
+    bytes actually required    737280
+    undersizing factor         11.25x
+
+E2  ALIASING, read back through the seed harness's OWN pointer arithmetic
+    frames pushed                      128
+    ring count after push              128
+    slots whose bytes are their own     11 / 128
+    slots holding another frame's data  117 / 128   (91.4%)
+    slots showing the newest frame      12 / 128
+    -> the 128-slot replay is 12 distinct frames repeated to fill 128.
+       116 frames of the real history are never looked at.
+
+E3  SELF-LOSS — replay the live engine against its OWN recorded targets
+    A harness that can see its own past reproduces those targets exactly.
+    Any nonzero self-loss is measurement error, before a candidate exists.
+
+    seed pool, no state restore         21100
+    seed pool, state restored            3600
+    sized pool, no state restore          200
+    sized pool, state restored              0   <- oracle
+    target                                  0   <- what a sound harness must return
+
+E4  DECISION DIVERGENCE — 600 VLM proposals, 2x2 factorial
+    targets are the EXPERT's actions; the production engine is the live
+    baseline.  oracle = sized pool + state restore.  "dangerous" = the arm
+    promotes a proposal the oracle rejects, i.e. a WORSE script goes live.
+
+    arm                             disagree    dangerous   accept%
+    seed pool (aliased)             107/600       30/600       9.7%
+                                 state NOT restored
+
+    seed pool (aliased)              91/600       32/600      13.0%
+                                 state restored
+
+    sized pool                      126/600       63/600      17.5%
+                                 state NOT restored
+
+    sized pool                        0/600        0/600      17.5%
+                                 state restored
+
+    fidelity: lab_replay vs the VERBATIM seed header — 0 mismatches / 600
+
+E5  THE SEED SUITE'S OWN SANDBOX STEP, executed
+    frames pushed                      1
+    harness->count after push          1
+    seed guard:  if (count < 16) return 0;
+    differential core executed         NO
+    proposed_accepted                  0
+    enters the golden receipt as       ^ 0  (XOR with a constant zero)
+    pool bytes covered by the hash     0 of 65536
+    index slots covered by the hash    2 of 128
+
+E6  THE GOLDEN RECEIPT IS ARCHITECTURE-DEPENDENT BY CONSTRUCTION
+    The suite asserts one constant must hold "on every machine, every
+    optimisation level".  It hashes &sandbox.frames[0], and that struct
+    stores size_t offsets.  The seed set's own memory map calls that field
+    "4B/8B depending on WASM architecture".
+
+    wasm32 ABI    sizeof = 24 bytes   hash 0x19931624
+    host 64-bit   sizeof = 40 bytes   hash 0x403CA264
+    (the 64-bit layout is the real struct; the 32-bit layout is the wasm32
+     ABI, reconstructed here — no wasm toolchain in this sandbox.)
+    equal: NO
+
+E7  THE INDEX — chained, anchored, refuses unbound comments
+    bound entry appended           yes
+    UNBOUND entry appended         REFUSED   (refused counter = 1)
+    chain verifies                 OK   0xBC1BC950 over 1 entries
+    tamper with entry 0            DETECTED
+    strip its line binding         DETECTED
+    lose the head anchor           DETECTED
+    (restored)                     OK
+
+E8  THE CHURN CLAIM, three ways
+    the seed asserts that `loss_b < loss_a` "prevents macro weights from
+    alternating rapidly when noise boundaries are tight".
+
+    the known-good fix offered 20x        promotions = 1   (converges)
+    two candidates alternating 20x       promotions = 1   (no flip-flop)
+    winning margin over 600 proposals (loss is 100 per wrong bit):
+      <=100 (1 bit)    2   <=200    0   <=400    7   <=800    4   <=1600    8   >1600   73
+      accepted 94 of 600; 2 of those rest on a SINGLE bit.
+    -> the guard is monotone and it does stop oscillation: both claims hold.
+       What it does not have is a floor.  A proposal that wins by one bit
+       out of 512 is promoted, and `loss_b < loss_a` cannot tell that from a
+       proposal that wins by a thousand.  A margin is the only thing that
+       makes the difference visible, and the seed does not have one.
+
+E9  PRIMARY AFFORDANCE — 512 live frames, a proposal every 16
+    one in three proposals is the known-good fix (unswap bands 2 and 3)
+
+    stream                       promotions    dangerous      index      chain
+    A: driven by the seed harness          3            2         32         OK
+    B: driven by the sized pool           2            0         32         OK
+    proposals offered                    32
+
+    A promoted 3 scripts, of which 2 the oracle had already rejected.
+    Both indexes are chained, anchored, and verify.  Sample entry:
+      script=seed-v1  v1   line=7 field=5  loss 0 -> 100  KEPT
+      comment: "PROMOTED band 1 action 1 better on replay"
+
+E10  THE FIXED HEADER, RUN  (not just designed)
+    pool bytes            746496   (derived, not typed: 128 frames x 5832 stride)
+    slots with live bytes 128 / 128   (seed harness: 11 / 128)
+    self-loss             0   (a sound harness returns exactly 0)
+    null change promoted? no   (a candidate identical to live must never win)
+    the known-good fix on a LIVE (already correct) engine, margin 0   -> 0
+    the same, with a 100-point margin                                -> 0
+    the same, with a 5000-point margin                               -> 0
+

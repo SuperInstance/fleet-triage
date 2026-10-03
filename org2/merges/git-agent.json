@@ -1,0 +1,1 @@
+{"repo": "git-agent", "branch": "main", "head": "aed3fd94403f", "commits_first_parent": 19, "merges": {"other_merge": 2}, "n_merges": 2, "rows": [{"sha": "aed3fd94403f", "subj": "docs: add LEGIBILITY.md legibility pass (#5)", "class": "other_merge"}, {"sha": "71e0ea678182", "subj": "docs: update README with fleet context", "class": "other_merge"}]}

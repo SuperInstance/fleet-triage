@@ -1,0 +1,1 @@
+{"repo": "flux-testkit", "branch": "main", "head": "fbf0f8673f20", "commits_first_parent": 7, "merges": {"pr_merge": 2}, "n_merges": 2, "rows": [{"sha": "fbf0f8673f20", "subj": "Merge pull request #1 from SuperInstance/superz/add-ci", "class": "pr_merge"}, {"sha": "a398c020cbfa", "subj": "Merge pull request #3 from SuperInstance/superz/T-009", "class": "pr_merge"}]}

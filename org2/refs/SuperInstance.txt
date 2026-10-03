@@ -1,0 +1,11 @@
+refs/heads/archive/si-main-20260820	ffa7b1a508b8bdcf64c6af9a64afb5455920009b
+refs/heads/archive/si-readme-20260820	615f46a7764ce07fbdd2ace7dc3534bac8b73056
+refs/heads/catalog-v2	092623838c83cff8a64b2105678e5946543a13dd
+refs/heads/claude/readme-production-readiness-utc4eh	f7bc02d56cfeb37701dd77c00d6a5d16844e8d74
+refs/heads/fleet-canon-v1	eca11b1eec338ef639bcf4d19b1f3934e628f026
+refs/heads/kennel-vol2	b1f5940cabe044b9465f5c0a223bfdd3d23d91d3
+refs/heads/main	b85f02e6e8770621676a9035a930ef9c0473c288
+refs/heads/master	387faf125c67b66012656932968d77c71a6e6efe
+refs/heads/production-pass-2026-08-24	47a1859015523cf3bb29949ef9ac87617d3f1d99
+refs/heads/readme-v2	f95b7fc0e3c93a87217bb20ee17e52ef7f0d4971
+refs/heads/z-port4-brand-showcase	fd2b9960a188b54a94aabdd1e42e010b35ac6828

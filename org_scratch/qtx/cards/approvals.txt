@@ -1,0 +1,23 @@
+[1mapprovals[0m — one sheet, three tenants, policies that know who's asking
+
+┌─ policy: $2,400 spend, same sheet ──────────────────────────┐
+│ acme (premium) ceiling $5000 — auto: true                 │
+│ globex (standard) ceiling $500 — auto: false              │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m premium tier self-approves $2,400[2m — ceiling $5000[0m
+  [32m✓[0m standard tier routes $2,400 to a human[2m — ceiling $500[0m
+  [32m✓[0m acme files $2,400 → auto-approved[2m — ceiling $5000[0m
+  [32m✓[0m globex files $2,400 → human review[2m — same sheet, same request, different policy[0m
+  [32m✓[0m globex small spend still self-approves[2m — ceiling $500[0m
+  [32m✓[0m cross-tenant approval REFUSED[2m — cross-tenant approval: initech cannot approve globex requests[0m
+  [32m✓[0m own-tenant approval works[2m — by globex[0m
+  [32m✓[0m approved request left the queue
+┌─ decided ledger ────────────────────────────────────────────┐
+│ A-1 acme $2400 → auto-approved                            │
+│ G-2 globex $120 → auto-approved                           │
+│ G-1 globex $2400 → approved by globex                     │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m witness chain sealed[2m — 5 flow events, head fda5dcf54d3c…[0m
+
+[1m  ══ approvals: [32m9/9 checks green — ready-to-go[0m ══[0m
+

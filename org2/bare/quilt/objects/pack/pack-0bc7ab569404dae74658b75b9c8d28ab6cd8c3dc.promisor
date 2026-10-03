@@ -1,0 +1,15 @@
+4f2f30cc41f323c9504b2ae33c19695f18213c2a HEAD
+a3ab14b44011efaee6c70fb36896c0532e8d151c refs/heads/canon-edge-sweep-0922
+c23e51b2ce431d4d1d6808f81ad7e1906188d9d4 refs/heads/canon-md
+31180f4fafe3a35960235c63918f39b5b4a6e2e0 refs/heads/canon-stub
+a5ff3052a61e410da854212143e14665011a8d47 refs/heads/claude/fix-ci-typescript-peer
+cd3e550c591e7c9df15be9b00136de6f0d4f0436 refs/heads/claude/fix-worker-unused-import
+27514545f572a2a4647a4c0fef10b33fb4050cd3 refs/heads/claude/gesture-arclength-crossnode
+21d90bd40af3f43be6ade9367a6f89338cb67324 refs/heads/claude/gesture-third-order
+f3fbcbd8a42c73933f2f308de6e86b83bb06c569 refs/heads/fix/quilt-33-typescript-downgrade
+5bec4da37d78acbd46dfcfb9b48eb9d719950c34 refs/heads/hooks-53/key-scan
+4f2f30cc41f323c9504b2ae33c19695f18213c2a refs/heads/main
+8a8d1a7db64463d41c1d012b1b5f1ddddce3b687 refs/heads/mavis/apache-2-full-text
+8fb4225da3fa51c05e9555dc6b660d03361fe1d1 refs/heads/playtest-classes-10-11
+6df30bc45ba9e449ba57d3fb1beb81c257b78b49 refs/heads/quilt-jupyter-conception
+0c5acd6908b928efa5aaf92474b8a124c88c801e refs/tags/v0.2.0

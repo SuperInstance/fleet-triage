@@ -1,0 +1,4 @@
+refs/heads/demo-receipts	a46d515f6fc95e073e2ab9a2d63e108f8e3bea9a
+refs/heads/fixture-tagseq-frac-clock	8c1a3dec92794db51b7e685f4edc0cbfe9e6d9e0
+refs/heads/main	44c8fd4be76a45735a82058a5e189feb778c8c66
+refs/heads/quilt-receipts	090ba2a100553afe3d532205b8304d95be3b64df

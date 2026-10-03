@@ -1,0 +1,145 @@
+{
+  "base": "https://api.typesafe.ai/v1/systemone",
+  "ran_at": "2026-09-25T03:15:30.277Z",
+  "scenarios": [
+    {
+      "id": "st02",
+      "truth": "drifting",
+      "replayed": {
+        "firstShapeFlag": 10,
+        "firstNaiveFlag": 18
+      },
+      "truth_verdict": "shape",
+      "receipts": [
+        {
+          "tick": 10,
+          "detector": "shape",
+          "event": "regime left stable",
+          "seq": 0,
+          "prev_hash": "0000000000000000",
+          "row_hash": "913eaf9c06ff03b0"
+        },
+        {
+          "tick": 18,
+          "detector": "threshold",
+          "event": "sample < 0.8",
+          "seq": 1,
+          "prev_hash": "913eaf9c06ff03b0",
+          "row_hash": "36d0905d99c1ed52"
+        }
+      ]
+    },
+    {
+      "id": "st04",
+      "truth": "stuck",
+      "replayed": {
+        "firstShapeFlag": 10,
+        "firstNaiveFlag": null
+      },
+      "truth_verdict": "shape",
+      "receipts": [
+        {
+          "tick": 10,
+          "detector": "shape",
+          "event": "regime left stable",
+          "seq": 0,
+          "prev_hash": "0000000000000000",
+          "row_hash": "913eaf9c06ff03b0"
+        }
+      ]
+    },
+    {
+      "id": "st08",
+      "truth": "drifting",
+      "replayed": {
+        "firstShapeFlag": 10,
+        "firstNaiveFlag": 11
+      },
+      "truth_verdict": "shape",
+      "receipts": [
+        {
+          "tick": 10,
+          "detector": "shape",
+          "event": "regime left stable",
+          "seq": 0,
+          "prev_hash": "0000000000000000",
+          "row_hash": "913eaf9c06ff03b0"
+        },
+        {
+          "tick": 11,
+          "detector": "threshold",
+          "event": "sample < 0.8",
+          "seq": 1,
+          "prev_hash": "913eaf9c06ff03b0",
+          "row_hash": "36b18c5d99a735f7"
+        }
+      ]
+    },
+    {
+      "id": "st01",
+      "truth": "stable",
+      "replayed": {
+        "firstShapeFlag": null,
+        "firstNaiveFlag": null
+      },
+      "truth_verdict": "neither",
+      "receipts": []
+    }
+  ],
+  "results": [
+    {
+      "id": "st02",
+      "truth": "shape",
+      "order": "bare→receipts",
+      "answers": {
+        "bare": "threshold",
+        "receipts": "shape"
+      },
+      "bareTruth": false,
+      "receiptsTruth": true
+    },
+    {
+      "id": "st04",
+      "truth": "shape",
+      "order": "receipts→bare",
+      "answers": {
+        "receipts": "shape",
+        "bare": "neither"
+      },
+      "bareTruth": false,
+      "receiptsTruth": true
+    },
+    {
+      "id": "st08",
+      "truth": "shape",
+      "order": "bare→receipts",
+      "answers": {
+        "bare": "threshold",
+        "receipts": "shape"
+      },
+      "bareTruth": false,
+      "receiptsTruth": true
+    },
+    {
+      "id": "st01",
+      "truth": "neither",
+      "order": "receipts→bare",
+      "answers": {
+        "receipts": "neither",
+        "bare": "neither"
+      },
+      "bareTruth": true,
+      "receiptsTruth": true
+    }
+  ],
+  "analysis": {
+    "bareTruth": 1,
+    "receiptsTruth": 4,
+    "h2shift": 3,
+    "h2backslide": 0,
+    "refused": 0,
+    "n": 4
+  },
+  "witness_head": "5da712bf36114fe0",
+  "witness_len": 8
+}

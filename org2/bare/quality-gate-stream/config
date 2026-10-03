@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 1
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/SuperInstance/quality-gate-stream.git
+	promisor = true
+	partialclonefilter = tree:0

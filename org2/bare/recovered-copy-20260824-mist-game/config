@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 1
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/SuperInstance/recovered-copy-20260824-mist-game.git
+	promisor = true
+	partialclonefilter = tree:0

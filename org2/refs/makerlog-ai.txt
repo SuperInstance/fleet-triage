@@ -1,0 +1,2 @@
+refs/heads/claude/refine-product-vision-Ajv6z	4038502b959fdcf5c3034a249e6765db4ce07104
+refs/heads/main	110a0ce1026b98c32a75c5a7c4e24153608e5c44

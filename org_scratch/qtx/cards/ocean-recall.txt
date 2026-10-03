@@ -1,0 +1,21 @@
+[1mocean-recall[0m — remember / recall / forget, with an auditable memory
+
+┌─ memory ────────────────────────────────────────────────────┐
+│ size 3 notes                                              │
+│ geometry local deterministic embed (64-d), one geometry   │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m exact-substance recall hits[2m — sim=0.4523[0m
+  [32m✓[0m paraphrase recall hits[2m — sim=0.3873[0m
+  [32m✓[0m unrelated query honestly misses[2m — sim=0 < threshold — absence is information[0m
+  [32m✓[0m forget removes the note
+  [32m✓[0m double forget refuses honestly[2m — nothing remembered as "arch-001"[0m
+  [32m✓[0m forgotten note is gone from recall[2m — sim=0.1443[0m
+┌─ witness ledger ────────────────────────────────────────────┐
+│ entries 9                                                 │
+│ ops rrrrrrffr                                             │
+│ head ba3ef64df4d2c0a0                                     │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m witness chain sealed[2m — 9 memory operations, head ba3ef64df4d2…[0m
+
+[1m  ══ ocean-recall: [32m7/7 checks green — ready-to-go[0m ══[0m
+

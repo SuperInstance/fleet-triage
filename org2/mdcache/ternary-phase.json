@@ -1,0 +1,1 @@
+{"ternary-phase-master/Cargo.toml": "[package]\ndescription = \"ternary-phase - SuperInstance ecosystem crate\"\nrepository = \"https://github.com/SuperInstance/ternary-phase\"\nname = \"ternary-phase\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\n\n[lib]\nname = \"ternary_phase\"\npath = \"src/lib.rs\"\n"}

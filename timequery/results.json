@@ -1,0 +1,282 @@
+{
+ "deciding": {
+  "T1_still_empty": true,
+  "T2_moved_nonempty": true,
+  "T3_stale_declined": true,
+  "T1_n": 0,
+  "T2_n": 15,
+  "all_green": true
+ },
+ "aliasing": {
+  "per_hostile": [
+   {
+    "hostile": 0,
+    "excursions_60fps": 1,
+    "excursions_surviving_30fps": 1,
+    "excursions_surviving_3fps": 1,
+    "excursions_entirely_invisible_at_3fps": 0,
+    "excursion_len_frames": [
+     600
+    ],
+    "lost_lengths_frames": [],
+    "kept_lengths_frames": [
+     600
+    ]
+   },
+   {
+    "hostile": 1,
+    "excursions_60fps": 11,
+    "excursions_surviving_30fps": 11,
+    "excursions_surviving_3fps": 8,
+    "excursions_entirely_invisible_at_3fps": 3,
+    "excursion_len_frames": [
+     43,
+     57,
+     54,
+     45,
+     39,
+     5,
+     7,
+     31,
+     4,
+     49,
+     20
+    ],
+    "lost_lengths_frames": [
+     5,
+     7,
+     4
+    ],
+    "kept_lengths_frames": [
+     43,
+     57,
+     54,
+     45,
+     39,
+     31,
+     49,
+     20
+    ]
+   },
+   {
+    "hostile": 2,
+    "excursions_60fps": 4,
+    "excursions_surviving_30fps": 4,
+    "excursions_surviving_3fps": 2,
+    "excursions_entirely_invisible_at_3fps": 2,
+    "excursion_len_frames": [
+     8,
+     8,
+     8,
+     5
+    ],
+    "lost_lengths_frames": [
+     8,
+     8
+    ],
+    "kept_lengths_frames": [
+     8,
+     5
+    ]
+   }
+  ],
+  "total_excursions": 16,
+  "surviving_30fps": 16,
+  "surviving_3fps": 11
+ },
+ "two_questions": {
+  "q1_change": {
+   "observe_accuracy": 1.0,
+   "n": 18,
+   "bounded_reader_sweep": [
+    {
+     "budget_pages": 1,
+     "accuracy": 0.0033333333333333335
+    },
+    {
+     "budget_pages": 5,
+     "accuracy": 0.016666666666666666
+    },
+    {
+     "budget_pages": 10,
+     "accuracy": 0.03333333333333333
+    },
+    {
+     "budget_pages": 30,
+     "accuracy": 0.1
+    },
+    {
+     "budget_pages": 100,
+     "accuracy": 0.3333333333333333
+    },
+    {
+     "budget_pages": 300,
+     "accuracy": 1.0
+    }
+   ]
+  },
+  "q2_absolute": {
+   "observe (valid anchor)": {
+    "n": 27,
+    "correct": 27,
+    "accuracy": 1.0,
+    "confidently_wrong": 0
+   },
+   "diff only (no reference)": {
+    "n": 27,
+    "correct": 0,
+    "accuracy": 0.0,
+    "confidently_wrong": 0
+   },
+   "full_rate (direct read)": {
+    "n": 27,
+    "correct": 27,
+    "accuracy": 1.0,
+    "confidently_wrong": 0
+   },
+   "observe (STALE anchor)": {
+    "n": 5,
+    "declined": 5,
+    "answered_anyway": 0
+   }
+  }
+ },
+ "triggers": {
+  "n": 4,
+  "n_refuted": 2,
+  "n_occluded": 1,
+  "n_upheld": 0,
+  "n_confirmed": 1,
+  "frame_agrees_with_world": "1/2",
+  "n_adv_depth_refuted": "5/9",
+  "adversarial_depth": [
+   [
+    14.0,
+    "CONFIRMED",
+    "",
+    0
+   ],
+   [
+    26.0,
+    "CONFIRMED",
+    "",
+    0
+   ],
+   [
+    40.0,
+    "CONFIRMED",
+    "",
+    0
+   ],
+   [
+    46.0,
+    "CONFIRMED",
+    "",
+    0
+   ],
+   [
+    48.0,
+    "REFUTED",
+    "&",
+    0
+   ],
+   [
+    50.0,
+    "REFUTED",
+    "&",
+    0
+   ],
+   [
+    52.0,
+    "REFUTED",
+    "#",
+    0
+   ],
+   [
+    55.0,
+    "REFUTED",
+    "8",
+    0
+   ],
+   [
+    58.0,
+    "REFUTED",
+    ",",
+    0
+   ]
+  ],
+  "detail": [
+   [
+    "WRONG assumption (moving hostile assumed still)",
+    "REFUTED",
+    {
+     "world_pose_ref": [
+      -1.8212,
+      0.9699,
+      14.0
+     ],
+     "world_pose_now": [
+      -1.6764,
+      1.4157,
+      14.0
+     ],
+     "moved_in_world": true,
+     "footprint_cells_lost": 14,
+     "footprint_cells_gained": 21,
+     "n_cells_changed_total": 41,
+     "frame_evidence_says_moved": true
+    }
+   ],
+   [
+    "CORRECT assumption (static ceiling)",
+    "OCCLUDED",
+    {
+     "world_pose_ref": null,
+     "world_pose_now": null,
+     "moved_in_world": false,
+     "footprint_cells_lost": 11,
+     "footprint_cells_gained": 0,
+     "n_cells_changed_total": 41,
+     "frame_evidence_says_moved": true
+    }
+   ],
+   [
+    "FALSE POSITIVE (asks about a hostile that does not exist)",
+    "REFUTED",
+    {
+     "cells_owned": 0
+    }
+   ],
+   [
+    "SEPARABILITY: can CHARS alone tell hostile from wall?",
+    "CONFIRMED",
+    {
+     "target_glyphs": "@",
+     "other_glyphs": " #&*,.8:x",
+     "glyph_overlap": "",
+     "n_glyph_overlap": 0,
+     "n_target_colours": 1,
+     "n_other_colours": 3,
+     "colour_overlap": 0,
+     "target_colours": "0e",
+     "channel": "char only"
+    }
+   ]
+  ]
+ },
+ "shared_path": {
+  "full_rate": {
+   "captures": 300,
+   "hits": 1205,
+   "raster_s": 1.3444602489471436,
+   "wall_s": 0.5140957832336426
+  },
+  "diff": {
+   "captures": 0,
+   "hits": 151,
+   "raster_s": 0.0,
+   "wall_s": 0.040112972259521484
+  },
+  "amortisation_x": 5.0
+ }
+}

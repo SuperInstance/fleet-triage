@@ -1,0 +1,1 @@
+{"repo": "tripartite-rs-archive", "branch": "main", "head": "bf9cb3d71637", "commits_first_parent": 3, "merges": {"other_merge": 1}, "n_merges": 1, "rows": [{"sha": "bf9cb3d71637", "subj": "deps: thiserror 1 -> 2 + CI harness repair (PR #3)", "class": "other_merge"}]}

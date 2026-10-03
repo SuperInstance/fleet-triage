@@ -1,0 +1,104 @@
+{
+  "base": "https://api.mothquantum.com/api/v1",
+  "ran_at": "2026-09-25T02:13:51.973Z",
+  "outcomes": [
+    {
+      "env": "groceries",
+      "verdict": "refusal-final"
+    },
+    {
+      "env": "dining",
+      "verdict": "override"
+    }
+  ],
+  "envelopes": {
+    "groceries": {
+      "budget": 100,
+      "spent": 100
+    },
+    "dining": {
+      "budget": 100,
+      "spent": 75
+    },
+    "travel": {
+      "budget": 100,
+      "spent": 140
+    }
+  },
+  "states": [
+    "PENDING",
+    "ENTANGLED",
+    "COLLAPSED",
+    "PENDING",
+    "ENTANGLED",
+    "COLLAPSED"
+  ],
+  "appeals": [
+    {
+      "kind": "appeal",
+      "state": "PENDING",
+      "envelope": "groceries",
+      "engine": "coin-toss-v1",
+      "seq": 0,
+      "prev_hash": "0000000000000000",
+      "row_hash": "d771fa75d441207d"
+    },
+    {
+      "kind": "appeal",
+      "state": "ENTANGLED",
+      "envelope": "groceries",
+      "job_id": "c973175e-c302-45f1-b915-5736adb398d7",
+      "seq": 1,
+      "prev_hash": "d771fa75d441207d",
+      "row_hash": "f22357f644305af5"
+    },
+    {
+      "kind": "appeal",
+      "state": "COLLAPSED",
+      "envelope": "groceries",
+      "job_id": "c973175e-c302-45f1-b915-5736adb398d7",
+      "status": "completed",
+      "output": "tails",
+      "backend": "aer",
+      "polls": 1,
+      "digest": "a00fc991313548f9",
+      "seq": 2,
+      "prev_hash": "f22357f644305af5",
+      "row_hash": "58227b1fd220ef5a"
+    },
+    {
+      "kind": "appeal",
+      "state": "PENDING",
+      "envelope": "dining",
+      "engine": "coin-toss-v1",
+      "seq": 3,
+      "prev_hash": "58227b1fd220ef5a",
+      "row_hash": "fc8371cb31eedad8"
+    },
+    {
+      "kind": "appeal",
+      "state": "ENTANGLED",
+      "envelope": "dining",
+      "job_id": "e991aa2c-6dfd-48c1-9eb8-79542c0fceef",
+      "seq": 4,
+      "prev_hash": "fc8371cb31eedad8",
+      "row_hash": "8ac069ddb6dc3534"
+    },
+    {
+      "kind": "appeal",
+      "state": "COLLAPSED",
+      "envelope": "dining",
+      "job_id": "e991aa2c-6dfd-48c1-9eb8-79542c0fceef",
+      "status": "completed",
+      "output": "heads",
+      "backend": "aer",
+      "polls": 1,
+      "digest": "7e6b1051871eb35b",
+      "seq": 5,
+      "prev_hash": "8ac069ddb6dc3534",
+      "row_hash": "0e86301cec4b9e33"
+    }
+  ],
+  "witness_head": "0e86301cec4b9e33",
+  "witness_len": 6
+}

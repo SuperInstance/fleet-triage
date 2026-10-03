@@ -1,0 +1,72 @@
+{
+  "doc": "01-conservation-law-of-intelligence.md",
+  "citing_repo": null,
+  "chars": 181,
+  "index": {
+    "repos": 477,
+    "files": 85990,
+    "frozen_at": "2026-10-01"
+  },
+  "index_is_partial": false,
+  "stages_run": [
+    "numeric"
+  ],
+  "n_findings": 3,
+  "tally": {
+    "RATIO_MISMATCH": 2,
+    "RATIO_OK": 1
+  },
+  "n_unverified": 0,
+  "coverage_note": "All findings in this response were decided against the frozen index.",
+  "known_bugs_url": "/health (the four known bugs ship with the service)",
+  "findings": [
+    {
+      "stage": "numeric",
+      "outcome": "RATIO_MISMATCH",
+      "doc": "01-conservation-law-of-intelligence.md",
+      "line": 1,
+      "raw": "Eisenstein triples give 6.8× higher density than Pythagorean triples (59,841 vs 10,428).",
+      "target": "ratio ~6.8×",
+      "detail": "claim 6.8×; operands 59841/10428 = 5.7385×; relative error 15.61%",
+      "check": "python3 -c \"print(59841/10428)\"",
+      "evidence": "claimed 6.8× vs stated operands (59,841 vs 10,428)",
+      "operand_line": 1,
+      "claimed": 6.8,
+      "actual": 5.73849252013809,
+      "cited_line": null,
+      "cited_line_end": null
+    },
+    {
+      "stage": "numeric",
+      "outcome": "RATIO_MISMATCH",
+      "doc": "01-conservation-law-of-intelligence.md",
+      "line": 2,
+      "raw": "A 15× swarm speedup is reported (3 vs 200).",
+      "target": "ratio ~15×",
+      "detail": "claim 15×; operands 3/200 = 0.0150×; relative error 99.90%",
+      "check": "python3 -c \"print(3/200)\"",
+      "evidence": "claimed 15× vs stated operands (3 vs 200)",
+      "operand_line": 2,
+      "claimed": 15,
+      "actual": 0.015,
+      "cited_line": null,
+      "cited_line_end": null
+    },
+    {
+      "stage": "numeric",
+      "outcome": "RATIO_OK",
+      "doc": "01-conservation-law-of-intelligence.md",
+      "line": 3,
+      "raw": "The ratio is 4/2 and the claim of 2× is correct.",
+      "target": "ratio ~2×",
+      "detail": "claim 2×; operands 4/2 = 2.0000×; relative error 0.00%",
+      "check": "python3 -c \"print(4/2)\"",
+      "evidence": "claimed 2× vs written fraction 4/2",
+      "operand_line": 3,
+      "claimed": 2,
+      "actual": 2,
+      "cited_line": null,
+      "cited_line_end": null
+    }
+  ]
+}

@@ -1,0 +1,1328 @@
+{
+ "meta": {
+  "provenance": "extracted: Rasterizer.Raster() on a live Scene, headless, seeded",
+  "source": "github.com/wonrzrzeczny/Asciipocalypse @ HEAD (clone 2026-10-02)",
+  "texture_path": "CPU-side PNG read into AsciiTexture (option 2 of the brief)",
+  "camera_placement": "scripted observer post near the nearest monster",
+  "eye_easy": false,
+  "audio_calls_suppressed": 38,
+  "cell_stride_bytes": 11,
+  "textures_loaded": 28,
+  "nonopaque_alpha_textures": [
+   "textures/barrel_red:4",
+   "textures/barrel_green:4",
+   "textures/barrel_blue:4"
+  ]
+ },
+ "observe": {
+  "cells_total": 14400.0,
+  "cells_3d": 13366.0,
+  "cells_hud": 1034.0,
+  "cells_blank": 0.0,
+  "scene_objects": 81.035,
+  "scene_triangles": 1018.78,
+  "rendered_triangles": 1112.9683333333332,
+  "clipped_triangles": 170.2975,
+  "distinct_entities": 14.250833333333333,
+  "arch_entities": 7.923333333333333,
+  "arch_cells": 12805.269166666667,
+  "object_entities": 6.3275,
+  "object_cells": 560.7308333333333,
+  "frames": 1200,
+  "entity_collapse_ratio": 5.686334132506871,
+  "object_occlusion_rate": 0.9219164558524094,
+  "object_cell_share": 0.04195203002643523
+ },
+ "observe_per_class": {
+  "obj:EnemyProjectile/textures/projectile": {
+   "instances": 2648,
+   "total_cells": 95269,
+   "median_cells": 5.0
+  },
+  "obj:BasicMonster/textures/monster": {
+   "instances": 1387,
+   "total_cells": 225033,
+   "median_cells": 115.0
+  },
+  "obj:EnemyProjectile/textures/projectile2": {
+   "instances": 1303,
+   "total_cells": 26643,
+   "median_cells": 8.0
+  },
+  "obj:EnemyProjectile/textures/projectile4": {
+   "instances": 1115,
+   "total_cells": 50252,
+   "median_cells": 9.0
+  },
+  "obj:Spooper/textures/spooper": {
+   "instances": 365,
+   "total_cells": 85400,
+   "median_cells": 177.0
+  },
+  "obj:IceMonster/textures/ice_monster": {
+   "instances": 189,
+   "total_cells": 15391,
+   "median_cells": 39.0
+  },
+  "obj:LavaPool/textures/lava": {
+   "instances": 160,
+   "total_cells": 69522,
+   "median_cells": 552.5
+  },
+  "obj:Collectible/textures/barrel_blue": {
+   "instances": 135,
+   "total_cells": 21000,
+   "median_cells": 111.0
+  },
+  "obj:ShotgunDude/textures/shotgun_dude": {
+   "instances": 100,
+   "total_cells": 46674,
+   "median_cells": 557.0
+  },
+  "obj:SpinnyBoi/textures/spinny_boi": {
+   "instances": 99,
+   "total_cells": 36464,
+   "median_cells": 398.0
+  },
+  "obj:Collectible/textures/barrel_green": {
+   "instances": 88,
+   "total_cells": 1177,
+   "median_cells": 6.0
+  },
+  "obj:Collectible/textures/barrel_red": {
+   "instances": 4,
+   "total_cells": 52,
+   "median_cells": 16.0
+  }
+ },
+ "observe_ramps": {
+  "arch:textures/bricks02": {
+   "cells": 3904449,
+   "distinct_glyphs": 8,
+   "glyphs": "#8x*,:. ",
+   "mean_z": {
+    "#": 0.89878,
+    "8": 0.9072,
+    "x": 0.92261,
+    "*": 0.94151,
+    ",": 0.95717,
+    ":": 0.97039,
+    ".": 0.98167,
+    " ": 0.98967
+   }
+  },
+  "arch:textures/lava_ground": {
+   "cells": 2785194,
+   "distinct_glyphs": 8,
+   "glyphs": "#8x*,:. ",
+   "mean_z": {
+    "#": 0.89878,
+    "8": 0.90718,
+    "x": 0.92266,
+    "*": 0.94145,
+    ",": 0.95705,
+    ":": 0.97064,
+    ".": 0.98095,
+    " ": 0.98917
+   }
+  },
+  "arch:textures/ice_floor": {
+   "cells": 2749495,
+   "distinct_glyphs": 8,
+   "glyphs": "#8x*,:. ",
+   "mean_z": {
+    "#": 0.89878,
+    "8": 0.90714,
+    "x": 0.92249,
+    "*": 0.94143,
+    ",": 0.95714,
+    ":": 0.96997,
+    ".": 0.98027,
+    " ": 0.98915
+   }
+  },
+  "arch:textures/jungle_ground": {
+   "cells": 1735947,
+   "distinct_glyphs": 8,
+   "glyphs": "#8x*,:. ",
+   "mean_z": {
+    "#": 0.89878,
+    "8": 0.90713,
+    "x": 0.92263,
+    "*": 0.94137,
+    ",": 0.95701,
+    ":": 0.96989,
+    ".": 0.98168,
+    " ": 0.98993
+   }
+  },
+  "arch:textures/bricks01": {
+   "cells": 1297554,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.77892,
+    "&": 0.82869,
+    "#": 0.86451,
+    "8": 0.89783,
+    "x": 0.91403,
+    "*": 0.951,
+    ",": 0.96354,
+    ":": 0.97324,
+    ".": 0.98209,
+    " ": 0.9909
+   }
+  },
+  "arch:textures/ice_walls": {
+   "cells": 1014606,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.60233,
+    "&": 0.82945,
+    "#": 0.87878,
+    "8": 0.90026,
+    "x": 0.92072,
+    "*": 0.94027,
+    ",": 0.95989,
+    ":": 0.97431,
+    ".": 0.97996,
+    " ": 0.98997
+   }
+  },
+  "arch:textures/lava_walls": {
+   "cells": 801638,
+   "distinct_glyphs": 7,
+   "glyphs": "8x*,:. ",
+   "mean_z": {
+    "8": 0.91269,
+    "x": 0.92386,
+    "*": 0.94373,
+    ",": 0.96219,
+    ":": 0.9757,
+    ".": 0.98302,
+    " ": 0.98913
+   }
+  },
+  "arch:textures/jungle_bricks": {
+   "cells": 447899,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.80752,
+    "&": 0.83011,
+    "#": 0.86782,
+    "8": 0.89738,
+    "x": 0.92026,
+    "*": 0.94331,
+    ",": 0.96089,
+    ":": 0.97168,
+    ".": 0.98181,
+    " ": 0.98695
+   }
+  },
+  "arch:textures/jungle_bricks_vines": {
+   "cells": 425911,
+   "distinct_glyphs": 5,
+   "glyphs": "*,:. ",
+   "mean_z": {
+    "*": 0.95557,
+    ",": 0.96204,
+    ":": 0.97061,
+    ".": 0.98223,
+    " ": 0.99093
+   }
+  },
+  "obj:BasicMonster/textures/monster": {
+   "cells": 225033,
+   "distinct_glyphs": 6,
+   "glyphs": "x*,:. ",
+   "mean_z": {
+    "x": 0.93854,
+    "*": 0.94525,
+    ",": 0.9528,
+    ":": 0.9697,
+    ".": 0.98292,
+    " ": 0.9896
+   }
+  },
+  "arch:textures/lava": {
+   "cells": 174036,
+   "distinct_glyphs": 4,
+   "glyphs": ",:. ",
+   "mean_z": {
+    ",": 0.96492,
+    ":": 0.97229,
+    ".": 0.98131,
+    " ": 0.9878
+   }
+  },
+  "obj:EnemyProjectile/textures/projectile": {
+   "cells": 95269,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.31549,
+    "&": 0.82081,
+    "#": 0.86846,
+    "8": 0.89912,
+    "x": 0.92307,
+    "*": 0.94096,
+    ",": 0.95795,
+    ":": 0.97035,
+    ".": 0.97993,
+    " ": 0.98736
+   }
+  },
+  "obj:Spooper/textures/spooper": {
+   "cells": 85400,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.55891,
+    "&": 0.82668,
+    "#": 0.87002,
+    "8": 0.90273,
+    "x": 0.92472,
+    "*": 0.9428,
+    ",": 0.95314,
+    ":": 0.96495,
+    ".": 0.98325,
+    " ": 0.98571
+   }
+  },
+  "obj:LavaPool/textures/lava": {
+   "cells": 69522,
+   "distinct_glyphs": 5,
+   "glyphs": "*,:. ",
+   "mean_z": {
+    "*": 0.95673,
+    ",": 0.96398,
+    ":": 0.97266,
+    ".": 0.9806,
+    " ": 0.98866
+   }
+  },
+  "obj:EnemyProjectile/textures/projectile4": {
+   "cells": 50252,
+   "distinct_glyphs": 9,
+   "glyphs": "@&#8x*,:.",
+   "mean_z": {
+    "@": 0.16512,
+    "&": 0.81864,
+    "#": 0.86968,
+    "8": 0.89972,
+    "x": 0.92385,
+    "*": 0.94096,
+    ",": 0.95659,
+    ":": 0.96773,
+    ".": 0.97886
+   }
+  },
+  "obj:ShotgunDude/textures/shotgun_dude": {
+   "cells": 46674,
+   "distinct_glyphs": 5,
+   "glyphs": "x*,:.",
+   "mean_z": {
+    "x": 0.93904,
+    "*": 0.9433,
+    ",": 0.9464,
+    ":": 0.97203,
+    ".": 0.97353
+   }
+  },
+  "obj:SpinnyBoi/textures/spinny_boi": {
+   "cells": 36464,
+   "distinct_glyphs": 4,
+   "glyphs": "x*,:",
+   "mean_z": {
+    "x": 0.93923,
+    "*": 0.94545,
+    ",": 0.95102,
+    ":": 0.96584
+   }
+  },
+  "arch:textures/ice": {
+   "cells": 29573,
+   "distinct_glyphs": 5,
+   "glyphs": "*,:. ",
+   "mean_z": {
+    "*": 0.95365,
+    ",": 0.95925,
+    ":": 0.96382,
+    ".": 0.98449,
+    " ": 0.98532
+   }
+  },
+  "obj:EnemyProjectile/textures/projectile2": {
+   "cells": 26643,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.35427,
+    "&": 0.82249,
+    "#": 0.86874,
+    "8": 0.9004,
+    "x": 0.92353,
+    "*": 0.94066,
+    ",": 0.95733,
+    ":": 0.96851,
+    ".": 0.97907,
+    " ": 0.98567
+   }
+  },
+  "obj:Collectible/textures/barrel_blue": {
+   "cells": 21000,
+   "distinct_glyphs": 9,
+   "glyphs": "&#8x*,:. ",
+   "mean_z": {
+    "&": 0.84919,
+    "#": 0.86054,
+    "8": 0.91164,
+    "x": 0.92381,
+    "*": 0.93898,
+    ",": 0.95376,
+    ":": 0.97712,
+    ".": 0.97715,
+    " ": 0.9952
+   }
+  },
+  "obj:IceMonster/textures/ice_monster": {
+   "cells": 15391,
+   "distinct_glyphs": 6,
+   "glyphs": "x*,:. ",
+   "mean_z": {
+    "x": 0.93813,
+    "*": 0.94588,
+    ",": 0.95719,
+    ":": 0.96901,
+    ".": 0.98255,
+    " ": 0.99288
+   }
+  },
+  "obj:Collectible/textures/barrel_green": {
+   "cells": 1177,
+   "distinct_glyphs": 3,
+   "glyphs": ":. ",
+   "mean_z": {
+    ":": 0.9782,
+    ".": 0.979,
+    " ": 0.99287
+   }
+  },
+  "obj:Collectible/textures/barrel_red": {
+   "cells": 52,
+   "distinct_glyphs": 2,
+   "glyphs": ":.",
+   "mean_z": {
+    ":": 0.98053,
+    ".": 0.98039
+   }
+  },
+  "arch:textures/bush": {
+   "cells": 21,
+   "distinct_glyphs": 2,
+   "glyphs": ". ",
+   "mean_z": {
+    ".": 0.99365,
+    " ": 0.99371
+   }
+  }
+ },
+ "walk": {
+  "cells_total": 14400.0,
+  "cells_3d": 13366.0,
+  "cells_hud": 1034.0,
+  "cells_blank": 0.0,
+  "scene_objects": 51.8725,
+  "scene_triangles": 422.98,
+  "rendered_triangles": 484.515,
+  "clipped_triangles": 77.485,
+  "distinct_entities": 5.74,
+  "arch_entities": 5.055,
+  "arch_cells": 13238.205,
+  "object_entities": 0.685,
+  "object_cells": 127.795,
+  "frames": 400,
+  "entity_collapse_ratio": 9.037020905923345,
+  "object_occlusion_rate": 0.9867945443153887,
+  "object_cell_share": 0.009561200059853359
+ },
+ "walk_per_class": {
+  "obj:BasicMonster/textures/monster": {
+   "instances": 130,
+   "total_cells": 39149,
+   "median_cells": 18.0
+  },
+  "obj:EnemyProjectile/textures/projectile": {
+   "instances": 118,
+   "total_cells": 11877,
+   "median_cells": 36.0
+  },
+  "obj:Collectible/textures/barrel_green": {
+   "instances": 14,
+   "total_cells": 59,
+   "median_cells": 4.0
+  },
+  "obj:Collectible/textures/barrel_red": {
+   "instances": 12,
+   "total_cells": 33,
+   "median_cells": 4.0
+  }
+ },
+ "walk_ramps": {
+  "arch:textures/bricks02": {
+   "cells": 3021105,
+   "distinct_glyphs": 8,
+   "glyphs": "#8x*,:. ",
+   "mean_z": {
+    "#": 0.89878,
+    "8": 0.90714,
+    "x": 0.92249,
+    "*": 0.94136,
+    ",": 0.95714,
+    ":": 0.97082,
+    ".": 0.97963,
+    " ": 0.99082
+   }
+  },
+  "arch:textures/bricks01": {
+   "cells": 2274095,
+   "distinct_glyphs": 10,
+   "glyphs": "@&#8x*,:. ",
+   "mean_z": {
+    "@": 0.33128,
+    "&": 0.81351,
+    "#": 0.87063,
+    "8": 0.90124,
+    "x": 0.92268,
+    "*": 0.94216,
+    ",": 0.95854,
+    ":": 0.97515,
+    ".": 0.98066,
+    " ": 0.99186
+   }
+  },
+  "obj:BasicMonster/textures/monster": {
+   "cells": 39149,
+   "distinct_glyphs": 8,
+   "glyphs": "@&#*,:. ",
+   "mean_z": {
+    "@": 0.71877,
+    "&": 0.79507,
+    "#": 0.8392,
+    "*": 0.94875,
+    ",": 0.95138,
+    ":": 0.95888,
+    ".": 0.98836,
+    " ": 0.98984
+   }
+  },
+  "obj:EnemyProjectile/textures/projectile": {
+   "cells": 11877,
+   "distinct_glyphs": 9,
+   "glyphs": "@&#8x*,:.",
+   "mean_z": {
+    "@": 0.35516,
+    "&": 0.85683,
+    "#": 0.8772,
+    "8": 0.89899,
+    "x": 0.92115,
+    "*": 0.93833,
+    ",": 0.9548,
+    ":": 0.9696,
+    ".": 0.97798
+   }
+  },
+  "arch:textures/exit": {
+   "cells": 82,
+   "distinct_glyphs": 2,
+   "glyphs": ". ",
+   "mean_z": {
+    ".": 0.99106,
+    " ": 0.99095
+   }
+  },
+  "obj:Collectible/textures/barrel_green": {
+   "cells": 59,
+   "distinct_glyphs": 2,
+   "glyphs": ". ",
+   "mean_z": {
+    ".": 0.99093,
+    " ": 0.99093
+   }
+  },
+  "obj:Collectible/textures/barrel_red": {
+   "cells": 33,
+   "distinct_glyphs": 2,
+   "glyphs": ". ",
+   "mean_z": {
+    ".": 0.99093,
+    " ": 0.99198
+   }
+  }
+ },
+ "recover": {
+  "n": 15231,
+  "err_glyph": {
+   "median": 1.8243501,
+   "p90": 8.39578
+  },
+  "err_oracle": {
+   "median": 1.151278,
+   "p90": 2.6822584
+  },
+  "dist": {
+   "median": 26.85073,
+   "p90": 61.995934
+  },
+  "loc_cells": {
+   "median": 0.314072919230553,
+   "p90": 2.8973086027002686,
+   "exact": 0.5983192173855951
+  },
+  "by_size": [
+   {
+    "lo": 1,
+    "hi": 4,
+    "n": 2950,
+    "dist": 47.354456,
+    "err_glyph": 5.228543999999999,
+    "err_oracle": 1.13224745
+   },
+   {
+    "lo": 4,
+    "hi": 20,
+    "n": 5896,
+    "dist": 28.839683,
+    "err_glyph": 1.61028105,
+    "err_oracle": 0.9098761799999999
+   },
+   {
+    "lo": 20,
+    "hi": 100,
+    "n": 3103,
+    "dist": 17.40623,
+    "err_glyph": 1.2331299,
+    "err_oracle": 1.1356372
+   },
+   {
+    "lo": 100,
+    "hi": null,
+    "n": 3282,
+    "dist": 21.1112365,
+    "err_glyph": 1.89546375,
+    "err_oracle": 1.7821918
+   }
+  ]
+ },
+ "arms": {
+  "A:Data": {
+   "macroF1": 0.0370998942013836,
+   "microF1": 0.0370998942013836,
+   "acc": 0.12235333333333333,
+   "enemyF1": 0.02091825307950728,
+   "enemyP": 0.017615993964541683,
+   "enemyR": 0.05306818181818181,
+   "per_class": {
+    "arch:textures/bricks02": 0.0,
+    "arch:textures/bricks01": 0.1702,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.2092,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1521,
+    "arch:textures/lava_walls": 0.2476,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "B:Data+Color": {
+   "macroF1": 0.2950050677771439,
+   "microF1": 0.2950050677771439,
+   "acc": 0.7858933333333333,
+   "enemyF1": 0.2960049559464398,
+   "enemyP": 0.7302812591528468,
+   "enemyR": 0.4683635353061101,
+   "per_class": {
+    "arch:textures/bricks02": 0.4761,
+    "arch:textures/bricks01": 0.4593,
+    "obj:BasicMonster/textures/monster": 0.4054,
+    "obj:EnemyProjectile/textures/projectile": 0.4851,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.4292,
+    "arch:textures/lava_walls": 0.4214,
+    "obj:EnemyProjectile/textures/projectile2": 0.4918,
+    "arch:textures/jungle_ground": 0.4831,
+    "arch:textures/jungle_bricks_vines": 0.184,
+    "arch:textures/jungle_bricks": 0.0041,
+    "arch:textures/ice_floor": 0.448,
+    "arch:textures/ice_walls": 0.3298,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.4315,
+    "obj:IceMonster/textures/ice_monster": 0.3151,
+    "obj:EnemyProjectile/textures/projectile4": 0.4776,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.3061,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0475,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "C:Color": {
+   "macroF1": 0.2951904970938014,
+   "microF1": 0.2951904970938014,
+   "acc": 0.7688311111111111,
+   "enemyF1": 0.30438315252980236,
+   "enemyP": 0.7322784332064411,
+   "enemyR": 0.47391451160605785,
+   "per_class": {
+    "arch:textures/bricks02": 0.4707,
+    "arch:textures/bricks01": 0.4628,
+    "obj:BasicMonster/textures/monster": 0.3633,
+    "obj:EnemyProjectile/textures/projectile": 0.4872,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.4218,
+    "arch:textures/lava_walls": 0.387,
+    "obj:EnemyProjectile/textures/projectile2": 0.4933,
+    "arch:textures/jungle_ground": 0.4834,
+    "arch:textures/jungle_bricks_vines": 0.1551,
+    "arch:textures/jungle_bricks": 0.0255,
+    "arch:textures/ice_floor": 0.4447,
+    "arch:textures/ice_walls": 0.3041,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.4315,
+    "obj:IceMonster/textures/ice_monster": 0.4186,
+    "obj:EnemyProjectile/textures/projectile4": 0.4812,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.2503,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.1185,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "D:depth-only": {
+   "macroF1": 0.021308706938029786,
+   "microF1": 0.021308706938029786,
+   "acc": 0.09538222222222222,
+   "enemyF1": 0.018810131553112112,
+   "enemyP": 0.02016842105263158,
+   "enemyR": 0.02721590909090909,
+   "per_class": {
+    "arch:textures/bricks02": 0.0,
+    "arch:textures/bricks01": 0.1166,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.1881,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1428,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "CTRL-shuffled-glyph": {
+   "macroF1": 0.01074019948806502,
+   "microF1": 0.01074019948806502,
+   "acc": 0.09564444444444445,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.0589,
+    "arch:textures/bricks01": 0.0266,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1401,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "CTRL-random-colour": {
+   "macroF1": 0.010595960238024501,
+   "microF1": 0.010595960238024501,
+   "acc": 0.09845555555555556,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.0823,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1402,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "CTRL-both-random": {
+   "macroF1": 0.017163695623099565,
+   "microF1": 0.017163695623099565,
+   "acc": 0.14456444444444444,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.224,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1365,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "BASE-majority": {
+   "macroF1": 0.006704199365039298,
+   "microF1": 0.006704199365039298,
+   "acc": 0.08924,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.0,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1408,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "_n": {
+   "train": 450000,
+   "test": 450000,
+   "runs": 12,
+   "runs_train": [
+    "run_111",
+    "run_123",
+    "run_511",
+    "run_523",
+    "run_911",
+    "run_923"
+   ],
+   "runs_test": [
+    "run_137",
+    "run_151",
+    "run_537",
+    "run_551",
+    "run_937",
+    "run_951"
+   ]
+  }
+ },
+ "arms_eye": {
+  "A:Data": {
+   "macroF1": 0.0341429632265083,
+   "microF1": 0.0341429632265083,
+   "acc": 0.2850155555555556,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.3073,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "B:Data+Color": {
+   "macroF1": 0.1227384137006837,
+   "microF1": 0.1227384137006837,
+   "acc": 0.34024444444444446,
+   "enemyF1": 0.10566101104641859,
+   "enemyP": 0.2257317064432881,
+   "enemyR": 0.3535131559212359,
+   "per_class": {
+    "arch:textures/bricks02": 0.3685,
+    "arch:textures/bricks01": 0.3135,
+    "obj:BasicMonster/textures/monster": 0.3654,
+    "obj:EnemyProjectile/textures/projectile": 0.0572,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "C:Color": {
+   "macroF1": 0.1227384137006837,
+   "microF1": 0.1227384137006837,
+   "acc": 0.34024444444444446,
+   "enemyF1": 0.10566101104641859,
+   "enemyP": 0.2257317064432881,
+   "enemyR": 0.3535131559212359,
+   "per_class": {
+    "arch:textures/bricks02": 0.3685,
+    "arch:textures/bricks01": 0.3135,
+    "obj:BasicMonster/textures/monster": 0.3654,
+    "obj:EnemyProjectile/textures/projectile": 0.0572,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "D:depth-only": {
+   "macroF1": 0.037979989481462945,
+   "microF1": 0.037979989481462945,
+   "acc": 0.16009555555555555,
+   "enemyF1": 0.016905599134433326,
+   "enemyP": 0.009467465580502911,
+   "enemyR": 0.21371580547112462,
+   "per_class": {
+    "arch:textures/bricks02": 0.2742,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0676,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "CTRL-shuffled-glyph": {
+   "macroF1": 0.0341429632265083,
+   "microF1": 0.0341429632265083,
+   "acc": 0.2850155555555556,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.3073,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "CTRL-random-colour": {
+   "macroF1": 0.03330437327161636,
+   "microF1": 0.03330437327161636,
+   "acc": 0.24482444444444446,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.2997,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "CTRL-both-random": {
+   "macroF1": 0.03145278918218302,
+   "microF1": 0.03145278918218302,
+   "acc": 0.18394,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.2831,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "BASE-majority": {
+   "macroF1": 0.0341429632265083,
+   "microF1": 0.0341429632265083,
+   "acc": 0.2850155555555556,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.3073,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_red": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0
+   }
+  },
+  "_n": {
+   "train": 450000,
+   "test": 450000,
+   "runs": 4,
+   "runs_train": [
+    "eye_111",
+    "eye_511"
+   ],
+   "runs_test": [
+    "eye_123",
+    "eye_523"
+   ]
+  }
+ },
+ "arms_ctrl2": {
+  "A:Data": {
+   "macroF1": 0.03713318434844143,
+   "microF1": 0.03713318434844143,
+   "acc": 0.1222088888888889,
+   "enemyF1": 0.021482931071972168,
+   "enemyP": 0.01822878228782288,
+   "enemyR": 0.05482796892341842,
+   "per_class": {
+    "arch:textures/bricks02": 0.0,
+    "arch:textures/bricks01": 0.1673,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.2148,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1525,
+    "arch:textures/lava_walls": 0.2451,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "B:Data+Color": {
+   "macroF1": 0.29909954185707116,
+   "microF1": 0.29909954185707116,
+   "acc": 0.7873533333333333,
+   "enemyF1": 0.30430737743994285,
+   "enemyP": 0.7220250930366587,
+   "enemyR": 0.4929503776065367,
+   "per_class": {
+    "arch:textures/bricks02": 0.4762,
+    "arch:textures/bricks01": 0.4597,
+    "obj:BasicMonster/textures/monster": 0.408,
+    "obj:EnemyProjectile/textures/projectile": 0.4833,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.4298,
+    "arch:textures/lava_walls": 0.4202,
+    "obj:EnemyProjectile/textures/projectile2": 0.491,
+    "arch:textures/jungle_ground": 0.4835,
+    "arch:textures/jungle_bricks_vines": 0.1848,
+    "arch:textures/jungle_bricks": 0.0022,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.4486,
+    "arch:textures/ice_walls": 0.333,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.4325,
+    "obj:IceMonster/textures/ice_monster": 0.4111,
+    "obj:EnemyProjectile/textures/projectile4": 0.4761,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.3064,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0347,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "C:Color": {
+   "macroF1": 0.2945834482333873,
+   "microF1": 0.2945834482333873,
+   "acc": 0.7692955555555555,
+   "enemyF1": 0.30344557909550346,
+   "enemyP": 0.7288435047072082,
+   "enemyR": 0.4749144268755197,
+   "per_class": {
+    "arch:textures/bricks02": 0.4709,
+    "arch:textures/bricks01": 0.4631,
+    "obj:BasicMonster/textures/monster": 0.3697,
+    "obj:EnemyProjectile/textures/projectile": 0.4863,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.4223,
+    "arch:textures/lava_walls": 0.388,
+    "obj:EnemyProjectile/textures/projectile2": 0.4944,
+    "arch:textures/jungle_ground": 0.4835,
+    "arch:textures/jungle_bricks_vines": 0.1522,
+    "arch:textures/jungle_bricks": 0.0244,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.4447,
+    "arch:textures/ice_walls": 0.3027,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.4349,
+    "obj:IceMonster/textures/ice_monster": 0.4155,
+    "obj:EnemyProjectile/textures/projectile4": 0.4793,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.2499,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.1045,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "D:depth-only": {
+   "macroF1": 0.02218749282833189,
+   "microF1": 0.02218749282833189,
+   "acc": 0.09592888888888888,
+   "enemyF1": 0.020736747529200357,
+   "enemyP": 0.022115753162131085,
+   "enemyR": 0.03201997780244173,
+   "per_class": {
+    "arch:textures/bricks02": 0.0,
+    "arch:textures/bricks01": 0.1153,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.2074,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1433,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "CTRL-shuffled-glyph": {
+   "macroF1": 0.011048208764336145,
+   "microF1": 0.011048208764336145,
+   "acc": 0.09515555555555555,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.0513,
+    "arch:textures/bricks01": 0.0403,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1405,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "CTRL-random-colour": {
+   "macroF1": 0.0104716399890786,
+   "microF1": 0.0104716399890786,
+   "acc": 0.09845555555555556,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.079,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1409,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "CTRL-both-random": {
+   "macroF1": 0.017050251186134274,
+   "microF1": 0.017050251186134274,
+   "acc": 0.14300666666666667,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.2219,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1362,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "BASE-majority": {
+   "macroF1": 0.006724331676646572,
+   "microF1": 0.006724331676646572,
+   "acc": 0.08958,
+   "enemyF1": 0.0,
+   "enemyP": 0.0,
+   "enemyR": 0.0,
+   "per_class": {
+    "arch:textures/bricks02": 0.0,
+    "arch:textures/bricks01": 0.0,
+    "obj:BasicMonster/textures/monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile": 0.0,
+    "obj:Collectible/textures/barrel_green": 0.0,
+    "arch:textures/lava_ground": 0.1412,
+    "arch:textures/lava_walls": 0.0,
+    "obj:EnemyProjectile/textures/projectile2": 0.0,
+    "arch:textures/jungle_ground": 0.0,
+    "arch:textures/jungle_bricks_vines": 0.0,
+    "arch:textures/jungle_bricks": 0.0,
+    "obj:Collectible/textures/barrel_blue": 0.0,
+    "arch:textures/ice_floor": 0.0,
+    "arch:textures/ice_walls": 0.0,
+    "obj:ShotgunDude/textures/shotgun_dude": 0.0,
+    "obj:IceMonster/textures/ice_monster": 0.0,
+    "obj:EnemyProjectile/textures/projectile4": 0.0,
+    "arch:textures/bush": 0.0,
+    "obj:Spooper/textures/spooper": 0.0,
+    "obj:SpinnyBoi/textures/spinny_boi": 0.0,
+    "arch:textures/lava": 0.0
+   }
+  },
+  "_n": {
+   "train": 450000,
+   "test": 450000,
+   "runs": 12,
+   "runs_train": [
+    "run_111",
+    "run_123",
+    "run_511",
+    "run_523",
+    "run_911",
+    "run_923"
+   ],
+   "runs_test": [
+    "run_137",
+    "run_151",
+    "run_537",
+    "run_551",
+    "run_937",
+    "run_951"
+   ]
+  }
+ }
+}

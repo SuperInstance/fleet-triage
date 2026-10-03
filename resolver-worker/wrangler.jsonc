@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fleet-resolver",
+  "main": "index.js",
+  "compatibility_date": "2026-09-22",
+  "workers_dev": true,
+  "account_id": "049ff5e84ecf636b53b162cbb580aae6",
+  "observability": { "enabled": true }
+}

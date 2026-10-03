@@ -1,0 +1,5 @@
+refs/heads/cross-repo-patterns-lite	70ebdb8ce5cb993106f05d4b007de0b9d4b94931
+refs/heads/feature/distributed-metronome-bridge	7d668aa33d1e9b776b21e69246194c7f2ef22b19
+refs/heads/feature/opcode-capability-index	4a4f1e4b681545d5ff0297ae3756fe999e15b5df
+refs/heads/main	a9ef91ee35b5a4b0c4944f099fd72eb2b0af7eac
+refs/heads/repo-metrics-v2	75e2bbae9e3d1dd703ab9e800b0f6e92c370978a

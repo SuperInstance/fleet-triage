@@ -1,0 +1,4 @@
+refs/heads/claude/cross-poll-edu	56943c1106323f87027d118bd9c09ebff11057e6
+refs/heads/claude/qthe-verify	cbf026440149b1ffb061e9371642682cc56cabda
+refs/heads/forge-adopt-v0	d63aaddcbd90219c154bb904c384013b34ba8189
+refs/heads/main	2bc52a549fb984dcc7989370138373604fadabb2

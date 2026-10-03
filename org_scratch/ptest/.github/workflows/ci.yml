@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Install TypeScript 5.x (peer-compatible)
+        run: npm install --save-dev typescript@^5.9.3
+        # typescript 7.x peer-conflicts with @typescript-eslint/parser 8.70.1 (which peers >=4.8.4 <6.1.0)
+        # Pin to 5.x until upstream adds TS7 support.
+      - run: npm run typecheck
+      - run: npm test

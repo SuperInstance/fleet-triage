@@ -1,0 +1,7 @@
+refs/heads/backup/wrong-cudaclaw-push-2026-08-13	dc58cef20f64f11f6a09a0a4cbeb81f15b0db263
+refs/heads/claude/cross-poll-edu	2bf9528f042b26db00c713dc3ccc6bfef6f4dbe0
+refs/heads/concept-art-shell-2026-07-10	233a20c18ff7c5a8ea17359de583da9e866c72eb
+refs/heads/decoupling-phase1-2026-07-10	7d478aff4379b3e7f3050a26e1c3b6004f638c9a
+refs/heads/decoupling-research-2026-07-10	db501d0da922a1f489ddbe872b67eae42c8e78f6
+refs/heads/hermes-residual-self-image-2026-08-18	655e1b7698ccf7079befa5a9ebd6833ec4a1980b
+refs/heads/main	2bf9528f042b26db00c713dc3ccc6bfef6f4dbe0

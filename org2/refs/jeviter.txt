@@ -1,0 +1,8 @@
+refs/heads/ade-bridge	f6c04b1184203ee59b6b8f1ccff356efd041400c
+refs/heads/docs-jev-usage-notes-kimi1	3dffe1b8652495c812839397195290a86a64715d
+refs/heads/main	7693bc13c6afc4938b2f38d1b647fe4962c9fdcf
+refs/heads/seed-7-merge-governor	dcf6d70fd4635096942bc12387e024b80cc2bd8a
+refs/heads/sequential-merge-governor	fdb131c5c52586e215d7734525789eb7e8d43509
+refs/heads/tui-v0	2ceecd8dcfd9256f8b50c59c4d7456dd4dddc605
+refs/heads/tui-v0-5	6fdc94e7ab44792d7b23062f57700528d92b144d
+refs/heads/vibe-spec-distiller	9d74cbff6d2d2c19c2a7dc8e4a11479829605817

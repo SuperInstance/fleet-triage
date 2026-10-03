@@ -1,0 +1,1 @@
+{"ternary-cipher-main/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-cipher\"\nname = \"ternary-cipher\"\nversion = \"0.1.0\"\nedition = \"2021\"\ndescription = \"Ternary cryptography \u2014 ciphers, hash commitments, zero-knowledge, and secret sharing over Z\u2083\"\nlicense = \"MIT\"\n\n[dependencies]\n"}

@@ -1,0 +1,188 @@
+==============================================================================
+TIME-QUERY — 30 fps / 3 fps / reference+diffs+triggers
+frame provenance: RECONSTRUCTED projection + SYNTHETIC scene.
+The real Rasterizer.Raster() could not be run: this sandbox has no
+.NET runtime (no `dotnet`, no libhostfxr.so, no libcoreclr.so).
+==============================================================================
+
+==============================================================================
+THE DECIDING TESTS  (run first -- an interface that returns a plausible diff in all three cases is a green badge)
+==============================================================================
+T1 STILL   anchor=anchor(t=4.0000s, epoch=0, digest=ced3987b, 60x26, reconstructed-projection/synthetic-scene)
+           same-t diff -> n_changed = 0   => EMPTY  ✓
+T2 MOVED   same anchor, t+1/60s -> n_changed = 15  (char 15 / color 15)   => NON-EMPTY  ✓
+           first 3 changed cells (i,j, ref->cur char, ref->cur col, ref->cur owner):
+             (19, 12, ':', '@', 84, 14, 'wall_L', 'hostile_0')
+             (19, 13, ':', '@', 84, 14, 'wall_L', 'hostile_0')
+             (19, 14, ':', '@', 84, 14, 'wall_L', 'hostile_0')
+T3 STALE   obs.epoch advanced 0 -> 1; old anchor is epoch 0
+           ControlFailure: STALE ANCHOR: reference was advanced (epoch 0 -> 1) after this anchor was taken at epoch 0.  A diff against it would look like a diff and be confidently wrong.  DECLINING TO OBSERVE.
+           => DECLINED  ✓
+
+==============================================================================
+DECIDING TESTS SUMMARY
+==============================================================================
+  T1_still_empty         PASS ✓
+  T2_moved_nonempty      PASS ✓
+  T3_stale_declined      PASS ✓
+  ALL THREE: PASS ✓
+
+==============================================================================
+THE THREE MODES, with real output
+==============================================================================
+MODE 1  30 fps : 300 pages, 1895100 characters over 10 s
+        provenance: reconstructed-projection/synthetic-scene
+        page 1 of 3 (first 6 rows, colour row included):
+          &#&###&&#&&&#####&#&&##&&#&&#&&#&#&&##&&#&#&###&&&&&##&#&##&  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          ####&&&#######&&&########&&######&#########&&&##&#&&###&&&##  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          ########8#######8####8#################8#8#########8#####88#  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          ##8#888##8#8#88#8#8##88##8#888888#88888#8888###8###888##8###  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          888888888888888888888888888888888888888888888888888x88x88888  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          888xxx8xxxx8xxx8x888x8xx8x88xxxxx8x888888xxx8xxx8xx8xx88xxxx  |54 54 54 54 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 54 54 54
+
+MODE 2   3 fps : 30 pages, 189510 characters over 10 s
+        provenance: reconstructed-projection/synthetic-scene
+        page 1 of 3 (first 6 rows):
+          &#&###&&#&&&#####&#&&##&&#&&#&&#&#&&##&&#&#&###&&&&&##&#&##&  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          ####&&&#######&&&########&&######&#########&&&##&#&&###&&&##  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          ########8#######8####8#################8#8#########8#####88#  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          ##8#888##8#8#88#8#8##88##8#888888#88888#8888###8###888##8###  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          888888888888888888888888888888888888888888888888888x88x88888  |4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a
+          888xxx8xxxx8xxx8x888x8xx8x88xxxxx8x888888xxx8xxx8xx8xx88xxxx  |54 54 54 54 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 4a 54 54 54
+
+MODE 3  ref+diffs+triggers
+        reference: anchor(t=4.0000s, epoch=0, digest=ced3987b, 60x26, reconstructed-projection/synthetic-scene)
+        30 diffs, total 93118 characters of payload
+        diff sizes (cells changed per 1/30s step), first 12:
+          15 16 24 31 39 42 48 49 49 47 36 40
+        TRIGGERS (evidence for OR against the assumption of need):
+          REFUTED   hostile_0 has not moved since the reference          {"world_pose_ref": [-1.8212, 0.9699, 14.0], "world_pose_now": [-1.6764, 1.4157, 14.0], "moved_in_world": true, "footprint_cells_lost": 14, "footprint_
+          REFUTED   hostile_0 has not moved since the reference          {"world_pose_ref": [-1.8212, 0.9699, 14.0], "world_pose_now": [-1.6764, 1.4157, 14.0], "moved_in_world": true, "footprint_cells_lost": 14, "footprint_
+          OCCLUDED  the ceiling has not moved since the reference        {"world_pose_ref": null, "world_pose_now": null, "moved_in_world": false, "footprint_cells_lost": 11, "footprint_cells_gained": 0, "n_cells_changed_to
+          CONFIRMED a hostile is on screen                               {"cells_owned": 6}
+          CONFIRMED a hostile can be spotted from the CHARACTER channel  {"target_glyphs": "@", "other_glyphs": " #&*,.8:x", "glyph_overlap": "", "n_glyph_overlap": 0, "n_target_colours": 1, "n_other_colours": 3, "colour_ov
+
+==============================================================================
+MEASUREMENT 1 -- RATE ALIASING.  The failure nobody warns you about.
+==============================================================================
+An 'excursion' = a maximal run of >=4 consecutive 60 fps frames in
+which a hostile owns >=8 cells.  Sampling at 3 fps keeps 1 frame in 20.
+
+  hostile_0 :  1 excursions at 60 fps ->  1 survive 30 fps,  1 survive 3 fps
+               lengths(frames): [600]
+  hostile_1 : 11 excursions at 60 fps -> 11 survive 30 fps,  8 survive 3 fps
+               lengths(frames): [43, 57, 54, 45, 39, 5, 7, 31, 4, 49, 20]
+  hostile_2 :  4 excursions at 60 fps ->  4 survive 30 fps,  2 survive 3 fps
+               lengths(frames): [8, 8, 8, 5]
+
+  TOTAL: 16 excursions | 30 fps keeps 16 (100%) | 3 fps keeps 11 (69%)
+  Excursions ENTIRELY INVISIBLE at 3 fps: 5 of 16
+  length of the LOST excursions  (frames): [4, 5, 7, 8, 8]  -> median 7 frames = 117 ms at 60 fps
+  length of the KEPT excursions  (frames): [5, 8, 20, 31, 39, 43, 45, 49, 54, 57, 600]  -> median 43 frames = 717 ms at 60 fps
+  A 3 fps sample keeps one frame in 20.  Every lost excursion above is
+  SHORTER than that gap, so the loss is not uniform: it is exactly the
+  fast-moving content -- the thing you sampled to find.
+
+==============================================================================
+MEASUREMENT 2 -- THE TWO QUESTIONS, ASKED SEPARATELY.  Never blended.
+==============================================================================
+Q1  CHANGE DETECTION   'did X change between the reference and t?'
+    observe mode: 18/18 correct = 1.000   (per-trial truth vector: TTTTTTTTTTTTTTTTTT)
+    full_rate mode: the reader must locate the change across a window
+      it did not choose.  Cost, in cell-comparisons the reader must do:
+        hostile_0  30fps over 10s: 31200 comparisons
+        ceiling    30fps over 10s: 31200 comparisons
+        hostile_0  diff+ref      : 1560 comparisons
+    full_rate under a BOUNDED reader.  Exact, not simulated: if the
+    change lands on one of N pages uniformly and the reader may
+    examine B of them without knowing which, P(find) = B/N.
+        B=  1 of 300 pages examined -> P(find the change) = 0.003
+        B=  5 of 300 pages examined -> P(find the change) = 0.017
+        B= 10 of 300 pages examined -> P(find the change) = 0.033
+        B= 30 of 300 pages examined -> P(find the change) = 0.100
+        B=100 of 300 pages examined -> P(find the change) = 0.333
+        B=300 of 300 pages examined -> P(find the change) = 1.000
+
+Q2  ABSOLUTE STATE    'what is at position P right now?'
+    observe (valid anchor)     27/27 correct = 1.000 | confidently wrong: 0
+    diff only (no reference)    0/27 correct = 0.000 | confidently wrong: 0
+    full_rate (direct read)    27/27 correct = 1.000 | confidently wrong: 0
+    observe (STALE anchor)      5/ 5 DECLINED | answered anyway: 0
+    THE BOUNDARY, stated plainly:
+      change detection: diff+ref is EXACT (18/18).  full_rate is not
+        less correct, it is 20x more expensive to check: 31,200 cell
+        comparisons against 1,560, because the reader must find the
+        change in a window it did not choose.
+      absolute state  : diff ALONE scores 0.000 -- L4, the state was
+        projected away.  diff+REFERENCE scores 1.000, the same as
+        full_rate.  So the reference does not merely help; it fully
+        repairs the question.  And at a STALE anchor it DECLINES,
+        which full_rate never has to do because it has no anchor.
+
+==============================================================================
+MEASUREMENT 3 -- THE TRIGGER.  Built to be WRONG, and confirmed wrong.
+==============================================================================
+  WRONG assumption (moving hostile assumed still)      -> REFUTED   {"world_pose_ref": [-1.8212, 0.9699, 14.0], "world_pose_now": [-1.6764, 1.4157, 14.0], "moved_in_world": true, "footprint_cells_lost": 14, "
+  CORRECT assumption (static ceiling)                  -> OCCLUDED  {"world_pose_ref": null, "world_pose_now": null, "moved_in_world": false, "footprint_cells_lost": 11, "footprint_cells_gained": 0, "n_cells_
+  FALSE POSITIVE (asks about a hostile that does not exist) -> REFUTED   {"cells_owned": 0}
+  SEPARABILITY: can CHARS alone tell hostile from wall? -> CONFIRMED {"target_glyphs": "@", "other_glyphs": " #&*,.8:x", "glyph_overlap": "", "n_glyph_overlap": 0, "n_target_colours": 1, "n_other_colours": 3, 
+
+  scene-graph truth vs frame-level evidence: 1/2 agree
+    WRONG assumption (moving hostile assumed still)      truth_moved=True  frame_says_moved=True 
+    CORRECT assumption (static ceiling)                  truth_moved=False frame_says_moved=True 
+
+  ADVERSARIAL DEPTH — a hostile placed at the SAME depth as the wall
+  behind it, so depth cannot stand in for identity.  Note that z^10
+  flattens the ramp: any cell with z_ndc < (0.1)^(1/10) = 0.794 reads
+  '@' regardless of WHAT it is, so the sweep has to cross that knee
+  (z = 47.6 in this scene) before the char channel can fail at all:
+    hostile z  verdict   glyph overlap  colour overlap
+    14.0       CONFIRMED ''             0 (1 target colours vs 3 other)
+    26.0       CONFIRMED ''             0 (1 target colours vs 3 other)
+    40.0       CONFIRMED ''             0 (1 target colours vs 3 other)
+    46.0       CONFIRMED ''             0 (1 target colours vs 3 other)
+    48.0       REFUTED   '&'            0 (1 target colours vs 3 other)
+    50.0       REFUTED   '&'            0 (1 target colours vs 3 other)
+    52.0       REFUTED   '#'            0 (1 target colours vs 3 other)
+    55.0       REFUTED   '8'            0 (1 target colours vs 3 other)
+    58.0       REFUTED   ','            0 (1 target colours vs 3 other)
+
+  char-only separability REFUTED at 5 of 9 adversarial depths.
+  Where it is NOT refuted the glyph sets are disjoint only because the
+  target sits in a depth band the walls do not occupy -- a property of
+  THIS SCENE, not a property of the channel.
+
+  verdicts: 2 REFUTED (evidence AGAINST) | 1 OCCLUDED (neither) | 0 UPHELD (no evidence) | 1 CONFIRMED (evidence FOR)
+  The interface returns evidence AGAINST the assumption of need, not
+  only evidence for it -- and it can return NEITHER, which a
+  confirm-only interface cannot do.
+
+==============================================================================
+MEASUREMENT 4 -- THE SHARED OBSERVATION PATH (the n_eff question)
+==============================================================================
+  1 lane  x 30 fps x 10 s = 300 page-requests
+    unique captures 300 | cache hits 1 | raster time 1.344 s | wall 1.475 s
+  5 lanes x 30 fps x 10 s = 1500 page-requests
+    unique captures 300 | cache hits 1205 | raster time 1.344 s | wall 0.514 s
+  5 lanes x 30 diffs each = 150 diff-requests
+    unique captures 0 | cache hits 151 | raster time 0.000 s | wall 0.040 s
+
+  Every lane's answer is served by ONE path and ONE cache, so the
+  COST is shared (5.0x amortisation) and so is the FRESHNESS: all
+  lanes see the same epoch.  Two triggers evaluated on the same
+  epoch receive evidence from the SAME frames -- their evidence is
+  correlated by construction, not by coincidence.
+    lane1 trigger evidence: {"world_pose_ref": [-1.8212, 0.9699, 14.0], "world_pose_now": [-1.6764, 1.4157, 14.0], "moved_in_world": true, "footprint_cells_lost": 14, "footprint_cells_gained": 21, "n_cells_changed_total": 41, "frame_evidence_says_moved": true}
+    lane2 trigger evidence: {"world_pose_ref": [1.9291, 1.1531, 26.0], "world_pose_now": [1.4676, 1.1219, 26.0], "moved_in_world": true, "footprint_cells_lost": 4, "footprint_cells_gained": 0, "n_cells_changed_total": 41, "frame_evidence_says_moved": true}
+    same epoch (0), same captured frames, same verdict shape: True
+
+==============================================================================
+FINAL
+==============================================================================
+Q1 CHANGE DETECTION (observe, diff+ref) : 1.000  over n=18 trials
+Q2 ABSOLUTE STATE   observe (valid anchor)     : 1.000  (confidently wrong: 0)
+Q2 ABSOLUTE STATE   diff only (no reference)   : 0.000  (confidently wrong: 0)
+Q2 ABSOLUTE STATE   full_rate (direct read)    : 1.000  (confidently wrong: 0)
+Q2 ABSOLUTE STATE   observe (STALE anchor)     : 5/5 DECLINED
+
+results.json written.

@@ -1,0 +1,20 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+  workflow_dispatch:
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: npm install --no-save yaml || true
+      - name: syntax check every module
+        run: npm run check
+      - name: flagship tool, offline verdict (fleet-pager)
+        run: node tools/fleet-pager.mjs
+      - name: GAN-hardened elites in-place verification
+        run: |
+          for v in gan-elites/*/verify.mjs; do echo "── $v"; node "$v" || exit 1; done

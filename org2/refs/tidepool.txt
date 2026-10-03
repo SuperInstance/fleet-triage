@@ -1,0 +1,9 @@
+refs/heads/canon-edge-sweep-0922	8f225cca81eec00a9f83a04b64cfb326f2acb7b7
+refs/heads/canon-md	a491fbc3b00e1d42fe6fd7aadcc12f7fecfa55d3
+refs/heads/canon-stub	cca063917faad4809ab30c661dcacc86a9509a0b
+refs/heads/claude/docs-tidepool	6e6523aee22483541edb0b85957dc1abd5af32c0
+refs/heads/lane-b-jev-decision	5aafa2e1ea66b1372dfdd36b79b650f35f19fd03
+refs/heads/license-mit	189304e0500f2368245f80f78b843b8e9d2a61f2
+refs/heads/main	805d413e1330b729f3b281ba61c5030e6221a855
+refs/heads/q16-breed-ingest	4ef6d350cc77be784a255ea8c4d2551cb0332435
+refs/heads/readme-zero-shot	4ee898e559db5f82e27a8eb7cb9f0b75937eafbf

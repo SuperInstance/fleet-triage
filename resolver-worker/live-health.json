@@ -1,0 +1,93 @@
+{
+  "service": "resolver-worker",
+  "version": "1.0.0",
+  "status": "OK",
+  "index": {
+    "repos": 477,
+    "files": 85990,
+    "distinct_basenames": 36935,
+    "directory_entries": 477,
+    "suffix_index": 53003,
+    "census_repos": 5092,
+    "built": "2026-10-01",
+    "source": ".resolver-state/repo_index.json",
+    "frozen": true
+  },
+  "stages": {
+    "1_citation": "SHIPPED — path resolution against the frozen index",
+    "2_numeric": "SHIPPED — ratios recomputed from their own stated operands",
+    "3_external": "DISABLED — reports EXTERNAL_NOT_CHECKED; never guesses"
+  },
+  "known_bugs": [
+    {
+      "id": 1,
+      "status": "FIXED-IN-PYTHON / PORTED-WITH-FIX",
+      "title": "Line-anchor ±140-char window attributed one range to every path in a list",
+      "disease": "confident, specific, wrong 'this resolves'",
+      "symptom": "`pat.search()` took the FIRST match in a ±140-char window, so in a numbered list one line range was propagated onto sibling paths nobody had claimed a line for.",
+      "cost": "3 of 4 LINE_OOR findings were fiction about files no author had anchored.",
+      "at_edge": "Not reproduced. The port attributes anchors only to the citation they are written next to."
+    },
+    {
+      "id": 2,
+      "status": "FIXED-IN-PYTHON / PORTED-WITH-FIX",
+      "title": "Path guard ran before the `:NN` anchor was stripped",
+      "disease": "confident, specific, wrong 'this resolves'",
+      "symptom": "PATHLIKE/BARE_FILE do not match a string still carrying its ':NN' anchor, so every inline `path:42` citation hit `continue` and was silently dropped — never extracted, never checked.",
+      "cost": "Every `file.py:42` citation in the corpus was invisible to the tool.",
+      "at_edge": "Not reproduced. The port parses the anchor first, then tests the anchor-stripped path."
+    },
+    {
+      "id": 3,
+      "status": "FIXED-IN-PYTHON / PORTED-WITH-FIX",
+      "title": "No repo-root fallback for doc-relative resolution",
+      "disease": "confident, specific, wrong 'this resolves'",
+      "symptom": "`src/core/valuenetwork.ts` was reported missing; it exists, in a 174-file `src/core/`.",
+      "cost": "7 false positives in one file alone.",
+      "at_edge": "Not reproduced. Suffix matching is indexed fleet-wide."
+    },
+    {
+      "id": 4,
+      "status": "FIXED-IN-PYTHON / PORTED-WITH-FIX",
+      "title": "Basename matching across unrelated repos",
+      "disease": "confident, specific, wrong 'this resolves'",
+      "symptom": "`permutation.py` resolved into `sparse4pinns` — someone else's PINN project — and the tool compared line numbers against a file the fleet does not have.",
+      "cost": "Produced SYMBOL_MISMATCH rows that implied real files had been located. They had not.",
+      "at_edge": "Not reproduced. The port never resolves a basename into a repo that does not contain the cited path; such citations are reported AMBIGUOUS, never as a line-level disagreement."
+    },
+    {
+      "id": 5,
+      "status": "OPEN — REGRESSION CLASS, NOT A DEFECT",
+      "title": "The tool indexed its own clone cache",
+      "disease": "confident, specific, wrong 'this resolves'",
+      "symptom": "Indexing the resolver's own clone directory made every bare `rubiks.py` spuriously AMBIGUOUS.",
+      "cost": "Inflated AMBIGUOUS from 4,486.",
+      "at_edge": "Not reproducible here. The edge index is a frozen artifact with no clone cache in it."
+    },
+    {
+      "id": 6,
+      "status": "OPEN — THE FAILURE MODE THAT MATTERS",
+      "title": "A flaky mount silently emptied the index",
+      "disease": "confident, specific, wrong 'this resolves'",
+      "symptom": "An empty index makes EVERY path citation FILE_MISSING. The tool produced a 99% false-positive rate that looked exactly like a legitimate result.",
+      "cost": "The single most dangerous failure this instrument has.",
+      "at_edge": "Guarded. /health reports nRepos and nFiles in the RESPONSE, and /selftest asserts known-good citations still resolve. A low index count is visible in the response body, not in a log."
+    }
+  ],
+  "one_disease": "Every bug in this instrument, mine and the build agent's, has the same shape: a confident, specific, wrong 'this resolves / this does not exist.'",
+  "known_limitations": [
+    "STAGE 3 (external URL / arXiv / DOI) is DISABLED at the edge. The Python tool resolves 4,472 external refs (3,014 URL_OK, 380 URL_DEAD, 229 arXiv_RESOLVES, 48 DOI). The edge Worker reports them as EXTERNAL_NOT_CHECKED rather than guessing. A Worker cannot be trusted to re-run egress at scale and the original tool's numbers remain the authority.",
+    "LINE_OOR and SYMBOL_MISMATCH are UNVERIFIABLE_EDGE. Deciding them requires the file CONTENTS (line counts and the text of a cited line). The edge index holds PATHS ONLY, 85,990 files across 477 repos. The tool reports 10 LINE_OOR and 6 SYMBOL_MISMATCH fleet-wide; the edge cannot adjudicate any of them and does not pretend to.",
+    "There is NO citing-repo context. The Python tool knows which repo a document lives in and tries that repo FIRST. The edge Worker is given prose, not a filesystem path, so every citation is resolved repo-qualified-then-fleet-wide. Citations that are correct relative to an unstated repo will be reported AMBIGUOUS or REPO_UNKNOWN, not RESOLVES.",
+    "The index is a FROZEN SNAPSHOT built 2026-10-01 from /workspace/.resolver-state/repo_index.json. It is not live. A file created after that date does not exist here, and a deleted one still does. FILE_MISSING means 'not in the snapshot', never 'does not exist'.",
+    "The index holds PATHS, not contents and not line counts. This is a deliberate size choice: 85,990 paths compress to 0.91 MB gzip. It is also the reason stage 1 is the ONLY stage shipped at full strength."
+  ],
+  "doctrine": "A resolver that reports 4,000 broken references must be assumed broken until proven otherwise. GET /selftest is the proof obligation.",
+  "endpoints": {
+    "POST /resolve": "prose in, findings table out",
+    "GET /health": "this",
+    "GET /selftest": "positive + negative controls",
+    "GET /canary": "integer-exact FNV-1a 64"
+  },
+  "secrets": "none — this Worker requires no token, no secret, only its index"
+}

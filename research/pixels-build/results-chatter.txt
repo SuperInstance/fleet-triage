@@ -1,0 +1,79 @@
+================================================================
+ CHATTER — the fixed-dither question, measured
+ model: Rasterizer.cs:129   fogId = min(int(pow(z,10)*10 + off), 9)
+================================================================
+
+C1  BOUNDARY GEOMETRY of the z^10 quantiser (offset 0, 10 glyphs)
+      k   z at which the glyph steps      gap to the previous boundary
+      1    0.79433                           -
+      2    0.85134                     0.05701
+      3    0.88657                     0.03523
+      4    0.91244                     0.02588
+      5    0.93303                     0.02059
+      6    0.95020                     0.01717
+      7    0.96496                     0.01476
+      8    0.97793                     0.01297
+      9    0.98952                     0.01159
+
+      widest gap 0.05701    narrowest gap 0.01159    ratio 4.9x
+      -> boundaries crowd together as z rises, so the flip rate per unit
+         depth scales as d/dz[z^10] = 10 z^9: 6.8x larger at z=0.99 than at
+         z=0.80.  That is the chatter, and it is a property of the RAMP
+         FUNCTION, not of when the dither is drawn.
+
+C2  ONE z SWEEP, FIVE DITHER POLICIES  (1024 cells, 20000 steps, z 0.70->1.00)
+    ramp "@&#8x*,:. " throughout; only the dither differs.
+
+    FLAT      offset = 0 everywhere          total    9216   peak/frame  1024   mean    0.5
+    FIXED     drawn once  (what the game does) total    9216   peak/frame     7   mean    0.5
+    REDRAW    redrawn every frame            total 5698924   peak/frame   565   mean  284.9
+    TEMPORAL  sine phase, per cell and frame total  643192   peak/frame    86   mean   32.2
+    PHASED    phase walks slowly through a period total   10766   peak/frame     7   mean    0.5
+
+    total flips    FIXED 9216   FLAT 9216   ratio 1.000
+    peak/frame     FIXED 7   FLAT 1024   ratio 146x
+    total flips    REDRAW 5698924 (618.37x FIXED)   peak 565
+    total flips    TEMPORAL 643192 (70x FIXED)  peak 86
+    total flips    PHASED 10766 (1.17x FIXED)   peak 7
+
+    -> FLAT and FIXED agree on the TOTAL to 0.00% and differ 146x on the
+       PEAK.  A dither is a re-phasing: it cannot change how many times
+       z^10*10 crosses an integer, only how many cells cross together.
+       FLAT is the control that scores badly — same information, no spread,
+       the whole wall flips at once.  That is the flicker being described.
+    -> REDRAW has 81x the peak of the real algorithm and 618.37x its total.
+       The retracted churn figure was measuring THIS, which is why it was
+       an artifact and why it was such a dramatic one.
+    -> TEMPORAL, the cure as literally prescribed, is 70x WORSE than what
+       the game already does.  Per-frame dither variation is not
+       anti-aliasing; on a quantiser this steep it is extra noise.
+
+C3  FLIP RATE vs z, measured in windows  (FIXED dither, 1024 cells)
+        z window       flips per unit z     ratio to z=0.80    z^9 predicts
+      0.795 - 0.805               14800              1.00x            1.00x
+      0.855 - 0.865               26800              1.81x            1.92x
+      0.915 - 0.925               49800              3.36x            3.52x
+      0.985 - 0.995               92600              6.26x            6.81x
+
+    -> measured and z^9 track each other across the whole informative band,
+       the last one off by 8% because the window is finite and the
+       boundaries are discrete.  Chatter is worst where the ramp is most
+       compressed — the FAR end, the same band ASCII-CHARSELECTION.md
+       reports as reading '@' for ~79% of cells.
+
+C4  A BOBBING CAMERA  (z = 0.90 +/- 0.010, 60-frame period, 1024 cells)
+    total flips            79155
+    peak in one frame      47
+    flips toward NEARER    39600  (the "swap back and forth")
+
+    -> with a monotone z the glyph only ever steps one way, so the seed
+       document's "back and forth" needs a non-monotone z.  A first-person
+       camera has one, and there the same fixed dither produces genuine
+       two-way flicker, because every cell has its own threshold and the
+       bob pushes different cells across theirs on different frames.
+
+C5  THE ALPHABET IS ORTHOGONAL TO ALL OF THIS
+    "@&#8x*,:. " and ".:-=+*#%@" are both 10-glyph density ramps.  Swapping one for the
+    other changes no flip count in any arm above, because the flip count is
+    a property of the quantiser and not of the characters.  The text-priority
+    trap in ASCII-VISION-LANDSCAPE.md is real and it is a SEPARATE decision.

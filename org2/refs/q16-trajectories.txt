@@ -1,0 +1,6 @@
+refs/heads/claude/v0-seam	d3f8b381bad01d581ea6f3810b780596f4961dea
+refs/heads/gan-ledger-seeded-distill	e81f36ed33a206a1c2e437e8bc5caec8baa564e1
+refs/heads/gan-traj-adapter	0ab51712b3485c9a0e6b85d907598daaf13eba4c
+refs/heads/lane-n-q16-bridge	bfd7ee88e80523d0d3f78e1daab0be1d6be6e8bd
+refs/heads/main	3e8699c8e95e7811c17fe19a9fd6b98fc53968d9
+refs/heads/sigma-loop	c9b7bfdd049190b1b5f027a166ae632c0c4b00f2

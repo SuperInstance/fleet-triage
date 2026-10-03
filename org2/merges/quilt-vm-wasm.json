@@ -1,0 +1,1 @@
+{"repo": "quilt-vm-wasm", "branch": "master", "head": "001fa5327423", "commits_first_parent": 7, "merges": {"pr_merge": 1}, "n_merges": 1, "rows": [{"sha": "5c3632ba677a", "subj": "Merge pull request #1 from SuperInstance/fix/manifest-wasm-optional-dep", "class": "pr_merge"}]}

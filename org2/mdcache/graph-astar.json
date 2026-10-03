@@ -1,0 +1,1 @@
+{"graph-astar-master/Cargo.toml": "[package]\nname = \"graph-astar\"\nversion = \"0.1.0\"\ndescription = \"Graph Astar \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/graph-astar\"\nedition = \"2021\"\n\nkeywords = [\"graph-astar\"]\n\n[dependencies]\n"}

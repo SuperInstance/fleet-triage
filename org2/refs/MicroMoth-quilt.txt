@@ -1,0 +1,9 @@
+refs/heads/claude/quantum-wow-plugin	f3d0c772baeef79562c4cfe9a9535df51c576ed1
+refs/heads/exp004-jitter-drop-receipt	c9d02a0c469da3cacc4e0eecaf85a862d4d45356
+refs/heads/exp010-pop-scale-receipt	394751a861e2fb7ad09c3728ff9c6a38e9997c7e
+refs/heads/exp019-assembly-receipt	2b738a8b5547a28ff56e1e01a1ab546acf56de70
+refs/heads/exp020-tie-break-receipt	ed59d3d0d6f8cccb6a4eab9167a24f97eb9017b6
+refs/heads/exp021-r31-autopsy-receipt	5106a14e04b04d73bb1239362b7f2671ad71a8b1
+refs/heads/exp022-desert-break-receipt	c9dffbad576e0682d5879b03ad3d9137c3c90bc3
+refs/heads/lab-home-citation	8bdae0162706e6c1b29f9bc394176dd660f22112
+refs/heads/main	950a6fed54e7f435a7c1694b9d087d2cd37c4349

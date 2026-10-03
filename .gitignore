@@ -1,2 +1,16 @@
 __pycache__/
 *.pyc
+node_modules/
+target/
+.wrangler/
+
+# ORPHANED FLEET CLONES - 28,771 files, 252 MB. Regenerable by re-cloning, and
+# committing them would put 252 MB of duplicated history into this repository
+# permanently. They are census scratch: org2/auditclones, org_scratch/*.json.
+# Re-create with a clone script; do not commit.
+org2/
+org_scratch/
+
+# A nested git repo with 0 commits and 0 tracked files. It is why `git add -A`
+# kept refusing: git cannot add a repository inside a repository.
+CONFORM/

@@ -1,0 +1,5 @@
+refs/heads/chore/repo-setup	e7654658f1e6e583f2965a8d3bb634cff97b5930
+refs/heads/feat/ai-agent-production-grade	81392b78b079fc13452fabeebc54a0d5813ed09d
+refs/heads/feat/windows-support	e5fa3a1a451c9b98168f13f86f709766c433466b
+refs/heads/main	336415a36e83084c05dff903123897fddf7db75e
+refs/heads/master	daeb5598a63bff483d17b4b83d584bd8bff87d6a

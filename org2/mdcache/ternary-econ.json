@@ -1,0 +1,1 @@
+{"ternary-econ-main/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-econ\"\nname = \"ternary-econ\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Economic models with ternary market signals: market analysis, supply/demand, portfolio optimization, risk assessment, market simulation\"\n"}

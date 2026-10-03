@@ -1,0 +1,22 @@
+[1mpipeline-guard[0m — validation as visible data, dead-letters as recoverable cells
+
+┌─ run 1 (schema v1) ─────────────────────────────────────────┐
+│ accepted 4 rows, total $239.43                            │
+│ dead-letter 5 rows                                        │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m 4 clean rows accepted
+  [32m✓[0m 5 bad rows dead-lettered
+  [32m✓[0m rejections carry precise reasons[2m — kafka:orders:p2: amount/type:number | kafka:orders:p3: amount/max:10000 | kafka:orders:p4: currency/oneOf:USD|EUR|GBP | kafka:orders:p5: qty/required | kafka:orders:p8: order_id/required[0m
+  [32m✓[0m type error named the field and rule
+  [32m✓[0m range error named the bound
+  [32m✓[0m oneOf error named the enum
+┌─ run 2 (schema v2 + replay) ────────────────────────────────┐
+│ accepted 5 rows, total $15238.43                          │
+│ dead-letter 4 rows                                        │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m replay recovered the over-ceiling row[2m — the 14,999 order passes under v2 — schema changed as data, no deploy[0m
+  [32m✓[0m genuinely bad rows stayed dead[2m — a schema relax is not an amnesty[0m
+  [32m✓[0m witness chain sealed[2m — 14 row events, head 6ed3344cc34b…[0m
+
+[1m  ══ pipeline-guard: [32m9/9 checks green — ready-to-go[0m ══[0m
+

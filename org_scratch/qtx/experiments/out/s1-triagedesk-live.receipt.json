@@ -1,0 +1,340 @@
+{
+  "base": "https://api.typesafe.ai/v1/systemone",
+  "ran_at": "2026-09-25T01:10:48.013Z",
+  "rows": [
+    {
+      "id": "t01",
+      "want": "escalate-human",
+      "heuristic": {
+        "score": 60,
+        "action": "escalate-human",
+        "page": {
+          "noul": "yes",
+          "p": 0.95
+        }
+      },
+      "live": {
+        "score": 100,
+        "action": "escalate-human",
+        "noul": "yes",
+        "p": 0.94,
+        "raw_conf": {
+          "urgency": 0.45,
+          "action": 0.99
+        }
+      },
+      "ms": 926,
+      "scoreDelta": 40,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "27d1b76ed8dba619"
+    },
+    {
+      "id": "t02",
+      "want": "escalate-human",
+      "heuristic": {
+        "score": 40,
+        "action": "escalate-human",
+        "page": {
+          "noul": "yes",
+          "p": 0.95
+        }
+      },
+      "live": {
+        "score": 100,
+        "action": "escalate-human",
+        "noul": "yes",
+        "p": 0.96,
+        "raw_conf": {
+          "urgency": 0.38,
+          "action": 1
+        }
+      },
+      "ms": 812,
+      "scoreDelta": 60,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "b24234949dad44c1"
+    },
+    {
+      "id": "t03",
+      "want": "forward-billing",
+      "heuristic": {
+        "score": 45,
+        "action": "forward-billing",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 100,
+        "action": "forward-billing",
+        "noul": "no",
+        "p": 0.2,
+        "raw_conf": {
+          "urgency": 0,
+          "action": 0.94
+        }
+      },
+      "ms": 309,
+      "scoreDelta": 55,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "6c86e49ac06a67a3"
+    },
+    {
+      "id": "t04",
+      "want": "forward-billing",
+      "heuristic": {
+        "score": 30,
+        "action": "forward-billing",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 30,
+        "action": "forward-billing",
+        "noul": "no",
+        "p": 0.19,
+        "raw_conf": {
+          "urgency": 0,
+          "action": 0.94
+        }
+      },
+      "ms": 322,
+      "scoreDelta": 0,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "5b221f0137766e34"
+    },
+    {
+      "id": "t05",
+      "want": "auto-close",
+      "heuristic": {
+        "score": 9,
+        "action": "auto-close",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 10,
+        "action": "reply-only",
+        "noul": "no",
+        "p": 0.04,
+        "raw_conf": {
+          "urgency": 0.19,
+          "action": 0.13
+        }
+      },
+      "ms": 290,
+      "scoreDelta": 1,
+      "actionAgree": false,
+      "pageAgree": true,
+      "row_hash": "accb9673a1a53f1e"
+    },
+    {
+      "id": "t06",
+      "want": "auto-close",
+      "heuristic": {
+        "score": 3,
+        "action": "auto-close",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 10,
+        "action": "reply-only",
+        "noul": "no",
+        "p": 0.09,
+        "raw_conf": {
+          "urgency": 0,
+          "action": 0.21
+        }
+      },
+      "ms": 337,
+      "scoreDelta": 7,
+      "actionAgree": false,
+      "pageAgree": true,
+      "row_hash": "363615f196502009"
+    },
+    {
+      "id": "t07",
+      "want": "reply-only",
+      "heuristic": {
+        "score": 0,
+        "action": "reply-only",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 30,
+        "action": "reply-only",
+        "noul": "no",
+        "p": 0.08,
+        "raw_conf": {
+          "urgency": 0.07,
+          "action": 0.98
+        }
+      },
+      "ms": 288,
+      "scoreDelta": 30,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "e1d73236c3b14454"
+    },
+    {
+      "id": "t08",
+      "want": "reply-only",
+      "heuristic": {
+        "score": 0,
+        "action": "reply-only",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 10,
+        "action": "reply-only",
+        "noul": "no",
+        "p": 0.06,
+        "raw_conf": {
+          "urgency": 0,
+          "action": 0.96
+        }
+      },
+      "ms": 329,
+      "scoreDelta": 10,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "b0a60e1b189c9e0c"
+    },
+    {
+      "id": "t09",
+      "want": "boundary",
+      "heuristic": {
+        "score": 0,
+        "action": "reply-only",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 30,
+        "action": "reply-only",
+        "noul": "no",
+        "p": 0.18,
+        "raw_conf": {
+          "urgency": 0.41,
+          "action": 0.66
+        }
+      },
+      "ms": 327,
+      "scoreDelta": 30,
+      "actionAgree": true,
+      "pageAgree": true,
+      "row_hash": "87274ab23d496235"
+    },
+    {
+      "id": "t10",
+      "want": "boundary",
+      "heuristic": {
+        "score": 35,
+        "action": "forward-billing",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 50,
+        "action": "forward-billing",
+        "noul": "yes",
+        "p": 0.67,
+        "raw_conf": {
+          "urgency": 0.14,
+          "action": 0.37
+        }
+      },
+      "ms": 332,
+      "scoreDelta": 15,
+      "actionAgree": true,
+      "pageAgree": false,
+      "row_hash": "5797ba92b2264a06"
+    },
+    {
+      "id": "t11",
+      "want": "escalate-human",
+      "heuristic": {
+        "score": 60,
+        "action": "escalate-human",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 100,
+        "action": "escalate-human",
+        "noul": "yes",
+        "p": 0.76,
+        "raw_conf": {
+          "urgency": 0.04,
+          "action": 0.98
+        }
+      },
+      "ms": 334,
+      "scoreDelta": 40,
+      "actionAgree": true,
+      "pageAgree": false,
+      "row_hash": "eacf8369b98ca59c"
+    },
+    {
+      "id": "t12",
+      "want": "boundary",
+      "heuristic": {
+        "score": 33,
+        "action": "forward-billing",
+        "page": {
+          "noul": "no",
+          "p": 0.1
+        }
+      },
+      "live": {
+        "score": 30,
+        "action": "escalate-human",
+        "noul": "no",
+        "p": 0.08,
+        "raw_conf": {
+          "urgency": 0.34,
+          "action": 0.21
+        }
+      },
+      "ms": 339,
+      "scoreDelta": 3,
+      "actionAgree": false,
+      "pageAgree": true,
+      "row_hash": "8a526e41725671d9"
+    }
+  ],
+  "agreement": {
+    "action": 9,
+    "page": 10,
+    "within10": 5,
+    "meanDelta": "24.3",
+    "refused": 0,
+    "n": 12
+  },
+  "witness_head": "8a526e41725671d9",
+  "witness_len": 12
+}

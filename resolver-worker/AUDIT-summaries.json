@@ -1,0 +1,241 @@
+{
+ "run": {
+  "date": "2026-10-01",
+  "docs": 10985,
+  "chars": 8397397,
+  "repos_on_disk": [
+   "fleet-triage",
+   "pong-quilt",
+   "plato-tile-encoder",
+   "eisenstein"
+  ],
+  "targets_absent_from_machine": [
+   "quilt-tools",
+   "AI-Writings",
+   "quilt-atlas",
+   "quilt-edge-lab"
+  ]
+ },
+ "citation_outcomes": {
+  "AMBIGUOUS": 1419,
+  "REPO_UNKNOWN": 1085,
+  "RESOLVES": 820,
+  "FILE_MISSING": 1631,
+  "REPO_NOT_INDEXED": 536,
+  "PATH_PRECISE_ONLY": 585,
+  "REPO_MISMATCH": 104
+ },
+ "citation_total": 6180,
+ "stage2_total": 184,
+ "stage2_outcomes": {
+  "RATIO_MISMATCH": 171,
+  "RATIO_OK": 13
+ },
+ "file_missing_taxonomy": {
+  "UNVERIFIABLE": 1009,
+  "AMBIGUOUS_needs_human": 433,
+  "NOT_A_DEFECT_doc_already_says_it_is_missing": 13,
+  "CATEGORY_URL_not_a_path": 25,
+  "REAL_DEFECT_done_claim_absent_on_disk": 25,
+  "CATEGORY_dotfile_or_abs_not_a_fleet_path": 92,
+  "TOOL_FP_index_stale": 6,
+  "CATEGORY_glob_not_a_path": 26,
+  "NOT_A_DEFECT_roadmap_future_work": 2
+ },
+ "file_missing_total": 1631,
+ "real_defects": [
+  {
+   "doc": "F1-AUDIT.md",
+   "repo": "fleet-triage",
+   "path": "out/3b-per-cell-ratio.svg",
+   "line": 666,
+   "ctx": "| `out/3b-per-cell-ratio.svg` | per-cell variance \u00f7 `\u03c3\u00b2/2k` |"
+  },
+  {
+   "doc": "RESEARCH.md",
+   "repo": "fleet-triage",
+   "path": "cs.LG/recent",
+   "line": 354,
+   "ctx": "Live `arxiv.org/list/cs.LG/recent` returns `arXiv:2609.38176` as current, so the block is"
+  },
+  {
+   "doc": "SCOUT2-PRIORART.md",
+   "repo": "fleet-triage",
+   "path": "tools/collapse_ledger.py",
+   "line": 458,
+   "ctx": "README's \"under which seed\" is implemented by the fleet's `tools/collapse_ledger.py` wrapping"
+  },
+  {
+   "doc": "music-ROUND4.md",
+   "repo": "fleet-triage",
+   "path": "tools/gen-r4.py",
+   "line": 236,
+   "ctx": "| `tools/gen-r4.py` | renderer, `music-3.0`, 900 s timeout, \u22642 retries, immediate download, per-track save, `manifest.json` | \u2705 `ast.parse`; credential path exercised, exits 1 with"
+  },
+  {
+   "doc": "music-ROUND4.md",
+   "repo": "fleet-triage",
+   "path": "tools/gen-r4.py",
+   "line": 242,
+   "ctx": "the artifact. Do not let it live in `/tmp`.** `git add tools/gen-r4.py tools/formcheck-r4.py"
+  },
+  {
+   "doc": "music-ROUND4.md",
+   "repo": "fleet-triage",
+   "path": "tools/formcheck-r4.py",
+   "line": 242,
+   "ctx": "the artifact. Do not let it live in `/tmp`.** `git add tools/gen-r4.py tools/formcheck-r4.py"
+  },
+  {
+   "doc": "integration.md",
+   "repo": "fleet-triage",
+   "path": "src/environment/holodeck_bridge.rs",
+   "line": 234,
+   "ctx": "2. **fleet-simulator \u2192 holodeck-rust**: Connected via `fleet_simulator/src/environment/holodeck_bridge.rs`. Uses gRPC client to connect to holodeck-rust server. Connection is **ACT"
+  },
+  {
+   "doc": "navigator-groq-120b-viva.md",
+   "repo": "fleet-triage",
+   "path": "scripts/auto_tune.sh",
+   "line": 69,
+   "ctx": "| `scripts/auto_tune.sh` | \u2013 | CLI that launches a *grid* or *random* search over hyper\u2011parameters defined in `config/tidepool.yaml`. |"
+  },
+  {
+   "doc": "navigator-groq-120b-viva.md",
+   "repo": "fleet-triage",
+   "path": "config/tidepool.yaml",
+   "line": 69,
+   "ctx": "| `scripts/auto_tune.sh` | \u2013 | CLI that launches a *grid* or *random* search over hyper\u2011parameters defined in `config/tidepool.yaml`. |"
+  },
+  {
+   "doc": "integration.md",
+   "repo": "fleet-triage",
+   "path": "src/environment/holodeck_bridge.rs",
+   "line": 128,
+   "ctx": "2. **fleet-simulator \u2192 holodeck-rust**: Connected via `fleet_simulator/src/environment/holodeck_bridge.rs`. Uses gRPC client to connect to holodeck-rust server. Connection is **ACT"
+  },
+  {
+   "doc": "integration-cycle-3.md",
+   "repo": "fleet-triage",
+   "path": "src/environment/holodeck_bridge.rs",
+   "line": 13,
+   "ctx": "2. **fleet-simulator \u2192 holodeck-rust**: Connected via `fleet_simulator/src/environment/holodeck_bridge.rs`. Uses gRPC client to connect to holodeck-rust server. Connection is **ACT"
+  },
+  {
+   "doc": "2026-04-28.md",
+   "repo": "fleet-triage",
+   "path": ".github/FUNDING.yml",
+   "line": 6,
+   "ctx": "- Added `.github/FUNDING.yml` to all 92 cocapn repos"
+  },
+  {
+   "doc": "README.md",
+   "repo": "fleet-triage",
+   "path": "out/s1-triagedesk-live.receipt.json",
+   "line": 30,
+   "ctx": "Receipt: `out/s1-triagedesk-live.receipt.json` (hash-chained, verify with the"
+  },
+  {
+   "doc": "papers-WHITEPAPERS.md",
+   "repo": "fleet-triage",
+   "path": "../",
+   "line": 46,
+   "ctx": "`derive/../` \u2014 the per-file counts are reproducible with the script in \u00a76."
+  },
+  {
+   "doc": "QUEUE.md",
+   "repo": "fleet-triage",
+   "path": "scripts/g7_validate.mjs",
+   "line": 50,
+   "ctx": "- [ ] G7 watt-receipt instrumentation \u2014 extend guard.py's nvidia-smi poll to also sample power.draw (same query, same 5 s cadence) and integrate mean-power \u00d7 wall-seconds into the "
+  },
+  {
+   "doc": "QUEUE.md",
+   "repo": "fleet-triage",
+   "path": "scripts/g1_seat_harness.mjs",
+   "line": 51,
+   "ctx": "- [ ] G1 local-LLM-seat spike \u2014 7B\u20138B Q4_K_M instruct model (Qwen2.5-7B-Instruct class, ~4.4 GB GGUF) served locally on the 4050 (fits the 6.1 GB ceiling; start 4k ctx + Q8 KV cach"
+  },
+  {
+   "doc": "QUEUE.md",
+   "repo": "fleet-triage",
+   "path": "docs/g1/predictions.json",
+   "line": 51,
+   "ctx": "- [ ] G1 local-LLM-seat spike \u2014 7B\u20138B Q4_K_M instruct model (Qwen2.5-7B-Instruct class, ~4.4 GB GGUF) served locally on the 4050 (fits the 6.1 GB ceiling; start 4k ctx + Q8 KV cach"
+  },
+  {
+   "doc": "RESULTS.md",
+   "repo": "fleet-triage",
+   "path": "eileen/venvs/elephant-gpu/lib/python3.14/site-packages/transformers/utils/import_utils.py",
+   "line": 157,
+   "ctx": "\"stderr\": \"Traceback (most recent call last):\\n  File \\\"<frozen runpy>\\\", line 198, in _run_module_as_main\\n  File \\\"<frozen runpy>\\\", line 88, in _run_code\\n  File \\\"/home/eileen/"
+  },
+  {
+   "doc": "dlss5-manager-recon-2026-09-29.md",
+   "repo": "fleet-triage",
+   "path": "version/dbghelp/d3d12/wininet/winhttp.dll",
+   "line": 11,
+   "ctx": "`ModInstaller` then swaps/upgrades runtime DLLs **per game, reversibly**: every overwritten file is backed up and recorded in a manifest (`dlss5-install.json` in AppData + a sideca"
+  },
+  {
+   "doc": "encod-synergy-misc-2026-09-29.md",
+   "repo": "fleet-triage",
+   "path": "src/dodecet.rs",
+   "line": 20,
+   "ctx": "**A dodecet is a 12-bit unsigned value, 0\u20134095 (4096 values), stored in a `u16`** (`src/lib.rs:87-97`: `MAX_DODECET=0xFFF`, `DODECET_BITS=12`, `NIBBLES=3`, `CAPACITY=4096`; `src/do"
+  },
+  {
+   "doc": "encod-synergy-misc-2026-09-29.md",
+   "repo": "fleet-triage",
+   "path": "tests/compatibility/browser_tests.rs",
+   "line": 41,
+   "ctx": "- **Dodecet as shipped cannot build:** restore/remove the `fleet-math-c` path dep (or vendor it). Add `[[test]]` entries so the 4 orphaned test files run; decide whether `tests/com"
+  },
+  {
+   "doc": "README.md",
+   "repo": "fleet-triage",
+   "path": "out/s1-triagedesk-live.receipt.json",
+   "line": 30,
+   "ctx": "Receipt: `out/s1-triagedesk-live.receipt.json` (hash-chained, verify with the"
+  },
+  {
+   "doc": "CONTRIBUTING.md",
+   "repo": "fleet-triage",
+   "path": "docs/dev/cleanup_unused.md",
+   "line": 66,
+   "ctx": "Always run `uv run python -m autodata.scripts.cleanup_unused --check` (see `docs/dev/cleanup_unused.md`) before submitting changes that touch `autodata/`. The command exits non-zer"
+  },
+  {
+   "doc": "syn-CLAIMSTATE.md",
+   "repo": "fleet-static-host",
+   "path": "fleet-static-host/\u2026/VIBE-CODER-ARCH.md",
+   "line": 230,
+   "ctx": "| `fleet-static-host/\u2026/VIBE-CODER-ARCH.md` | `ratelimit.ts`, `access.ts` | 5 | 2 | partly shipped |"
+  },
+  {
+   "doc": "worker-RESOLVER.md",
+   "repo": "fleet-triage",
+   "path": "plans/plan_95406a94/board.md",
+   "line": 32,
+   "ctx": "| `.mavis/plans/plan_95406a94/board.md` | \"CLOUDFLARE_API_TOKEN not present in current shell env\" |"
+  }
+ ],
+ "empty_target_findings": 219,
+ "hypoth_68x": {
+  "detected_one_line": true,
+  "detected_realistic_two_line": false,
+  "actual": 5.7385,
+  "claimed": 6.8
+ },
+ "index_shape": {
+  "repos": 477,
+  "files": 85990,
+  "max_repo": "fleet-triage",
+  "max_repo_files": 53808,
+  "max_repo_share": 0.626,
+  "median_repo_files": 10,
+  "repos_le_10_files": 248,
+  "nested_double_counted_repos": 246,
+  "nested_double_counted_files": 16427
+ }
+}

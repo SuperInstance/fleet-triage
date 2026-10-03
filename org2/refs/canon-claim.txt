@@ -1,0 +1,2 @@
+refs/heads/canon-stub	27f98e3f131009722291d7c7fb40636f3250e511
+refs/heads/master	077631ee10820e6b08dee9e3446eddfc1e03e4c9

@@ -1,0 +1,650 @@
+### repo: substrate-attest  (apply with: git -C substrate-attest apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index 12572cd..666e99f 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "ATTEST opcode (R10): add a trust score to an observation. Witness-typed.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "attest",
+     "observation",
+### repo: substrate-bundle  (apply with: git -C substrate-bundle apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index 4e39a57..8cc1dad 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "BUNDLE opcode (R10): group observations into a named collection.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "bundle",
+     "observation",
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-canary-pin  (apply with: git -C substrate-canary-pin apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index bc18ade..c75f4ec 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "FNV-1a 64-bit pinned to the fleet canary 0x024a555471370b18d. Cross-language stable.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "fnv1a",
+     "canary",
+diff --git a/test.js b/test.js
+index 6f765b6..36e9eab 100644
+--- a/test.js
++++ b/test.js
+@@ -4,4 +4,5 @@ try {
+   console.log('OK: ' + Object.keys(result).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-contest  (apply with: git -C substrate-contest apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index c1dbb0a..df17ff5 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "CONTEST opcode (R10): create a counter-observation that disputes another.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "contest",
+     "observation",
+diff --git a/test.js b/test.js
+index 6f765b6..36e9eab 100644
+--- a/test.js
++++ b/test.js
+@@ -4,4 +4,5 @@ try {
+   console.log('OK: ' + Object.keys(result).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-delegate  (apply with: git -C substrate-delegate apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index 8adebe5..05f22cd 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "DELEGATE opcode (R10): grant a capability to another node.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "delegate",
+     "capability",
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-membership  (apply with: git -C substrate-membership apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index f595247..81f0cf4 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "MEMBERSHIP opcode (R10): test if an observation is a member of a bundle.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "membership",
+     "bundle",
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-merger  (apply with: git -C substrate-merger apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index fa8a6c6..aa74e95 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "MERGER opcode (R10): reach consensus across contradictions.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "merge",
+     "observation",
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-revoke  (apply with: git -C substrate-revoke apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index 8dd080e..9cc406c 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "REVOKE opcode (R10): mark an observation as superseded but not deleted.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "revoke",
+     "observation",
+diff --git a/test.js b/test.js
+index 6f765b6..36e9eab 100644
+--- a/test.js
++++ b/test.js
+@@ -4,4 +4,5 @@ try {
+   console.log('OK: ' + Object.keys(result).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-traverse  (apply with: git -C substrate-traverse apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index fea40aa..ed15535 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "TRAVERSE opcode (R10): walk the witness log along typed edges.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "traverse",
+     "witness-log",
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-withdraw  (apply with: git -C substrate-withdraw apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index 1e7a135..4517e2a 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "WITHDRAW opcode (R10): pull a published observation into private scope.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "withdraw",
+     "observation",
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }
+### repo: substrate-witness-log  (apply with: git -C substrate-witness-log apply -p1 < <this section>)
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index 7155e4f..f2a5b84 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "The witness log: a typed chain of observations. The substrate's lived memory.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "witness-log",
+     "observation",
+diff --git a/test.js b/test.js
+index 6f765b6..36e9eab 100644
+--- a/test.js
++++ b/test.js
+@@ -4,4 +4,5 @@ try {
+   console.log('OK: ' + Object.keys(result).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }

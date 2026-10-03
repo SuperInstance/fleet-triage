@@ -1,0 +1,4 @@
+refs/heads/claude/init-1wgqn0	0b4049114741110e05c8faf81a2337383f5a0187
+refs/heads/main	5c68342e113f5c1b314532009bc3700c4e352332
+refs/heads/perception-tools	f2ced9cbde91a5c2931e34dabac917f997624f19
+refs/heads/seamstress-gate1	c252b1163af43a5e03ff43998f08e91d189aaa5a

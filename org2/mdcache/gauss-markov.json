@@ -1,0 +1,1 @@
+{"gauss-markov-master/Cargo.toml": "[package]\nname = \"gauss-markov\"\nversion = \"0.1.0\"\ndescription = \"Gauss Markov \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/gauss-markov\"\nedition = \"2021\"\n\nkeywords = [\"gauss-markov\"]\n\n[dependencies]\n"}

@@ -1,0 +1,36 @@
+[1mdriftwatch[0m — reads the shape of a metric; static thresholds shown up for contrast
+
+┌─ phase 1 ───────────────────────────────────────────────────┐
+│ regime stable                                             │
+│ naive alarms 0                                            │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m healthy metric reads stable
+┌─ phase 2 ───────────────────────────────────────────────────┐
+│ regime drifting                                           │
+│ slope -0.0075/sample                                      │
+│ naive alarms 5                                            │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m slow drift caught by slope[2m — flagged while accuracy was still 0.890[0m
+  [32m✓[0m shape beats threshold: flagged EARLIER than 0.80 alarm[2m — driftwatch @ 0.890 vs static @ 0.792 — a day of lead time in production[0m
+┌─ phase 3 ───────────────────────────────────────────────────┐
+│ regime oscillating                                        │
+│ bend/sample 0.2038                                        │
+│ naive alarms 5                                            │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m oscillation caught by bending energy[2m — mean is healthy 0.90 — thresholds see nothing here[0m
+┌─ phase 4 ───────────────────────────────────────────────────┐
+│ regime stuck                                              │
+│ tail variance 0                                           │
+│ naive alarms 5                                            │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m stuck caught by variance collapse[2m — 0.90 forever looks healthy to any threshold — not to variance[0m
+  [32m✓[0m one event per regime change[2m — stable→drifting, drifting→oscillating, oscillating→stuck[0m
+  [32m✓[0m witness chain sealed[2m — 3 regime events, head b8637eb2fabb…[0m
+┌─ regime trail ──────────────────────────────────────────────┐
+│ stable → drifting                                         │
+│ drifting → oscillating                                    │
+│ oscillating → stuck                                       │
+└────────────────────────────────────────────────────────────┘
+
+[1m  ══ driftwatch: [32m7/7 checks green — ready-to-go[0m ══[0m
+

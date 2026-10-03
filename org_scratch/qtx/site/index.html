@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quilt Tools — ten working prototypes</title>
+<style>
+  :root { --bg:#0a0a0a; --card:rgba(255,255,255,.03); --bd:rgba(255,255,255,.09); --tx:#f0f0f0; --dim:#9a9a9a;
+          --green:#7ec699; --blue:#5fa8d3; --purple:#bb7ec6; --red:#c67e7e; --amber:#c6c67e; }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  body { background:var(--bg); color:var(--tx); font:15px/1.6 'Inter',-apple-system,sans-serif; padding:48px 20px }
+  .wrap { max-width:880px; margin:0 auto }
+  h1 { font-size:2rem; letter-spacing:-.03em }
+  .sub { color:var(--dim); margin:8px 0 6px }
+  .hero-note { color:var(--dim); font-size:.9rem; margin-bottom:36px }
+  .hero-note b { color:var(--green) }
+  .grad { background:linear-gradient(135deg,#7ec699,#5fa8d3,#bb7ec6); -webkit-background-clip:text; background-clip:text; color:transparent }
+  .card { background:var(--card); border:1px solid var(--bd); border-radius:12px; padding:20px 22px; margin-bottom:18px }
+  .card-head { display:flex; align-items:center; gap:12px; flex-wrap:wrap }
+  h3 { font-size:1.05rem; text-transform:capitalize }
+  .realm { font-size:.72rem; color:var(--dim); border:1px solid var(--bd); border-radius:99px; padding:2px 10px; text-transform:uppercase; letter-spacing:.08em }
+  .pass, .fail { margin-left:auto; font-size:.8rem; font-weight:600 }
+  .pass { color:var(--green) } .fail { color:var(--red) }
+  .pitch { color:var(--dim); margin:8px 0 4px }
+  details { margin-top:10px } summary { cursor:pointer; color:var(--blue); font-size:.85rem }
+  pre { background:#050505; border:1px solid var(--bd); border-radius:8px; padding:14px; overflow-x:auto;
+        font:12px/1.55 'JetBrains Mono',Menlo,monospace; color:#cfcfcf; margin-top:10px }
+  .g { color:var(--green) } .r { color:var(--red) } .y { color:var(--amber) }
+  .c { color:var(--blue) } .d { color:var(--dim) } .b { color:#fff; font-weight:600 }
+  footer { color:var(--dim); font-size:.85rem; margin-top:36px }
+  code { font-family:'JetBrains Mono',monospace; color:var(--green); font-size:.9em }
+</style></head><body><div class="wrap">
+  <h1><span class="grad">Quilt Tools</span></h1>
+  <p class="sub">ten working prototypes on one reactive runtime — <b class="b">75/75 checks green</b> in the latest sweep</p>
+  <p class="hero-note">Each card is the tool's <b>actual captured output</b> — the verification you see ran, it was not
+  hand-written. One file per tool, <code>node tools/&lt;name&gt;.mjs</code>, no config. Built on
+  SuperInstance/quilt (play-test-patched engine, 11 patches, 36/36 upstream tests).</p>
+  
+    <section class="card" id="01-fleet-pager">
+      <div class="card-head">
+        <h3>fleet pager</h3>
+        <span class="realm">DevOps / SRE</span>
+        <span class="pass">[32m7/7 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Golden signals → severity → edge-triggered pages with hysteresis.</p>
+      <details open><summary>verified run</summary><pre><span class="b">fleet-pager</span> — golden signals → burn rates → severity → edge-triggered pages
+
+┌─ t=0  steady state ─────────────────────────────────────────┐
+│ latency 120 ms   error_rate: 0.2%   saturation: 0.4       │
+│ burn errors ×0.4   latency ×0.4                           │
+│ severity 30 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> quiet system pages nobody<span class="d"> — baseline severity 30 — below the sev3 band</span>
+┌─ t+5m latency degrades (480ms) ─────────────────────────────┐
+│ latency 480 ms   error_rate: 0.2%   saturation: 0.4       │
+│ burn errors ×0.4   latency ×1.6                           │
+│ severity 51 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> sev3 ticket fired on first crossing<span class="d"> — severity=51</span>
+  <span class="g">✓</span> no sev2 page yet (band discipline)
+┌─ t+9m errors spike (4.0%) ──────────────────────────────────┐
+│ latency 480 ms   error_rate: 4%   saturation: 0.4         │
+│ burn errors ×8.0   latency ×1.6                           │
+│ severity 75 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> sev2 page fired once<span class="d"> — severity=75 → platform-primary</span>
+  <span class="g">✓</span> no duplicate page while in-band<span class="d"> — saturation 0.95 keeps severity in sev2 band</span>
+┌─ t+40m recovered ───────────────────────────────────────────┐
+│ latency 140 ms   error_rate: 0.1%   saturation: 0.45      │
+│ burn errors ×0.2   latency ×0.5                           │
+│ severity 24 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> resolve fired below hysteresis band<span class="d"> — severity=24</span>
+┌─ witness ledger ────────────────────────────────────────────┐
+│ entries 3                                                 │
+│ head cae314ad0f333cec                                     │
+│ verify {&quot;ok&quot;:true,&quot;brokenAt&quot;:null,&quot;head&quot;:&quot;cae314ad0f333cec&quot;,&quot;count&quot;:3}│
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 3 receipts, head cae314ad0f333cec</span>
+
+<span class="b">  ══ fleet-pager: <span class="g">7/7 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="02-ledger-seal">
+      <div class="card-head">
+        <h3>ledger seal</h3>
+        <span class="realm">Security</span>
+        <span class="pass">[32m6/6 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Tamper-evident audit ledger; the verifier pins the exact broken row.</p>
+      <details open><summary>verified run</summary><pre><span class="b">ledger-seal</span> — append-only witness ledger + tamper alarm + audit queries
+
+  <span class="g">✓</span> append fence: 5 clean rows accepted
+  <span class="g">✓</span> append fence rejects actorless rows<span class="d"> — rows require actor+action</span>
+  <span class="g">✓</span> audit query: bob read the secret twice<span class="d"> — seqs 1,4</span>
+  <span class="g">✓</span> chain verifies clean<span class="d"> — 5 rows, head 287ecb019443…</span>
+┌─ clean ledger ──────────────────────────────────────────────┐
+│ rows 5                                                    │
+│ head 287ecb019443fc55                                     │
+│ verdict SEALED                                            │
+└────────────────────────────────────────────────────────────┘
+┌─ tamper alarm ──────────────────────────────────────────────┐
+│ edit row seq=2: attempts 5→1, ts −1d (silent)             │
+│ verdict TAMPER DETECTED                                   │
+│ broken at seq=2                                           │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> tamper detected at exactly the edited row<span class="d"> — verifier pinned seq=2</span>
+  <span class="g">✓</span> restore heals the chain<span class="d"> — head 287ecb019443…</span>
+
+<span class="b">  ══ ledger-seal: <span class="g">6/6 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="03-ocean-recall">
+      <div class="card-head">
+        <h3>ocean recall</h3>
+        <span class="realm">Knowledge</span>
+        <span class="pass">[32m7/7 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Remember / recall / forget with an auditable memory and honest misses.</p>
+      <details open><summary>verified run</summary><pre><span class="b">ocean-recall</span> — remember / recall / forget, with an auditable memory
+
+┌─ memory ────────────────────────────────────────────────────┐
+│ size 3 notes                                              │
+│ geometry local deterministic embed (64-d), one geometry   │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> exact-substance recall hits<span class="d"> — sim=0.4523</span>
+  <span class="g">✓</span> paraphrase recall hits<span class="d"> — sim=0.3873</span>
+  <span class="g">✓</span> unrelated query honestly misses<span class="d"> — sim=0 &lt; threshold — absence is information</span>
+  <span class="g">✓</span> forget removes the note
+  <span class="g">✓</span> double forget refuses honestly<span class="d"> — nothing remembered as &quot;arch-001&quot;</span>
+  <span class="g">✓</span> forgotten note is gone from recall<span class="d"> — sim=0.1443</span>
+┌─ witness ledger ────────────────────────────────────────────┐
+│ entries 9                                                 │
+│ ops rrrrrrffr                                             │
+│ head ba3ef64df4d2c0a0                                     │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 9 memory operations, head ba3ef64df4d2…</span>
+
+<span class="b">  ══ ocean-recall: <span class="g">7/7 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="04-triagedesk">
+      <div class="card-head">
+        <h3>triagedesk</h3>
+        <span class="realm">Support</span>
+        <span class="pass">[32m8/8 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">System One triage — the fence between model and sheet holds.</p>
+      <details open><summary>verified run</summary><pre><span class="b">triagedesk</span> — System One triage (<span class="y">offline heuristics</span>; fence identical in both)
+
+┌─ honest outage ─────────────────────────────────────────────┐
+│ score 80 / 100 (heuristic)                                │
+│ choice escalate-human (heuristic)                         │
+│ noul yes (p=0.95) (heuristic)                             │
+│ policy page_now=YES   sla=72h                             │
+└────────────────────────────────────────────────────────────┘
+┌─ cosmetic typo  ────────────────────────────────────────────┐
+│ score 3 / 100 (heuristic)                                 │
+│ choice auto-close (heuristic)                             │
+│ noul no (p=0.1) (heuristic)                               │
+│ policy page_now=no   sla=72h                              │
+└────────────────────────────────────────────────────────────┘
+┌─ billing issue  ────────────────────────────────────────────┐
+│ score 30 / 100 (heuristic)                                │
+│ choice forward-billing (heuristic)                        │
+│ noul no (p=0.1) (heuristic)                               │
+│ policy page_now=no   sla=72h                              │
+└────────────────────────────────────────────────────────────┘
+┌─ ADVERSARIAL   ─────────────────────────────────────────────┐
+│ score 1 / 100 (heuristic)                                 │
+│ choice reply-only (heuristic)                             │
+│ noul no (p=0.1) (heuristic)                               │
+│ policy page_now=no   sla=72h                              │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> outage pages a human<span class="d"> — score=80, choice=escalate-human</span>
+  <span class="g">✓</span> typo closes politely, no page<span class="d"> — score=3</span>
+  <span class="g">✓</span> billing routes to billing<span class="d"> — forward-billing path exists in the menu</span>
+  <span class="g">✓</span> adversarial choice stayed in the menu<span class="d"> — BANANA never reached the sheet — got &quot;reply-only&quot;</span>
+  <span class="g">✓</span> adversarial score stayed inside the clamp<span class="d"> — types hold; values may leak — the receipt shows which</span>
+  <span class="g">✓</span> injection never opened the pager<span class="d"> — heuristics unmoved: score=1, noul=no</span>
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 4 decision receipts, head 8a12c9294de9…</span>
+  <span class="g">✓</span> no refusals left behind<span class="d"> — 12 decisions, 0 repairs</span>
+┌─ witness ledger ────────────────────────────────────────────┐
+│ receipts 4 decisions                                      │
+│ mode offline                                              │
+│ head 8a12c9294de9c29e                                     │
+└────────────────────────────────────────────────────────────┘
+
+<span class="b">  ══ triagedesk: <span class="g">8/8 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="05-budget-tide">
+      <div class="card-head">
+        <h3>budget tide</h3>
+        <span class="realm">Fintech</span>
+        <span class="pass">[32m8/8 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Envelopes that refuse: the tide gate stops money before it moves.</p>
+      <details open><summary>verified run</summary><pre><span class="b">budget-tide</span> — envelopes that refuse, not envelopes that judge
+
+┌─ week 1 ────────────────────────────────────────────────────┐
+│ groceries $82.4 / $600   tide in                          │
+│ dining $45.5 / $200   tide in                             │
+│ transport $32 / $150   tide in                            │
+│ month pace 40% elapsed                                    │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> normal spends flow
+┌─ week 2 — dining at $200.74 ────────────────────────────────┐
+│ groceries $82.4 / $600   tide in                          │
+│ dining $200.74 / $200   TIDE OUT                          │
+│ transport $32 / $150   tide in                            │
+│ month pace 40% elapsed                                    │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> dining envelope is dry
+  <span class="g">✓</span> dry envelope raised its alert<span class="d"> — dining envelope empty — refusal mode until next month</span>
+  <span class="g">✓</span> spend on dry envelope REFUSED before money moved<span class="d"> — dining tide is out: 200.74 of 200 already spent</span>
+  <span class="g">✓</span> refusal names the shortfall
+  <span class="g">✓</span> other envelopes unaffected<span class="d"> — groceries at $177.5</span>
+  <span class="g">✓</span> no negative-amount loophole<span class="d"> — refusal is by budget math, amount sign irrelevant here</span>
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 9 transactions + refusals, head 04531a453a6a…</span>
+┌─ month so far ──────────────────────────────────────────────┐
+│ accepted spend $410.24                                    │
+│ refusals 2                                                │
+│ head 04531a453a6abfe9                                     │
+└────────────────────────────────────────────────────────────┘
+
+<span class="b">  ══ budget-tide: <span class="g">8/8 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="06-home-ecos">
+      <div class="card-head">
+        <h3>home ecos</h3>
+        <span class="realm">IoT / Smart home</span>
+        <span class="pass">[32m6/6 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Learned baselines catch the 2am heater no threshold can see.</p>
+      <details open><summary>verified run</summary><pre><span class="b">home-ecos</span> — learned baselines, occupancy-aware comfort, gesture-checked power
+
+┌─ overnight ─────────────────────────────────────────────────┐
+│ baseline 83 W (learned from 12 samples)                   │
+│ hvac {&quot;mode&quot;:&quot;eco&quot;,&quot;target&quot;:18}                           │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> baseline learned the quiet house<span class="d"> — ewma=83 W</span>
+  <span class="g">✓</span> eco mode applied while away
+  <span class="g">✓</span> occupancy flips hvac to heat<span class="d"> — target 21.5°C</span>
+┌─ evening ───────────────────────────────────────────────────┐
+│ baseline 1966 W                                           │
+│ gesture bending energy 4535 over last 32 samples (smooth duty cycles bend little)│
+│ events 2                                                  │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> evening draw = one event, not sixty<span class="d"> — surges so far: 1 — edge-triggered, the oven coming on is one event</span>
+┌─ 2am ───────────────────────────────────────────────────────┐
+│ baseline 165 W (quiet night)                              │
+│ sample 400 W = 4.2× baseline                              │
+│ verdict SURGE flagged                                     │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> 2am heater caught against the learned baseline<span class="d"> — quiet-night baseline ~120 W → 400 W is a wave, not noise (surge #2)</span>
+  <span class="g">✓</span> event ledger sealed<span class="d"> — 3 home events, head 8900c149fb26…</span>
+
+<span class="b">  ══ home-ecos: <span class="g">6/6 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="07-driftwatch">
+      <div class="card-head">
+        <h3>driftwatch</h3>
+        <span class="realm">ML-ops</span>
+        <span class="pass">[32m7/7 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Shape-reading drift detection — flagged at 0.890 vs static 0.792.</p>
+      <details open><summary>verified run</summary><pre><span class="b">driftwatch</span> — reads the shape of a metric; static thresholds shown up for contrast
+
+┌─ phase 1 ───────────────────────────────────────────────────┐
+│ regime stable                                             │
+│ naive alarms 0                                            │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> healthy metric reads stable
+┌─ phase 2 ───────────────────────────────────────────────────┐
+│ regime drifting                                           │
+│ slope -0.0075/sample                                      │
+│ naive alarms 5                                            │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> slow drift caught by slope<span class="d"> — flagged while accuracy was still 0.890</span>
+  <span class="g">✓</span> shape beats threshold: flagged EARLIER than 0.80 alarm<span class="d"> — driftwatch @ 0.890 vs static @ 0.792 — a day of lead time in production</span>
+┌─ phase 3 ───────────────────────────────────────────────────┐
+│ regime oscillating                                        │
+│ bend/sample 0.2038                                        │
+│ naive alarms 5                                            │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> oscillation caught by bending energy<span class="d"> — mean is healthy 0.90 — thresholds see nothing here</span>
+┌─ phase 4 ───────────────────────────────────────────────────┐
+│ regime stuck                                              │
+│ tail variance 0                                           │
+│ naive alarms 5                                            │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> stuck caught by variance collapse<span class="d"> — 0.90 forever looks healthy to any threshold — not to variance</span>
+  <span class="g">✓</span> one event per regime change<span class="d"> — stable→drifting, drifting→oscillating, oscillating→stuck</span>
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 3 regime events, head b8637eb2fabb…</span>
+┌─ regime trail ──────────────────────────────────────────────┐
+│ stable → drifting                                         │
+│ drifting → oscillating                                    │
+│ oscillating → stuck                                       │
+└────────────────────────────────────────────────────────────┘
+
+<span class="b">  ══ driftwatch: <span class="g">7/7 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="08-approvals">
+      <div class="card-head">
+        <h3>approvals</h3>
+        <span class="realm">SaaS workflow</span>
+        <span class="pass">[32m9/9 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">One sheet, three tenants, policies that know who is asking.</p>
+      <details open><summary>verified run</summary><pre><span class="b">approvals</span> — one sheet, three tenants, policies that know who&#x27;s asking
+
+┌─ policy: $2,400 spend, same sheet ──────────────────────────┐
+│ acme (premium) ceiling $5000 — auto: true                 │
+│ globex (standard) ceiling $500 — auto: false              │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> premium tier self-approves $2,400<span class="d"> — ceiling $5000</span>
+  <span class="g">✓</span> standard tier routes $2,400 to a human<span class="d"> — ceiling $500</span>
+  <span class="g">✓</span> acme files $2,400 → auto-approved<span class="d"> — ceiling $5000</span>
+  <span class="g">✓</span> globex files $2,400 → human review<span class="d"> — same sheet, same request, different policy</span>
+  <span class="g">✓</span> globex small spend still self-approves<span class="d"> — ceiling $500</span>
+  <span class="g">✓</span> cross-tenant approval REFUSED<span class="d"> — cross-tenant approval: initech cannot approve globex requests</span>
+  <span class="g">✓</span> own-tenant approval works<span class="d"> — by globex</span>
+  <span class="g">✓</span> approved request left the queue
+┌─ decided ledger ────────────────────────────────────────────┐
+│ A-1 acme $2400 → auto-approved                            │
+│ G-2 globex $120 → auto-approved                           │
+│ G-1 globex $2400 → approved by globex                     │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 5 flow events, head fda5dcf54d3c…</span>
+
+<span class="b">  ══ approvals: <span class="g">9/9 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="09-habit-atlas">
+      <div class="card-head">
+        <h3>habit atlas</h3>
+        <span class="realm">Health</span>
+        <span class="pass">[32m8/8 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Habits as physics: momentum with slow gains, gentle decay.</p>
+      <details open><summary>verified run</summary><pre><span class="b">habit-atlas</span> — momentum as physics: gains are slow, slips decay, rest is free
+
+┌─ week 1 ────────────────────────────────────────────────────┐
+│ days 0-6 6 of 7 done                                      │
+│ streak 3                                                  │
+│ momentum 1                                                │
+│ zone cruising                                             │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> streak counts the run days<span class="d"> — run run run (rest) run run run → 3-run streak</span>
+  <span class="g">✓</span> momentum rose through week 1<span class="d"> — 1 — cruising</span>
+  <span class="g">✓</span> rest day did not break the streak<span class="d"> — miss resets streak (motivation) but momentum barely moved</span>
+  <span class="g">✓</span> misses decay momentum but gently<span class="d"> — trough 0.65</span>
+┌─ week 2 ────────────────────────────────────────────────────┐
+│ days 7-13 5 of 7 done (two slips)                         │
+│ momentum 1                                                │
+│ zone cruising                                             │
+│ best streak 4                                             │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> momentum recovered after the wobble<span class="d"> — 1 — the system forgives, gradually</span>
+  <span class="g">✓</span> double check-in refused<span class="d"> — day already checked in (or out of order)</span>
+  <span class="g">✓</span> retroactive check-in refused<span class="d"> — days are append-only, like everything else here</span>
+┌─ the fortnight ─────────────────────────────────────────────┐
+│ check-ins 16 (fenced: 2 refused)                          │
+│ runs 13 of 14                                             │
+│ final momentum 1 (cruising)                               │
+│ head 51742b90751c7395                                     │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 16 days, head 51742b90751c…</span>
+
+<span class="b">  ══ habit-atlas: <span class="g">8/8 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+    <section class="card" id="10-pipeline-guard">
+      <div class="card-head">
+        <h3>pipeline guard</h3>
+        <span class="realm">Data engineering</span>
+        <span class="pass">[32m9/9 checks green — ready-to-go[0m</span>
+      </div>
+      <p class="pitch">Schema as data: precise reasons, dead-letter replay, evolution without deploys.</p>
+      <details open><summary>verified run</summary><pre><span class="b">pipeline-guard</span> — validation as visible data, dead-letters as recoverable cells
+
+┌─ run 1 (schema v1) ─────────────────────────────────────────┐
+│ accepted 4 rows, total $239.43                            │
+│ dead-letter 5 rows                                        │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> 4 clean rows accepted
+  <span class="g">✓</span> 5 bad rows dead-lettered
+  <span class="g">✓</span> rejections carry precise reasons<span class="d"> — kafka:orders:p2: amount/type:number | kafka:orders:p3: amount/max:10000 | kafka:orders:p4: currency/oneOf:USD|EUR|GBP | kafka:orders:p5: qty/required | kafka:orders:p8: order_id/required</span>
+  <span class="g">✓</span> type error named the field and rule
+  <span class="g">✓</span> range error named the bound
+  <span class="g">✓</span> oneOf error named the enum
+┌─ run 2 (schema v2 + replay) ────────────────────────────────┐
+│ accepted 5 rows, total $15238.43                          │
+│ dead-letter 4 rows                                        │
+└────────────────────────────────────────────────────────────┘
+  <span class="g">✓</span> replay recovered the over-ceiling row<span class="d"> — the 14,999 order passes under v2 — schema changed as data, no deploy</span>
+  <span class="g">✓</span> genuinely bad rows stayed dead<span class="d"> — a schema relax is not an amnesty</span>
+  <span class="g">✓</span> witness chain sealed<span class="d"> — 14 row events, head 6ed3344cc34b…</span>
+
+<span class="b">  ══ pipeline-guard: <span class="g">9/9 checks green — ready-to-go</span> ══</span></pre></details>
+    </section>
+  <footer>Shared runtime: <code>quilt-toolkit.mjs</code> — witness receipts (fnv1a-64 chains), playtest harness,
+  schema-fenced System One decisions, deterministic embeddings. Swap-in seams are marked in every tool header.</footer>
+</div></body></html>

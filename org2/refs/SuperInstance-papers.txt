@@ -1,0 +1,4 @@
+refs/heads/local-backup-2026-08-20	779733b7572880e3fae4356a2e66e02393cdbcf1
+refs/heads/main	efbc664cbc95d5342060bd14beb4891dd078a430
+refs/heads/papers-main	e8a26e573673a49c0d0aa65c418a9f21567f9d00
+refs/heads/windows-backup-2026-08-13	779733b7572880e3fae4356a2e66e02393cdbcf1

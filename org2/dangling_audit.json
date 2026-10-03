@@ -1,0 +1,128 @@
+[
+ {
+  "target": "jev-quilt",
+  "sha": "a3feccca",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "mist-game",
+  "sha": "8c45ff7",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "pong-quilt",
+  "sha": "023edbe",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "quilt-jepa",
+  "sha": "29e74d16",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "quilt-stone",
+  "sha": "ed25519",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "substrate-llm-client",
+  "sha": "006f3797",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "pong-quilt",
+  "sha": "6f1f80e2",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "SuperInstance",
+  "sha": "8a19d1e",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "quilt-stone",
+  "sha": "fba032456cf5f570d4924fd4fd314da6d7862182",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "crab-traps",
+  "sha": "0c36dd2",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "jev-quilt",
+  "sha": "3f8405888366e3697b3775017fa5fe13d6244226",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "PuddnHead",
+  "sha": "8d7bf0c86cd1f81b453ff87322ecf979247b5f97",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "SuperInstance",
+  "sha": "c5436f6db6cbbe82",
+  "audit": "NOFETCH",
+  "why": "no main/master"
+ },
+ {
+  "target": "CRDT_Research",
+  "sha": "368ba40",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "jev-quilt",
+  "sha": "3f8405888",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "qthe",
+  "sha": "addc22f9",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "pong-quilt",
+  "sha": "5391ba56",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "jev-quilt",
+  "sha": "61900bd",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "moth-runner",
+  "sha": "e95c786",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "saddle",
+  "sha": "05afebd",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "jev-quilt",
+  "sha": "cf8e0af",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "jev-quilt",
+  "sha": "b8a7ece",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "substrate-llm-client",
+  "sha": "329074a",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "jev-quilt",
+  "sha": "5f280b8b",
+  "audit": "ABSENT"
+ },
+ {
+  "target": "mist-game",
+  "sha": "85bef1e",
+  "audit": "ABSENT"
+ }
+]

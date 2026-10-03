@@ -1,0 +1,23 @@
+{
+  "canary_3lang": {
+    "input": "café Δ 日本語",
+    "encoding": "UTF-8",
+    "algorithm": "FNV-1a 64",
+    "expected_int": "0x24a555471370b18d",
+    "actual_int": "0x24a555471370b18d",
+    "expected_decimal": "2640610520279855501",
+    "actual_decimal": "2640610520279855501",
+    "match": true,
+    "comparison": "BigInt integer equality — never string equality on the hex form"
+  },
+  "canary_alphabet": {
+    "input_claimed": "abcdefghijklmnopqrstuvwxyz",
+    "claimed_int": "0xe5c271ee5c13e9c7",
+    "actual_int": "0x8450deb1cdc382a2",
+    "match": false,
+    "status": "UNVERIFIED_INPUT_UNKNOWN",
+    "detail": "The claimed value 0xe5c271ee5c13e9c7 does not match FNV-1a 64 of the lowercase a-z alphabet, and no recoverable input string for it was found. This Worker reports UNVERIFIED rather than searching for a string that produces the target. Fabricating an input to fit a constant is precisely the disease this instrument exists to catch."
+  },
+  "overall": "OK",
+  "note": "One canary verified exactly. One reported honestly as unverified. That ratio is the correct output."
+}

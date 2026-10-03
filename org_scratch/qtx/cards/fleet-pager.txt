@@ -1,0 +1,37 @@
+[1mfleet-pager[0m — golden signals → burn rates → severity → edge-triggered pages
+
+┌─ t=0  steady state ─────────────────────────────────────────┐
+│ latency 120 ms   error_rate: 0.2%   saturation: 0.4       │
+│ burn errors ×0.4   latency ×0.4                           │
+│ severity 30 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m quiet system pages nobody[2m — baseline severity 30 — below the sev3 band[0m
+┌─ t+5m latency degrades (480ms) ─────────────────────────────┐
+│ latency 480 ms   error_rate: 0.2%   saturation: 0.4       │
+│ burn errors ×0.4   latency ×1.6                           │
+│ severity 51 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m sev3 ticket fired on first crossing[2m — severity=51[0m
+  [32m✓[0m no sev2 page yet (band discipline)
+┌─ t+9m errors spike (4.0%) ──────────────────────────────────┐
+│ latency 480 ms   error_rate: 4%   saturation: 0.4         │
+│ burn errors ×8.0   latency ×1.6                           │
+│ severity 75 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m sev2 page fired once[2m — severity=75 → platform-primary[0m
+  [32m✓[0m no duplicate page while in-band[2m — saturation 0.95 keeps severity in sev2 band[0m
+┌─ t+40m recovered ───────────────────────────────────────────┐
+│ latency 140 ms   error_rate: 0.1%   saturation: 0.45      │
+│ burn errors ×0.2   latency ×0.5                           │
+│ severity 24 / 100                                         │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m resolve fired below hysteresis band[2m — severity=24[0m
+┌─ witness ledger ────────────────────────────────────────────┐
+│ entries 3                                                 │
+│ head cae314ad0f333cec                                     │
+│ verify {"ok":true,"brokenAt":null,"head":"cae314ad0f333cec","count":3}│
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m witness chain sealed[2m — 3 receipts, head cae314ad0f333cec[0m
+
+[1m  ══ fleet-pager: [32m7/7 checks green — ready-to-go[0m ══[0m
+

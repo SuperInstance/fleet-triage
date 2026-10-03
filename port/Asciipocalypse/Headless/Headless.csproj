@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>AsciiHeadless</AssemblyName>
+    <RootNamespace>ASCII_FPS</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NoWarn>CS0169;CS0414;CS0649;CS0067;CS0162;CS0168;CS0219;CS8981</NoWarn>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- every game source file except the GL host (ASCII_FPS.cs) and its Main -->
+    <Compile Include="..\ASCII_FPS\**\*.cs" Exclude="..\ASCII_FPS\ASCII_FPS.cs;..\ASCII_FPS\Program.cs;..\ASCII_FPS\bin\**\*.cs;..\ASCII_FPS\obj\**\*.cs" />
+    <Compile Include="*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OBJContentPipelineExtension\OBJContentPipelineExtension.csproj" />
+  </ItemGroup>
+</Project>

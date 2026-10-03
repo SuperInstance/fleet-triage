@@ -1,0 +1,1 @@
+{"capnp-schema-master/Cargo.toml": "[package]\nname = \"capnp-schema\"\nversion = \"0.1.0\"\ndescription = \"Capnp Schema \u2014 Rust implementation with the SuperInstance polyformalism canary wired in.\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/SuperInstance/capnp-schema\"\nedition = \"2021\"\n\nkeywords = [\"capnp-schema\"]\n\n[dependencies]\n"}

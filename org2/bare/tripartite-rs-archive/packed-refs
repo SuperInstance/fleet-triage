@@ -1,0 +1,3 @@
+# pack-refs with: peeled fully-peeled sorted 
+87044eca44048ff9694753349fd544965bcbfd3f refs/heads/deps/thiserror-2
+bf9cb3d716379b9697fffd92c257da14d18597c0 refs/heads/main

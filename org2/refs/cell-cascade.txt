@@ -1,0 +1,7 @@
+refs/heads/cortex-plug	42631559872c2335e92bfaf21671a4854fc0b45b
+refs/heads/cortex-v05	640b73a08fe84a9964b6422cefc2a6988c3fe638
+refs/heads/edge-benchmarks	cc34de2d06591c723c5d5ff79bcc6dfab5648ffe
+refs/heads/fleet-instinct	86ef39b11e115445c4e533a5a7d7ae55c9352f68
+refs/heads/main	118b1228b5d5a7cf1413036bad5d9f49396a9528
+refs/heads/qm-bridge	a3e5118fcc87403178c7fcc9bfb74b90d46e0546
+refs/heads/reflex-arc	b31c6dfb1b40b2b43f0fc4348a229e464232e8df

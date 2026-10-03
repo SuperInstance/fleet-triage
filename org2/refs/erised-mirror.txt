@@ -1,0 +1,2 @@
+refs/heads/claude/erised-autonomous-dev	f15ae3f6c6135bb30fdad3bb1bd6ac437aff7d9d
+refs/heads/main	7c32d19bdb701bf468d20b647a22c89daffcb95c

@@ -1,0 +1,8 @@
+refs/heads/claude/debug-docs-crosspollinate	903117c3c96c2a7d7fe93b029385f7c7520f9cac
+refs/heads/claude/embedding-v2	ca677c1d2df6e1dd43861f14227c5cce56304de8
+refs/heads/claude/explain-and-call-response	378a26e3d7a20b9d93428a332a86ecde6cd97083
+refs/heads/claude/meta-abstraction-engine	ccc96b7bb9e9ff5e4a95edf3b91ea4818b13f6ab
+refs/heads/claude/mir-analysis	6501334e5982953997b78c20cc3a55cb85117e25
+refs/heads/claude/real-midi-ingestion	313cc85bb53b184abd613c5684f3ffe72b20e756
+refs/heads/claude/twist-torsion-third-order	ec0c4b686a462cf049e64af4cdad28583b71f3b8
+refs/heads/master	7eff512e7681e8285fdb30559ea118bfe40b2ba4

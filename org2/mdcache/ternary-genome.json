@@ -1,0 +1,1 @@
+{"ternary-genome-master/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-genome\"\nname = \"ternary-genome\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Genetic encoding and expression for evolving ternary agent populations\"\n"}

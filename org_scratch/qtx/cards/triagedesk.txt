@@ -1,0 +1,42 @@
+[1mtriagedesk[0m — System One triage ([33moffline heuristics[0m; fence identical in both)
+
+┌─ honest outage ─────────────────────────────────────────────┐
+│ score 80 / 100 (heuristic)                                │
+│ choice escalate-human (heuristic)                         │
+│ noul yes (p=0.95) (heuristic)                             │
+│ policy page_now=YES   sla=72h                             │
+└────────────────────────────────────────────────────────────┘
+┌─ cosmetic typo  ────────────────────────────────────────────┐
+│ score 3 / 100 (heuristic)                                 │
+│ choice auto-close (heuristic)                             │
+│ noul no (p=0.1) (heuristic)                               │
+│ policy page_now=no   sla=72h                              │
+└────────────────────────────────────────────────────────────┘
+┌─ billing issue  ────────────────────────────────────────────┐
+│ score 30 / 100 (heuristic)                                │
+│ choice forward-billing (heuristic)                        │
+│ noul no (p=0.1) (heuristic)                               │
+│ policy page_now=no   sla=72h                              │
+└────────────────────────────────────────────────────────────┘
+┌─ ADVERSARIAL   ─────────────────────────────────────────────┐
+│ score 1 / 100 (heuristic)                                 │
+│ choice reply-only (heuristic)                             │
+│ noul no (p=0.1) (heuristic)                               │
+│ policy page_now=no   sla=72h                              │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m outage pages a human[2m — score=80, choice=escalate-human[0m
+  [32m✓[0m typo closes politely, no page[2m — score=3[0m
+  [32m✓[0m billing routes to billing[2m — forward-billing path exists in the menu[0m
+  [32m✓[0m adversarial choice stayed in the menu[2m — BANANA never reached the sheet — got "reply-only"[0m
+  [32m✓[0m adversarial score stayed inside the clamp[2m — types hold; values may leak — the receipt shows which[0m
+  [32m✓[0m injection never opened the pager[2m — heuristics unmoved: score=1, noul=no[0m
+  [32m✓[0m witness chain sealed[2m — 4 decision receipts, head 8a12c9294de9…[0m
+  [32m✓[0m no refusals left behind[2m — 12 decisions, 0 repairs[0m
+┌─ witness ledger ────────────────────────────────────────────┐
+│ receipts 4 decisions                                      │
+│ mode offline                                              │
+│ head 8a12c9294de9c29e                                     │
+└────────────────────────────────────────────────────────────┘
+
+[1m  ══ triagedesk: [32m8/8 checks green — ready-to-go[0m ══[0m
+

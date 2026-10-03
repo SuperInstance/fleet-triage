@@ -1,0 +1,1 @@
+{"repo": "flux-a2a-signal", "branch": "main", "head": "415ada1d40c5", "commits_first_parent": 13, "merges": {"pr_merge": 2}, "n_merges": 2, "rows": [{"sha": "415ada1d40c5", "subj": "Merge pull request #5 from SuperInstance/greenhorn/T-007", "class": "pr_merge"}, {"sha": "acd8723b70f0", "subj": "Merge pull request #4 from SuperInstance/superz/T-009", "class": "pr_merge"}]}

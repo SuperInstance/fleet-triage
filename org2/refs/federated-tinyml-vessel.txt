@@ -1,0 +1,5 @@
+refs/heads/claude/convergence-gesture	b7c1e6ab9abac98e7b298a7ff6e75627643ac6a1
+refs/heads/claude/docs-byte-exact	5d3faccace5e2b2fa9660058dcaa6aa77b2a3bb7
+refs/heads/claude/downstream-scrapcraft-edu	c46b3cef0b017178735379bcc6b6d997be81ac32
+refs/heads/claude/fix-noniid-empty-shard	4ea428c1c95226d09996a9b000286ea11b10961b
+refs/heads/master	9d385661508586f2eb20cef21a0fa1a69c92ed27

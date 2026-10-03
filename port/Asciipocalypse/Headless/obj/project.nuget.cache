@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZvBKcuj32cI=",
+  "success": true,
+  "projectFilePath": "/run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/port/Asciipocalypse/Headless/Headless.csproj",
+  "expectedPackageFiles": [
+    "/workspace/.nuget/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/workspace/.nuget/monogame.framework.desktopgl/3.8.0.1641/monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "/workspace/.nuget/sixlabors.imagesharp/2.1.9/sixlabors.imagesharp.2.1.9.nupkg.sha512",
+    "/workspace/.nuget/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "/workspace/.nuget/system.text.encoding.codepages/5.0.0/system.text.encoding.codepages.5.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.9 has a known high severity vulnerability, https://github.com/advisories/GHSA-2cmq-823j-5qj8",
+      "projectPath": "/run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/port/Asciipocalypse/Headless/Headless.csproj",
+      "warningLevel": 1,
+      "filePath": "/run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/port/Asciipocalypse/Headless/Headless.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 2.1.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-rxmq-m78w-7wmc",
+      "projectPath": "/run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/port/Asciipocalypse/Headless/Headless.csproj",
+      "warningLevel": 1,
+      "filePath": "/run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/port/Asciipocalypse/Headless/Headless.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
+}

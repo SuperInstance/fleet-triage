@@ -1,0 +1,1 @@
+{"ternary-kuramoto-master/Cargo.toml": "[package]\nrepository = \"https://github.com/SuperInstance/ternary-kuramoto\"\nname = \"ternary-kuramoto\"\nversion = \"0.1.0\"\nedition = \"2021\"\ndescription = \"Discrete Kuramoto oscillator \u2014 phase-to-ternary mapping, coupling, order parameter, chimera detection\"\nlicense = \"MIT\"\n"}

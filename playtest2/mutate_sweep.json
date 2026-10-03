@@ -1,0 +1,652 @@
+[
+ {
+  "repo": "cell-doctrine",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 1,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:20",
+    "file": "index.js",
+    "line": 20,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "fleet-static-host",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 2,
+   "red": 0,
+   "green": 2,
+   "exit": 0
+  },
+  "n_mut": 2,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:build_site.py:246",
+    "file": "build_site.py",
+    "line": 246,
+    "red": 0,
+    "green": 2,
+    "exit": 0,
+    "caught": false
+   },
+   {
+    "mutation": "mul-zero:build_site.py:53",
+    "file": "build_site.py",
+    "line": 53,
+    "red": 0,
+    "green": 2,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "madlibs-gan",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 6,
+   "red": 0,
+   "green": 6,
+   "exit": 0,
+   "cmd": "unittest discover"
+  },
+  "n_mut": 2,
+  "caught": 2,
+  "muts": [
+   {
+    "mutation": "return-falsy:madlibs.py:47",
+    "file": "madlibs.py",
+    "line": 47,
+    "red": 1,
+    "green": 5,
+    "exit": 1,
+    "caught": true
+   },
+   {
+    "mutation": "mul-zero:madlibs.py:92",
+    "file": "madlibs.py",
+    "line": 92,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "madlibs-gan-npm",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 6,
+   "red": 0,
+   "green": 6,
+   "exit": 0,
+   "cmd": "unittest discover"
+  },
+  "n_mut": 2,
+  "caught": 2,
+  "muts": [
+   {
+    "mutation": "return-falsy:madlibs.py:47",
+    "file": "madlibs.py",
+    "line": 47,
+    "red": 1,
+    "green": 5,
+    "exit": 1,
+    "caught": true
+   },
+   {
+    "mutation": "mul-zero:madlibs.py:92",
+    "file": "madlibs.py",
+    "line": 92,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "micrograd-quilt",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 25,
+   "red": 0,
+   "green": 25,
+   "exit": 0,
+   "cmd": "unittest discover -s tests"
+  },
+  "n_mut": 2,
+  "caught": 2,
+  "muts": [
+   {
+    "mutation": "return-falsy:engine.py:22",
+    "file": "micrograd/engine.py",
+    "line": 22,
+    "red": 1,
+    "green": 24,
+    "exit": 1,
+    "caught": true
+   },
+   {
+    "mutation": "mul-zero:engine.py:26",
+    "file": "micrograd/engine.py",
+    "line": 26,
+    "red": 1,
+    "green": 24,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "opcode-canon",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 6,
+   "red": 0,
+   "green": 6,
+   "exit": 0
+  },
+  "n_mut": 0,
+  "caught": 0,
+  "muts": [],
+  "skipped": "no mechanical mutation candidate in index.js"
+ },
+ {
+  "repo": "quilt-bandit",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 17,
+   "red": 0,
+   "green": 17,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 1,
+  "muts": [
+   {
+    "mutation": "mul-zero:run_experiment.mjs:41",
+    "file": "experiment/run_experiment.mjs",
+    "line": 41,
+    "red": 3,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "quilt-canary-port",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 4,
+   "red": 0,
+   "green": 4,
+   "exit": 0,
+   "cmd": "unittest discover -s tests"
+  },
+  "n_mut": 0,
+  "caught": 0,
+  "muts": [],
+  "skipped": "no mechanical mutation candidate in quilt_canary_port/__init__.py"
+ },
+ {
+  "repo": "quilt-cell",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 3,
+  "caught": 1,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:25",
+    "file": "index.js",
+    "line": 25,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   },
+   {
+    "mutation": "mul-zero:index.js:13",
+    "file": "index.js",
+    "line": 13,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   },
+   {
+    "mutation": "min-to-max:index.js:52",
+    "file": "index.js",
+    "line": 52,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "recovered-copy-20260824-scrap-voice",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 18,
+   "red": 0,
+   "green": 18,
+   "exit": 0
+  },
+  "n_mut": 2,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.ts:44",
+    "file": "src/index.ts",
+    "line": 44,
+    "red": 0,
+    "green": 18,
+    "exit": 0,
+    "caught": false
+   },
+   {
+    "mutation": "mul-zero:index.ts:1",
+    "file": "src/index.ts",
+    "line": 1,
+    "red": 0,
+    "green": 18,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "scrap-voice",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 18,
+   "red": 0,
+   "green": 18,
+   "exit": 0
+  },
+  "n_mut": 2,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.ts:44",
+    "file": "src/index.ts",
+    "line": 44,
+    "red": 0,
+    "green": 18,
+    "exit": 0,
+    "caught": false
+   },
+   {
+    "mutation": "mul-zero:index.ts:1",
+    "file": "src/index.ts",
+    "line": 1,
+    "red": 0,
+    "green": 18,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-bundle",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:20",
+    "file": "index.js",
+    "line": 20,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-canary-pin",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 2,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:20",
+    "file": "index.js",
+    "line": 20,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   },
+   {
+    "mutation": "mul-zero:index.js:18",
+    "file": "index.js",
+    "line": 18,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-contest",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:36",
+    "file": "index.js",
+    "line": 36,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-delegate",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:45",
+    "file": "index.js",
+    "line": 45,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-membership",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:13",
+    "file": "index.js",
+    "line": 13,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-merger",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:73",
+    "file": "index.js",
+    "line": 73,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-revoke",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:31",
+    "file": "index.js",
+    "line": 31,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-traverse",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:36",
+    "file": "index.js",
+    "line": 36,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-withdraw",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:16",
+    "file": "index.js",
+    "line": 16,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "substrate-witness-log",
+  "verdict": "VACUOUS",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 2,
+  "caught": 0,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:30",
+    "file": "index.js",
+    "line": 30,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   },
+   {
+    "mutation": "mul-zero:index.js:13",
+    "file": "index.js",
+    "line": 13,
+    "red": 0,
+    "green": 1,
+    "exit": 0,
+    "caught": false
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "three-forms-of-evidence",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 1,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:31",
+    "file": "index.js",
+    "line": 31,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "three-forms-of-forgetting",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 1,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:30",
+    "file": "index.js",
+    "line": 30,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ },
+ {
+  "repo": "witness-is-prediction",
+  "verdict": "EXECUTES-PRODUCT",
+  "baseline": {
+   "ran": 1,
+   "red": 0,
+   "green": 1,
+   "exit": 0
+  },
+  "n_mut": 1,
+  "caught": 1,
+  "muts": [
+   {
+    "mutation": "return-falsy:index.js:20",
+    "file": "index.js",
+    "line": 20,
+    "red": 1,
+    "green": 0,
+    "exit": 1,
+    "caught": true
+   }
+  ],
+  "skipped": null
+ }
+]

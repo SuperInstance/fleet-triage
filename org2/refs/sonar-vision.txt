@@ -1,0 +1,4 @@
+refs/heads/main	6bad026ba2b93c65f3e6ba89eeaf54c7fec15f52
+refs/heads/narrative-consistency-2026-07-09	b83e8417b0b0c30b76653ac605e82bf2eeaa41b2
+refs/heads/polish/production-grade	f964ddaa67751a7e7cd7291de3170a7602d0a05b
+refs/heads/tone-pass-2026-07-09	73fcce7068717f8598a317bc63155971c0e0006a

@@ -1,0 +1,11 @@
+refs/heads/greenhorn/fix-icmp-r0	5b77a267a10469937b35079be11d7591e5196458
+refs/heads/greenhorn/security-fixes	6f75943ca1e6c18df4cd3380a398919e574add26
+refs/heads/isa-v2	8df8e6033b3250691154a337f24c4ec5693c9249
+refs/heads/main	2d4ee2a4298e575753a1b8dbb663e048099af8df
+refs/heads/master	ad3d76ddb4a2d4c600192e2bf51ad3ec8a171aee
+refs/heads/reconcile/isa-unified-interpreter	01af46bd3031b608c0cfc31e43395b13af696a16
+refs/heads/superz/T-009	7c8b1d8a8bbd70ecca313b77a710e365c1ffedf6
+refs/heads/superz/conformance-fix	1c4f943048c077784f166d48176c958a6a092935
+refs/heads/superz/cross-assembler	6097c2f9f98e2eae3cc880a7d6e83c940fd73aba
+refs/heads/superz/security-conformance	d0ad8fe40ba12a48c46e6407c03c4ed5e5f748db
+refs/heads/superz/semantic-routing-sz	a6ef1d35e18d8ced5f744089fdd8529bbcf70248

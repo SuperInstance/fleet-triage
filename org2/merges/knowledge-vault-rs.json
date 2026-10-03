@@ -1,0 +1,1 @@
+{"repo": "knowledge-vault-rs", "branch": "main", "head": "d43738df40c7", "commits_first_parent": 3, "merges": {"other_merge": 1}, "n_merges": 1, "rows": [{"sha": "d43738df40c7", "subj": "fix: repair broken main + consolidated dependency upgrade (PR #6)", "class": "other_merge"}]}

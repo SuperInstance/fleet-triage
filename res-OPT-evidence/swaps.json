@@ -1,0 +1,16 @@
+{
+  "free statistic (DummyLM, no net, no key, no GPU)": {
+    "move": "confidence=0.8 value='north' probabilities={'north': 0.9, 'south': 0.1}",
+    "move_conf": 0.8,
+    "can_act": "confidence=0.98 value=True probability=0.99",
+    "can_act_p": 0.99,
+    "can_act_conf": 0.98
+  },
+  "judgment model, 0.45/0.55 split, confidence 0.35": {
+    "move": "confidence=0.35 value='south' probabilities={'north': 0.45, 'south': 0.55}",
+    "move_conf": 0.35,
+    "can_act": "confidence=0.0 value=True probability=0.5",
+    "can_act_p": 0.5,
+    "can_act_conf": 0.0
+  }
+}

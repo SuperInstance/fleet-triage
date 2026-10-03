@@ -1,0 +1,69 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..92b4535
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,29 @@
++name: CI
++
++on:
++  push:
++    branches: [ "main" ]
++  pull_request:
++    branches: [ "main" ]
++
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: "22"
++
++      # `npm install` is expected to FAIL on the repos that declare
++      # "@superinstance/observation-primitive": "file:../observation-primitive"
++      # -- observation-primitive is not a published package and not a sibling
++      # checkout on a fresh runner. That failure is real and is left visible.
++      # Do NOT add `|| true`, `continue-on-error:` or `set +e` here: a green
++      # tick on a harness that never ran is the exact defect this file closes.
++      - name: Install dependencies
++        run: npm install
++
++      - name: Run tests
++        run: npm test
+diff --git a/package.json b/package.json
+index fea40aa..0038712 100644
+--- a/package.json
++++ b/package.json
+@@ -4,6 +4,9 @@
+   "description": "TRAVERSE opcode (R10): walk the witness log along typed edges.",
+   "main": "index.js",
+   "types": "index.d.ts",
++  "scripts": {
++    "test": "node test.js"
++  },
+   "keywords": [
+     "traverse",
+     "witness-log",
+@@ -14,7 +17,7 @@
+   "author": "SuperInstance",
+   "license": "MIT",
+   "dependencies": {
+-    "@superinstance/observation-primitive": "file:../observation-primitive",
+-    "@superinstance/substrate-witness-log": "file:../substrate-witness-log"
++    "@superinstance/observation-primitive": "github:SuperInstance/observation-primitive",
++    "@superinstance/substrate-witness-log": "github:SuperInstance/substrate-witness-log"
+   }
+ }
+diff --git a/test.js b/test.js
+index 6d8fb2d..f8c8ca0 100644
+--- a/test.js
++++ b/test.js
+@@ -3,4 +3,5 @@ try {
+   console.log('OK: ' + Object.keys(r).join(', '));
+ } catch (e) {
+   console.error('FAIL:', e.message);
++  process.exit(1);
+ }

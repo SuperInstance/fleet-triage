@@ -1,0 +1,30 @@
+[1mbudget-tide[0m — envelopes that refuse, not envelopes that judge
+
+┌─ week 1 ────────────────────────────────────────────────────┐
+│ groceries $82.4 / $600   tide in                          │
+│ dining $45.5 / $200   tide in                             │
+│ transport $32 / $150   tide in                            │
+│ month pace 40% elapsed                                    │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m normal spends flow
+┌─ week 2 — dining at $200.74 ────────────────────────────────┐
+│ groceries $82.4 / $600   tide in                          │
+│ dining $200.74 / $200   TIDE OUT                          │
+│ transport $32 / $150   tide in                            │
+│ month pace 40% elapsed                                    │
+└────────────────────────────────────────────────────────────┘
+  [32m✓[0m dining envelope is dry
+  [32m✓[0m dry envelope raised its alert[2m — dining envelope empty — refusal mode until next month[0m
+  [32m✓[0m spend on dry envelope REFUSED before money moved[2m — dining tide is out: 200.74 of 200 already spent[0m
+  [32m✓[0m refusal names the shortfall
+  [32m✓[0m other envelopes unaffected[2m — groceries at $177.5[0m
+  [32m✓[0m no negative-amount loophole[2m — refusal is by budget math, amount sign irrelevant here[0m
+  [32m✓[0m witness chain sealed[2m — 9 transactions + refusals, head 04531a453a6a…[0m
+┌─ month so far ──────────────────────────────────────────────┐
+│ accepted spend $410.24                                    │
+│ refusals 2                                                │
+│ head 04531a453a6abfe9                                     │
+└────────────────────────────────────────────────────────────┘
+
+[1m  ══ budget-tide: [32m8/8 checks green — ready-to-go[0m ══[0m
+

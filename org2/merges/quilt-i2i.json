@@ -1,0 +1,1 @@
+{"repo": "quilt-i2i", "branch": "main", "head": "6b1cbf35e159", "commits_first_parent": 17, "merges": {"other_merge": 2}, "n_merges": 2, "rows": [{"sha": "c8e65a19091d", "subj": "docs: add LEGIBILITY.md legibility pass (#1)", "class": "other_merge"}, {"sha": "080e31a99f88", "subj": "Merge upstream history", "class": "other_merge"}]}

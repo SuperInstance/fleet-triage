@@ -1,0 +1,58 @@
+{
+  "doc": "01-conservation-law-of-intelligence.md",
+  "citing_repo": null,
+  "chars": 188,
+  "index": {
+    "repos": 477,
+    "files": 85990,
+    "frozen_at": "2026-10-01"
+  },
+  "index_is_partial": false,
+  "stages_run": [
+    "citation"
+  ],
+  "n_findings": 2,
+  "tally": {
+    "FILE_MISSING": 1,
+    "REPO_UNKNOWN": 1
+  },
+  "n_unverified": 0,
+  "coverage_note": "All findings in this response were decided against the frozen index.",
+  "known_bugs_url": "/health (the four known bugs ship with the service)",
+  "findings": [
+    {
+      "stage": "citation",
+      "outcome": "FILE_MISSING",
+      "doc": "01-conservation-law-of-intelligence.md",
+      "line": 1,
+      "raw": "murmur/transforms/rubiks.py:437",
+      "target": "murmur/transforms/rubiks.py",
+      "detail": "no such path 'transforms/rubiks.py' in indexed repo 'murmur' (repo-qualified -> murmur)",
+      "check": "ls <repo>/murmur/transforms/rubiks.py",
+      "evidence": "",
+      "cited_line": 437,
+      "cited_line_end": null,
+      "line_note": ":437",
+      "symbol": "update_certainty",
+      "note": "",
+      "repo": "murmur"
+    },
+    {
+      "stage": "citation",
+      "outcome": "REPO_UNKNOWN",
+      "doc": "01-conservation-law-of-intelligence.md",
+      "line": 1,
+      "raw": "src/core/valuenetwork.ts",
+      "target": "src/core/valuenetwork.ts",
+      "detail": "first segment 'src' is not a known fleet repo — unproven",
+      "check": "",
+      "evidence": "",
+      "cited_line": null,
+      "cited_line_end": null,
+      "line_note": "",
+      "symbol": "update_certainty",
+      "note": "",
+      "repo": null
+    }
+  ]
+}

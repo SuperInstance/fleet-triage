@@ -1,0 +1,8 @@
+refs/heads/add-jev-receipts	576ae3df53d886329e29cc87a216ae3b83052a16
+refs/heads/canon-md	973543c5aa0133c45dfc4caee61e95daaf244281
+refs/heads/canon-stub	33023d6b62c2c3a1601e83b35083e9568ddbd042
+refs/heads/claude/gesture-bridge-doc	3be854c3175dd93809008035606a00be5d56c266
+refs/heads/claude/the-fifth-substrate	ec53dfba322e6b4b54ca9fe2341d878f56e54938
+refs/heads/fix/playtest-chromium-path	18b9700c114a4354f62ea403a10641185c65f516
+refs/heads/main	23047cb7471fa6177a7b0fa7b2fed77e681179f1
+refs/heads/setl-mode	febaeea5546eb2ab3f748a1580d1df299318804d

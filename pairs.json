@@ -1,0 +1,1889 @@
+{
+ "polychora|polychora-temporal": {
+  "files": 259,
+  "lines": 0,
+  "exact": 146,
+  "near": 113,
+  "ex": [
+   [
+    "polychora/build.rs",
+    "polychora-temporal/build.rs"
+   ],
+   [
+    "polychora/index.html",
+    "polychora-temporal/index.html"
+   ],
+   [
+    "polychora/recompress.py",
+    "polychora-temporal/recompress.py"
+   ],
+   [
+    "polychora/common/src/layout_verify.rs",
+    "polychora-temporal/common/src/layout_verify.rs"
+   ]
+  ]
+ },
+ "Tripartite1|synesis": {
+  "files": 124,
+  "lines": 0,
+  "exact": 70,
+  "near": 54,
+  "ex": [
+   [
+    "Tripartite1/crates/synesis-cli/src/config.rs",
+    "synesis/crates/synesis-cli/src/config.rs"
+   ],
+   [
+    "Tripartite1/crates/synesis-cli/src/display.rs",
+    "synesis/crates/synesis-cli/src/display.rs"
+   ],
+   [
+    "Tripartite1/crates/synesis-cli/src/main.rs",
+    "synesis/crates/synesis-cli/src/main.rs"
+   ],
+   [
+    "Tripartite1/crates/synesis-cli/src/commands/cloud.rs",
+    "synesis/crates/synesis-cli/src/commands/cloud.rs"
+   ]
+  ]
+ },
+ "fleet-static-host|rc-20260824-01": {
+  "files": 75,
+  "lines": 0,
+  "exact": 51,
+  "near": 24,
+  "ex": [
+   [
+    "fleet-static-host/public/mist/404.html",
+    "fleet-static-host/public/mist/404/index.html"
+   ],
+   [
+    "fleet-static-host/public/ternary/app.js",
+    "rc-20260824-01/public/ternary/app.js"
+   ],
+   [
+    "fleet-static-host/public/ternary/index.html",
+    "rc-20260824-01/public/ternary/index.html"
+   ],
+   [
+    "fleet-static-host/public/mist/index.html",
+    "rc-20260824-01/public/mist/index.html"
+   ]
+  ]
+ },
+ "fleet-jepa-midi|recovered-copy-20260824-fleet-jepa-midi": {
+  "files": 40,
+  "lines": 0,
+  "exact": 23,
+  "near": 17,
+  "ex": [
+   [
+    "fleet-jepa-midi/elephant_sense_probe.py",
+    "recovered-copy-20260824-fleet-jepa-midi/elephant_sense_probe.py"
+   ],
+   [
+    "fleet-jepa-midi/eval_audio_jepa.py",
+    "recovered-copy-20260824-fleet-jepa-midi/eval_audio_jepa.py"
+   ],
+   [
+    "fleet-jepa-midi/review_with_deepinfra.py",
+    "recovered-copy-20260824-fleet-jepa-midi/review_with_deepinfra.py"
+   ],
+   [
+    "fleet-jepa-midi/train_audio_jepa.py",
+    "recovered-copy-20260824-fleet-jepa-midi/train_audio_jepa.py"
+   ]
+  ]
+ },
+ "fleet-ensemble|recovered-copy-20260824-fleet-ensemble": {
+  "files": 30,
+  "lines": 0,
+  "exact": 16,
+  "near": 14,
+  "ex": [
+   [
+    "fleet-ensemble/src/main.rs",
+    "recovered-copy-20260824-fleet-ensemble/src/main.rs"
+   ],
+   [
+    "fleet-ensemble/src/director/emergence.rs",
+    "recovered-copy-20260824-fleet-ensemble/src/director/emergence.rs"
+   ],
+   [
+    "fleet-ensemble/src/director/feel_space.rs",
+    "recovered-copy-20260824-fleet-ensemble/src/director/feel_space.rs"
+   ],
+   [
+    "fleet-ensemble/src/director/mod.rs",
+    "recovered-copy-20260824-fleet-ensemble/src/director/mod.rs"
+   ]
+  ]
+ },
+ "fleet-memory|recovered-copy-20260824-fleet-memory": {
+  "files": 25,
+  "lines": 0,
+  "exact": 15,
+  "near": 10,
+  "ex": [
+   [
+    "fleet-memory/scripts/gen-migrations.sh",
+    "recovered-copy-20260824-fleet-memory/scripts/gen-migrations.sh"
+   ],
+   [
+    "fleet-memory/scripts/living-minds-serialize.py",
+    "recovered-copy-20260824-fleet-memory/scripts/living-minds-serialize.py"
+   ],
+   [
+    "fleet-memory/scripts/vram-budget-probe.sh",
+    "recovered-copy-20260824-fleet-memory/scripts/vram-budget-probe.sh"
+   ],
+   [
+    "fleet-memory/src/chunker.rs",
+    "recovered-copy-20260824-fleet-memory/src/chunker.rs"
+   ]
+  ]
+ },
+ "ergodic-theory|lau-ergodic-theory": {
+  "files": 21,
+  "lines": 0,
+  "exact": 11,
+  "near": 10,
+  "ex": [
+   [
+    "ergodic-theory/src/agent_prediction.rs",
+    "lau-ergodic-theory/src/agent_prediction.rs"
+   ],
+   [
+    "ergodic-theory/src/birkhoff.rs",
+    "lau-ergodic-theory/src/birkhoff.rs"
+   ],
+   [
+    "ergodic-theory/src/entropy.rs",
+    "lau-ergodic-theory/src/entropy.rs"
+   ],
+   [
+    "ergodic-theory/src/ergodicity.rs",
+    "lau-ergodic-theory/src/ergodicity.rs"
+   ]
+  ]
+ },
+ "dynamical-systems|lau-dynamical-systems": {
+  "files": 18,
+  "lines": 0,
+  "exact": 9,
+  "near": 9,
+  "ex": [
+   [
+    "dynamical-systems/src/basin.rs",
+    "lau-dynamical-systems/src/basin.rs"
+   ],
+   [
+    "dynamical-systems/src/behavior.rs",
+    "lau-dynamical-systems/src/agent_dynamics.rs"
+   ],
+   [
+    "dynamical-systems/src/bifurcation.rs",
+    "lau-dynamical-systems/src/bifurcation.rs"
+   ],
+   [
+    "dynamical-systems/src/continuous.rs",
+    "lau-dynamical-systems/src/continuous.rs"
+   ]
+  ]
+ },
+ "ecc-rs|lau-error-correcting-codes": {
+  "files": 18,
+  "lines": 0,
+  "exact": 9,
+  "near": 9,
+  "ex": [
+   [
+    "ecc-rs/src/convolutional.rs",
+    "lau-error-correcting-codes/src/convolutional.rs"
+   ],
+   [
+    "ecc-rs/src/crc.rs",
+    "lau-error-correcting-codes/src/crc.rs"
+   ],
+   [
+    "ecc-rs/src/cyclic.rs",
+    "lau-error-correcting-codes/src/cyclic.rs"
+   ],
+   [
+    "ecc-rs/src/hamming.rs",
+    "lau-error-correcting-codes/src/hamming.rs"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-scrap-quilt|scrap-quilt": {
+  "files": 17,
+  "lines": 0,
+  "exact": 11,
+  "near": 6,
+  "ex": [
+   [
+    "recovered-copy-20260824-scrap-quilt/src/chat.ts",
+    "scrap-quilt/src/chat.ts"
+   ],
+   [
+    "recovered-copy-20260824-scrap-quilt/src/corpus.ts",
+    "scrap-quilt/src/corpus.ts"
+   ],
+   [
+    "recovered-copy-20260824-scrap-quilt/src/evolve.ts",
+    "scrap-quilt/src/evolve.ts"
+   ],
+   [
+    "recovered-copy-20260824-scrap-quilt/src/lore.ts",
+    "scrap-quilt/src/lore.ts"
+   ]
+  ]
+ },
+ "lau-logic-foundations|logic-foundations": {
+  "files": 16,
+  "lines": 0,
+  "exact": 8,
+  "near": 8,
+  "ex": [
+   [
+    "lau-logic-foundations/src/cnf.rs",
+    "logic-foundations/src/cnf.rs"
+   ],
+   [
+    "lau-logic-foundations/src/connectives.rs",
+    "logic-foundations/src/connectives.rs"
+   ],
+   [
+    "lau-logic-foundations/src/dpll.rs",
+    "logic-foundations/src/dpll.rs"
+   ],
+   [
+    "lau-logic-foundations/src/godel.rs",
+    "logic-foundations/src/godel.rs"
+   ]
+  ]
+ },
+ "lau-renormalization|renormalization": {
+  "files": 16,
+  "lines": 0,
+  "exact": 8,
+  "near": 8,
+  "ex": [
+   [
+    "lau-renormalization/src/beta.rs",
+    "renormalization/src/beta.rs"
+   ],
+   [
+    "lau-renormalization/src/critical_exponents.rs",
+    "renormalization/src/critical_exponents.rs"
+   ],
+   [
+    "lau-renormalization/src/epsilon_expansion.rs",
+    "renormalization/src/epsilon_expansion.rs"
+   ],
+   [
+    "lau-renormalization/src/fixed_point.rs",
+    "renormalization/src/fixed_point.rs"
+   ]
+  ]
+ },
+ "elephant-sim-worker|recovered-copy-20260824-elephant-sim-worker": {
+  "files": 13,
+  "lines": 0,
+  "exact": 8,
+  "near": 5,
+  "ex": [
+   [
+    "elephant-sim-worker/scripts/smoke.ts",
+    "recovered-copy-20260824-elephant-sim-worker/scripts/smoke.ts"
+   ],
+   [
+    "elephant-sim-worker/src/agent.ts",
+    "recovered-copy-20260824-elephant-sim-worker/src/agent.ts"
+   ],
+   [
+    "elephant-sim-worker/src/index.ts",
+    "recovered-copy-20260824-elephant-sim-worker/src/index.ts"
+   ],
+   [
+    "elephant-sim-worker/src/sim/corpus.ts",
+    "recovered-copy-20260824-elephant-sim-worker/src/sim/corpus.ts"
+   ]
+  ]
+ },
+ "operational-fiction|recovered-copy-20260824-operational-fiction": {
+  "files": 11,
+  "lines": 0,
+  "exact": 7,
+  "near": 4,
+  "ex": [
+   [
+    "operational-fiction/src/operational_fiction/__init__.py",
+    "recovered-copy-20260824-operational-fiction/src/operational_fiction/__init__.py"
+   ],
+   [
+    "operational-fiction/src/operational_fiction/cli.py",
+    "recovered-copy-20260824-operational-fiction/src/operational_fiction/cli.py"
+   ],
+   [
+    "operational-fiction/src/operational_fiction/frames.py",
+    "recovered-copy-20260824-operational-fiction/src/operational_fiction/frames.py"
+   ],
+   [
+    "operational-fiction/tests/test_cli.py",
+    "recovered-copy-20260824-operational-fiction/tests/test_cli.py"
+   ]
+  ]
+ },
+ "mist-quilt|recovered-copy-20260824-mist-quilt": {
+  "files": 10,
+  "lines": 0,
+  "exact": 6,
+  "near": 4,
+  "ex": [
+   [
+    "mist-quilt/src/chat.ts",
+    "recovered-copy-20260824-mist-quilt/src/chat.ts"
+   ],
+   [
+    "mist-quilt/src/index.ts",
+    "recovered-copy-20260824-mist-quilt/src/index.ts"
+   ],
+   [
+    "mist-quilt/src/predict.ts",
+    "recovered-copy-20260824-mist-quilt/src/predict.ts"
+   ],
+   [
+    "mist-quilt/src/room.ts",
+    "recovered-copy-20260824-mist-quilt/src/room.ts"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-scrap-voice|scrap-voice": {
+  "files": 10,
+  "lines": 0,
+  "exact": 8,
+  "near": 2,
+  "ex": [
+   [
+    "recovered-copy-20260824-scrap-voice/src/audio.ts",
+    "scrap-voice/src/audio.ts"
+   ],
+   [
+    "recovered-copy-20260824-scrap-voice/src/bank.ts",
+    "scrap-voice/src/bank.ts"
+   ],
+   [
+    "recovered-copy-20260824-scrap-voice/src/cache.ts",
+    "scrap-voice/src/cache.ts"
+   ],
+   [
+    "recovered-copy-20260824-scrap-voice/src/chat.ts",
+    "scrap-voice/src/chat.ts"
+   ]
+  ]
+ },
+ "constraint-theory-papers|fm-papers": {
+  "files": 8,
+  "lines": 0,
+  "exact": 4,
+  "near": 4,
+  "ex": [
+   [
+    "constraint-theory-papers/synergy_benchmark.py",
+    "fm-papers/synergy_benchmark.py"
+   ],
+   [
+    "constraint-theory-papers/telephone-game.py",
+    "fm-papers/telephone-game.py"
+   ],
+   [
+    "constraint-theory-papers/verify_synergy.py",
+    "fm-papers/verify_synergy.py"
+   ],
+   [
+    "constraint-theory-papers/zai-p3-experiment-script.py",
+    "fm-papers/zai-p3-experiment-script.py"
+   ]
+  ]
+ },
+ "rc-20260824-01|si-papers-new": {
+  "files": 7,
+  "lines": 0,
+  "exact": 4,
+  "near": 3,
+  "ex": [
+   [
+    "fleet-static-host/public/mist/404.html",
+    "fleet-static-host/public/mist/404/index.html"
+   ],
+   [
+    "fleet-static-host/public/ternary/app.js",
+    "rc-20260824-01/public/ternary/app.js"
+   ],
+   [
+    "fleet-static-host/public/ternary/index.html",
+    "rc-20260824-01/public/ternary/index.html"
+   ],
+   [
+    "fleet-static-host/public/mist/index.html",
+    "rc-20260824-01/public/mist/index.html"
+   ]
+  ]
+ },
+ "fleet-static-host|si-papers-new": {
+  "files": 6,
+  "lines": 0,
+  "exact": 4,
+  "near": 2,
+  "ex": [
+   [
+    "fleet-static-host/public/mist/404.html",
+    "fleet-static-host/public/mist/404/index.html"
+   ],
+   [
+    "fleet-static-host/public/ternary/app.js",
+    "rc-20260824-01/public/ternary/app.js"
+   ],
+   [
+    "fleet-static-host/public/ternary/index.html",
+    "rc-20260824-01/public/ternary/index.html"
+   ],
+   [
+    "fleet-static-host/public/mist/index.html",
+    "rc-20260824-01/public/mist/index.html"
+   ]
+  ]
+ },
+ "fleet-embed|recovered-copy-20260824-fleet-embed": {
+  "files": 5,
+  "lines": 0,
+  "exact": 4,
+  "near": 1,
+  "ex": [
+   [
+    "fleet-embed/src/main.rs",
+    "recovered-copy-20260824-fleet-embed/src/main.rs"
+   ],
+   [
+    "fleet-embed/src/model.rs",
+    "recovered-copy-20260824-fleet-embed/src/model.rs"
+   ],
+   [
+    "fleet-embed/src/server.rs",
+    "recovered-copy-20260824-fleet-embed/src/server.rs"
+   ],
+   [
+    "fleet-embed/src/types.rs",
+    "recovered-copy-20260824-fleet-embed/src/types.rs"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-tap-gamenight|tap-gamenight": {
+  "files": 5,
+  "lines": 0,
+  "exact": 4,
+  "near": 1,
+  "ex": [
+   [
+    "recovered-copy-20260824-tap-gamenight/show.py",
+    "tap-gamenight/show.py"
+   ],
+   [
+    "recovered-copy-20260824-tap-gamenight/voices.py",
+    "tap-gamenight/voices.py"
+   ],
+   [
+    "recovered-copy-20260824-tap-gamenight/voices2.py",
+    "tap-gamenight/voices2.py"
+   ],
+   [
+    "recovered-copy-20260824-tap-gamenight/voices_di.py",
+    "tap-gamenight/voices_di.py"
+   ]
+  ]
+ },
+ "fleet-static-host|ternary-rom": {
+  "files": 4,
+  "lines": 0,
+  "exact": 2,
+  "near": 2,
+  "ex": [
+   [
+    "fleet-static-host/public/ternary/app.js",
+    "rc-20260824-01/public/ternary/app.js"
+   ],
+   [
+    "fleet-static-host/public/ternary/index.html",
+    "rc-20260824-01/public/ternary/index.html"
+   ]
+  ]
+ },
+ "rc-20260824-01|ternary-rom": {
+  "files": 4,
+  "lines": 0,
+  "exact": 2,
+  "near": 2,
+  "ex": [
+   [
+    "fleet-static-host/public/ternary/app.js",
+    "rc-20260824-01/public/ternary/app.js"
+   ],
+   [
+    "fleet-static-host/public/ternary/index.html",
+    "rc-20260824-01/public/ternary/index.html"
+   ]
+  ]
+ },
+ "si-papers-new|ternary-rom": {
+  "files": 4,
+  "lines": 0,
+  "exact": 2,
+  "near": 2,
+  "ex": [
+   [
+    "fleet-static-host/public/ternary/app.js",
+    "rc-20260824-01/public/ternary/app.js"
+   ],
+   [
+    "fleet-static-host/public/ternary/index.html",
+    "rc-20260824-01/public/ternary/index.html"
+   ]
+  ]
+ },
+ "flux-reasoner|flux-reasoner-engine": {
+  "files": 4,
+  "lines": 0,
+  "exact": 2,
+  "near": 2,
+  "ex": [
+   [
+    "flux-reasoner/flux_reasoner/__init__.py",
+    "flux-reasoner-engine/flux_reasoner/__init__.py"
+   ],
+   [
+    "flux-reasoner/tests/test_flux_reasoner.py",
+    "flux-reasoner-engine/tests/test_flux_reasoner.py"
+   ]
+  ]
+ },
+ "quilt-canon-book|quilt-canon-feed": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-book|quilt-canon-game": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-book|quilt-canon-keywords": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-book|quilt-canon-mcp": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-feed|quilt-canon-game": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-feed|quilt-canon-keywords": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-feed|quilt-canon-mcp": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-game|quilt-canon-keywords": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-game|quilt-canon-mcp": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "quilt-canon-keywords|quilt-canon-mcp": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ],
+   [
+    "quilt-canon-book/quilt_canon_book/loader.py",
+    "quilt-canon-feed/quilt_canon_feed/loader.py"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent|recovered-copy-20260824-study-smartcomponent": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent/Digitaltwin/Digitaltwin/CodeBehind.cs",
+    "recovered-copy-20260824-study-smartcomponent/Digitaltwin/Digitaltwin/CodeBehind.cs"
+   ],
+   [
+    "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent/Digitaltwin/Digitaltwin/Properties/AssemblyInfo.cs",
+    "recovered-copy-20260824-study-smartcomponent/Digitaltwin/Digitaltwin/Properties/AssemblyInfo.cs"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent|study-smartcomponent": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent/Digitaltwin/Digitaltwin/CodeBehind.cs",
+    "recovered-copy-20260824-study-smartcomponent/Digitaltwin/Digitaltwin/CodeBehind.cs"
+   ],
+   [
+    "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent/Digitaltwin/Digitaltwin/Properties/AssemblyInfo.cs",
+    "recovered-copy-20260824-study-smartcomponent/Digitaltwin/Digitaltwin/Properties/AssemblyInfo.cs"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-study-smartcomponent|study-smartcomponent": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent/Digitaltwin/Digitaltwin/CodeBehind.cs",
+    "recovered-copy-20260824-study-smartcomponent/Digitaltwin/Digitaltwin/CodeBehind.cs"
+   ],
+   [
+    "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent/Digitaltwin/Digitaltwin/Properties/AssemblyInfo.cs",
+    "recovered-copy-20260824-study-smartcomponent/Digitaltwin/Digitaltwin/Properties/AssemblyInfo.cs"
+   ]
+  ]
+ },
+ "madlibs-gan|madlibs-gan-npm": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "madlibs-gan/madlibs.py",
+    "madlibs-gan-npm/madlibs.py"
+   ],
+   [
+    "madlibs-gan/test_madlibs.py",
+    "madlibs-gan-npm/test_madlibs.py"
+   ]
+  ]
+ },
+ "peanut-gallery|peanut-gallery-npm": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "peanut-gallery/gallery.py",
+    "peanut-gallery-npm/gallery.py"
+   ],
+   [
+    "peanut-gallery/test_gallery.py",
+    "peanut-gallery-npm/test_gallery.py"
+   ]
+  ]
+ },
+ "quilt|quilt-arcade": {
+  "files": 3,
+  "lines": 0,
+  "exact": 3,
+  "near": 0,
+  "ex": [
+   [
+    "quilt/quilt_worker/quilt_core/parser.js",
+    "quilt-arcade/engine/parser.js"
+   ],
+   [
+    "quilt/quilt_worker/quilt_core/cells/api.js",
+    "quilt-arcade/engine/cells/api.js"
+   ],
+   [
+    "quilt/quilt_worker/quilt_core/cells/program.js",
+    "quilt-arcade/engine/cells/program.js"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-wesley|wesley": {
+  "files": 3,
+  "lines": 0,
+  "exact": 2,
+  "near": 1,
+  "ex": [
+   [
+    "recovered-copy-20260824-wesley/scripts/wesley-stream.py",
+    "wesley/scripts/wesley-stream.py"
+   ],
+   [
+    "recovered-copy-20260824-wesley/scripts/wesley_night_school.py",
+    "wesley/scripts/wesley_night_school.py"
+   ]
+  ]
+ },
+ "dojo-alchemist|dojo-builder": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "dojo-alchemist/src/repetition_detector.sh",
+    "dojo-builder/src/repetition_detector.sh"
+   ],
+   [
+    "dojo-alchemist/src/thought_capture.sh",
+    "dojo-builder/src/thought_capture.sh"
+   ]
+  ]
+ },
+ "dojo-alchemist|dojo-scout": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "dojo-alchemist/src/repetition_detector.sh",
+    "dojo-builder/src/repetition_detector.sh"
+   ],
+   [
+    "dojo-alchemist/src/thought_capture.sh",
+    "dojo-builder/src/thought_capture.sh"
+   ]
+  ]
+ },
+ "dojo-alchemist|dojo-scribe": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "dojo-alchemist/src/repetition_detector.sh",
+    "dojo-builder/src/repetition_detector.sh"
+   ],
+   [
+    "dojo-alchemist/src/thought_capture.sh",
+    "dojo-builder/src/thought_capture.sh"
+   ]
+  ]
+ },
+ "dojo-builder|dojo-scout": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "dojo-alchemist/src/repetition_detector.sh",
+    "dojo-builder/src/repetition_detector.sh"
+   ],
+   [
+    "dojo-alchemist/src/thought_capture.sh",
+    "dojo-builder/src/thought_capture.sh"
+   ]
+  ]
+ },
+ "dojo-builder|dojo-scribe": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "dojo-alchemist/src/repetition_detector.sh",
+    "dojo-builder/src/repetition_detector.sh"
+   ],
+   [
+    "dojo-alchemist/src/thought_capture.sh",
+    "dojo-builder/src/thought_capture.sh"
+   ]
+  ]
+ },
+ "dojo-scout|dojo-scribe": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "dojo-alchemist/src/repetition_detector.sh",
+    "dojo-builder/src/repetition_detector.sh"
+   ],
+   [
+    "dojo-alchemist/src/thought_capture.sh",
+    "dojo-builder/src/thought_capture.sh"
+   ]
+  ]
+ },
+ "fleet-midi-mapper|fleet-midi-pattern": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-mapper/lib/engine.py",
+    "fleet-midi-pattern/lib/engine.py"
+   ],
+   [
+    "fleet-midi-mapper/lib/go/process.go",
+    "fleet-midi-pattern/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-mapper|fleet-midi-script": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-mapper/lib/engine.py",
+    "fleet-midi-pattern/lib/engine.py"
+   ],
+   [
+    "fleet-midi-mapper/lib/go/process.go",
+    "fleet-midi-pattern/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-pattern|fleet-midi-script": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-mapper/lib/engine.py",
+    "fleet-midi-pattern/lib/engine.py"
+   ],
+   [
+    "fleet-midi-mapper/lib/go/process.go",
+    "fleet-midi-pattern/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-weather-agent|template-fleet-agent": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-weather-agent/agent.py",
+    "template-fleet-agent/agent.py"
+   ],
+   [
+    "fleet-weather-agent/build.sh",
+    "template-fleet-agent/build.sh"
+   ]
+  ]
+ },
+ "greenhorn-runtime-early-version|zeroclaw-agent-early-version": {
+  "files": 2,
+  "lines": 0,
+  "exact": 1,
+  "near": 1,
+  "ex": [
+   [
+    "greenhorn-runtime-early-version/test_greenhorn.py",
+    "zeroclaw-agent-early-version/review-feedback/T-004-yellow-tests/greenhorn-runtime/test_greenhorn.py"
+   ]
+  ]
+ },
+ "ideation-games|recovered-copy-20260824-ideation-games": {
+  "files": 2,
+  "lines": 0,
+  "exact": 1,
+  "near": 1,
+  "ex": [
+   [
+    "ideation-games/techniques/scripts/run_setup.py",
+    "recovered-copy-20260824-ideation-games/techniques/scripts/run_setup.py"
+   ]
+  ]
+ },
+ "knowledge-graph|si-knowledge-base": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "knowledge-graph/__init__.py",
+    "si-knowledge-base/__init__.py"
+   ],
+   [
+    "knowledge-graph/setup.py",
+    "si-knowledge-base/setup.py"
+   ]
+  ]
+ },
+ "mist-lab|recovered-copy-20260824-mist-lab": {
+  "files": 2,
+  "lines": 0,
+  "exact": 1,
+  "near": 1,
+  "ex": [
+   [
+    "mist-lab/src/index.ts",
+    "recovered-copy-20260824-mist-lab/src/index.ts"
+   ]
+  ]
+ },
+ "quilt-quantumaudio-demo|quilt-quantumaudio-demo-push": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-quantumaudio-demo/bench.py",
+    "quilt-quantumaudio-demo-push/bench.py"
+   ],
+   [
+    "quilt-quantumaudio-demo/demo.py",
+    "quilt-quantumaudio-demo-push/demo.py"
+   ]
+  ]
+ },
+ "recovered-copy-20260824-superinstance-ai|superinstance-ai": {
+  "files": 2,
+  "lines": 0,
+  "exact": 2,
+  "near": 0,
+  "ex": [
+   [
+    "recovered-copy-20260824-superinstance-ai/404.html",
+    "superinstance-ai/404.html"
+   ],
+   [
+    "recovered-copy-20260824-superinstance-ai/plainsong-playground.html",
+    "superinstance-ai/plainsong-playground.html"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-decode": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-drone": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-encode": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-filter": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-genetic": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-grammar": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-blend|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-decode|fleet-midi-drone": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-decode|fleet-midi-encode": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-decode|fleet-midi-filter": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-decode|fleet-midi-genetic": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-decode|fleet-midi-grammar": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-decode|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-drone|fleet-midi-encode": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-drone|fleet-midi-filter": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-drone|fleet-midi-genetic": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-drone|fleet-midi-grammar": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-drone|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-encode|fleet-midi-filter": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-encode|fleet-midi-genetic": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-encode|fleet-midi-grammar": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-encode|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-filter|fleet-midi-genetic": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-filter|fleet-midi-grammar": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-filter|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-genetic|fleet-midi-grammar": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-genetic|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-grammar|fleet-midi-swarm": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-blend/lib/go/process.go",
+    "fleet-midi-decode/lib/go/process.go"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-cycle": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-feed": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-live": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-pedagogy": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-phase": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-quantum": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-collab|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-cycle|fleet-midi-feed": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-cycle|fleet-midi-live": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-cycle|fleet-midi-pedagogy": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-cycle|fleet-midi-phase": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-cycle|fleet-midi-quantum": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-cycle|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-feed|fleet-midi-live": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-feed|fleet-midi-pedagogy": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-feed|fleet-midi-phase": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-feed|fleet-midi-quantum": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-feed|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-live|fleet-midi-pedagogy": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-live|fleet-midi-phase": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-live|fleet-midi-quantum": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-live|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-pedagogy|fleet-midi-phase": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-pedagogy|fleet-midi-quantum": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-pedagogy|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-phase|fleet-midi-quantum": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-phase|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "fleet-midi-quantum|fleet-midi-resonance": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-collab/lib/rust/src/lib.rs",
+    "fleet-midi-cycle/lib/rust/src/lib.rs"
+   ]
+  ]
+ },
+ "quilt-canon-book|quilt-canon-witness": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ]
+  ]
+ },
+ "quilt-canon-feed|quilt-canon-witness": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ]
+  ]
+ },
+ "quilt-canon-game|quilt-canon-witness": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ]
+  ]
+ },
+ "quilt-canon-keywords|quilt-canon-witness": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ]
+  ]
+ },
+ "quilt-canon-mcp|quilt-canon-witness": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-canon-book/quilt_canon_book/canary.py",
+    "quilt-canon-feed/quilt_canon_feed/canary.py"
+   ]
+  ]
+ },
+ "fleet-midi-mapper|fleet-orchestra": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-mapper/lib/engine.py",
+    "fleet-midi-pattern/lib/engine.py"
+   ]
+  ]
+ },
+ "fleet-midi-pattern|fleet-orchestra": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-mapper/lib/engine.py",
+    "fleet-midi-pattern/lib/engine.py"
+   ]
+  ]
+ },
+ "fleet-midi-script|fleet-orchestra": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "fleet-midi-mapper/lib/engine.py",
+    "fleet-midi-pattern/lib/engine.py"
+   ]
+  ]
+ },
+ "quilt|quilt-rust": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt/examples/boat-autopilot/demo.ts",
+    "quilt-rust/examples/boat-autopilot/demo.ts"
+   ]
+  ]
+ },
+ "quilt-jev-toolkit|quilt-jev-toolkit-push": {
+  "files": 1,
+  "lines": 0,
+  "exact": 1,
+  "near": 0,
+  "ex": [
+   [
+    "quilt-jev-toolkit/canon_gate.py",
+    "quilt-jev-toolkit-push/canon_gate.py"
+   ]
+  ]
+ },
+ "cocapn-com-pages|deckboss-net-pages": {
+  "files": 1,
+  "lines": 0,
+  "exact": 0,
+  "near": 1,
+  "ex": []
+ }
+}

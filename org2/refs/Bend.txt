@@ -1,0 +1,9 @@
+refs/heads/664-wrap-is-read-as-a-variable-when-compiling-with-blocks	bfc930945423384614cdbe8024523330448d48e7
+refs/heads/695-implement-listsum-and-listrange-functions-in-bend-built-ins	e4dab27ea59c8a6cde57f43105f278dbe7c247a6
+refs/heads/bpm	20bcef2b2854a822f85e7fa370421d1d5619e770
+refs/heads/direct-readback	75fec29e75015e2f235e9b831866234ff2db4f1e
+refs/heads/hvm-core	ff0993c26568f92b5164213d4867335bf194dd4d
+refs/heads/main	d184863f03e796d1d657958a51dd6dd331ade92d
+refs/heads/patch-log-era	a3362b230d7cf6d69a89555dbbdbffdf2338877b
+refs/heads/polarized-hvm-ast	1b45de11ecaf4dc84cc4d29471de21deb9f1100c
+refs/heads/rust-update	ff0812e043b0c7c1f0dc3eff692de497d364790a

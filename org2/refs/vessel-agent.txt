@@ -1,0 +1,2 @@
+refs/heads/claude/planning-research-r4xji4	ab80d0fff204f1c1bffd0d335fee1678fd887125
+refs/heads/master	b7bc38537eb1ea2bff842c71cdd885afe999fb7d

@@ -1,0 +1,1 @@
+{"ternary-metrics-master/Cargo.toml": "[package]\nname = \"ternary-metrics\"\nversion = \"0.1.0\"\nedition = \"2021\"\nlicense = \"MIT\"\ndescription = \"Performance metrics collection and reporting for ternary systems\"\nrepository = \"https://github.com/SuperInstance/ternary-metrics\"\n"}

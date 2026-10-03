@@ -1,0 +1,1 @@
+{"repo": "flux-meta-orchestrator", "branch": "main", "head": "fc8ea4e4d779", "commits_first_parent": 7, "merges": {"pr_merge": 1}, "n_merges": 1, "rows": [{"sha": "1fd915bc474a", "subj": "Merge pull request #1 from SuperInstance/superz/bugfixes-cli-tests", "class": "pr_merge"}]}
