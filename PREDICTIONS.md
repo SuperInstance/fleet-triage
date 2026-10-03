@@ -42,8 +42,9 @@ keep a green badge are **the ones that survive `got = expected`.**
 | 12 | JEV-as-a-panel equals JEV-as-one | **KEPT** | 1 of 22 claims changed over 3 repeats, spread 0.009 |
 | 13 | 8 vendors would give a diverse panel | **FALSE — my prediction** | n_eff 0.18. Heterogeneous *models* buy nothing |
 | 14 | The chooser is the reusable unit, not the app | **UNRESOLVED** | `r3-SWAP`: holds for enumerated apps, leaks for composed |
+| 15 | For Asciipocalypse the char arm and colour arm are near-equal, and char-only loses little | **FALSE — and the false half matters** | Pooled two-arm test says near-equal (IDENTITY 0.7162 chars vs 0.7044 colour), but that is a *proximity confound*: the glyph is a pure function of z, enemies stand in room centres so they are nearer than the walls. Stratified by depth band the char arm sits at 0.5000 in 5 of 9 strata while colour reaches 0.60–0.97. `CTRL_SHUF` (glyphs permuted) = 0.5000/0.4876, so the test can fail. Colour is the only identity channel; glyph is a 10-level depth quantiser. See `ASCII-CELLS.md`. |
 
-**Score: 5 kept · 5 false, all but one mine · 1 half-false · 1 unresolved —
+**Score: 5 kept · 6 false, all but one mine · 1 half-false · 1 unresolved —
 and one already-false claim in a document I have not yet corrected.**
 
 ## A prediction, made and then refuted by reading the source
