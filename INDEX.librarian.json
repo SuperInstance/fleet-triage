@@ -1,0 +1,1320 @@
+{
+  "schema": "orch-librarian/1",
+  "generated_utc": "2026-10-02T18:06:59Z",
+  "root": "/workspace/projects/fleet-triage",
+  "git": {
+    "is_repo": true,
+    "branch": "r2-notebook",
+    "commits": 12,
+    "tracked_files": 95,
+    "tracked_md": 24,
+    "untracked_entries": 178,
+    "modified_entries": 0,
+    "in_HEAD": [
+      "AGENT-ENTRY.md",
+      "AGENTS.md",
+      "HOLLOW.md",
+      "README-PROPOSAL.md",
+      "midi-SURVEY.md",
+      "naming-DOOR.md",
+      "orch-SCOREBOARD.md",
+      "r1-NOENGINE.md",
+      "r1-SYNCOPATION.md",
+      "r1-TYPEFUNC.md",
+      "r2-NOTBOOK.md",
+      "tool-SURFACES.md"
+    ],
+    "on_disk_but_not_in_HEAD": [
+      "AUTOPUBLISH.md",
+      "BOARD.md",
+      "CANARY-FICTION.md",
+      "CLOSE-LOOP.md",
+      "CODESPACE-SPEC.md",
+      "CORRECTION-CONSERVATION.md",
+      "CORRECTION-PROJECTION.md",
+      "CRDT-CANARY2.md",
+      "CREATIVE.md",
+      "D1-INVENTORY.md",
+      "DEMO.md",
+      "DOCTRINE.md",
+      "EXPERIMENTS.md",
+      "F1-AUDIT.md",
+      "FICTION-COMPACTION.md",
+      "FICTION-FAR.md",
+      "GH-DUNGEONS-SEEDS.md",
+      "GIFT-ORACLE.md",
+      "GRACEFUL-FAIL.md",
+      "INDEX.md",
+      "IT-DEPARTMENT-BROKEN.md",
+      "JEV-CONTRACT.md",
+      "JEV-MERGE.md",
+      "MISSION-STEERING.md",
+      "NEXTGEN-GIT-CONCURRENCY.md",
+      "ORG.md",
+      "ORG2.md",
+      "ORIENTATION.md",
+      "PLAYTEST-OUTSIDER.md",
+      "PLAYTEST.md",
+      "PLAYTEST2.md",
+      "PR-STEWARD.md",
+      "README.md",
+      "RELAY-SELECTLIB.md",
+      "RESEARCH.md",
+      "RESOLVER-DEFECT.md",
+      "RESOLVER-FIELD.md",
+      "RESOLVER-FINAL.md",
+      "ROLES.md",
+      "SCOUT-PRIORART.md",
+      "SCOUT-QUILTINGIT.md",
+      "SCOUT2-PRIORART.md",
+      "SHED.md",
+      "SPRINTS.md",
+      "STUBS.md",
+      "SUBSTRATE-DEPS.md",
+      "SUBSTRATE-FIX.md",
+      "THE-LOOP.md",
+      "THEORY-OF-MIND.md",
+      "TYPES-UNLOCKED.md",
+      "VALUE-LEDGER.md",
+      "VERIFY-CONSERVATION.md",
+      "build-01.md",
+      "cf-D1.md",
+      "cf-EMBED.md",
+      "cf-TTS.md",
+      "chiaroscuro-MERGE.md",
+      "ci-LANE.md",
+      "crdt-CANARY3.md",
+      "dangling-TRIAGE.md",
+      "demo-DETERMINISM.md",
+      "dir-FORMAL.md",
+      "dir-SECURITY.md",
+      "dir-STATE.md",
+      "doctrine-RECHECK.md",
+      "edge-INTERP.md",
+      "edge-NCA.md",
+      "exp-01.md",
+      "exp-02.md",
+      "fleet-STRUCTURE.md",
+      "judge-SCHEMA.md",
+      "lattice-LIVENESS.md",
+      "lattice-RD.md",
+      "lau-PLAYER.md",
+      "lau-REBUILD.md",
+      "music-ROUND3.md",
+      "music-ROUND4.md",
+      "nextgen-ADVERSARY.md",
+      "nextgen-BUILD.md",
+      "nextgen-FINAL.md",
+      "nextgen-git.md",
+      "papers-MESSAGES.md",
+      "papers-RESEARCH.md",
+      "papers-ROOT.md",
+      "papers-WHITEPAPERS.md",
+      "play-01.md",
+      "play-fix-01.md",
+      "quilt-jev-CLI.md",
+      "quilt-jev-WEB.md",
+      "r1-JEVSAMPLER.md",
+      "r2-PAYOFF.md",
+      "scout-01.md",
+      "scout-DOMAINS.md",
+      "sprint-CRDT.md",
+      "sprint-FAILOPEN.md",
+      "sprint-RESOLVER.md",
+      "syn-AUDITORS.md",
+      "syn-CLAIMSTATE.md",
+      "syn-HARNESS.md",
+      "syn-HARNESS2.md",
+      "textfirst-SCOUT.md",
+      "types-REGISTRY.md",
+      "worker-RESOLVER.md",
+      "zoo-PROBE.md"
+    ]
+  },
+  "census": {
+    "worktree_total_files": 73224,
+    "worktree_top_level_md": 116,
+    "worktree_total_bytes": 1751738
+  },
+  "fresh_clone_check": {
+    "performed": true,
+    "path": "/tmp/ftclone",
+    "clone_total_files": 17,
+    "clone_top_level_md": 7,
+    "worktree_total_files": 73224,
+    "worktree_top_level_md": 116,
+    "docs_present_in_worktree_absent_from_clone": [
+      "AUTOPUBLISH.md",
+      "BOARD.md",
+      "CANARY-FICTION.md",
+      "CLOSE-LOOP.md",
+      "CODESPACE-SPEC.md",
+      "CORRECTION-CONSERVATION.md",
+      "CORRECTION-PROJECTION.md",
+      "CRDT-CANARY2.md",
+      "CREATIVE.md",
+      "D1-INVENTORY.md",
+      "DEMO.md",
+      "DOCTRINE.md",
+      "EXPERIMENTS.md",
+      "F1-AUDIT.md",
+      "FICTION-COMPACTION.md",
+      "FICTION-FAR.md",
+      "GH-DUNGEONS-SEEDS.md",
+      "GIFT-ORACLE.md",
+      "GRACEFUL-FAIL.md",
+      "INDEX.md",
+      "IT-DEPARTMENT-BROKEN.md",
+      "JEV-CONTRACT.md",
+      "JEV-MERGE.md",
+      "MISSION-STEERING.md",
+      "NEXTGEN-GIT-CONCURRENCY.md",
+      "ORG.md",
+      "ORG2.md",
+      "ORIENTATION.md",
+      "PLAYTEST-OUTSIDER.md",
+      "PLAYTEST.md",
+      "PLAYTEST2.md",
+      "PR-STEWARD.md",
+      "README.md",
+      "RELAY-SELECTLIB.md",
+      "RESEARCH.md",
+      "RESOLVER-DEFECT.md",
+      "RESOLVER-FIELD.md",
+      "RESOLVER-FINAL.md",
+      "ROLES.md",
+      "SCOUT-PRIORART.md",
+      "SCOUT-QUILTINGIT.md",
+      "SCOUT2-PRIORART.md",
+      "SHED.md",
+      "SPRINTS.md",
+      "STUBS.md",
+      "SUBSTRATE-DEPS.md",
+      "SUBSTRATE-FIX.md",
+      "THE-LOOP.md",
+      "THEORY-OF-MIND.md",
+      "TYPES-UNLOCKED.md",
+      "VALUE-LEDGER.md",
+      "VERIFY-CONSERVATION.md",
+      "build-01.md",
+      "cf-D1.md",
+      "cf-EMBED.md",
+      "cf-TTS.md",
+      "chiaroscuro-MERGE.md",
+      "ci-LANE.md",
+      "crdt-CANARY3.md",
+      "dangling-TRIAGE.md",
+      "demo-DETERMINISM.md",
+      "dir-FORMAL.md",
+      "dir-SECURITY.md",
+      "dir-STATE.md",
+      "doctrine-RECHECK.md",
+      "edge-INTERP.md",
+      "edge-NCA.md",
+      "exp-01.md",
+      "exp-02.md",
+      "fleet-STRUCTURE.md",
+      "judge-SCHEMA.md",
+      "lattice-LIVENESS.md",
+      "lattice-RD.md",
+      "lau-PLAYER.md",
+      "lau-REBUILD.md",
+      "music-ROUND3.md",
+      "music-ROUND4.md",
+      "nextgen-ADVERSARY.md",
+      "nextgen-BUILD.md",
+      "nextgen-FINAL.md",
+      "nextgen-git.md",
+      "orch-SCOREBOARD.md",
+      "papers-MESSAGES.md",
+      "papers-RESEARCH.md",
+      "papers-ROOT.md",
+      "papers-WHITEPAPERS.md",
+      "play-01.md",
+      "play-fix-01.md",
+      "quilt-jev-CLI.md",
+      "quilt-jev-WEB.md",
+      "r1-JEVSAMPLER.md",
+      "r1-NOENGINE.md",
+      "r1-SYNCOPATION.md",
+      "r1-TYPEFUNC.md",
+      "r2-NOTBOOK.md",
+      "r2-PAYOFF.md",
+      "scout-01.md",
+      "scout-DOMAINS.md",
+      "sprint-CRDT.md",
+      "sprint-FAILOPEN.md",
+      "sprint-RESOLVER.md",
+      "syn-AUDITORS.md",
+      "syn-CLAIMSTATE.md",
+      "syn-HARNESS.md",
+      "syn-HARNESS2.md",
+      "textfirst-SCOUT.md",
+      "types-REGISTRY.md",
+      "worker-RESOLVER.md",
+      "zoo-PROBE.md"
+    ],
+    "count_absent": 109,
+    "verdict": "DIVERGENT"
+  },
+  "documents": [
+    {
+      "path": "AGENT-ENTRY.md",
+      "bytes": 12002,
+      "mtime_utc": "2026-10-02T15:54:22Z",
+      "age_days": 0.09,
+      "sha256": "e98012d790194fe0",
+      "lines": 216
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5982,
+      "mtime_utc": "2026-10-02T15:53:52Z",
+      "age_days": 0.09,
+      "sha256": "ce2d37a69b7dd26c",
+      "lines": 111
+    },
+    {
+      "path": "AUTOPUBLISH.md",
+      "bytes": 17410,
+      "mtime_utc": "2026-10-01T02:43:52Z",
+      "age_days": 1.64,
+      "sha256": "f530f29b5238c786",
+      "lines": 281
+    },
+    {
+      "path": "BOARD.md",
+      "bytes": 4974,
+      "mtime_utc": "2026-10-01T20:49:58Z",
+      "age_days": 0.89,
+      "sha256": "611eaaf1154aebb1",
+      "lines": 97
+    },
+    {
+      "path": "CANARY-FICTION.md",
+      "bytes": 3840,
+      "mtime_utc": "2026-10-02T06:56:32Z",
+      "age_days": 0.47,
+      "sha256": "ba4fa6a655f8b51a",
+      "lines": 85
+    },
+    {
+      "path": "CLOSE-LOOP.md",
+      "bytes": 21112,
+      "mtime_utc": "2026-10-02T01:54:15Z",
+      "age_days": 0.68,
+      "sha256": "213a926f2a4d9ff2",
+      "lines": 440
+    },
+    {
+      "path": "CODESPACE-SPEC.md",
+      "bytes": 8173,
+      "mtime_utc": "2026-10-02T03:46:03Z",
+      "age_days": 0.6,
+      "sha256": "40b57a0bde853c95",
+      "lines": 167
+    },
+    {
+      "path": "CORRECTION-CONSERVATION.md",
+      "bytes": 3753,
+      "mtime_utc": "2026-10-02T01:35:14Z",
+      "age_days": 0.69,
+      "sha256": "149b686f24d55241",
+      "lines": 77
+    },
+    {
+      "path": "CORRECTION-PROJECTION.md",
+      "bytes": 4768,
+      "mtime_utc": "2026-10-01T21:17:06Z",
+      "age_days": 0.87,
+      "sha256": "8dc6db8be8bf56e5",
+      "lines": 99
+    },
+    {
+      "path": "CRDT-CANARY2.md",
+      "bytes": 12548,
+      "mtime_utc": "2026-10-02T01:15:02Z",
+      "age_days": 0.7,
+      "sha256": "4c46374895bded8c",
+      "lines": 333
+    },
+    {
+      "path": "CREATIVE.md",
+      "bytes": 6897,
+      "mtime_utc": "2026-10-01T02:00:32Z",
+      "age_days": 1.67,
+      "sha256": "f965912c489df12a",
+      "lines": 121
+    },
+    {
+      "path": "D1-INVENTORY.md",
+      "bytes": 3569,
+      "mtime_utc": "2026-10-01T20:49:02Z",
+      "age_days": 0.89,
+      "sha256": "917c32f07000a536",
+      "lines": 92
+    },
+    {
+      "path": "DEMO.md",
+      "bytes": 27748,
+      "mtime_utc": "2026-10-02T08:51:06Z",
+      "age_days": 0.39,
+      "sha256": "dc8180ff4e8477fb",
+      "lines": 683
+    },
+    {
+      "path": "DOCTRINE.md",
+      "bytes": 7727,
+      "mtime_utc": "2026-10-01T23:55:30Z",
+      "age_days": 0.76,
+      "sha256": "2302ea6e4d9668f1",
+      "lines": 171
+    },
+    {
+      "path": "EXPERIMENTS.md",
+      "bytes": 8066,
+      "mtime_utc": "2026-10-01T23:55:52Z",
+      "age_days": 0.76,
+      "sha256": "f6e93ca4b03b400c",
+      "lines": 185
+    },
+    {
+      "path": "F1-AUDIT.md",
+      "bytes": 33039,
+      "mtime_utc": "2026-10-01T02:52:36Z",
+      "age_days": 1.63,
+      "sha256": "6dbfca4871219d9e",
+      "lines": 685
+    },
+    {
+      "path": "FICTION-COMPACTION.md",
+      "bytes": 4753,
+      "mtime_utc": "2026-10-01T21:04:55Z",
+      "age_days": 0.88,
+      "sha256": "865068b6075f8213",
+      "lines": 88
+    },
+    {
+      "path": "FICTION-FAR.md",
+      "bytes": 26267,
+      "mtime_utc": "2026-10-01T21:08:54Z",
+      "age_days": 0.87,
+      "sha256": "4695969cbedabeb5",
+      "lines": 459
+    },
+    {
+      "path": "GH-DUNGEONS-SEEDS.md",
+      "bytes": 7189,
+      "mtime_utc": "2026-10-02T17:08:08Z",
+      "age_days": 0.04,
+      "sha256": "7813c57459e74f29",
+      "lines": 152
+    },
+    {
+      "path": "GIFT-ORACLE.md",
+      "bytes": 6715,
+      "mtime_utc": "2026-10-02T03:19:17Z",
+      "age_days": 0.62,
+      "sha256": "4cf1b6dad099c873",
+      "lines": 131
+    },
+    {
+      "path": "GRACEFUL-FAIL.md",
+      "bytes": 8328,
+      "mtime_utc": "2026-10-02T04:17:44Z",
+      "age_days": 0.58,
+      "sha256": "a40198e8ef79e19c",
+      "lines": 189
+    },
+    {
+      "path": "HOLLOW.md",
+      "bytes": 33268,
+      "mtime_utc": "2026-10-01T00:33:45Z",
+      "age_days": 1.73,
+      "sha256": "f550c6eb7e89ba1b",
+      "lines": 419
+    },
+    {
+      "path": "INDEX.md",
+      "bytes": 5677,
+      "mtime_utc": "2026-10-01T23:55:03Z",
+      "age_days": 0.76,
+      "sha256": "cacd6a1edaf86f37",
+      "lines": 98
+    },
+    {
+      "path": "IT-DEPARTMENT-BROKEN.md",
+      "bytes": 3802,
+      "mtime_utc": "2026-10-02T04:41:11Z",
+      "age_days": 0.56,
+      "sha256": "1a57ffd16095715d",
+      "lines": 88
+    },
+    {
+      "path": "JEV-CONTRACT.md",
+      "bytes": 3376,
+      "mtime_utc": "2026-10-02T08:15:35Z",
+      "age_days": 0.41,
+      "sha256": "f6ead6578c04e1ee",
+      "lines": 85
+    },
+    {
+      "path": "JEV-MERGE.md",
+      "bytes": 19205,
+      "mtime_utc": "2026-10-01T22:42:21Z",
+      "age_days": 0.81,
+      "sha256": "e0ea60737348ba45",
+      "lines": 374
+    },
+    {
+      "path": "MISSION-STEERING.md",
+      "bytes": 5830,
+      "mtime_utc": "2026-10-01T23:12:10Z",
+      "age_days": 0.79,
+      "sha256": "7618d326711fa556",
+      "lines": 117
+    },
+    {
+      "path": "NEXTGEN-GIT-CONCURRENCY.md",
+      "bytes": 8181,
+      "mtime_utc": "2026-10-01T20:46:22Z",
+      "age_days": 0.89,
+      "sha256": "7b3410d562be0dc5",
+      "lines": 152
+    },
+    {
+      "path": "ORG.md",
+      "bytes": 17119,
+      "mtime_utc": "2026-10-01T02:12:47Z",
+      "age_days": 1.66,
+      "sha256": "1a534c0db3b2f030",
+      "lines": 370
+    },
+    {
+      "path": "ORG2.md",
+      "bytes": 20298,
+      "mtime_utc": "2026-10-01T05:14:40Z",
+      "age_days": 1.54,
+      "sha256": "f74d60b51a46c66c",
+      "lines": 414
+    },
+    {
+      "path": "ORIENTATION.md",
+      "bytes": 6397,
+      "mtime_utc": "2026-10-02T02:22:46Z",
+      "age_days": 0.66,
+      "sha256": "dbda0bd724a0a0bc",
+      "lines": 125
+    },
+    {
+      "path": "PLAYTEST-OUTSIDER.md",
+      "bytes": 18571,
+      "mtime_utc": "2026-10-01T22:25:39Z",
+      "age_days": 0.82,
+      "sha256": "d100815b96202265",
+      "lines": 334
+    },
+    {
+      "path": "PLAYTEST.md",
+      "bytes": 18312,
+      "mtime_utc": "2026-10-01T02:11:29Z",
+      "age_days": 1.66,
+      "sha256": "2448eaf1d3cd880c",
+      "lines": 354
+    },
+    {
+      "path": "PLAYTEST2.md",
+      "bytes": 23411,
+      "mtime_utc": "2026-10-01T04:48:54Z",
+      "age_days": 1.55,
+      "sha256": "7402fd8ceddda2c3",
+      "lines": 456
+    },
+    {
+      "path": "PR-STEWARD.md",
+      "bytes": 20117,
+      "mtime_utc": "2026-10-01T21:29:46Z",
+      "age_days": 0.86,
+      "sha256": "0324e9da4d943335",
+      "lines": 382
+    },
+    {
+      "path": "README-PROPOSAL.md",
+      "bytes": 3326,
+      "mtime_utc": "2026-10-02T15:54:34Z",
+      "age_days": 0.09,
+      "sha256": "fcbbf0f56b8de8be",
+      "lines": 71
+    },
+    {
+      "path": "README.md",
+      "bytes": 2708,
+      "mtime_utc": "2026-09-30T23:43:43Z",
+      "age_days": 1.77,
+      "sha256": "a8940db0836e89ad",
+      "lines": 61
+    },
+    {
+      "path": "RELAY-SELECTLIB.md",
+      "bytes": 5312,
+      "mtime_utc": "2026-10-01T22:19:29Z",
+      "age_days": 0.82,
+      "sha256": "5eaac0e60e0b78e1",
+      "lines": 111
+    },
+    {
+      "path": "RESEARCH.md",
+      "bytes": 24070,
+      "mtime_utc": "2026-10-01T01:54:02Z",
+      "age_days": 1.68,
+      "sha256": "768f9dfe2b0776c2",
+      "lines": 413
+    },
+    {
+      "path": "RESOLVER-DEFECT.md",
+      "bytes": 4840,
+      "mtime_utc": "2026-10-01T06:41:21Z",
+      "age_days": 1.48,
+      "sha256": "723113f0235f03e9",
+      "lines": 121
+    },
+    {
+      "path": "RESOLVER-FIELD.md",
+      "bytes": 25274,
+      "mtime_utc": "2026-10-01T21:45:15Z",
+      "age_days": 0.85,
+      "sha256": "0c024eee3342d8bb",
+      "lines": 500
+    },
+    {
+      "path": "RESOLVER-FINAL.md",
+      "bytes": 7417,
+      "mtime_utc": "2026-10-01T15:21:58Z",
+      "age_days": 1.11,
+      "sha256": "496ecf0e05a0a6c3",
+      "lines": 144
+    },
+    {
+      "path": "ROLES.md",
+      "bytes": 6759,
+      "mtime_utc": "2026-10-02T07:35:21Z",
+      "age_days": 0.44,
+      "sha256": "98190505ba3c41f2",
+      "lines": 144
+    },
+    {
+      "path": "SCOUT-PRIORART.md",
+      "bytes": 30400,
+      "mtime_utc": "2026-10-01T02:30:54Z",
+      "age_days": 1.65,
+      "sha256": "8864a8aa5228eb18",
+      "lines": 277
+    },
+    {
+      "path": "SCOUT-QUILTINGIT.md",
+      "bytes": 17959,
+      "mtime_utc": "2026-10-01T23:28:36Z",
+      "age_days": 0.78,
+      "sha256": "6c5abe84dbe05b62",
+      "lines": 310
+    },
+    {
+      "path": "SCOUT2-PRIORART.md",
+      "bytes": 32165,
+      "mtime_utc": "2026-10-01T04:22:40Z",
+      "age_days": 1.57,
+      "sha256": "abc0c422c6736ff9",
+      "lines": 563
+    },
+    {
+      "path": "SHED.md",
+      "bytes": 21928,
+      "mtime_utc": "2026-10-01T21:24:40Z",
+      "age_days": 0.86,
+      "sha256": "eb692b0d5f82b5f8",
+      "lines": 401
+    },
+    {
+      "path": "SPRINTS.md",
+      "bytes": 6244,
+      "mtime_utc": "2026-10-02T08:46:25Z",
+      "age_days": 0.39,
+      "sha256": "124d9bca08516823",
+      "lines": 133
+    },
+    {
+      "path": "STUBS.md",
+      "bytes": 16171,
+      "mtime_utc": "2026-10-01T00:04:57Z",
+      "age_days": 1.75,
+      "sha256": "edda2b1fff7b541e",
+      "lines": 191
+    },
+    {
+      "path": "SUBSTRATE-DEPS.md",
+      "bytes": 19743,
+      "mtime_utc": "2026-10-02T01:12:44Z",
+      "age_days": 0.7,
+      "sha256": "ded173a0fe50bf28",
+      "lines": 398
+    },
+    {
+      "path": "SUBSTRATE-FIX.md",
+      "bytes": 22219,
+      "mtime_utc": "2026-10-02T00:09:22Z",
+      "age_days": 0.75,
+      "sha256": "fcee69d6e77b41a4",
+      "lines": 477
+    },
+    {
+      "path": "THE-LOOP.md",
+      "bytes": 7360,
+      "mtime_utc": "2026-10-02T04:37:47Z",
+      "age_days": 0.56,
+      "sha256": "ffbacbc30f71872e",
+      "lines": 159
+    },
+    {
+      "path": "THEORY-OF-MIND.md",
+      "bytes": 6867,
+      "mtime_utc": "2026-10-02T15:48:48Z",
+      "age_days": 0.1,
+      "sha256": "62fda6d26422c60e",
+      "lines": 149
+    },
+    {
+      "path": "TYPES-UNLOCKED.md",
+      "bytes": 5749,
+      "mtime_utc": "2026-10-02T02:21:57Z",
+      "age_days": 0.66,
+      "sha256": "6715dd3379bf244f",
+      "lines": 128
+    },
+    {
+      "path": "VALUE-LEDGER.md",
+      "bytes": 5471,
+      "mtime_utc": "2026-10-02T09:36:40Z",
+      "age_days": 0.35,
+      "sha256": "15819e37b1c4b463",
+      "lines": 122
+    },
+    {
+      "path": "VERIFY-CONSERVATION.md",
+      "bytes": 12175,
+      "mtime_utc": "2026-10-02T01:17:19Z",
+      "age_days": 0.7,
+      "sha256": "b20d547f7c1c8901",
+      "lines": 234
+    },
+    {
+      "path": "build-01.md",
+      "bytes": 13206,
+      "mtime_utc": "2026-10-02T07:56:23Z",
+      "age_days": 0.42,
+      "sha256": "ccb8829d818d10ad",
+      "lines": 307
+    },
+    {
+      "path": "cf-D1.md",
+      "bytes": 17014,
+      "mtime_utc": "2026-10-01T20:39:21Z",
+      "age_days": 0.89,
+      "sha256": "87ad48179f587a37",
+      "lines": 300
+    },
+    {
+      "path": "cf-EMBED.md",
+      "bytes": 7816,
+      "mtime_utc": "2026-10-01T20:41:11Z",
+      "age_days": 0.89,
+      "sha256": "34a4c9879b3a7d40",
+      "lines": 169
+    },
+    {
+      "path": "cf-TTS.md",
+      "bytes": 27499,
+      "mtime_utc": "2026-10-01T20:07:45Z",
+      "age_days": 0.92,
+      "sha256": "a27a1b2778444901",
+      "lines": 515
+    },
+    {
+      "path": "chiaroscuro-MERGE.md",
+      "bytes": 17214,
+      "mtime_utc": "2026-10-02T02:30:27Z",
+      "age_days": 0.65,
+      "sha256": "912156a6a941efc3",
+      "lines": 355
+    },
+    {
+      "path": "ci-LANE.md",
+      "bytes": 14603,
+      "mtime_utc": "2026-10-01T16:59:29Z",
+      "age_days": 1.05,
+      "sha256": "dc935491a174ccaf",
+      "lines": 302
+    },
+    {
+      "path": "crdt-CANARY3.md",
+      "bytes": 340,
+      "mtime_utc": "2026-10-02T06:55:55Z",
+      "age_days": 0.47,
+      "sha256": "2bc4dd3984814d16",
+      "lines": 12
+    },
+    {
+      "path": "dangling-TRIAGE.md",
+      "bytes": 14050,
+      "mtime_utc": "2026-10-01T16:02:28Z",
+      "age_days": 1.09,
+      "sha256": "7f710451fb9cd071",
+      "lines": 288
+    },
+    {
+      "path": "demo-DETERMINISM.md",
+      "bytes": 13959,
+      "mtime_utc": "2026-10-02T10:05:30Z",
+      "age_days": 0.33,
+      "sha256": "a26b07539d9e1ae1",
+      "lines": 371
+    },
+    {
+      "path": "dir-FORMAL.md",
+      "bytes": 28498,
+      "mtime_utc": "2026-10-02T02:41:42Z",
+      "age_days": 0.64,
+      "sha256": "eb731e336f147cb1",
+      "lines": 525
+    },
+    {
+      "path": "dir-SECURITY.md",
+      "bytes": 18936,
+      "mtime_utc": "2026-10-02T03:00:15Z",
+      "age_days": 0.63,
+      "sha256": "c5387e44b1b4a44c",
+      "lines": 325
+    },
+    {
+      "path": "dir-STATE.md",
+      "bytes": 1966,
+      "mtime_utc": "2026-10-02T02:35:57Z",
+      "age_days": 0.65,
+      "sha256": "dddc337a3e818376",
+      "lines": 41
+    },
+    {
+      "path": "doctrine-RECHECK.md",
+      "bytes": 12343,
+      "mtime_utc": "2026-10-01T21:00:49Z",
+      "age_days": 0.88,
+      "sha256": "be8f41e123bc6eef",
+      "lines": 228
+    },
+    {
+      "path": "edge-INTERP.md",
+      "bytes": 33437,
+      "mtime_utc": "2026-10-01T16:20:43Z",
+      "age_days": 1.07,
+      "sha256": "9954140bbfa2f2e3",
+      "lines": 494
+    },
+    {
+      "path": "edge-NCA.md",
+      "bytes": 32094,
+      "mtime_utc": "2026-10-01T16:15:49Z",
+      "age_days": 1.08,
+      "sha256": "c23c9923696792a1",
+      "lines": 507
+    },
+    {
+      "path": "exp-01.md",
+      "bytes": 8975,
+      "mtime_utc": "2026-10-02T07:39:41Z",
+      "age_days": 0.44,
+      "sha256": "096ed0ce9e444111",
+      "lines": 179
+    },
+    {
+      "path": "exp-02.md",
+      "bytes": 12392,
+      "mtime_utc": "2026-10-02T08:53:00Z",
+      "age_days": 0.38,
+      "sha256": "4fdae0fe0f6a56c8",
+      "lines": 236
+    },
+    {
+      "path": "fleet-STRUCTURE.md",
+      "bytes": 25409,
+      "mtime_utc": "2026-10-01T16:22:01Z",
+      "age_days": 1.07,
+      "sha256": "07fc0c330cc6cca2",
+      "lines": 525
+    },
+    {
+      "path": "judge-SCHEMA.md",
+      "bytes": 340,
+      "mtime_utc": "2026-10-02T06:55:55Z",
+      "age_days": 0.47,
+      "sha256": "8e8257e65eb0896b",
+      "lines": 12
+    },
+    {
+      "path": "lattice-LIVENESS.md",
+      "bytes": 344,
+      "mtime_utc": "2026-10-02T06:55:55Z",
+      "age_days": 0.47,
+      "sha256": "a1193d2d88687e33",
+      "lines": 12
+    },
+    {
+      "path": "lattice-RD.md",
+      "bytes": 28338,
+      "mtime_utc": "2026-10-02T03:36:10Z",
+      "age_days": 0.6,
+      "sha256": "058601e9e8a06bfe",
+      "lines": 498
+    },
+    {
+      "path": "lau-PLAYER.md",
+      "bytes": 21376,
+      "mtime_utc": "2026-10-02T16:18:24Z",
+      "age_days": 0.08,
+      "sha256": "f3983fd95252aca6",
+      "lines": 387
+    },
+    {
+      "path": "lau-REBUILD.md",
+      "bytes": 19551,
+      "mtime_utc": "2026-10-02T16:14:56Z",
+      "age_days": 0.08,
+      "sha256": "c85594ffce09d135",
+      "lines": 418
+    },
+    {
+      "path": "midi-SURVEY.md",
+      "bytes": 41260,
+      "mtime_utc": "2026-10-02T04:44:49Z",
+      "age_days": 0.56,
+      "sha256": "5f69623d34af7e55",
+      "lines": 610
+    },
+    {
+      "path": "music-ROUND3.md",
+      "bytes": 12711,
+      "mtime_utc": "2026-10-01T16:02:23Z",
+      "age_days": 1.09,
+      "sha256": "0aa7c7364d32ff1d",
+      "lines": 268
+    },
+    {
+      "path": "music-ROUND4.md",
+      "bytes": 11972,
+      "mtime_utc": "2026-10-01T21:31:57Z",
+      "age_days": 0.86,
+      "sha256": "20855c3cfaffc8b7",
+      "lines": 259
+    },
+    {
+      "path": "naming-DOOR.md",
+      "bytes": 20140,
+      "mtime_utc": "2026-10-02T17:07:48Z",
+      "age_days": 0.04,
+      "sha256": "6ed522ffe4ef51a5",
+      "lines": 382
+    },
+    {
+      "path": "nextgen-ADVERSARY.md",
+      "bytes": 11917,
+      "mtime_utc": "2026-10-01T20:54:04Z",
+      "age_days": 0.88,
+      "sha256": "bfa6a3131d126a4e",
+      "lines": 243
+    },
+    {
+      "path": "nextgen-BUILD.md",
+      "bytes": 11031,
+      "mtime_utc": "2026-10-01T21:14:08Z",
+      "age_days": 0.87,
+      "sha256": "c94c08d5fd0c4b9a",
+      "lines": 203
+    },
+    {
+      "path": "nextgen-FINAL.md",
+      "bytes": 9796,
+      "mtime_utc": "2026-10-02T00:14:57Z",
+      "age_days": 0.74,
+      "sha256": "f9d497eab5fee802",
+      "lines": 197
+    },
+    {
+      "path": "nextgen-git.md",
+      "bytes": 13680,
+      "mtime_utc": "2026-10-01T20:49:06Z",
+      "age_days": 0.89,
+      "sha256": "ee9062bfb76fc71c",
+      "lines": 223
+    },
+    {
+      "path": "orch-SCOREBOARD.md",
+      "bytes": 11445,
+      "mtime_utc": "2026-10-02T17:16:08Z",
+      "age_days": 0.04,
+      "sha256": "0266ec1a84caacac",
+      "lines": 182
+    },
+    {
+      "path": "papers-MESSAGES.md",
+      "bytes": 32908,
+      "mtime_utc": "2026-10-01T05:28:30Z",
+      "age_days": 1.53,
+      "sha256": "f822d978063d51a8",
+      "lines": 453
+    },
+    {
+      "path": "papers-RESEARCH.md",
+      "bytes": 32746,
+      "mtime_utc": "2026-10-01T05:29:13Z",
+      "age_days": 1.53,
+      "sha256": "e519f7ec47c4f444",
+      "lines": 401
+    },
+    {
+      "path": "papers-ROOT.md",
+      "bytes": 26179,
+      "mtime_utc": "2026-10-01T05:29:32Z",
+      "age_days": 1.53,
+      "sha256": "80ee65aaba1813b6",
+      "lines": 437
+    },
+    {
+      "path": "papers-WHITEPAPERS.md",
+      "bytes": 26730,
+      "mtime_utc": "2026-10-01T05:27:56Z",
+      "age_days": 1.53,
+      "sha256": "3976785e8d1e5aa2",
+      "lines": 453
+    },
+    {
+      "path": "play-01.md",
+      "bytes": 25589,
+      "mtime_utc": "2026-10-02T07:43:21Z",
+      "age_days": 0.43,
+      "sha256": "3a44dde093aee507",
+      "lines": 498
+    },
+    {
+      "path": "play-fix-01.md",
+      "bytes": 19230,
+      "mtime_utc": "2026-10-02T10:09:18Z",
+      "age_days": 0.33,
+      "sha256": "f4362876596e3604",
+      "lines": 405
+    },
+    {
+      "path": "quilt-jev-CLI.md",
+      "bytes": 18483,
+      "mtime_utc": "2026-10-02T09:42:15Z",
+      "age_days": 0.35,
+      "sha256": "61177f3b5f478bbb",
+      "lines": 465
+    },
+    {
+      "path": "quilt-jev-WEB.md",
+      "bytes": 18304,
+      "mtime_utc": "2026-10-02T09:06:33Z",
+      "age_days": 0.38,
+      "sha256": "1798a9c2df000bb8",
+      "lines": 353
+    },
+    {
+      "path": "r1-JEVSAMPLER.md",
+      "bytes": 8841,
+      "mtime_utc": "2026-10-02T17:10:19Z",
+      "age_days": 0.04,
+      "sha256": "7a5d8e884d6c5121",
+      "lines": 173
+    },
+    {
+      "path": "r1-NOENGINE.md",
+      "bytes": 20280,
+      "mtime_utc": "2026-10-02T17:30:37Z",
+      "age_days": 0.03,
+      "sha256": "326c4c00ae665ec0",
+      "lines": 389
+    },
+    {
+      "path": "r1-SYNCOPATION.md",
+      "bytes": 17397,
+      "mtime_utc": "2026-10-02T17:36:59Z",
+      "age_days": 0.02,
+      "sha256": "c4de8d14f2db4694",
+      "lines": 338
+    },
+    {
+      "path": "r1-TYPEFUNC.md",
+      "bytes": 15249,
+      "mtime_utc": "2026-10-02T17:22:48Z",
+      "age_days": 0.03,
+      "sha256": "682d5ffa8517520d",
+      "lines": 253
+    },
+    {
+      "path": "r2-NOTBOOK.md",
+      "bytes": 14864,
+      "mtime_utc": "2026-10-02T17:43:20Z",
+      "age_days": 0.02,
+      "sha256": "4936b242ccf0da32",
+      "lines": 290
+    },
+    {
+      "path": "r2-PAYOFF.md",
+      "bytes": 3982,
+      "mtime_utc": "2026-10-02T17:20:25Z",
+      "age_days": 0.03,
+      "sha256": "66a98fb58712d320",
+      "lines": 73
+    },
+    {
+      "path": "scout-01.md",
+      "bytes": 7959,
+      "mtime_utc": "2026-10-02T07:44:07Z",
+      "age_days": 0.43,
+      "sha256": "6f3b79684a2884a3",
+      "lines": 173
+    },
+    {
+      "path": "scout-DOMAINS.md",
+      "bytes": 15524,
+      "mtime_utc": "2026-10-02T17:26:48Z",
+      "age_days": 0.03,
+      "sha256": "8547782c700fbb9f",
+      "lines": 250
+    },
+    {
+      "path": "sprint-CRDT.md",
+      "bytes": 27506,
+      "mtime_utc": "2026-10-01T16:19:45Z",
+      "age_days": 1.07,
+      "sha256": "be0478b666deda53",
+      "lines": 506
+    },
+    {
+      "path": "sprint-FAILOPEN.md",
+      "bytes": 18275,
+      "mtime_utc": "2026-10-01T16:01:32Z",
+      "age_days": 1.09,
+      "sha256": "0a21f746b2971dfe",
+      "lines": 398
+    },
+    {
+      "path": "sprint-RESOLVER.md",
+      "bytes": 13292,
+      "mtime_utc": "2026-10-01T10:10:52Z",
+      "age_days": 1.33,
+      "sha256": "7c759c5a69963063",
+      "lines": 300
+    },
+    {
+      "path": "syn-AUDITORS.md",
+      "bytes": 21191,
+      "mtime_utc": "2026-10-01T20:45:00Z",
+      "age_days": 0.89,
+      "sha256": "c3c263deb08d61a8",
+      "lines": 344
+    },
+    {
+      "path": "syn-CLAIMSTATE.md",
+      "bytes": 18244,
+      "mtime_utc": "2026-10-01T20:39:07Z",
+      "age_days": 0.89,
+      "sha256": "68f7dffb44fb7e84",
+      "lines": 352
+    },
+    {
+      "path": "syn-HARNESS.md",
+      "bytes": 1912,
+      "mtime_utc": "2026-10-01T20:33:35Z",
+      "age_days": 0.9,
+      "sha256": "d594881a0edd34f8",
+      "lines": 37
+    },
+    {
+      "path": "syn-HARNESS2.md",
+      "bytes": 17652,
+      "mtime_utc": "2026-10-01T23:38:40Z",
+      "age_days": 0.77,
+      "sha256": "4359ce25a13d509c",
+      "lines": 325
+    },
+    {
+      "path": "textfirst-SCOUT.md",
+      "bytes": 31258,
+      "mtime_utc": "2026-10-02T04:38:59Z",
+      "age_days": 0.56,
+      "sha256": "50fceb1f04f8e406",
+      "lines": 574
+    },
+    {
+      "path": "tool-SURFACES.md",
+      "bytes": 8668,
+      "mtime_utc": "2026-10-02T17:08:28Z",
+      "age_days": 0.04,
+      "sha256": "c224df8b0c23d7d8",
+      "lines": 174
+    },
+    {
+      "path": "types-REGISTRY.md",
+      "bytes": 12718,
+      "mtime_utc": "2026-10-02T02:51:15Z",
+      "age_days": 0.64,
+      "sha256": "86f11f4143799717",
+      "lines": 266
+    },
+    {
+      "path": "worker-RESOLVER.md",
+      "bytes": 22947,
+      "mtime_utc": "2026-10-01T20:40:15Z",
+      "age_days": 0.89,
+      "sha256": "4fa756b9af88c01e",
+      "lines": 447
+    },
+    {
+      "path": "zoo-PROBE.md",
+      "bytes": 17577,
+      "mtime_utc": "2026-10-02T02:42:03Z",
+      "age_days": 0.64,
+      "sha256": "c2cf017e75b0c682",
+      "lines": 356
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "BattenSpline-count-and-kind",
+      "truth": "MEASURED 2026-10-02: 88 hits / 30 files across all 34 /workspace/projects. 0 executable-code hits: the 2 hits in quilt-llvm/experiments/batten-spike/src/kernel.rs are '//!' doc-comments, and the 3rd code-extension hit is VERIFY-CONSERVATION.md citing a filename. All substance traces to ONE paper (scout-foundational.md) replicated 5x and HTML-rendered 3x. Verdict: prose (right kind), 88 (not 10/12), and NOT 136 code hits.",
+      "retracted_in": [
+        "CORRECTION-CONSERVATION.md",
+        "ORIENTATION.md",
+        "VERIFY-CONSERVATION.md"
+      ],
+      "fixed_carriers": [
+        "CORRECTION-CONSERVATION.md",
+        "ORIENTATION.md",
+        "VERIFY-CONSERVATION.md"
+      ],
+      "live_stale_carriers": [
+        {
+          "doc": "BOARD.md",
+          "mtime_utc": "2026-10-01T20:49:58Z",
+          "age_days": 0.89,
+          "carries_fix_too": false
+        },
+        {
+          "doc": "CLOSE-LOOP.md",
+          "mtime_utc": "2026-10-02T01:54:15Z",
+          "age_days": 0.68,
+          "carries_fix_too": false
+        },
+        {
+          "doc": "INDEX.md",
+          "mtime_utc": "2026-10-01T23:55:03Z",
+          "age_days": 0.76,
+          "carries_fix_too": false
+        },
+        {
+          "doc": "RESOLVER-FINAL.md",
+          "mtime_utc": "2026-10-01T15:21:58Z",
+          "age_days": 1.11,
+          "carries_fix_too": false
+        }
+      ],
+      "n_live": 4
+    }
+  ],
+  "live_contradiction_total": 4,
+  "stale_citations": [
+    {
+      "doc": "BOARD.md",
+      "cites_as_current": "BattenSpline-count-and-kind",
+      "corrected_by": "ORIENTATION.md",
+      "stale_by_days": 0.23,
+      "age_days": 0.89
+    },
+    {
+      "doc": "CLOSE-LOOP.md",
+      "cites_as_current": "BattenSpline-count-and-kind",
+      "corrected_by": "ORIENTATION.md",
+      "stale_by_days": 0.02,
+      "age_days": 0.68
+    },
+    {
+      "doc": "INDEX.md",
+      "cites_as_current": "BattenSpline-count-and-kind",
+      "corrected_by": "ORIENTATION.md",
+      "stale_by_days": 0.1,
+      "age_days": 0.76
+    },
+    {
+      "doc": "RESOLVER-FINAL.md",
+      "cites_as_current": "BattenSpline-count-and-kind",
+      "corrected_by": "ORIENTATION.md",
+      "stale_by_days": 0.46,
+      "age_days": 1.11
+    }
+  ],
+  "stale_citation_total": 4,
+  "retraction_carrying_docs": [
+    "AGENTS.md",
+    "CORRECTION-CONSERVATION.md",
+    "CORRECTION-PROJECTION.md",
+    "CRDT-CANARY2.md",
+    "DOCTRINE.md",
+    "EXPERIMENTS.md",
+    "F1-AUDIT.md",
+    "FICTION-FAR.md",
+    "HOLLOW.md",
+    "INDEX.md",
+    "JEV-MERGE.md",
+    "MISSION-STEERING.md",
+    "NEXTGEN-GIT-CONCURRENCY.md",
+    "ORG.md",
+    "ORG2.md",
+    "ORIENTATION.md",
+    "PLAYTEST2.md",
+    "README-PROPOSAL.md",
+    "RELAY-SELECTLIB.md",
+    "RESEARCH.md",
+    "RESOLVER-DEFECT.md",
+    "ROLES.md",
+    "SCOUT-PRIORART.md",
+    "SHED.md",
+    "STUBS.md",
+    "SUBSTRATE-DEPS.md",
+    "SUBSTRATE-FIX.md",
+    "VERIFY-CONSERVATION.md",
+    "cf-EMBED.md",
+    "chiaroscuro-MERGE.md",
+    "ci-LANE.md",
+    "dangling-TRIAGE.md",
+    "demo-DETERMINISM.md",
+    "dir-FORMAL.md",
+    "dir-SECURITY.md",
+    "doctrine-RECHECK.md",
+    "edge-INTERP.md",
+    "fleet-STRUCTURE.md",
+    "lattice-RD.md",
+    "midi-SURVEY.md",
+    "music-ROUND3.md",
+    "nextgen-FINAL.md",
+    "papers-MESSAGES.md",
+    "papers-RESEARCH.md",
+    "papers-WHITEPAPERS.md",
+    "play-fix-01.md",
+    "quilt-jev-CLI.md",
+    "sprint-CRDT.md",
+    "syn-AUDITORS.md",
+    "syn-HARNESS.md",
+    "syn-HARNESS2.md",
+    "worker-RESOLVER.md",
+    "zoo-PROBE.md"
+  ]
+}

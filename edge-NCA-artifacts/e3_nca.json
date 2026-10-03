@@ -1,0 +1,87 @@
+{
+ "do_nothing": 0.15025462210178375,
+ "trained_loss": 0.12386000901460648,
+ "learned_params": 2776,
+ "hand": {
+  "Sobel kernels (3x3, hand-specified)": "27",
+  "perception width (features per cell)": "48",
+  "grid size G": "12",
+  "channels C": "16",
+  "hidden H": "24",
+  "layers L": "3",
+  "rollout steps T": "24",
+  "stochastic update rate": "0.5",
+  "alive channel index": "15",
+  "zero-init of last layer": "yes",
+  "seed: single cell at": "(6, 6)",
+  "seed values (alive=1, rgb=0.5)": "4",
+  "target image pixels (hand-drawn)": "2304",
+  "padding mode": "zero",
+  "loss": "MSE(rgb, target)"
+ },
+ "target_cells": 52,
+ "mutations": {
+  "CONTROL do nothing": 0.15025462210178375,
+  "trained (stochastic mask on)": 0.017990969121456146,
+  "trained, no stochastic mask": 0.12386000901460648,
+  "trained, + alive-masking ON": 0.14966195821762085,
+  "trained, no seed (all-dead init)": 0.15163595974445343,
+  "trained, seed at wrong corner": 0.19269247353076935,
+  "trained, WHOLE GRID alive at t=0": 0.3482208251953125,
+  "trained, no stochastic mask, all alive": 0.36692482233047485,
+  "ALL learned weights zeroed": 0.15025462210178375,
+  "restored": 0.018608449026942253
+ },
+ "log": [
+  [
+   1990,
+   0.0241666529327631,
+   0.02733992226421833
+  ],
+  [
+   1991,
+   0.019286897033452988,
+   0.01893218606710434
+  ],
+  [
+   1992,
+   0.020808860659599304,
+   0.01525855716317892
+  ],
+  [
+   1993,
+   0.01789885014295578,
+   0.027958648279309273
+  ],
+  [
+   1994,
+   0.01754177361726761,
+   0.017393605783581734
+  ],
+  [
+   1995,
+   0.017556561157107353,
+   0.012764094397425652
+  ],
+  [
+   1996,
+   0.02138296701014042,
+   0.021872220560908318
+  ],
+  [
+   1997,
+   0.02009737677872181,
+   0.011319564655423164
+  ],
+  [
+   1998,
+   0.02084195800125599,
+   0.020832518115639687
+  ],
+  [
+   1999,
+   0.016747305169701576,
+   0.01655609905719757
+  ]
+ ]
+}

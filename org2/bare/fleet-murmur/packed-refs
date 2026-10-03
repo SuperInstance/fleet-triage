@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+f671198a1affc46eda3fdb4b7ac8a96d344e5c93 refs/heads/main
+1914b6fde1497cd20dc9ab4edb1d590be50609f5 refs/heads/master
+a05e2b30c6cd93a4a418ad408dd50a6fadd523d8 refs/heads/murmur-seal-self-state
+f671198a1affc46eda3fdb4b7ac8a96d344e5c93 refs/heads/r67-ledger-currency
+8034a08506ae75c4c5c048d80501d1d060473f65 refs/heads/refusal-events-ledger

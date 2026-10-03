@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="560" viewBox="0 0 940 560">
+<rect width="940" height="560" fill="white"/>
+<line x1="92" y1="131.5" x2="730" y2="131.5" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="135.5" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">1</text>
+<line x1="92" y1="113.1" x2="730" y2="113.1" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="117.1" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">2</text>
+<line x1="92" y1="88.8" x2="730" y2="88.8" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="92.8" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">5</text>
+<line x1="92" y1="70.4" x2="730" y2="70.4" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="74.4" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">10</text>
+<line x1="92" y1="52.0" x2="730" y2="52.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="56.0" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">20</text>
+<line x1="92" y1="27.7" x2="730" y2="27.7" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="31.7" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">50</text>
+<line x1="92" y1="9.3" x2="730" y2="9.3" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="13.3" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">100</text>
+<line x1="92" y1="-9.1" x2="730" y2="-9.1" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-5.1" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">200</text>
+<line x1="92" y1="-33.4" x2="730" y2="-33.4" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-29.4" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">500</text>
+<line x1="92" y1="-51.8" x2="730" y2="-51.8" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-47.8" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">1000</text>
+<line x1="92.0" y1="52" x2="92.0" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="92.0" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">1</text>
+<line x1="156.0" y1="52" x2="156.0" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="156.0" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">2</text>
+<line x1="240.6" y1="52" x2="240.6" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="240.6" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">5</text>
+<line x1="304.7" y1="52" x2="304.7" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="304.7" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">10</text>
+<line x1="368.7" y1="52" x2="368.7" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="368.7" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">20</text>
+<line x1="453.3" y1="52" x2="453.3" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="453.3" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">50</text>
+<line x1="517.3" y1="52" x2="517.3" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="517.3" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">100</text>
+<line x1="581.4" y1="52" x2="581.4" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="581.4" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">200</text>
+<line x1="666.0" y1="52" x2="666.0" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="666.0" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">500</text>
+<line x1="730.0" y1="52" x2="730.0" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="730.0" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">1000</text>
+<rect x="92" y="52" width="638" height="446" fill="none" stroke="#9ca3af"/>
+<text x="411" y="546" font-size="13" text-anchor="middle" fill="#111827">generation</text>
+<text transform="translate(20,275) rotate(-90)" font-size="13" text-anchor="middle" fill="#111827">self-averaged variance</text>
+<text x="92" y="30" font-size="16" font-weight="600" fill="#111827">CONTROL: recombination correlated with the private signal</text>
+<text x="740" y="66" font-size="11" fill="#374151" font-family="monospace">the thesis requires the stochasticity be</text>
+<text x="740" y="81" font-size="11" fill="#374151" font-family="monospace">INDEPENDENT of the private data e_i.</text>
+<text x="740" y="96" font-size="11" fill="#374151" font-family="monospace"></text>
+<text x="740" y="111" font-size="11" fill="#374151" font-family="monospace">if correlated recombination also holds</text>
+<text x="740" y="126" font-size="11" fill="#374151" font-family="monospace">the variance, the requirement is weaker</text>
+<text x="740" y="141" font-size="11" fill="#374151" font-family="monospace">than claimed.  (here: much worse --</text>
+<text x="740" y="156" font-size="11" fill="#374151" font-family="monospace">it is inverted.)</text>
+<path d="M-63708.0,132.1 L92.0,133.9 L156.0,137.7 L193.5,141.1 L220.0,144.4 L240.6,149.2 L257.5,153.0 L271.7,156.4 L284.1,160.2 L304.7,167.6 L313.5,170.9 L328.9,177.2 L342.1,181.5 L353.7,188.1 L363.9,196.0 L377.5,214.1 L392.9,232.9 L403.0,243.1 L417.7,252.4 L430.4,294.0 L443.6,286.7 L456.9,681.3 L470.2,681.3 L483.1,681.3 L495.6,681.3 L508.6,681.3 L521.8,681.3 L534.9,681.3 L547.7,681.3 L560.7,681.3 L573.7,681.3 L586.7,681.3 L599.7,681.3 L612.8,681.3 L625.9,681.3 L638.9,681.3 L651.8,681.3 L664.9,681.3 L677.9,681.3 L690.9,681.3 L703.9,681.3 L717.0,681.3 L730.0,681.3" fill="none" stroke="#2563eb" stroke-width="2.4"/>
+<path d="M-63708.0,132.1 L92.0,124.0 L156.0,119.1 L193.5,115.3 L220.0,112.4 L240.6,110.4 L257.5,109.4 L271.7,108.3 L284.1,107.1 L304.7,106.6 L313.5,106.0 L328.9,105.0 L342.1,105.1 L353.7,104.4 L363.9,104.0 L377.5,103.8 L392.9,103.3 L403.0,103.5 L417.7,103.7 L430.4,103.2 L443.6,103.4 L456.9,103.6 L470.2,103.9 L483.1,103.8 L495.6,103.7 L508.6,103.8 L521.8,104.0 L534.9,104.6 L547.7,104.3 L560.7,105.2 L573.7,104.2 L586.7,104.9 L599.7,105.0 L612.8,105.1 L625.9,105.9 L638.9,106.3 L651.8,106.2 L664.9,106.8 L677.9,107.4 L690.9,107.8 L703.9,107.7 L717.0,108.5 L730.0,110.2" fill="none" stroke="#dc2626" stroke-width="2.4"/>
+<path d="M-63708.0,132.1 L92.0,138.8 L156.0,146.4 L193.5,153.0 L220.0,160.8 L240.6,168.9 L257.5,175.9 L271.7,182.4 L284.1,189.7 L304.7,205.8 L313.5,212.5 L328.9,225.7 L342.1,240.6 L353.7,256.5 L363.9,270.3 L377.5,284.7 L392.9,308.2 L403.0,363.5 L417.7,681.3 L430.4,681.3 L443.6,681.3 L456.9,681.3 L470.2,681.3 L483.1,681.3 L495.6,681.3 L508.6,681.3 L521.8,681.3 L534.9,681.3 L547.7,681.3 L560.7,681.3 L573.7,681.3 L586.7,681.3 L599.7,681.3 L612.8,681.3 L625.9,681.3 L638.9,681.3 L651.8,681.3 L664.9,681.3 L677.9,681.3 L690.9,681.3 L703.9,681.3 L717.0,681.3 L730.0,681.3" fill="none" stroke="#059669" stroke-width="2.4"/>
+<line x1="740" y1="56" x2="764" y2="56" stroke="#2563eb" stroke-width="2.5"/>
+<text x="770" y="60" font-size="10.5" fill="#111827" font-family="monospace">independent crossover</text>
+<text x="770" y="72" font-size="10.5" fill="#111827" font-family="monospace">(thesis-compliant)</text>
+<line x1="740" y1="86" x2="764" y2="86" stroke="#dc2626" stroke-width="2.5"/>
+<text x="770" y="90" font-size="10.5" fill="#111827" font-family="monospace">DISASSORTATIVE: recomb</text>
+<text x="770" y="102" font-size="10.5" fill="#111827" font-family="monospace">correlated with private signal</text>
+<line x1="740" y1="116" x2="764" y2="116" stroke="#059669" stroke-width="2.5"/>
+<text x="770" y="120" font-size="10.5" fill="#111827" font-family="monospace">ASSORTATIVE: recomb correlated</text>
+<text x="770" y="132" font-size="10.5" fill="#111827" font-family="monospace">the other way</text>
+</svg>

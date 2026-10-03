@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+// lattice-cell CLI — run one cell lifetime, or reconcile the ledger.
+import { run, reconcile } from '../src/cell.js';
+import { Ledger, FileStore } from '../src/ledger.js';
+
+const [cmd, ...rest] = process.argv.slice(2);
+const flag = (n, d) => { const i = rest.indexOf('--' + n); return i < 0 ? d : rest[i + 1]; };
+const has = n => rest.includes('--' + n);
+
+if (cmd === 'run') {
+  const apply = has('noop') ? undefined : async () => {
+    const { writeFileSync } = await import('node:fs');
+    writeFileSync(`${flag('repo')}/cells/${flag('cell')}/dials/1`, `${flag('obstruction', '1.0')}\n`);
+  };
+  const r = await run({
+    repo: flag('repo'), ledgerPath: flag('ledger'), cell: flag('cell'),
+    intent: flag('intent', 'cell tick'), base: flag('base', 'main'),
+    postcondition: flag('post', null), lease_ms: 30000, apply,
+  });
+  console.log(JSON.stringify({ dispatch: r.dispatch.id, status: r.outcome.status, tip: r.tip, post: r.post }, null, 2));
+} else if (cmd === 'reconcile') {
+  console.log(JSON.stringify(await reconcile({ repo: flag('repo'), ledgerPath: flag('ledger') }), null, 2));
+} else if (cmd === 'rows') {
+  const l = new Ledger(await FileStore.open(flag('ledger')));
+  for (const r of await l.rows()) console.log(`${String(r.seq).padStart(3)} ${r.kind.padEnd(8)} ${r.cell ?? ''} ${r.status ?? ''} ${r.id} ${r.tip ?? r.intent ?? ''}`);
+} else {
+  console.error('usage: lattice-cell {run|reconcile|rows} --repo R --ledger L [--cell C --intent I --post REL --base B]');
+  process.exit(2);
+}

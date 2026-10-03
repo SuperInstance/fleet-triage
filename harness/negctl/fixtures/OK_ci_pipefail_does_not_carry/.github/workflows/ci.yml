@@ -1,0 +1,10 @@
+name: ci
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          set -o pipefail
+          ./configure.sh
+      - run: ./build.sh 2>&1 | tail -1

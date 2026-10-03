@@ -1,0 +1,5 @@
+# pack-refs with: peeled fully-peeled sorted 
+56943c1106323f87027d118bd9c09ebff11057e6 refs/heads/claude/cross-poll-edu
+cbf026440149b1ffb061e9371642682cc56cabda refs/heads/claude/qthe-verify
+d63aaddcbd90219c154bb904c384013b34ba8189 refs/heads/forge-adopt-v0
+2bc52a549fb984dcc7989370138373604fadabb2 refs/heads/main

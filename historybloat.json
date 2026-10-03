@@ -1,0 +1,223 @@
+{
+ "old_flagged": 106,
+ "zero_tree": 1,
+ "under_floor": 53,
+ "survivors": [
+  {
+   "repo": "fleet-coordinate",
+   "size_kb": 369250,
+   "tree_kb": 71,
+   "ratio": 5188
+  },
+  {
+   "repo": "murmur-plato-bridge",
+   "size_kb": 317751,
+   "tree_kb": 91,
+   "ratio": 3488
+  },
+  {
+   "repo": "flux-isa-edge",
+   "size_kb": 265574,
+   "tree_kb": 76,
+   "ratio": 3459
+  },
+  {
+   "repo": "fleet-resonance",
+   "size_kb": 355735,
+   "tree_kb": 118,
+   "ratio": 3001
+  },
+  {
+   "repo": "lau-constellation",
+   "size_kb": 302785,
+   "tree_kb": 147,
+   "ratio": 2050
+  },
+  {
+   "repo": "readme-generator",
+   "size_kb": 101837,
+   "tree_kb": 60,
+   "ratio": 1682
+  },
+  {
+   "repo": "lau-construct-integration",
+   "size_kb": 79186,
+   "tree_kb": 55,
+   "ratio": 1421
+  },
+  {
+   "repo": "plato-room-configs",
+   "size_kb": 123443,
+   "tree_kb": 100,
+   "ratio": 1231
+  },
+  {
+   "repo": "beta-test-elena",
+   "size_kb": 59120,
+   "tree_kb": 50,
+   "ratio": 1173
+  },
+  {
+   "repo": "lau-twistor-agents",
+   "size_kb": 145444,
+   "tree_kb": 132,
+   "ratio": 1095
+  },
+  {
+   "repo": "si-variational-bayes",
+   "size_kb": 61382,
+   "tree_kb": 56,
+   "ratio": 1088
+  },
+  {
+   "repo": "lau-construct-integration-v2",
+   "size_kb": 70717,
+   "tree_kb": 67,
+   "ratio": 1045
+  },
+  {
+   "repo": "fleet-gateway",
+   "size_kb": 99219,
+   "tree_kb": 95,
+   "ratio": 1036
+  },
+  {
+   "repo": "lau-stochastic-processes",
+   "size_kb": 67275,
+   "tree_kb": 66,
+   "ratio": 1012
+  },
+  {
+   "repo": "realtime-core",
+   "size_kb": 161041,
+   "tree_kb": 161,
+   "ratio": 998
+  },
+  {
+   "repo": "lau-number-theory",
+   "size_kb": 59497,
+   "tree_kb": 60,
+   "ratio": 976
+  },
+  {
+   "repo": "lau-dynamical-algebra",
+   "size_kb": 93847,
+   "tree_kb": 99,
+   "ratio": 945
+  },
+  {
+   "repo": "lau-cryptography",
+   "size_kb": 75669,
+   "tree_kb": 80,
+   "ratio": 944
+  },
+  {
+   "repo": "lau-noether-agents",
+   "size_kb": 87715,
+   "tree_kb": 94,
+   "ratio": 924
+  },
+  {
+   "repo": "lau-landauer-meter",
+   "size_kb": 56196,
+   "tree_kb": 61,
+   "ratio": 916
+  },
+  {
+   "repo": "lau-self-modeling",
+   "size_kb": 83190,
+   "tree_kb": 91,
+   "ratio": 908
+  },
+  {
+   "repo": "lau-ffi-bindings",
+   "size_kb": 56327,
+   "tree_kb": 64,
+   "ratio": 869
+  },
+  {
+   "repo": "flux-vm-v3",
+   "size_kb": 131371,
+   "tree_kb": 156,
+   "ratio": 837
+  },
+  {
+   "repo": "lau-leverage-singularity",
+   "size_kb": 79865,
+   "tree_kb": 96,
+   "ratio": 825
+  },
+  {
+   "repo": "lau-computer-graphics",
+   "size_kb": 50035,
+   "tree_kb": 62,
+   "ratio": 806
+  },
+  {
+   "repo": "quicunnel",
+   "size_kb": 123371,
+   "tree_kb": 165,
+   "ratio": 747
+  },
+  {
+   "repo": "edge-conservation-worker",
+   "size_kb": 50471,
+   "tree_kb": 74,
+   "ratio": 682
+  },
+  {
+   "repo": "optimal-transport-agents-rs",
+   "size_kb": 42656,
+   "tree_kb": 69,
+   "ratio": 612
+  },
+  {
+   "repo": "flux-importer",
+   "size_kb": 29094,
+   "tree_kb": 104,
+   "ratio": 277
+  },
+  {
+   "repo": "flux-genome-rs",
+   "size_kb": 48562,
+   "tree_kb": 219,
+   "ratio": 221
+  },
+  {
+   "repo": "plato-vision-jepa",
+   "size_kb": 23613,
+   "tree_kb": 450,
+   "ratio": 52
+  },
+  {
+   "repo": "Hunyuan3D-WorldClaw",
+   "size_kb": 180845,
+   "tree_kb": 6820,
+   "ratio": 27
+  },
+  {
+   "repo": "animal-ai",
+   "size_kb": 506059,
+   "tree_kb": 67674,
+   "ratio": 7
+  },
+  {
+   "repo": "voxelgpt",
+   "size_kb": 304926,
+   "tree_kb": 41590,
+   "ratio": 7
+  },
+  {
+   "repo": "lucineer-system",
+   "size_kb": 597501,
+   "tree_kb": 86317,
+   "ratio": 7
+  },
+  {
+   "repo": "scratch-www",
+   "size_kb": 630677,
+   "tree_kb": 116959,
+   "ratio": 5
+  }
+ ]
+}

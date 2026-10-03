@@ -1,0 +1,196 @@
+[
+ {
+  "arm": "NC-A",
+  "guard": false,
+  "judge_mode": "dead",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {},
+  "judged": 0,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 0,
+  "printed": [
+   "A_single              10            0/10          0",
+   "B_refracted           10            0/10          0",
+   "C_free                10            1/10          0"
+  ]
+ },
+ {
+  "arm": "NC-B",
+  "guard": true,
+  "judge_mode": "dead",
+  "raised": true,
+  "exc": "SystemExit(2)",
+  "wrote_ledger": false,
+  "judge_ge4": null,
+  "judged": null,
+  "truth_correct": null,
+  "liked_wrong": null,
+  "printed": []
+ },
+ {
+  "arm": "NC-C",
+  "guard": true,
+  "judge_mode": "healthy",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {
+   "A_single": 10,
+   "B_refracted": 10,
+   "C_free": 10
+  },
+  "judged": 30,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 0,
+  "printed": [
+   "A_single              10            0/10         10",
+   "B_refracted           10            0/10         10",
+   "C_free                10            1/10         10"
+  ]
+ },
+ {
+  "arm": "M5-empty-criteria",
+  "guard": true,
+  "judge_mode": "empty_criteria",
+  "raised": true,
+  "exc": "SystemExit(2)",
+  "wrote_ledger": false,
+  "judge_ge4": null,
+  "judged": null,
+  "truth_correct": null,
+  "liked_wrong": null,
+  "printed": []
+ },
+ {
+  "arm": "M2-constant",
+  "guard": true,
+  "judge_mode": "constant",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {
+   "A_single": 10,
+   "B_refracted": 10,
+   "C_free": 10
+  },
+  "judged": 30,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 0,
+  "printed": [
+   "A_single              10            0/10         10",
+   "B_refracted           10            0/10         10",
+   "C_free                10            1/10         10"
+  ]
+ },
+ {
+  "arm": "M3-rubric-blind",
+  "guard": true,
+  "judge_mode": "rubric_blind",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {
+   "A_single": 10,
+   "B_refracted": 10,
+   "C_free": 10
+  },
+  "judged": 30,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 0,
+  "printed": [
+   "A_single              10            0/10         10",
+   "B_refracted           10            0/10         10",
+   "C_free                10            1/10         10"
+  ]
+ },
+ {
+  "arm": "M4-partial",
+  "guard": true,
+  "judge_mode": "partial",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {
+   "A_single": 10
+  },
+  "judged": 10,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 0,
+  "printed": [
+   "A_single              10            0/10         10",
+   "B_refracted           10            0/10          0",
+   "C_free                10            1/10          0"
+  ]
+ },
+ {
+  "arm": "M6-no-prompts",
+  "guard": true,
+  "judge_mode": "healthy",
+  "raised": true,
+  "exc": "SystemExit(2)",
+  "wrote_ledger": false,
+  "judge_ge4": null,
+  "judged": null,
+  "truth_correct": null,
+  "liked_wrong": null,
+  "printed": []
+ },
+ {
+  "arm": "M7-rating-1to5",
+  "guard": true,
+  "judge_mode": "rating_1to5",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {
+   "A_single": 10,
+   "B_refracted": 10,
+   "C_free": 10
+  },
+  "judged": 30,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 9,
+  "printed": [
+   "A_single              10            0/10         10",
+   "B_refracted           10            0/10         10",
+   "C_free                10            1/10         10"
+  ]
+ },
+ {
+  "arm": "M8-arm-constant",
+  "guard": true,
+  "judge_mode": "arm_constant",
+  "raised": null,
+  "exc": null,
+  "wrote_ledger": true,
+  "judge_ge4": {
+   "A_single": 10,
+   "B_refracted": 10,
+   "C_free": 10
+  },
+  "judged": 30,
+  "truth_correct": {
+   "C_free": 1
+  },
+  "liked_wrong": 0,
+  "printed": [
+   "A_single              10            0/10         10",
+   "B_refracted           10            0/10         10",
+   "C_free                10            1/10         10"
+  ]
+ }
+]

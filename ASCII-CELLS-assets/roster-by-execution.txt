@@ -1,0 +1,16 @@
+# GameObject subclasses observed in scene.gameObjects over 160 generated floors (40 per generator)
+# (execution census: every object placed by the real SceneGenerator)
+BasicMonster	4206
+BushMonster	341
+Collectible	940
+IceMonster	750
+IceShotgunDude	259
+LavaPool	643
+PoisonMonster	727
+ShotgunDude	2256
+SpinnyBoi	665
+Spooper	1439
+
+# NOTE: a per-generator breakdown was attempted and is not shipped -- the grouping
+# key was the Scene type rather than the generator, so every row landed in one bucket.
+# The pooled census above is the artifact; it is what the claim rests on.

@@ -1,0 +1,10 @@
+name: ci
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: PYTHONPATH=src pytest -q
+      - run: RUST_BACKTRACE=1 cargo test
+      - run: PATH="/usr/bin:/bin:$PATH" node --test scripts/mint-aws-devt
+      - run: FOO=bar

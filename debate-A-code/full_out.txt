@@ -1,0 +1,80 @@
+==============================================================================
+TEST 1 — APP DIFF ON JUDGE SWAP
+==============================================================================
+  seam.py        before 3dcc6d98b7431de33c1cf5a58aa67824  after 3dcc6d98b7431de33c1cf5a58aa67824  IDENTICAL
+  app_sift.py    before e983fefb2eeb1104a113b20f4119ce41  after e983fefb2eeb1104a113b20f4119ce41  IDENTICAL
+  ---- diff -u _snapshot/app_sift.py app_sift.py  (verbatim) ----
+  <no output>
+  ---- diff -u _snapshot/seam.py seam.py  (verbatim) ----
+  <no output>
+  app diff = 0 lines; seam diff = 0 lines
+
+==============================================================================
+TEST 2 — WHAT THE APP GAVE UP TO GET THE SEAM
+==============================================================================
+  OBS-01 (tier A): app had to FABRICATE ['depth'] = 1/7 contract features with a neutral value
+  OBS-02 (tier A): app had to FABRICATE ['depth'] = 1/7 contract features with a neutral value
+  OBS-03 (tier B): app had to FABRICATE ['depth', 'in_trace'] = 2/7 contract features with a neutral value
+  OBS-04 (tier B): app had to FABRICATE ['depth', 'in_trace'] = 2/7 contract features with a neutral value
+  OBS-05 (tier B): app had to FABRICATE ['depth', 'in_trace'] = 2/7 contract features with a neutral value
+  total fabricated feature-values per decision: 48 across 30 runs (1.6 per run)
+
+==============================================================================
+TEST 3 — PER-DECISION COST, BY JUDGE
+==============================================================================
+  judge        runs  net  tok_in  tok_out  enum_ms  choose_ms   conf  probs
+  free-stat      10    0       0        0    6.067     0.0660  0.138   24.0
+  evidence       10    0       0        0    6.076     0.7132  0.382   24.0
+  human          10    0       0        0    5.311     0.0088    nan    0.0
+  model-jev       0   10  UNMEASURED -- TYPESAFEAI_KEY absent (probe this session: HTTP 401)
+
+==============================================================================
+TEST 4 — ACCURACY AGAINST THE ORACLE (source render)
+==============================================================================
+  judge        OBS-01  OBS-02  OBS-03  OBS-04  OBS-05   TOP1    MRR
+  free-stat       HIT      #4      #7      #7     #29 1/5     0.657
+  evidence        HIT     HIT      #7      #7     #29 2/5     0.103
+  human           HIT     HIT     HIT     HIT     HIT 5/5     0.131  <- UNSCORED: I wrote this key
+  model-jev     BLOCK   BLOCK   BLOCK   BLOCK   BLOCK 0/0     0.000
+  #HIT = picked the documented root cause; #k = the truth sat at rank k and was missed.
+
+==============================================================================
+TEST 5 — DID THEY DISAGREE? (full distributions, never a scalar)
+==============================================================================
+
+  OBS-01 (tier A)    truth = chain-lint/chain_lint.py::main@131
+    free-stat   pick=main@131  conf=0.185  main@131=0.185  <Expr>@2=0.068  <BASE>@29=0.068
+    evidence    pick=main@131  conf=0.719  main@131=0.719  <BASE>@29=0.037  <Expr>@2=0.023
+    human       pick=chain-lint/chain_lint.py::main@131  probs=None  confidence=None   [a legal answer with no distribution]
+    model-jev   BLOCKED (not scored)
+    -> AGREE on 1 distinct picks
+
+  OBS-02 (tier A)    truth = readme-verifier/census.py::<If>@38
+    free-stat   pick=<Expr>@2  conf=0.250  <Expr>@2=0.250  pick@16=0.250  one@29=0.250
+    evidence    pick=<If>@38  conf=0.951  <If>@38=0.951  <Expr>@2=0.019  pick@16=0.015
+    human       pick=readme-verifier/census.py::<If>@38  probs=None  confidence=None   [a legal answer with no distribution]
+    model-jev   BLOCKED (not scored)
+    -> DISAGREE on 2 distinct picks
+
+  OBS-03 (tier B)    truth = chain-lint/chain_lint.py::is_zero@52
+    free-stat   pick=<MISSING>@32  conf=0.165  <MISSING>@32=0.165  is_zero@52=0.165  <Expr>@2=0.061
+    evidence    pick=main@131  conf=0.719  main@131=0.719  <BASE>@29=0.037  <Expr>@2=0.023
+    human       pick=chain-lint/chain_lint.py::is_zero@52  probs=None  confidence=None   [a legal answer with no distribution]
+    model-jev   BLOCKED (not scored)
+    -> DISAGREE on 3 distinct picks
+
+  OBS-04 (tier B)    truth = chain-lint/chain_lint.py::is_zero@52
+    free-stat   pick=<Expr>@2  conf=0.077  <Expr>@2=0.077  <BASE>@29=0.077  <UA>@30=0.077
+    evidence    pick=main@131  conf=0.719  main@131=0.719  <BASE>@29=0.037  <Expr>@2=0.023
+    human       pick=chain-lint/chain_lint.py::is_zero@52  probs=None  confidence=None   [a legal answer with no distribution]
+    model-jev   BLOCKED (not scored)
+    -> DISAGREE on 3 distinct picks
+
+  OBS-05 (tier B)    truth = fleet-triage/resolver.py::extract_citations@384
+    free-stat   pick=<Expr>@2  conf=0.013  <Expr>@2=0.013  <HERE>@48=0.013  <CACHE>@52=0.013
+    evidence    pick=main@1569  conf=0.082  main@1569=0.082  <CACHE>@52=0.018  walk_tree@133=0.018
+    human       pick=fleet-triage/resolver.py::extract_citations@384  probs=None  confidence=None   [a legal answer with no distribution]
+    model-jev   BLOCKED (not scored)
+    -> DISAGREE on 3 distinct picks
+
+wrote results.json  (30 scored runs, 10 blocked)

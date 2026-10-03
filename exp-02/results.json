@@ -1,0 +1,273 @@
+{
+ "corpus_files": 103,
+ "chunks": 5645,
+ "arm_C": {
+  "correct": 7,
+  "retrieved": 7,
+  "of": 10,
+  "answerable": 8,
+  "correct_on_answerable": 7,
+  "command_only": [
+   "P09",
+   "P10"
+  ],
+  "per_prompt": [
+   {
+    "id": "P01",
+    "cls": "retrieval-answerable",
+    "q": "What n_eff did the correction lane measure over its four learners?",
+    "gold": "1.48",
+    "pred": "1.48",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "CORRECTION-PROJECTION.md#1",
+    "top_file": "syn-AUDITORS.md",
+    "top_score": 23.521,
+    "prove": "grep -n 'n_eff = 1.48' CORRECTION-PROJECTION.md",
+    "gold_src": "CORRECTION-PROJECTION.md:5"
+   },
+   {
+    "id": "P02",
+    "cls": "retrieval-answerable",
+    "q": "How many repositories in the fleet fail open?",
+    "gold": "13",
+    "pred": "13",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "DOCTRINE.md#37",
+    "top_file": "sprint-FAILOPEN.md",
+    "top_score": 13.875,
+    "prove": "grep -n '13 repositories fail open' DOCTRINE.md",
+    "gold_src": "DOCTRINE.md:126"
+   },
+   {
+    "id": "P03",
+    "cls": "retrieval-answerable",
+    "q": "Of 988 mathematical spreadsheet types, how many carry an explicit invariant?",
+    "gold": "48",
+    "pred": "48",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "TYPES-UNLOCKED.md#2",
+    "top_file": "TYPES-UNLOCKED.md",
+    "top_score": 26.684,
+    "prove": "grep -n '48 carry an explicit invariant' ORIENTATION.md",
+    "gold_src": "ORIENTATION.md:61"
+   },
+   {
+    "id": "P04",
+    "cls": "retrieval-answerable",
+    "q": "What is the true ratio in eisenstein, replacing the claimed 6.8x?",
+    "gold": "3.296",
+    "pred": "3.296",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "dir-SECURITY.md#19",
+    "top_file": "VERIFY-CONSERVATION.md",
+    "top_score": 21.486,
+    "prove": "grep -n 'True ratio is \\*\\*3.296' ORIENTATION.md",
+    "gold_src": "ORIENTATION.md:49"
+   },
+   {
+    "id": "P05",
+    "cls": "retrieval-answerable",
+    "q": "On what date was crdt-gset/tests/canary.rs added, commit dcbdeca?",
+    "gold": "2026-09-30",
+    "pred": "2026-09-30",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "CRDT-CANARY2.md#78",
+    "top_file": "CRDT-CANARY2.md",
+    "top_score": 34.492,
+    "prove": "grep -n 'dcbdeca' CRDT-CANARY2.md",
+    "gold_src": "CRDT-CANARY2.md:316"
+   },
+   {
+    "id": "P06",
+    "cls": "retrieval-answerable",
+    "q": "How many fleet repositories are open to pull requests?",
+    "gold": "5111",
+    "pred": null,
+    "correct": false,
+    "retrieved_gold": false,
+    "src": null,
+    "top_file": "docs/GROUP-DYNAMICS.md",
+    "top_score": 20.621,
+    "prove": "grep -n '5,111 open to PRs' docs/LANES.md",
+    "gold_src": "docs/LANES.md:19"
+   },
+   {
+    "id": "P07",
+    "cls": "retrieval-answerable",
+    "q": "Of the 13 fail-open repositories, how many share one try/except in a 6-line file?",
+    "gold": "11",
+    "pred": "11",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "DOCTRINE.md#37",
+    "top_file": "DOCTRINE.md",
+    "top_score": 29.414,
+    "prove": "grep -n '11 share one' DOCTRINE.md",
+    "gold_src": "DOCTRINE.md:126"
+   },
+   {
+    "id": "P08",
+    "cls": "retrieval-answerable",
+    "q": "What lower bound does the eisenstein property test assert, making it pass at any value?",
+    "gold": "16",
+    "pred": "16",
+    "correct": true,
+    "retrieved_gold": true,
+    "src": "dir-SECURITY.md#19",
+    "top_file": "dir-SECURITY.md",
+    "top_score": 17.524,
+    "prove": "grep -n 'test asserts `>= 16`' ORIENTATION.md",
+    "gold_src": "ORIENTATION.md:50"
+   },
+   {
+    "id": "P09",
+    "cls": "command-only",
+    "q": "How many top-level markdown reports are in the fleet-triage directory?",
+    "gold": "93",
+    "pred": "2026",
+    "correct": false,
+    "retrieved_gold": false,
+    "src": "INDEX.md#1",
+    "top_file": "INDEX.md",
+    "top_score": 10.912,
+    "prove": "ls -1 /workspace/projects/fleet-triage/*.md | wc -l",
+    "gold_src": "ls -1 *.md | wc -l"
+   },
+   {
+    "id": "P10",
+    "cls": "command-only",
+    "q": "How many lines does ORIENTATION.md contain?",
+    "gold": "124",
+    "pred": "02",
+    "correct": false,
+    "retrieved_gold": false,
+    "src": "papers-ROOT.md#43",
+    "top_file": "papers-ROOT.md",
+    "top_score": 7.93,
+    "prove": "wc -l < /workspace/projects/fleet-triage/ORIENTATION.md",
+    "gold_src": "wc -l < ORIENTATION.md"
+   }
+  ]
+ },
+ "guards": [
+  {
+   "mutant": "M1-dead",
+   "desc": "judge returns nothing",
+   "G1_presence": false,
+   "G2_complete_varies": false,
+   "G2_why": "an (arm, prompt) cell is unscored",
+   "G3_shuffle": true,
+   "G3_why": "3/3 slots rescored under shuffle",
+   "G4_discriminates": false,
+   "auc": null,
+   "caught_by": [
+    "G1",
+    "G2",
+    "G4"
+   ],
+   "verdict": "REFUSES"
+  },
+  {
+   "mutant": "M2-constant",
+   "desc": "same score everywhere",
+   "G1_presence": true,
+   "G2_complete_varies": false,
+   "G2_why": "score vector is a constant",
+   "G3_shuffle": false,
+   "G3_why": "vector identical under shuffle -- judging slot, not content",
+   "G4_discriminates": false,
+   "auc": 0.5,
+   "caught_by": [
+    "G2",
+    "G3",
+    "G4"
+   ],
+   "verdict": "REFUSES"
+  },
+  {
+   "mutant": "M3-partial",
+   "desc": "scores 1 of 3 arms",
+   "G1_presence": true,
+   "G2_complete_varies": false,
+   "G2_why": "an (arm, prompt) cell is unscored",
+   "G3_shuffle": true,
+   "G3_why": "3/3 slots rescored under shuffle",
+   "G4_discriminates": false,
+   "auc": null,
+   "caught_by": [
+    "G2",
+    "G4"
+   ],
+   "verdict": "REFUSES"
+  },
+  {
+   "mutant": "M4-plausible-wrong",
+   "desc": "well formed, non-constant, WRONG",
+   "G1_presence": true,
+   "G2_complete_varies": true,
+   "G2_why": "ok",
+   "G3_shuffle": true,
+   "G3_why": "3/3 slots rescored under shuffle",
+   "G4_discriminates": false,
+   "auc": 0.13,
+   "caught_by": [
+    "G4"
+   ],
+   "verdict": "REFUSES"
+  },
+  {
+   "mutant": "M5-length-keyed",
+   "desc": "well formed, keys on answer length",
+   "G1_presence": true,
+   "G2_complete_varies": true,
+   "G2_why": "ok",
+   "G3_shuffle": true,
+   "G3_why": "2/3 slots rescored under shuffle",
+   "G4_discriminates": false,
+   "auc": 0.315,
+   "caught_by": [
+    "G4"
+   ],
+   "verdict": "REFUSES"
+  },
+  {
+   "mutant": "M7-slot-heuristic",
+   "desc": "obeys rubric, always likes slot 3",
+   "G1_presence": true,
+   "G2_complete_varies": true,
+   "G2_why": "ok",
+   "G3_shuffle": false,
+   "G3_why": "vector identical under shuffle -- judging slot, not content",
+   "G4_discriminates": true,
+   "auc": 0.87,
+   "caught_by": [
+    "G3"
+   ],
+   "verdict": "REFUSES"
+  },
+  {
+   "mutant": "M6-healthy",
+   "desc": "control: must complete, must not fire",
+   "G1_presence": true,
+   "G2_complete_varies": true,
+   "G2_why": "ok",
+   "G3_shuffle": true,
+   "G3_why": "moved",
+   "G4_discriminates": true,
+   "auc": 0.87,
+   "caught_by": [],
+   "verdict": "COMPLETES"
+  }
+ ],
+ "credentials": {
+  "TYPESAFEAI_KEY": false,
+  "CLOUDFLARE_TOKEN": false,
+  "GITHUB_TOKEN": false
+ },
+ "arms_A_B": "UNEXECUTABLE -- no credential"
+}

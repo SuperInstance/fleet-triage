@@ -1,0 +1,7 @@
+name: ci
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ./build.sh --all 2>&1 | tail -1

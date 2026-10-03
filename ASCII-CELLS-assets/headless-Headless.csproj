@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <AssemblyName>headless</AssemblyName>
+    <RootNamespace>ASCII_FPS</RootNamespace>
+    <NoWarn>CS0618;CS0169;CS0414;CS0649</NoWarn>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Shim.cs" />
+    <Compile Include="Harness.cs" />
+    <Compile Include="/tmp/asciipoc/OBJContentPipelineExtension/OBJFile.cs" />
+    <Compile Include="/tmp/asciipoc/ASCII_FPS/**/*.cs"
+             Exclude="/tmp/asciipoc/ASCII_FPS/ASCII_FPS.cs;/tmp/asciipoc/ASCII_FPS/Program.cs" />
+  </ItemGroup>
+</Project>

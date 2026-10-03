@@ -1,0 +1,14 @@
+5bc53ea41945ce7ef451496d54f508b13a7449d7 HEAD
+5ef4bf823370504f66858c422695cf14a3bea0f0 refs/heads/claude/diffuse
+99c0e046d57f578504e62511f8b587501e4ef4ea refs/heads/claude/docs-understanding
+1f99999ebec27e03124ccd5b44232d5100074bd3 refs/heads/claude/ml-projection-plugins
+1d756e1456f6fe9af908d6a9aff3d117361d0ddf refs/heads/claude/production
+48edf3c0695be68c8ff8e9b3612443c80d1b6e69 refs/heads/claude/shard-0002
+86e783ee239408d930ecb11c6e5e876c20e9fc2c refs/heads/claude/shard-0004
+765323309badd01f852ae7fdcbd04c34bd3e2a6b refs/heads/claude/shard-0005
+b81fe03c1d10a338d7ca2bfb71d12e13f331fe62 refs/heads/claude/shard-0006
+fe64ddba36d9db3a05df0bcee8e8764e582eca52 refs/heads/claude/shard-0007
+c19832240b3c2f3ced2cc404c9bb9f0a4f14fce3 refs/heads/claude/shard-0008
+189978e77e0c5e9456e269b16b440dd53180bab7 refs/heads/claude/verifier-cells
+5bc53ea41945ce7ef451496d54f508b13a7449d7 refs/heads/main
+00662b38218956051f299db292d3f05f7f34065f refs/heads/poc/p1-browser-fused

@@ -1,0 +1,642 @@
+{
+ "58e2a18": [
+  {
+   "from": "stone-sign-lane",
+   "to": "pq-sign-pilot",
+   "claim": "quilt-stone's stone-v2 sign lane gives a receipt chain a producer-identity staple — but a signature primitive nobody staples with is a library, not a doctrine. CURRENCY EARNED 2026-09-27: pong-quilt PR #51 (\"R39: STONE-V2-PILOTS first sign pilot — producer staples the birth-seal chain's tip\", MERGED 2026-09-27T09:03:15Z, merge 07384ac2) lands the first real adoption IN THE PRODUCER's repo: tools/prerun.js staples the R37 birth-seal chain's tip through the named quilt-stone checkout's signTip/verifyTipSignature (signs a COPY — the unsigned stone-v1.json stays canonical; verifyTipSignature with the producer public key runs BEFORE write; a refused staple bricks the run exit 1; the seam ships closed with a labeled skip when the checkout has no signTip — never silent), citing SuperInstance/quilt-stone BY NAME in-repo at three anchored sites: PLAYLOG Round 39 (\"the stone-v2 sign lane, SuperInstance/quilt-stone PR #4, STONE-SPEC.md §4.6.2\"), the citation pin in tests/stone-sign-glue.test.js, and core.js VERIFIED_CLAIMS 'stone-sign-pilot'. The 4 glue pins ran LIVE against the sign-lane tip 047be72 before merge: seal links 5 + staple ok + the post-sign FORGED-edit laundering refusal (\"signed tip does not match the chain tip\") + wrong-key refusal. HONESTY ON DIRECTION: the 14:56/16:04 pulse notes guessed pong-quilt→quilt-stone; the substrate's receipt-repo rule (edge #5 precedent) books stone-sign-lane -> pq-sign-pilot — the merge in the citing repo earns currency FOR the cited technique flowing INTO that repo. quilt-stone's FIRST outgoing edge (it received edge #9 five hours earlier); pong-quilt joins fleet-murmur as the second double-inbound-mass repo — the sign lane lands in the same repo that already breaks ties by quantum coin. Pre-booked twice, earned by Casey's merge burst, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-stone#4",
+   "receipt": "SuperInstance/pong-quilt#51",
+   "falsification_condition": "a pong-quilt prerun run against a quilt-stone checkout shipping signTip where the staple file is written without verifyTipSignature passing first, or the post-sign FORGED-edit laundering case verifies green, or the SuperInstance/quilt-stone citation removed from PLAYLOG Round 39 / tests/stone-sign-glue.test.js / core.js VERIFIED_CLAIMS"
+  },
+  {
+   "from": "pq-stone-v1-export",
+   "to": "stone-forward-adopt",
+   "claim": "pong-quilt's R36 wal-export lane produces real stone-v1 forward-format chains from the live receipt panel — but an export format nobody verifies through is a dialect, not a standard. CURRENCY EARNED 2026-09-27: quilt-stone PR #1 (\"smoke 12b: pong-quilt R36 is the first stone-v1 forward-format adopter\", MERGED 2026-09-27T04:20:06Z, merge 093c1b1) lands the adoption IN THE VERIFIER's repo: smoke section 12b pins five checks over the exporter's EXACT bytes (generated live from tools/wal-export.js toStoneV1() at PR #46's merge tip, not retyped) — alg=stone-v1/genesis canonical/links=5, the mandatory stone.header row carries tool=pong-quilt (producer named, not laundered), a post-seal edit is caught as hash_mismatch, a row splice breaks continuity — and README.md's Forward-format adopters section names SuperInstance/pong-quilt PR #46 BY NAME. Weight law met in the to-node's repo. Third to-node born after seeding (fleet-murmur, moth-waveform, quilt-stone); pong-quilt's SECOND outgoing edge — it both receives currency (pq->fm) and pays it forward into the canonical verifier. Pre-booked at 11:04 (\"on merge, referral graph books NINTH VERIFIED edge\"), earned by Casey's merge, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/pong-quilt#46",
+   "receipt": "SuperInstance/quilt-stone#1",
+   "falsification_condition": "a quilt-stone smoke 12b run where the pinned pong-quilt fixture verifies under anything but stone-v1 semantics, or the SuperInstance/pong-quilt citation removed from README.md Forward-format adopters / smoke.mjs section 12b"
+  },
+  {
+   "from": "jq-commons-g11",
+   "to": "qt-trust-lever",
+   "claim": "The referral graph's blind view sums edge weight per target repo, and weight is cheap to inflate: a source the fleet has not earned to trust can merge N junk-citation PRs into its own repo and buy itself mass — the exact Goodhart surface jev-quilt's G11 hardened in the commons the same week. CURRENCY EARNED 2026-09-27: quilt-tools PR #17 (merged 2026-09-27T01:27:12Z, merge d14fb44) ports the G11 trust lever into the graph's weight law — viewTrusted({trust, default:0}) re-scales every edge by its TARGET repo's EARNED trust (effective = trust·weight; an unseen source defaults to 0 and contributes NOTHING until the fleet earns reason to trust it; trust 1 everywhere reduces exactly to the blind view) — citing SuperInstance/jev-quilt commons.py trust_weighted() / provenance_merge() BY NAME in-repo (src/referral_graph.mjs comment + experiments/REFERRAL_GRAPH.md), the same honesty pattern as the moth-waveform code-level scar. This was the 08:11 pulse's synergy candidate, shipped exactly as flagged; Pin 11 pins the fixture semantics (blind view BUYABLE at >90% junk mass; unseen junk → 0; trust is the lever) and the citation string. First edge where the graph's own repo is the TO-node of a commons-lane technique; pre-hardens the currency against the weight-inflation attack the R8 Goodhart lane red-teams.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#37",
+   "receipt": "SuperInstance/quilt-tools#17",
+   "falsification_condition": "the referral view mass computed from summed edge weights with no earned-trust term while junk-citation PRs remain mergeable into a self-controlled repo, or the SuperInstance/jev-quilt commons.py citation removed from src/referral_graph.mjs / REFERRAL_GRAPH.md"
+  },
+  {
+   "from": "qgs-strict-gate",
+   "to": "fm-qgs-adapter",
+   "claim": "Two sibling repos built the two halves of the review-honesty doctrine on the same day — fleet-murmur#2 shipped a quality-gate seam, quality-gate-stream#2 shipped strict-mode scoring — and an unadaptered dialect drift between them would silently corrupt every rumor score crossing the seam. CURRENCY EARNED 2026-09-26: fleet-murmur PR #3 (merged 2026-09-26T23:08:45Z, merge 8df75c6) lands tools/quality_gate_adapter.py rewritten against the LIVE quality-gate-stream API (the pre-merge adapter raised TypeError/AttributeError against the real package — stale-API broken at birth, the fix shipped in the same PR that named the source), citing SuperInstance/quality-gate-stream BY NAME in-repo at three anchored sites: the adapter module docstring, VERIFIED_CLAIMS.md VC10, and tests/test_qgs_adapter_glue.py (4 live pins run the real package, labeled skips when uninstalled, never fake green; an always-on pin asserts the citation string survives in source). Direction honesty: the merge is in fleet-murmur, so per the substrate receipt-repo rule the edge books qgs-strict-gate -> fm-qgs-adapter — currency flows INTO the citing repo, exactly the direction pre-booked when the lane opened. fleet-murmur is the first repo carrying two VERIFIED inbound edges; the exporter-in-consumer / live-verify-in-producer shape mirrors the R26 wal-export -> quilt-doctor seam.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#3",
+   "falsification_condition": "the fleet-murmur adapter scoring a rumor through a hand-rolled reimplementation while quality-gate-stream is installed, or the SuperInstance/quality-gate-stream citation removed from the adapter source / VC10 / the glue pins"
+  },
+  {
+   "from": "fm-honesty-receipts",
+   "to": "mw-floor-gate",
+   "claim": "fleet-murmur's transport-honesty contract is a scar other instruments must carry: a black-hole transport scored 100% coverage until the honesty REFUSAL receipt named it. moth-waveform's no-op health gate exists for exactly that reason. CURRENCY EARNED 2026-09-26: moth-waveform PR #1 (merged 2026-09-26T21:06:24Z, merge dc1a142) cites the scar BY NAME in-repo at code level — sensitivity.py: \"a gate that passes without a live floor measurement passes vacuously (fleet-murmur scar)\" — plus the README Receipts-doctrine section naming fleet-murmur (transport modes) among the doctrine lineage (pong-quilt honesty pins, hermit quilt-WAL, quilt-doctor moth-ledger trial balance, quality-gate-stream REFUSAL receipts). Load-bearing citation is the code-level scar; the README list is lineage, not technique. Second to-node born after the graph was seeded.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/moth-waveform#1",
+   "falsification_condition": "a moth-waveform sensitivity receipt whose no-op health gate passed without a live floor measurement (noop row absent from the receipt) or the fleet-murmur scar citation removed from sensitivity.py"
+  },
+  {
+   "from": "pq-session-wal",
+   "to": "fm-honesty-receipts",
+   "claim": "pong-quilt's receipt lineage — QA-REFUSAL honesty pins (a claim must name how it knows), the session-WAL exporter re-anchoring the live receipt panel into the fleet five-opcode quilt WAL, and the VERIFIED_CLAIMS + readme-count registry pinned two-way against the live suite — is exactly the contract a gossip mesh needs before it scores delivery coverage. CURRENCY EARNED 2026-09-26: fleet-murmur PR #2 (merged 2026-09-26T19:08:16Z, merge 5391ba56) cites SuperInstance/pong-quilt BY NAME in-repo, three times in CROSS-POLLINATE.md: the QA-REFUSAL seam (R23-R28 honesty pins) as the transport-honesty contract, tools/wal-session.js's session WAL as the receipt-ledger substrate (\"one verifier reads every fleet ledger\"), and the VERIFIED_CLAIMS + readme-count pin as the claims-registry shape. First edge whose to-node is a repo born after the graph was seeded; first outward currency from pong-quilt.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#2",
+   "falsification_condition": "a murmur gossip round scored 100% delivery coverage with a black-hole transport and no honesty REFUSAL receipt, or the pong-quilt citations removed from CROSS-POLLINATE.md"
+  },
+  {
+   "from": "jq-substance-noul",
+   "to": "qb-jev-gate",
+   "claim": "quilt-cowboy's admission proxy was length alone — 1,745 generated papers entered the canon on synthesis_len >= 300 and nothing else (RD_QUILT_3_0 admits the length-as-concreteness proxy is a stand-in). CURRENCY EARNED 2026-09-26: quilt-cowboy PR #1 (merged 2026-09-26T09:12:37Z, merge a3feccca) wires jev-quilt's substance noul + 0.6 admit threshold onto the v3 output gate, citing SuperInstance/jev-quilt BY NAME in-repo (README.md \"The JEV Substance Gate\" section + jev_substance_gate.py CITATION const + module docstring), judged through any duck-typed backend exposing available() + decide_batch() — jev_quilt's TypeSafeBackend satisfies the protocol directly. First jev-quilt OUTGOING edge: all prior currency flowed show/pong/quant/tools.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/quilt-cowboy#1",
+   "falsification_condition": "a v3 worklog entry admitted to the canon with jev_substance present below 0.6 and no jev_admitted=False flag, or the CITATION naming SuperInstance/jev-quilt removed from the gate module"
+  },
+  {
+   "from": "quant-coin-toss",
+   "to": "qq-quantum-tiebreak",
+   "claim": "A champion-selection tie is a verdict: silent index order is an unwitnessed collapse. pong-quilt's R21 wires the makeEvaluator onTie seam to quilt-quant's coin-toss-v1 (seeded mock of the live engine, citation verified against quilt-quant lab/play.mjs, every flip journaled — R22 symmetrized the journal). CURRENCY EARNED 2026-09-26: pong-quilt PR #28 (merged 2026-09-26T05:27:42Z, merge b14791f) carries the coin-toss-v1 citation in-repo (core.js VERIFIED_CLAIMS 'quantum-tiebreak' entry + tools/prerun.js).",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/pong-quilt#28",
+   "falsification_condition": "a replayed prerun where equal-fitness champions are ordered by array index with no coin flip journaled"
+  },
+  {
+   "from": "qt-s2-driftwatch",
+   "to": "qs-ep2",
+   "claim": "S2 measured the exact wall behind E2's thesis: shape-beats-threshold cannot be asserted in a prompt — the episode's \"demonstrate, don't assert\" now has an api-lab receipt map under it. CURRENCY EARNED 2026-09-26: quilt-show PR #1 (merged 2026-09-25T19:14:08Z, merge a2f82a35) carries this citation in-repo (docs/E3-VERIFICATION.md referral-edge record + episode-3/sim.mjs header); quilt-show PR #3 (ep4-instruments, merged 21:30Z) re-cites it.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-tools#3",
+   "receipt": "SuperInstance/quilt-show#1",
+   "falsification_condition": "a replayed stream where the 0.80 threshold fires before shape on st02 slow drift"
+  },
+  {
+   "from": "qt-api-lab",
+   "to": "qs-ep2",
+   "claim": "E2 quantified persuasion risk: receipts flip credit 1/4 -> 4/4 whether or not the underlying claim is true — Episode 2's verifyChain discipline is the counter-move",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#5",
+   "falsification_condition": "a receipts-inline run where ground-truth agreement does not move vs bare"
+  },
+  {
+   "from": "qt-s3-tide",
+   "to": "qa-plugins",
+   "claim": "S3's witnessed pre-outcome states (PENDING/ENTANGLED/COLLAPSED) are the receipt shape a quantum coin plugin needs before its verdict drives game state",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#4",
+   "falsification_condition": "a plugin event driven by a coin outcome with no pre-outcome witness row"
+  },
+  {
+   "from": "qa-negspace",
+   "to": "qt-api-lab",
+   "claim": "NEGATIVE_SPACE's declined-patch-12 doctrine is the same shape as E2's receipts-over-scores: document the divergence, never silently port it — the lab should score claims the same way",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-arcade#2",
+   "falsification_condition": "a quilt-main PR merging the verbatim patch 12 with no cost-regression receipt"
+  },
+  {
+   "from": "qs-ep3",
+   "to": "qa-plugins",
+   "claim": "Episode 3's drag-to-reshape watcher loop is a playable reactive surface — the same seam the arcade plugins expose through run_all",
+   "weight": "PENDING",
+   "provenance": null,
+   "falsification_condition": "a watcher demo that cannot be re-expressed as a two-file plugin without losing behavior"
+  },
+  {
+   "from": "aw-quint-opcode",
+   "to": "ga-quilt-emit",
+   "claim": "AI-Writings/algebra.md defines the five-opcode spine and its laws (BIND idempotent; algebra.md says do not add opcodes); git-agent#1 (MERGED 2026-09-26T00:27:18Z, merge 6bc099a) built quilt_emit.py — vessel events mapped one-to-one to BIND/LINK/EFFECT/VIEW/TICK lines in a hash-chained WAL — on exactly that spine. git-agent#1's citation was DOCTRINAL only (\"the fleet quilt kernel speaks five opcodes\"), the source repo never named — so the edge was booked PENDING with the upgrade path recorded. CURRENCY EARNED 2026-09-26: git-agent PR #4 (merged 2026-09-26T09:11:41Z, merge 8d6c31a) lands the in-repo citation naming AI-Writings/algebra.md by name and URL (docs/GRAND-QUILT.md provenance block, live-verified on git-agent main), exactly the upgrade path booked here.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/git-agent#1",
+   "receipt": "SuperInstance/git-agent#4",
+   "falsification_condition": "git-agent quilt_emit.py shipping an opcode mapping that contradicts algebra.md semantics (e.g. VIEW given mutation semantics, or a 6th opcode added) with no algebra reference anywhere in the repo"
+  },
+  {
+   "from": "aw-jev-kat",
+   "to": "jq-kat-bridge",
+   "claim": "A fleet oracle instrument consumed by pin-and-digest is doctrine landing in the consumer's repo: AI-Writings#70 (MERGED 2026-09-29T21:26:53Z) shipped labs/jev-kat/jev_kat.mjs as the canonical KAT instrument, and SuperInstance/jev-quilt#47 (OPEN at booking 2026-09-30 — this pulse's commissioned bridge) names SuperInstance/AI-Writings in-repo at anchored sites: the bridge pins the instrument by repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5 as an executable constant, tests/test_jev_kat_bridge.py asserts the citation string survives in source (a drifted upstream cannot be bridged silently), and the module docstring records AI-Writings#70 as the instrument's canonical home. CURRENCY EARNED 2026-09-30: SuperInstance/jev-quilt PR #47 MERGED 2026-09-30T00:18:30Z (merge 45912589941ce29f02c8a6659bfe2b4e7abfccb9) — the weight law is met: a merged PR in the to-node's repo whose MAIN-tree source carries the load-bearing citation (verified by the 09:11 pulse: tools/jev_kat_bridge.mjs on jev-quilt main still pins repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5, and tests/test_jev_kat_bridge.py still asserts the citation string survives). The discovery watcher surfaced #47 among the candidates; the load-bearing check was done by hand, not self-upgraded. Precedent arc complete: aw-quint-opcode was booked PENDING on a merged-but-doctrinal citation and earned currency when a merge named the source — here the booking named the source from day one and the merge closed the loop one lifecycle step later.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#47",
+   "receipt": "SuperInstance/jev-quilt#47",
+   "falsification_condition": "jev-quilt#47 merging with the SuperInstance/AI-Writings citation removed from tools/jev_kat_bridge.mjs source or the tests/test_jev_kat_bridge.py citation pin, or the bridge executing an instrument whose sha256 does not match the pinned digest 5f280b8b…e1cc5"
+  },
+  {
+   "from": "mm-sealed-receipts",
+   "to": "mgq-qcells-lab",
+   "claim": "A sealed receipt lineage nobody's experiment names is a ledger talking to itself: the qcells lab runs ON the MicroMoth substrate and consumes the ledger's sealed findings, and its merged work says so. CURRENCY EARNED 2026-09-30: micrograd-quilt PR #7 (\"qcells exp020-036: tie-band replication → two-regime desert hazard → triplet-stream rate-lane closure\", MERGED 2026-09-30T04:49:20Z, merge 44de605) is a merged PR IN THE TO-NODE'S REPO whose diff ADDS labs/qcells/FINDINGS.md citing SuperInstance/MicroMoth-quilt BY NAME at four anchored sites — the lab charter header (\"Lab for novel experimentation on SuperInstance/MicroMoth-quilt\"), the import-baseline manifest pin on MicroMoth-quilt main, the honest-limit gap posted on MicroMoth-quilt#3, and the receipts/ dir lane note — plus docs/synergy-scan-2026-09-30-0711.md consuming MicroMoth-quilt#23/#24's MERGED sealed findings to redirect the lab's own queue (\"the lab's follow-on items are now already answered cross-repo; do not re-run\"). The from-technique is the ledger those receipts seal into: fnv1a-64 import-baseline manifest + sha256 byte-match receipt tables with per-receipt FAIL-first pins (exp016 sealed receipt commit fba4ec7 via MicroMoth-quilt#22 is the exp019 data_provenance anchor). HONESTY: the 14:38 pulse's citation scan reported this repo cited ZERO times by micrograd-quilt main — that scan was a FALSE NEGATIVE; the re-audit that booked this edge found 5+ by-name citations in the merged tree, so no citation PR was opened (one would have been citation spam on a false premise) and the edge is booked directly on Casey's merge. Fourth and fifth repos born after seeding enter together; the lab is the producer, the ledger the seal — this edge books the ledger→lab direction, and the mirror (lab→ledger) is booked PENDING in the same hour.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/micrograd-quilt#7",
+   "falsification_condition": "the SuperInstance/MicroMoth-quilt citations removed from labs/qcells/FINDINGS.md or docs/synergy-scan-2026-09-30-0711.md, or a lab experiment consuming a sealed MicroMoth-quilt receipt with no receipt reference anywhere in the consuming artifact"
+  },
+  {
+   "from": "mgq-qcells-lab",
+   "to": "mm-sealed-receipts",
+   "claim": "The ledger's receipts seal the lab's work — and a seal that names its producer only by workspace path is a doctrinal citation, not a currency: it identifies the work, not the repo. MicroMoth-quilt PR #24 (\"exp018 receipt: hard-root autopsy — FITNESS DESERT AT THE BIRTH CLOUD\", MERGED 2026-09-29T21:25:32Z, merge 664506a5) seals the qcells lab's exp018 autopsy and names the producer as \"the qcells lab (workspace/labs/qcells)\" — a filesystem path, never the repo SuperInstance/micrograd-quilt. That was the git-agent#1 doctrinal-citation shape, booked PENDING for six hours. CURRENCY EARNED 2026-09-30 (17:56 pulse): **MicroMoth-quilt PR #29** (\"docs(audit): qcells lab canonical home = SuperInstance/micrograd-quilt — provenance note + citation pin\", MERGED 2026-09-30T09:27:01Z) is a merged PR IN THE TO-NODE'S REPO that adds an AUDIT.md \"Qcells lab — canonical home\" note naming SuperInstance/micrograd-quilt BY NAME as the lab's durable addressable home (labs/qcells tree; sealed lineage exp018–exp022 mirrored as receipt PRs #5–#7; MM↔mgq first lab↔ledger bidirectional pair), with tests/test_lab_home_citation.py pinning the citation in-repo (repo named; local path framed by citation — a drifted citation cannot pass silently). The graph's first bidirectional pair now carries VERIFIED mass in BOTH directions — mm→mgq earned by the lab's merged FINDINGS (micrograd-quilt#7), the mirror earned by the ledger's merged AUDIT note (MicroMoth-quilt#29). Sealed receipts untouched (immutable); the note amends provenance without rewriting history. Never self-upgraded — the merge in the target repo did the earning.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/MicroMoth-quilt#29",
+   "falsification_condition": "a MicroMoth-quilt receipt sealing qcells-lab work that drops the workspace/labs/qcells producer reference entirely (the sealed bytes' provenance unmoored from any lab identity), or the upgrade PR merging with the SuperInstance/micrograd-quilt citation removed"
+  }
+ ],
+ "a98a5c5": [
+  {
+   "from": "qe-eproc-witness",
+   "to": "ds-esign-drift",
+   "claim": "A fleet witness instrument consumed by pin-and-digest is doctrine landing in the consumer repo: quilt-ewitness (created 2026-09-30T09:25Z) ships src/eproc.mjs — anytime-valid e-process witnesses for training claims, Ville bound 1/delta, sigma pre-registered under refusal, retraction built in — and SuperInstance/delta-shape#1 (\"Drift significance layer (E1-E5): e-witness bridge consuming SuperInstance/quilt-ewitness\", MERGED 2026-09-30T19:31:08Z, merge commit 57c07426) names SuperInstance/quilt-ewitness in-repo at anchored sites on merged main: vendor/quilt-ewitness/eproc.mjs pinned BY BYTES (@ 61b9e04, sha256 aad90ac5aedb4d8e19b189808b47b22fc7258044af2c25c8f7fc90efec19e63a, provenance in vendor/quilt-ewitness/SOURCE.txt — the fleet vendored-dist pattern), src/esign.mjs witnessDrift() sha256-checks the vendored instrument BEFORE trusting it (the hash IS the identity; mismatched bytes refuse to witness), and the owning repo is named in README (\"Shape != significance — now answered by the e-witness bridge\", consuming from SuperInstance/quilt-ewitness as a sha256-pinned vendored instrument). HONEST HISTORY: this edge was booked PENDING twice before the merge outran the booking — 23:56 9/30 on branch edge14-pending-delta-shape (commit 7ddd151, lost in a /tmp wipe before push), rebuilt 02:41 as quilt-tools#31 (merge 812a644), whose commit was later reset off main — so this commit books the edge at its earned weight in one step, with the merge itself as the receipt (the aw-jev-kat precedent: booked PENDING on an open PR, flipped by the merge, never self-upgraded). delta-shape is the SIXTH to-node born after seeding (fleet-murmur, moth-waveform, quilt-stone, micrograd-quilt, MicroMoth-quilt, delta-shape); quilt-ewitness enters as a from-node (from-node-only repos earn no view mass).",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/delta-shape#1",
+   "receipt": "SuperInstance/delta-shape#1",
+   "falsification_condition": "delta-shape main dropping the SuperInstance/quilt-ewitness citation from src/esign.mjs / vendor/quilt-ewitness/SOURCE.txt / README, or witnessDrift() executing vendored bytes whose sha256 does not match the pinned digest aad90ac5..."
+  },
+  {
+   "from": "stone-sign-lane",
+   "to": "pq-sign-pilot",
+   "claim": "quilt-stone's stone-v2 sign lane gives a receipt chain a producer-identity staple — but a signature primitive nobody staples with is a library, not a doctrine. CURRENCY EARNED 2026-09-27: pong-quilt PR #51 (\"R39: STONE-V2-PILOTS first sign pilot — producer staples the birth-seal chain's tip\", MERGED 2026-09-27T09:03:15Z, merge 07384ac2) lands the first real adoption IN THE PRODUCER's repo: tools/prerun.js staples the R37 birth-seal chain's tip through the named quilt-stone checkout's signTip/verifyTipSignature (signs a COPY — the unsigned stone-v1.json stays canonical; verifyTipSignature with the producer public key runs BEFORE write; a refused staple bricks the run exit 1; the seam ships closed with a labeled skip when the checkout has no signTip — never silent), citing SuperInstance/quilt-stone BY NAME in-repo at three anchored sites: PLAYLOG Round 39 (\"the stone-v2 sign lane, SuperInstance/quilt-stone PR #4, STONE-SPEC.md §4.6.2\"), the citation pin in tests/stone-sign-glue.test.js, and core.js VERIFIED_CLAIMS 'stone-sign-pilot'. The 4 glue pins ran LIVE against the sign-lane tip 047be72 before merge: seal links 5 + staple ok + the post-sign FORGED-edit laundering refusal (\"signed tip does not match the chain tip\") + wrong-key refusal. HONESTY ON DIRECTION: the 14:56/16:04 pulse notes guessed pong-quilt→quilt-stone; the substrate's receipt-repo rule (edge #5 precedent) books stone-sign-lane -> pq-sign-pilot — the merge in the citing repo earns currency FOR the cited technique flowing INTO that repo. quilt-stone's FIRST outgoing edge (it received edge #9 five hours earlier); pong-quilt joins fleet-murmur as the second double-inbound-mass repo — the sign lane lands in the same repo that already breaks ties by quantum coin. Pre-booked twice, earned by Casey's merge burst, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-stone#4",
+   "receipt": "SuperInstance/pong-quilt#51",
+   "falsification_condition": "a pong-quilt prerun run against a quilt-stone checkout shipping signTip where the staple file is written without verifyTipSignature passing first, or the post-sign FORGED-edit laundering case verifies green, or the SuperInstance/quilt-stone citation removed from PLAYLOG Round 39 / tests/stone-sign-glue.test.js / core.js VERIFIED_CLAIMS"
+  },
+  {
+   "from": "pq-stone-v1-export",
+   "to": "stone-forward-adopt",
+   "claim": "pong-quilt's R36 wal-export lane produces real stone-v1 forward-format chains from the live receipt panel — but an export format nobody verifies through is a dialect, not a standard. CURRENCY EARNED 2026-09-27: quilt-stone PR #1 (\"smoke 12b: pong-quilt R36 is the first stone-v1 forward-format adopter\", MERGED 2026-09-27T04:20:06Z, merge 093c1b1) lands the adoption IN THE VERIFIER's repo: smoke section 12b pins five checks over the exporter's EXACT bytes (generated live from tools/wal-export.js toStoneV1() at PR #46's merge tip, not retyped) — alg=stone-v1/genesis canonical/links=5, the mandatory stone.header row carries tool=pong-quilt (producer named, not laundered), a post-seal edit is caught as hash_mismatch, a row splice breaks continuity — and README.md's Forward-format adopters section names SuperInstance/pong-quilt PR #46 BY NAME. Weight law met in the to-node's repo. Third to-node born after seeding (fleet-murmur, moth-waveform, quilt-stone); pong-quilt's SECOND outgoing edge — it both receives currency (pq->fm) and pays it forward into the canonical verifier. Pre-booked at 11:04 (\"on merge, referral graph books NINTH VERIFIED edge\"), earned by Casey's merge, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/pong-quilt#46",
+   "receipt": "SuperInstance/quilt-stone#1",
+   "falsification_condition": "a quilt-stone smoke 12b run where the pinned pong-quilt fixture verifies under anything but stone-v1 semantics, or the SuperInstance/pong-quilt citation removed from README.md Forward-format adopters / smoke.mjs section 12b"
+  },
+  {
+   "from": "jq-commons-g11",
+   "to": "qt-trust-lever",
+   "claim": "The referral graph's blind view sums edge weight per target repo, and weight is cheap to inflate: a source the fleet has not earned to trust can merge N junk-citation PRs into its own repo and buy itself mass — the exact Goodhart surface jev-quilt's G11 hardened in the commons the same week. CURRENCY EARNED 2026-09-27: quilt-tools PR #17 (merged 2026-09-27T01:27:12Z, merge d14fb44) ports the G11 trust lever into the graph's weight law — viewTrusted({trust, default:0}) re-scales every edge by its TARGET repo's EARNED trust (effective = trust·weight; an unseen source defaults to 0 and contributes NOTHING until the fleet earns reason to trust it; trust 1 everywhere reduces exactly to the blind view) — citing SuperInstance/jev-quilt commons.py trust_weighted() / provenance_merge() BY NAME in-repo (src/referral_graph.mjs comment + experiments/REFERRAL_GRAPH.md), the same honesty pattern as the moth-waveform code-level scar. This was the 08:11 pulse's synergy candidate, shipped exactly as flagged; Pin 11 pins the fixture semantics (blind view BUYABLE at >90% junk mass; unseen junk → 0; trust is the lever) and the citation string. First edge where the graph's own repo is the TO-node of a commons-lane technique; pre-hardens the currency against the weight-inflation attack the R8 Goodhart lane red-teams.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#37",
+   "receipt": "SuperInstance/quilt-tools#17",
+   "falsification_condition": "the referral view mass computed from summed edge weights with no earned-trust term while junk-citation PRs remain mergeable into a self-controlled repo, or the SuperInstance/jev-quilt commons.py citation removed from src/referral_graph.mjs / REFERRAL_GRAPH.md"
+  },
+  {
+   "from": "qgs-strict-gate",
+   "to": "fm-qgs-adapter",
+   "claim": "Two sibling repos built the two halves of the review-honesty doctrine on the same day — fleet-murmur#2 shipped a quality-gate seam, quality-gate-stream#2 shipped strict-mode scoring — and an unadaptered dialect drift between them would silently corrupt every rumor score crossing the seam. CURRENCY EARNED 2026-09-26: fleet-murmur PR #3 (merged 2026-09-26T23:08:45Z, merge 8df75c6) lands tools/quality_gate_adapter.py rewritten against the LIVE quality-gate-stream API (the pre-merge adapter raised TypeError/AttributeError against the real package — stale-API broken at birth, the fix shipped in the same PR that named the source), citing SuperInstance/quality-gate-stream BY NAME in-repo at three anchored sites: the adapter module docstring, VERIFIED_CLAIMS.md VC10, and tests/test_qgs_adapter_glue.py (4 live pins run the real package, labeled skips when uninstalled, never fake green; an always-on pin asserts the citation string survives in source). Direction honesty: the merge is in fleet-murmur, so per the substrate receipt-repo rule the edge books qgs-strict-gate -> fm-qgs-adapter — currency flows INTO the citing repo, exactly the direction pre-booked when the lane opened. fleet-murmur is the first repo carrying two VERIFIED inbound edges; the exporter-in-consumer / live-verify-in-producer shape mirrors the R26 wal-export -> quilt-doctor seam.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#3",
+   "falsification_condition": "the fleet-murmur adapter scoring a rumor through a hand-rolled reimplementation while quality-gate-stream is installed, or the SuperInstance/quality-gate-stream citation removed from the adapter source / VC10 / the glue pins"
+  },
+  {
+   "from": "fm-honesty-receipts",
+   "to": "mw-floor-gate",
+   "claim": "fleet-murmur's transport-honesty contract is a scar other instruments must carry: a black-hole transport scored 100% coverage until the honesty REFUSAL receipt named it. moth-waveform's no-op health gate exists for exactly that reason. CURRENCY EARNED 2026-09-26: moth-waveform PR #1 (merged 2026-09-26T21:06:24Z, merge dc1a142) cites the scar BY NAME in-repo at code level — sensitivity.py: \"a gate that passes without a live floor measurement passes vacuously (fleet-murmur scar)\" — plus the README Receipts-doctrine section naming fleet-murmur (transport modes) among the doctrine lineage (pong-quilt honesty pins, hermit quilt-WAL, quilt-doctor moth-ledger trial balance, quality-gate-stream REFUSAL receipts). Load-bearing citation is the code-level scar; the README list is lineage, not technique. Second to-node born after the graph was seeded.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/moth-waveform#1",
+   "falsification_condition": "a moth-waveform sensitivity receipt whose no-op health gate passed without a live floor measurement (noop row absent from the receipt) or the fleet-murmur scar citation removed from sensitivity.py"
+  },
+  {
+   "from": "pq-session-wal",
+   "to": "fm-honesty-receipts",
+   "claim": "pong-quilt's receipt lineage — QA-REFUSAL honesty pins (a claim must name how it knows), the session-WAL exporter re-anchoring the live receipt panel into the fleet five-opcode quilt WAL, and the VERIFIED_CLAIMS + readme-count registry pinned two-way against the live suite — is exactly the contract a gossip mesh needs before it scores delivery coverage. CURRENCY EARNED 2026-09-26: fleet-murmur PR #2 (merged 2026-09-26T19:08:16Z, merge 5391ba56) cites SuperInstance/pong-quilt BY NAME in-repo, three times in CROSS-POLLINATE.md: the QA-REFUSAL seam (R23-R28 honesty pins) as the transport-honesty contract, tools/wal-session.js's session WAL as the receipt-ledger substrate (\"one verifier reads every fleet ledger\"), and the VERIFIED_CLAIMS + readme-count pin as the claims-registry shape. First edge whose to-node is a repo born after the graph was seeded; first outward currency from pong-quilt.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#2",
+   "falsification_condition": "a murmur gossip round scored 100% delivery coverage with a black-hole transport and no honesty REFUSAL receipt, or the pong-quilt citations removed from CROSS-POLLINATE.md"
+  },
+  {
+   "from": "jq-substance-noul",
+   "to": "qb-jev-gate",
+   "claim": "quilt-cowboy's admission proxy was length alone — 1,745 generated papers entered the canon on synthesis_len >= 300 and nothing else (RD_QUILT_3_0 admits the length-as-concreteness proxy is a stand-in). CURRENCY EARNED 2026-09-26: quilt-cowboy PR #1 (merged 2026-09-26T09:12:37Z, merge a3feccca) wires jev-quilt's substance noul + 0.6 admit threshold onto the v3 output gate, citing SuperInstance/jev-quilt BY NAME in-repo (README.md \"The JEV Substance Gate\" section + jev_substance_gate.py CITATION const + module docstring), judged through any duck-typed backend exposing available() + decide_batch() — jev_quilt's TypeSafeBackend satisfies the protocol directly. First jev-quilt OUTGOING edge: all prior currency flowed show/pong/quant/tools.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/quilt-cowboy#1",
+   "falsification_condition": "a v3 worklog entry admitted to the canon with jev_substance present below 0.6 and no jev_admitted=False flag, or the CITATION naming SuperInstance/jev-quilt removed from the gate module"
+  },
+  {
+   "from": "quant-coin-toss",
+   "to": "qq-quantum-tiebreak",
+   "claim": "A champion-selection tie is a verdict: silent index order is an unwitnessed collapse. pong-quilt's R21 wires the makeEvaluator onTie seam to quilt-quant's coin-toss-v1 (seeded mock of the live engine, citation verified against quilt-quant lab/play.mjs, every flip journaled — R22 symmetrized the journal). CURRENCY EARNED 2026-09-26: pong-quilt PR #28 (merged 2026-09-26T05:27:42Z, merge b14791f) carries the coin-toss-v1 citation in-repo (core.js VERIFIED_CLAIMS 'quantum-tiebreak' entry + tools/prerun.js).",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/pong-quilt#28",
+   "falsification_condition": "a replayed prerun where equal-fitness champions are ordered by array index with no coin flip journaled"
+  },
+  {
+   "from": "qt-s2-driftwatch",
+   "to": "qs-ep2",
+   "claim": "S2 measured the exact wall behind E2's thesis: shape-beats-threshold cannot be asserted in a prompt — the episode's \"demonstrate, don't assert\" now has an api-lab receipt map under it. CURRENCY EARNED 2026-09-26: quilt-show PR #1 (merged 2026-09-25T19:14:08Z, merge a2f82a35) carries this citation in-repo (docs/E3-VERIFICATION.md referral-edge record + episode-3/sim.mjs header); quilt-show PR #3 (ep4-instruments, merged 21:30Z) re-cites it.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-tools#3",
+   "receipt": "SuperInstance/quilt-show#1",
+   "falsification_condition": "a replayed stream where the 0.80 threshold fires before shape on st02 slow drift"
+  },
+  {
+   "from": "qt-api-lab",
+   "to": "qs-ep2",
+   "claim": "E2 quantified persuasion risk: receipts flip credit 1/4 -> 4/4 whether or not the underlying claim is true — Episode 2's verifyChain discipline is the counter-move",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#5",
+   "falsification_condition": "a receipts-inline run where ground-truth agreement does not move vs bare"
+  },
+  {
+   "from": "qt-s3-tide",
+   "to": "qa-plugins",
+   "claim": "S3's witnessed pre-outcome states (PENDING/ENTANGLED/COLLAPSED) are the receipt shape a quantum coin plugin needs before its verdict drives game state",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#4",
+   "falsification_condition": "a plugin event driven by a coin outcome with no pre-outcome witness row"
+  },
+  {
+   "from": "qa-negspace",
+   "to": "qt-api-lab",
+   "claim": "NEGATIVE_SPACE's declined-patch-12 doctrine is the same shape as E2's receipts-over-scores: document the divergence, never silently port it — the lab should score claims the same way",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-arcade#2",
+   "falsification_condition": "a quilt-main PR merging the verbatim patch 12 with no cost-regression receipt"
+  },
+  {
+   "from": "qs-ep3",
+   "to": "qa-plugins",
+   "claim": "Episode 3's drag-to-reshape watcher loop is a playable reactive surface — the same seam the arcade plugins expose through run_all",
+   "weight": "PENDING",
+   "provenance": null,
+   "falsification_condition": "a watcher demo that cannot be re-expressed as a two-file plugin without losing behavior"
+  },
+  {
+   "from": "aw-quint-opcode",
+   "to": "ga-quilt-emit",
+   "claim": "AI-Writings/algebra.md defines the five-opcode spine and its laws (BIND idempotent; algebra.md says do not add opcodes); git-agent#1 (MERGED 2026-09-26T00:27:18Z, merge 6bc099a) built quilt_emit.py — vessel events mapped one-to-one to BIND/LINK/EFFECT/VIEW/TICK lines in a hash-chained WAL — on exactly that spine. git-agent#1's citation was DOCTRINAL only (\"the fleet quilt kernel speaks five opcodes\"), the source repo never named — so the edge was booked PENDING with the upgrade path recorded. CURRENCY EARNED 2026-09-26: git-agent PR #4 (merged 2026-09-26T09:11:41Z, merge 8d6c31a) lands the in-repo citation naming AI-Writings/algebra.md by name and URL (docs/GRAND-QUILT.md provenance block, live-verified on git-agent main), exactly the upgrade path booked here.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/git-agent#1",
+   "receipt": "SuperInstance/git-agent#4",
+   "falsification_condition": "git-agent quilt_emit.py shipping an opcode mapping that contradicts algebra.md semantics (e.g. VIEW given mutation semantics, or a 6th opcode added) with no algebra reference anywhere in the repo"
+  },
+  {
+   "from": "aw-jev-kat",
+   "to": "jq-kat-bridge",
+   "claim": "A fleet oracle instrument consumed by pin-and-digest is doctrine landing in the consumer's repo: AI-Writings#70 (MERGED 2026-09-29T21:26:53Z) shipped labs/jev-kat/jev_kat.mjs as the canonical KAT instrument, and SuperInstance/jev-quilt#47 (OPEN at booking 2026-09-30 — this pulse's commissioned bridge) names SuperInstance/AI-Writings in-repo at anchored sites: the bridge pins the instrument by repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5 as an executable constant, tests/test_jev_kat_bridge.py asserts the citation string survives in source (a drifted upstream cannot be bridged silently), and the module docstring records AI-Writings#70 as the instrument's canonical home. CURRENCY EARNED 2026-09-30: SuperInstance/jev-quilt PR #47 MERGED 2026-09-30T00:18:30Z (merge 45912589941ce29f02c8a6659bfe2b4e7abfccb9) — the weight law is met: a merged PR in the to-node's repo whose MAIN-tree source carries the load-bearing citation (verified by the 09:11 pulse: tools/jev_kat_bridge.mjs on jev-quilt main still pins repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5, and tests/test_jev_kat_bridge.py still asserts the citation string survives). The discovery watcher surfaced #47 among the candidates; the load-bearing check was done by hand, not self-upgraded. Precedent arc complete: aw-quint-opcode was booked PENDING on a merged-but-doctrinal citation and earned currency when a merge named the source — here the booking named the source from day one and the merge closed the loop one lifecycle step later.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#47",
+   "receipt": "SuperInstance/jev-quilt#47",
+   "falsification_condition": "jev-quilt#47 merging with the SuperInstance/AI-Writings citation removed from tools/jev_kat_bridge.mjs source or the tests/test_jev_kat_bridge.py citation pin, or the bridge executing an instrument whose sha256 does not match the pinned digest 5f280b8b…e1cc5"
+  },
+  {
+   "from": "mm-sealed-receipts",
+   "to": "mgq-qcells-lab",
+   "claim": "A sealed receipt lineage nobody's experiment names is a ledger talking to itself: the qcells lab runs ON the MicroMoth substrate and consumes the ledger's sealed findings, and its merged work says so. CURRENCY EARNED 2026-09-30: micrograd-quilt PR #7 (\"qcells exp020-036: tie-band replication → two-regime desert hazard → triplet-stream rate-lane closure\", MERGED 2026-09-30T04:49:20Z, merge 44de605) is a merged PR IN THE TO-NODE'S REPO whose diff ADDS labs/qcells/FINDINGS.md citing SuperInstance/MicroMoth-quilt BY NAME at four anchored sites — the lab charter header (\"Lab for novel experimentation on SuperInstance/MicroMoth-quilt\"), the import-baseline manifest pin on MicroMoth-quilt main, the honest-limit gap posted on MicroMoth-quilt#3, and the receipts/ dir lane note — plus docs/synergy-scan-2026-09-30-0711.md consuming MicroMoth-quilt#23/#24's MERGED sealed findings to redirect the lab's own queue (\"the lab's follow-on items are now already answered cross-repo; do not re-run\"). The from-technique is the ledger those receipts seal into: fnv1a-64 import-baseline manifest + sha256 byte-match receipt tables with per-receipt FAIL-first pins (exp016 sealed receipt commit fba4ec7 via MicroMoth-quilt#22 is the exp019 data_provenance anchor). HONESTY: the 14:38 pulse's citation scan reported this repo cited ZERO times by micrograd-quilt main — that scan was a FALSE NEGATIVE; the re-audit that booked this edge found 5+ by-name citations in the merged tree, so no citation PR was opened (one would have been citation spam on a false premise) and the edge is booked directly on Casey's merge. Fourth and fifth repos born after seeding enter together; the lab is the producer, the ledger the seal — this edge books the ledger→lab direction, and the mirror (lab→ledger) is booked PENDING in the same hour.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/micrograd-quilt#7",
+   "falsification_condition": "the SuperInstance/MicroMoth-quilt citations removed from labs/qcells/FINDINGS.md or docs/synergy-scan-2026-09-30-0711.md, or a lab experiment consuming a sealed MicroMoth-quilt receipt with no receipt reference anywhere in the consuming artifact"
+  },
+  {
+   "from": "mgq-qcells-lab",
+   "to": "mm-sealed-receipts",
+   "claim": "The ledger's receipts seal the lab's work — and a seal that names its producer only by workspace path is a doctrinal citation, not a currency: it identifies the work, not the repo. MicroMoth-quilt PR #24 (\"exp018 receipt: hard-root autopsy — FITNESS DESERT AT THE BIRTH CLOUD\", MERGED 2026-09-29T21:25:32Z, merge 664506a5) seals the qcells lab's exp018 autopsy and names the producer as \"the qcells lab (workspace/labs/qcells)\" — a filesystem path, never the repo SuperInstance/micrograd-quilt. That was the git-agent#1 doctrinal-citation shape, booked PENDING for six hours. CURRENCY EARNED 2026-09-30 (17:56 pulse): **MicroMoth-quilt PR #29** (\"docs(audit): qcells lab canonical home = SuperInstance/micrograd-quilt — provenance note + citation pin\", MERGED 2026-09-30T09:27:01Z) is a merged PR IN THE TO-NODE'S REPO that adds an AUDIT.md \"Qcells lab — canonical home\" note naming SuperInstance/micrograd-quilt BY NAME as the lab's durable addressable home (labs/qcells tree; sealed lineage exp018–exp022 mirrored as receipt PRs #5–#7; MM↔mgq first lab↔ledger bidirectional pair), with tests/test_lab_home_citation.py pinning the citation in-repo (repo named; local path framed by citation — a drifted citation cannot pass silently). The graph's first bidirectional pair now carries VERIFIED mass in BOTH directions — mm→mgq earned by the lab's merged FINDINGS (micrograd-quilt#7), the mirror earned by the ledger's merged AUDIT note (MicroMoth-quilt#29). Sealed receipts untouched (immutable); the note amends provenance without rewriting history. Never self-upgraded — the merge in the target repo did the earning.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/MicroMoth-quilt#29",
+   "falsification_condition": "a MicroMoth-quilt receipt sealing qcells-lab work that drops the workspace/labs/qcells producer reference entirely (the sealed bytes' provenance unmoored from any lab identity), or the upgrade PR merging with the SuperInstance/micrograd-quilt citation removed"
+  }
+ ],
+ "7caf5a3": [
+  {
+   "from": "stone-sign-lane",
+   "to": "pq-sign-pilot",
+   "claim": "quilt-stone's stone-v2 sign lane gives a receipt chain a producer-identity staple — but a signature primitive nobody staples with is a library, not a doctrine. CURRENCY EARNED 2026-09-27: pong-quilt PR #51 (\"R39: STONE-V2-PILOTS first sign pilot — producer staples the birth-seal chain's tip\", MERGED 2026-09-27T09:03:15Z, merge 07384ac2) lands the first real adoption IN THE PRODUCER's repo: tools/prerun.js staples the R37 birth-seal chain's tip through the named quilt-stone checkout's signTip/verifyTipSignature (signs a COPY — the unsigned stone-v1.json stays canonical; verifyTipSignature with the producer public key runs BEFORE write; a refused staple bricks the run exit 1; the seam ships closed with a labeled skip when the checkout has no signTip — never silent), citing SuperInstance/quilt-stone BY NAME in-repo at three anchored sites: PLAYLOG Round 39 (\"the stone-v2 sign lane, SuperInstance/quilt-stone PR #4, STONE-SPEC.md §4.6.2\"), the citation pin in tests/stone-sign-glue.test.js, and core.js VERIFIED_CLAIMS 'stone-sign-pilot'. The 4 glue pins ran LIVE against the sign-lane tip 047be72 before merge: seal links 5 + staple ok + the post-sign FORGED-edit laundering refusal (\"signed tip does not match the chain tip\") + wrong-key refusal. HONESTY ON DIRECTION: the 14:56/16:04 pulse notes guessed pong-quilt→quilt-stone; the substrate's receipt-repo rule (edge #5 precedent) books stone-sign-lane -> pq-sign-pilot — the merge in the citing repo earns currency FOR the cited technique flowing INTO that repo. quilt-stone's FIRST outgoing edge (it received edge #9 five hours earlier); pong-quilt joins fleet-murmur as the second double-inbound-mass repo — the sign lane lands in the same repo that already breaks ties by quantum coin. Pre-booked twice, earned by Casey's merge burst, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-stone#4",
+   "receipt": "SuperInstance/pong-quilt#51",
+   "falsification_condition": "a pong-quilt prerun run against a quilt-stone checkout shipping signTip where the staple file is written without verifyTipSignature passing first, or the post-sign FORGED-edit laundering case verifies green, or the SuperInstance/quilt-stone citation removed from PLAYLOG Round 39 / tests/stone-sign-glue.test.js / core.js VERIFIED_CLAIMS"
+  },
+  {
+   "from": "pq-stone-v1-export",
+   "to": "stone-forward-adopt",
+   "claim": "pong-quilt's R36 wal-export lane produces real stone-v1 forward-format chains from the live receipt panel — but an export format nobody verifies through is a dialect, not a standard. CURRENCY EARNED 2026-09-27: quilt-stone PR #1 (\"smoke 12b: pong-quilt R36 is the first stone-v1 forward-format adopter\", MERGED 2026-09-27T04:20:06Z, merge 093c1b1) lands the adoption IN THE VERIFIER's repo: smoke section 12b pins five checks over the exporter's EXACT bytes (generated live from tools/wal-export.js toStoneV1() at PR #46's merge tip, not retyped) — alg=stone-v1/genesis canonical/links=5, the mandatory stone.header row carries tool=pong-quilt (producer named, not laundered), a post-seal edit is caught as hash_mismatch, a row splice breaks continuity — and README.md's Forward-format adopters section names SuperInstance/pong-quilt PR #46 BY NAME. Weight law met in the to-node's repo. Third to-node born after seeding (fleet-murmur, moth-waveform, quilt-stone); pong-quilt's SECOND outgoing edge — it both receives currency (pq->fm) and pays it forward into the canonical verifier. Pre-booked at 11:04 (\"on merge, referral graph books NINTH VERIFIED edge\"), earned by Casey's merge, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/pong-quilt#46",
+   "receipt": "SuperInstance/quilt-stone#1",
+   "falsification_condition": "a quilt-stone smoke 12b run where the pinned pong-quilt fixture verifies under anything but stone-v1 semantics, or the SuperInstance/pong-quilt citation removed from README.md Forward-format adopters / smoke.mjs section 12b"
+  },
+  {
+   "from": "jq-commons-g11",
+   "to": "qt-trust-lever",
+   "claim": "The referral graph's blind view sums edge weight per target repo, and weight is cheap to inflate: a source the fleet has not earned to trust can merge N junk-citation PRs into its own repo and buy itself mass — the exact Goodhart surface jev-quilt's G11 hardened in the commons the same week. CURRENCY EARNED 2026-09-27: quilt-tools PR #17 (merged 2026-09-27T01:27:12Z, merge d14fb44) ports the G11 trust lever into the graph's weight law — viewTrusted({trust, default:0}) re-scales every edge by its TARGET repo's EARNED trust (effective = trust·weight; an unseen source defaults to 0 and contributes NOTHING until the fleet earns reason to trust it; trust 1 everywhere reduces exactly to the blind view) — citing SuperInstance/jev-quilt commons.py trust_weighted() / provenance_merge() BY NAME in-repo (src/referral_graph.mjs comment + experiments/REFERRAL_GRAPH.md), the same honesty pattern as the moth-waveform code-level scar. This was the 08:11 pulse's synergy candidate, shipped exactly as flagged; Pin 11 pins the fixture semantics (blind view BUYABLE at >90% junk mass; unseen junk → 0; trust is the lever) and the citation string. First edge where the graph's own repo is the TO-node of a commons-lane technique; pre-hardens the currency against the weight-inflation attack the R8 Goodhart lane red-teams.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#37",
+   "receipt": "SuperInstance/quilt-tools#17",
+   "falsification_condition": "the referral view mass computed from summed edge weights with no earned-trust term while junk-citation PRs remain mergeable into a self-controlled repo, or the SuperInstance/jev-quilt commons.py citation removed from src/referral_graph.mjs / REFERRAL_GRAPH.md"
+  },
+  {
+   "from": "qgs-strict-gate",
+   "to": "fm-qgs-adapter",
+   "claim": "Two sibling repos built the two halves of the review-honesty doctrine on the same day — fleet-murmur#2 shipped a quality-gate seam, quality-gate-stream#2 shipped strict-mode scoring — and an unadaptered dialect drift between them would silently corrupt every rumor score crossing the seam. CURRENCY EARNED 2026-09-26: fleet-murmur PR #3 (merged 2026-09-26T23:08:45Z, merge 8df75c6) lands tools/quality_gate_adapter.py rewritten against the LIVE quality-gate-stream API (the pre-merge adapter raised TypeError/AttributeError against the real package — stale-API broken at birth, the fix shipped in the same PR that named the source), citing SuperInstance/quality-gate-stream BY NAME in-repo at three anchored sites: the adapter module docstring, VERIFIED_CLAIMS.md VC10, and tests/test_qgs_adapter_glue.py (4 live pins run the real package, labeled skips when uninstalled, never fake green; an always-on pin asserts the citation string survives in source). Direction honesty: the merge is in fleet-murmur, so per the substrate receipt-repo rule the edge books qgs-strict-gate -> fm-qgs-adapter — currency flows INTO the citing repo, exactly the direction pre-booked when the lane opened. fleet-murmur is the first repo carrying two VERIFIED inbound edges; the exporter-in-consumer / live-verify-in-producer shape mirrors the R26 wal-export -> quilt-doctor seam.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#3",
+   "falsification_condition": "the fleet-murmur adapter scoring a rumor through a hand-rolled reimplementation while quality-gate-stream is installed, or the SuperInstance/quality-gate-stream citation removed from the adapter source / VC10 / the glue pins"
+  },
+  {
+   "from": "fm-honesty-receipts",
+   "to": "mw-floor-gate",
+   "claim": "fleet-murmur's transport-honesty contract is a scar other instruments must carry: a black-hole transport scored 100% coverage until the honesty REFUSAL receipt named it. moth-waveform's no-op health gate exists for exactly that reason. CURRENCY EARNED 2026-09-26: moth-waveform PR #1 (merged 2026-09-26T21:06:24Z, merge dc1a142) cites the scar BY NAME in-repo at code level — sensitivity.py: \"a gate that passes without a live floor measurement passes vacuously (fleet-murmur scar)\" — plus the README Receipts-doctrine section naming fleet-murmur (transport modes) among the doctrine lineage (pong-quilt honesty pins, hermit quilt-WAL, quilt-doctor moth-ledger trial balance, quality-gate-stream REFUSAL receipts). Load-bearing citation is the code-level scar; the README list is lineage, not technique. Second to-node born after the graph was seeded.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/moth-waveform#1",
+   "falsification_condition": "a moth-waveform sensitivity receipt whose no-op health gate passed without a live floor measurement (noop row absent from the receipt) or the fleet-murmur scar citation removed from sensitivity.py"
+  },
+  {
+   "from": "pq-session-wal",
+   "to": "fm-honesty-receipts",
+   "claim": "pong-quilt's receipt lineage — QA-REFUSAL honesty pins (a claim must name how it knows), the session-WAL exporter re-anchoring the live receipt panel into the fleet five-opcode quilt WAL, and the VERIFIED_CLAIMS + readme-count registry pinned two-way against the live suite — is exactly the contract a gossip mesh needs before it scores delivery coverage. CURRENCY EARNED 2026-09-26: fleet-murmur PR #2 (merged 2026-09-26T19:08:16Z, merge 5391ba56) cites SuperInstance/pong-quilt BY NAME in-repo, three times in CROSS-POLLINATE.md: the QA-REFUSAL seam (R23-R28 honesty pins) as the transport-honesty contract, tools/wal-session.js's session WAL as the receipt-ledger substrate (\"one verifier reads every fleet ledger\"), and the VERIFIED_CLAIMS + readme-count pin as the claims-registry shape. First edge whose to-node is a repo born after the graph was seeded; first outward currency from pong-quilt.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#2",
+   "falsification_condition": "a murmur gossip round scored 100% delivery coverage with a black-hole transport and no honesty REFUSAL receipt, or the pong-quilt citations removed from CROSS-POLLINATE.md"
+  },
+  {
+   "from": "jq-substance-noul",
+   "to": "qb-jev-gate",
+   "claim": "quilt-cowboy's admission proxy was length alone — 1,745 generated papers entered the canon on synthesis_len >= 300 and nothing else (RD_QUILT_3_0 admits the length-as-concreteness proxy is a stand-in). CURRENCY EARNED 2026-09-26: quilt-cowboy PR #1 (merged 2026-09-26T09:12:37Z, merge a3feccca) wires jev-quilt's substance noul + 0.6 admit threshold onto the v3 output gate, citing SuperInstance/jev-quilt BY NAME in-repo (README.md \"The JEV Substance Gate\" section + jev_substance_gate.py CITATION const + module docstring), judged through any duck-typed backend exposing available() + decide_batch() — jev_quilt's TypeSafeBackend satisfies the protocol directly. First jev-quilt OUTGOING edge: all prior currency flowed show/pong/quant/tools.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/quilt-cowboy#1",
+   "falsification_condition": "a v3 worklog entry admitted to the canon with jev_substance present below 0.6 and no jev_admitted=False flag, or the CITATION naming SuperInstance/jev-quilt removed from the gate module"
+  },
+  {
+   "from": "quant-coin-toss",
+   "to": "qq-quantum-tiebreak",
+   "claim": "A champion-selection tie is a verdict: silent index order is an unwitnessed collapse. pong-quilt's R21 wires the makeEvaluator onTie seam to quilt-quant's coin-toss-v1 (seeded mock of the live engine, citation verified against quilt-quant lab/play.mjs, every flip journaled — R22 symmetrized the journal). CURRENCY EARNED 2026-09-26: pong-quilt PR #28 (merged 2026-09-26T05:27:42Z, merge b14791f) carries the coin-toss-v1 citation in-repo (core.js VERIFIED_CLAIMS 'quantum-tiebreak' entry + tools/prerun.js).",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/pong-quilt#28",
+   "falsification_condition": "a replayed prerun where equal-fitness champions are ordered by array index with no coin flip journaled"
+  },
+  {
+   "from": "qt-s2-driftwatch",
+   "to": "qs-ep2",
+   "claim": "S2 measured the exact wall behind E2's thesis: shape-beats-threshold cannot be asserted in a prompt — the episode's \"demonstrate, don't assert\" now has an api-lab receipt map under it. CURRENCY EARNED 2026-09-26: quilt-show PR #1 (merged 2026-09-25T19:14:08Z, merge a2f82a35) carries this citation in-repo (docs/E3-VERIFICATION.md referral-edge record + episode-3/sim.mjs header); quilt-show PR #3 (ep4-instruments, merged 21:30Z) re-cites it.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-tools#3",
+   "receipt": "SuperInstance/quilt-show#1",
+   "falsification_condition": "a replayed stream where the 0.80 threshold fires before shape on st02 slow drift"
+  },
+  {
+   "from": "qt-api-lab",
+   "to": "qs-ep2",
+   "claim": "E2 quantified persuasion risk: receipts flip credit 1/4 -> 4/4 whether or not the underlying claim is true — Episode 2's verifyChain discipline is the counter-move",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#5",
+   "falsification_condition": "a receipts-inline run where ground-truth agreement does not move vs bare"
+  },
+  {
+   "from": "qt-s3-tide",
+   "to": "qa-plugins",
+   "claim": "S3's witnessed pre-outcome states (PENDING/ENTANGLED/COLLAPSED) are the receipt shape a quantum coin plugin needs before its verdict drives game state",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#4",
+   "falsification_condition": "a plugin event driven by a coin outcome with no pre-outcome witness row"
+  },
+  {
+   "from": "qa-negspace",
+   "to": "qt-api-lab",
+   "claim": "NEGATIVE_SPACE's declined-patch-12 doctrine is the same shape as E2's receipts-over-scores: document the divergence, never silently port it — the lab should score claims the same way",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-arcade#2",
+   "falsification_condition": "a quilt-main PR merging the verbatim patch 12 with no cost-regression receipt"
+  },
+  {
+   "from": "qs-ep3",
+   "to": "qa-plugins",
+   "claim": "Episode 3's drag-to-reshape watcher loop is a playable reactive surface — the same seam the arcade plugins expose through run_all",
+   "weight": "PENDING",
+   "provenance": null,
+   "falsification_condition": "a watcher demo that cannot be re-expressed as a two-file plugin without losing behavior"
+  },
+  {
+   "from": "aw-quint-opcode",
+   "to": "ga-quilt-emit",
+   "claim": "AI-Writings/algebra.md defines the five-opcode spine and its laws (BIND idempotent; algebra.md says do not add opcodes); git-agent#1 (MERGED 2026-09-26T00:27:18Z, merge 6bc099a) built quilt_emit.py — vessel events mapped one-to-one to BIND/LINK/EFFECT/VIEW/TICK lines in a hash-chained WAL — on exactly that spine. git-agent#1's citation was DOCTRINAL only (\"the fleet quilt kernel speaks five opcodes\"), the source repo never named — so the edge was booked PENDING with the upgrade path recorded. CURRENCY EARNED 2026-09-26: git-agent PR #4 (merged 2026-09-26T09:11:41Z, merge 8d6c31a) lands the in-repo citation naming AI-Writings/algebra.md by name and URL (docs/GRAND-QUILT.md provenance block, live-verified on git-agent main), exactly the upgrade path booked here.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/git-agent#1",
+   "receipt": "SuperInstance/git-agent#4",
+   "falsification_condition": "git-agent quilt_emit.py shipping an opcode mapping that contradicts algebra.md semantics (e.g. VIEW given mutation semantics, or a 6th opcode added) with no algebra reference anywhere in the repo"
+  },
+  {
+   "from": "aw-jev-kat",
+   "to": "jq-kat-bridge",
+   "claim": "A fleet oracle instrument consumed by pin-and-digest is doctrine landing in the consumer's repo: AI-Writings#70 (MERGED 2026-09-29T21:26:53Z) shipped labs/jev-kat/jev_kat.mjs as the canonical KAT instrument, and SuperInstance/jev-quilt#47 (OPEN at booking 2026-09-30 — this pulse's commissioned bridge) names SuperInstance/AI-Writings in-repo at anchored sites: the bridge pins the instrument by repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5 as an executable constant, tests/test_jev_kat_bridge.py asserts the citation string survives in source (a drifted upstream cannot be bridged silently), and the module docstring records AI-Writings#70 as the instrument's canonical home. CURRENCY EARNED 2026-09-30: SuperInstance/jev-quilt PR #47 MERGED 2026-09-30T00:18:30Z (merge 45912589941ce29f02c8a6659bfe2b4e7abfccb9) — the weight law is met: a merged PR in the to-node's repo whose MAIN-tree source carries the load-bearing citation (verified by the 09:11 pulse: tools/jev_kat_bridge.mjs on jev-quilt main still pins repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5, and tests/test_jev_kat_bridge.py still asserts the citation string survives). The discovery watcher surfaced #47 among the candidates; the load-bearing check was done by hand, not self-upgraded. Precedent arc complete: aw-quint-opcode was booked PENDING on a merged-but-doctrinal citation and earned currency when a merge named the source — here the booking named the source from day one and the merge closed the loop one lifecycle step later.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#47",
+   "receipt": "SuperInstance/jev-quilt#47",
+   "falsification_condition": "jev-quilt#47 merging with the SuperInstance/AI-Writings citation removed from tools/jev_kat_bridge.mjs source or the tests/test_jev_kat_bridge.py citation pin, or the bridge executing an instrument whose sha256 does not match the pinned digest 5f280b8b…e1cc5"
+  },
+  {
+   "from": "mm-sealed-receipts",
+   "to": "mgq-qcells-lab",
+   "claim": "A sealed receipt lineage nobody's experiment names is a ledger talking to itself: the qcells lab runs ON the MicroMoth substrate and consumes the ledger's sealed findings, and its merged work says so. CURRENCY EARNED 2026-09-30: micrograd-quilt PR #7 (\"qcells exp020-036: tie-band replication → two-regime desert hazard → triplet-stream rate-lane closure\", MERGED 2026-09-30T04:49:20Z, merge 44de605) is a merged PR IN THE TO-NODE'S REPO whose diff ADDS labs/qcells/FINDINGS.md citing SuperInstance/MicroMoth-quilt BY NAME at four anchored sites — the lab charter header (\"Lab for novel experimentation on SuperInstance/MicroMoth-quilt\"), the import-baseline manifest pin on MicroMoth-quilt main, the honest-limit gap posted on MicroMoth-quilt#3, and the receipts/ dir lane note — plus docs/synergy-scan-2026-09-30-0711.md consuming MicroMoth-quilt#23/#24's MERGED sealed findings to redirect the lab's own queue (\"the lab's follow-on items are now already answered cross-repo; do not re-run\"). The from-technique is the ledger those receipts seal into: fnv1a-64 import-baseline manifest + sha256 byte-match receipt tables with per-receipt FAIL-first pins (exp016 sealed receipt commit fba4ec7 via MicroMoth-quilt#22 is the exp019 data_provenance anchor). HONESTY: the 14:38 pulse's citation scan reported this repo cited ZERO times by micrograd-quilt main — that scan was a FALSE NEGATIVE; the re-audit that booked this edge found 5+ by-name citations in the merged tree, so no citation PR was opened (one would have been citation spam on a false premise) and the edge is booked directly on Casey's merge. Fourth and fifth repos born after seeding enter together; the lab is the producer, the ledger the seal — this edge books the ledger→lab direction, and the mirror (lab→ledger) is booked PENDING in the same hour.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/micrograd-quilt#7",
+   "falsification_condition": "the SuperInstance/MicroMoth-quilt citations removed from labs/qcells/FINDINGS.md or docs/synergy-scan-2026-09-30-0711.md, or a lab experiment consuming a sealed MicroMoth-quilt receipt with no receipt reference anywhere in the consuming artifact"
+  },
+  {
+   "from": "mgq-qcells-lab",
+   "to": "mm-sealed-receipts",
+   "claim": "The ledger's receipts seal the lab's work — and a seal that names its producer only by workspace path is a doctrinal citation, not a currency: it identifies the work, not the repo. MicroMoth-quilt PR #24 (\"exp018 receipt: hard-root autopsy — FITNESS DESERT AT THE BIRTH CLOUD\", MERGED 2026-09-29T21:25:32Z, merge 664506a5) seals the qcells lab's exp018 autopsy and names the producer as \"the qcells lab (workspace/labs/qcells)\" — a filesystem path, never the repo SuperInstance/micrograd-quilt. That was the git-agent#1 doctrinal-citation shape, booked PENDING for six hours. CURRENCY EARNED 2026-09-30 (17:56 pulse): **MicroMoth-quilt PR #29** (\"docs(audit): qcells lab canonical home = SuperInstance/micrograd-quilt — provenance note + citation pin\", MERGED 2026-09-30T09:27:01Z) is a merged PR IN THE TO-NODE'S REPO that adds an AUDIT.md \"Qcells lab — canonical home\" note naming SuperInstance/micrograd-quilt BY NAME as the lab's durable addressable home (labs/qcells tree; sealed lineage exp018–exp022 mirrored as receipt PRs #5–#7; MM↔mgq first lab↔ledger bidirectional pair), with tests/test_lab_home_citation.py pinning the citation in-repo (repo named; local path framed by citation — a drifted citation cannot pass silently). The graph's first bidirectional pair now carries VERIFIED mass in BOTH directions — mm→mgq earned by the lab's merged FINDINGS (micrograd-quilt#7), the mirror earned by the ledger's merged AUDIT note (MicroMoth-quilt#29). Sealed receipts untouched (immutable); the note amends provenance without rewriting history. Never self-upgraded — the merge in the target repo did the earning.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/MicroMoth-quilt#29",
+   "falsification_condition": "a MicroMoth-quilt receipt sealing qcells-lab work that drops the workspace/labs/qcells producer reference entirely (the sealed bytes' provenance unmoored from any lab identity), or the upgrade PR merging with the SuperInstance/micrograd-quilt citation removed"
+  },
+  {
+   "from": "pq-named-refusals",
+   "to": "fm-refusal-ledger",
+   "claim": "pong-quilt's refusals are named, receipted, and prompt-content-free (QA-REFUSAL, byo-qpam-fallback, WAL-EXPORT/REFUSED, WAL-EXPORT/EMPTY, SEAL/REFUSED — and at R67 SAVE/COEV-EMPTY + LOAD/COEV-MALFORMED, with the SAVE/COEV-UNSTABLE R64 name surviving in claim prose as supersession lineage) — exactly the worked named-corpus substrate draft-kamimura-scitt-refusal-events-03's refusal-claim audit needs a real deployment to be read against. CURRENCY EARNED 2026-09-30: fleet-murmur PR #8 (\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 × pong-quilt named refusals\", MERGED 2026-09-30T19:31:12Z, merge b21a4a46) is a merged PR IN THE TO-NODE'S REPO citing SuperInstance/pong-quilt BY NAME at an anchored, pinned site: the ledger doc's PQ_PIN repo constant plus a corpus table pinned to pong-quilt main merge 52b42b4 — six named refusal kinds present-tense grepped at that pin with line-level sites recorded — and tests/test_refusal_events_ledger.py running a FAIL-first corpus pin (a main tree without the corpus trips RED naming the missing kind, so a drifted citation cannot pass silently). Direction honesty per the substrate's receipt-repo rule (edge #2 precedent): the merge is in fleet-murmur, so the edge books pq-named-refusals -> fm-refusal-ledger — currency flows INTO the citing repo. The 17:49 pulse's org note recorded \"mints pq->fm refusal-ledger edge\" at merge time; this booking lands the mint the merge earned — never self-upgraded. fleet-murmur becomes the fleet's first TRIPLE-inbound repo (honesty-receipts#2, qgs-adapter#3, refusal-ledger#8); pong-quilt's THIRD outgoing edge (session-wal honesty, stone-v1 forward-adoption, named refusals).",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#8",
+   "falsification_condition": "the SuperInstance/pong-quilt citation removed from the ledger doc or the PQ_PIN corpus-pin test, or a re-audit of the pinned pong-quilt main merge where a named corpus kind is absent from the tree while the pin still reports green (a drifted citation passing silently)"
+  }
+ ],
+ "0101409": [
+  {
+   "from": "qe-eproc-witness",
+   "to": "ds-esign-drift",
+   "claim": "A fleet witness instrument consumed by pin-and-digest is doctrine landing in the consumer repo: quilt-ewitness (created 2026-09-30T09:25Z) ships src/eproc.mjs — anytime-valid e-process witnesses for training claims, Ville bound 1/delta, sigma pre-registered under refusal, retraction built in — and SuperInstance/delta-shape#1 (\"Drift significance layer (E1-E5): e-witness bridge consuming SuperInstance/quilt-ewitness\", MERGED 2026-09-30T19:31:08Z, merge commit 57c07426) names SuperInstance/quilt-ewitness in-repo at anchored sites on merged main: vendor/quilt-ewitness/eproc.mjs pinned BY BYTES (@ 61b9e04, sha256 aad90ac5aedb4d8e19b189808b47b22fc7258044af2c25c8f7fc90efec19e63a, provenance in vendor/quilt-ewitness/SOURCE.txt — the fleet vendored-dist pattern), src/esign.mjs witnessDrift() sha256-checks the vendored instrument BEFORE trusting it (the hash IS the identity; mismatched bytes refuse to witness), and the owning repo is named in README (\"Shape != significance — now answered by the e-witness bridge\", consuming from SuperInstance/quilt-ewitness as a sha256-pinned vendored instrument). HONEST HISTORY: this edge was booked PENDING twice before the merge outran the booking — 23:56 9/30 on branch edge14-pending-delta-shape (commit 7ddd151, lost in a /tmp wipe before push), rebuilt 02:41 as quilt-tools#31 (merge 812a644), whose commit was later reset off main — so this commit books the edge at its earned weight in one step, with the merge itself as the receipt (the aw-jev-kat precedent: booked PENDING on an open PR, flipped by the merge, never self-upgraded). delta-shape is the SIXTH to-node born after seeding (fleet-murmur, moth-waveform, quilt-stone, micrograd-quilt, MicroMoth-quilt, delta-shape); quilt-ewitness enters as a from-node (from-node-only repos earn no view mass).",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/delta-shape#1",
+   "receipt": "SuperInstance/delta-shape#1",
+   "falsification_condition": "delta-shape main dropping the SuperInstance/quilt-ewitness citation from src/esign.mjs / vendor/quilt-ewitness/SOURCE.txt / README, or witnessDrift() executing vendored bytes whose sha256 does not match the pinned digest aad90ac5..."
+  },
+  {
+   "from": "stone-sign-lane",
+   "to": "pq-sign-pilot",
+   "claim": "quilt-stone's stone-v2 sign lane gives a receipt chain a producer-identity staple — but a signature primitive nobody staples with is a library, not a doctrine. CURRENCY EARNED 2026-09-27: pong-quilt PR #51 (\"R39: STONE-V2-PILOTS first sign pilot — producer staples the birth-seal chain's tip\", MERGED 2026-09-27T09:03:15Z, merge 07384ac2) lands the first real adoption IN THE PRODUCER's repo: tools/prerun.js staples the R37 birth-seal chain's tip through the named quilt-stone checkout's signTip/verifyTipSignature (signs a COPY — the unsigned stone-v1.json stays canonical; verifyTipSignature with the producer public key runs BEFORE write; a refused staple bricks the run exit 1; the seam ships closed with a labeled skip when the checkout has no signTip — never silent), citing SuperInstance/quilt-stone BY NAME in-repo at three anchored sites: PLAYLOG Round 39 (\"the stone-v2 sign lane, SuperInstance/quilt-stone PR #4, STONE-SPEC.md §4.6.2\"), the citation pin in tests/stone-sign-glue.test.js, and core.js VERIFIED_CLAIMS 'stone-sign-pilot'. The 4 glue pins ran LIVE against the sign-lane tip 047be72 before merge: seal links 5 + staple ok + the post-sign FORGED-edit laundering refusal (\"signed tip does not match the chain tip\") + wrong-key refusal. HONESTY ON DIRECTION: the 14:56/16:04 pulse notes guessed pong-quilt→quilt-stone; the substrate's receipt-repo rule (edge #5 precedent) books stone-sign-lane -> pq-sign-pilot — the merge in the citing repo earns currency FOR the cited technique flowing INTO that repo. quilt-stone's FIRST outgoing edge (it received edge #9 five hours earlier); pong-quilt joins fleet-murmur as the second double-inbound-mass repo — the sign lane lands in the same repo that already breaks ties by quantum coin. Pre-booked twice, earned by Casey's merge burst, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-stone#4",
+   "receipt": "SuperInstance/pong-quilt#51",
+   "falsification_condition": "a pong-quilt prerun run against a quilt-stone checkout shipping signTip where the staple file is written without verifyTipSignature passing first, or the post-sign FORGED-edit laundering case verifies green, or the SuperInstance/quilt-stone citation removed from PLAYLOG Round 39 / tests/stone-sign-glue.test.js / core.js VERIFIED_CLAIMS"
+  },
+  {
+   "from": "pq-stone-v1-export",
+   "to": "stone-forward-adopt",
+   "claim": "pong-quilt's R36 wal-export lane produces real stone-v1 forward-format chains from the live receipt panel — but an export format nobody verifies through is a dialect, not a standard. CURRENCY EARNED 2026-09-27: quilt-stone PR #1 (\"smoke 12b: pong-quilt R36 is the first stone-v1 forward-format adopter\", MERGED 2026-09-27T04:20:06Z, merge 093c1b1) lands the adoption IN THE VERIFIER's repo: smoke section 12b pins five checks over the exporter's EXACT bytes (generated live from tools/wal-export.js toStoneV1() at PR #46's merge tip, not retyped) — alg=stone-v1/genesis canonical/links=5, the mandatory stone.header row carries tool=pong-quilt (producer named, not laundered), a post-seal edit is caught as hash_mismatch, a row splice breaks continuity — and README.md's Forward-format adopters section names SuperInstance/pong-quilt PR #46 BY NAME. Weight law met in the to-node's repo. Third to-node born after seeding (fleet-murmur, moth-waveform, quilt-stone); pong-quilt's SECOND outgoing edge — it both receives currency (pq->fm) and pays it forward into the canonical verifier. Pre-booked at 11:04 (\"on merge, referral graph books NINTH VERIFIED edge\"), earned by Casey's merge, never self-upgraded.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/pong-quilt#46",
+   "receipt": "SuperInstance/quilt-stone#1",
+   "falsification_condition": "a quilt-stone smoke 12b run where the pinned pong-quilt fixture verifies under anything but stone-v1 semantics, or the SuperInstance/pong-quilt citation removed from README.md Forward-format adopters / smoke.mjs section 12b"
+  },
+  {
+   "from": "jq-commons-g11",
+   "to": "qt-trust-lever",
+   "claim": "The referral graph's blind view sums edge weight per target repo, and weight is cheap to inflate: a source the fleet has not earned to trust can merge N junk-citation PRs into its own repo and buy itself mass — the exact Goodhart surface jev-quilt's G11 hardened in the commons the same week. CURRENCY EARNED 2026-09-27: quilt-tools PR #17 (merged 2026-09-27T01:27:12Z, merge d14fb44) ports the G11 trust lever into the graph's weight law — viewTrusted({trust, default:0}) re-scales every edge by its TARGET repo's EARNED trust (effective = trust·weight; an unseen source defaults to 0 and contributes NOTHING until the fleet earns reason to trust it; trust 1 everywhere reduces exactly to the blind view) — citing SuperInstance/jev-quilt commons.py trust_weighted() / provenance_merge() BY NAME in-repo (src/referral_graph.mjs comment + experiments/REFERRAL_GRAPH.md), the same honesty pattern as the moth-waveform code-level scar. This was the 08:11 pulse's synergy candidate, shipped exactly as flagged; Pin 11 pins the fixture semantics (blind view BUYABLE at >90% junk mass; unseen junk → 0; trust is the lever) and the citation string. First edge where the graph's own repo is the TO-node of a commons-lane technique; pre-hardens the currency against the weight-inflation attack the R8 Goodhart lane red-teams.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#37",
+   "receipt": "SuperInstance/quilt-tools#17",
+   "falsification_condition": "the referral view mass computed from summed edge weights with no earned-trust term while junk-citation PRs remain mergeable into a self-controlled repo, or the SuperInstance/jev-quilt commons.py citation removed from src/referral_graph.mjs / REFERRAL_GRAPH.md"
+  },
+  {
+   "from": "qgs-strict-gate",
+   "to": "fm-qgs-adapter",
+   "claim": "Two sibling repos built the two halves of the review-honesty doctrine on the same day — fleet-murmur#2 shipped a quality-gate seam, quality-gate-stream#2 shipped strict-mode scoring — and an unadaptered dialect drift between them would silently corrupt every rumor score crossing the seam. CURRENCY EARNED 2026-09-26: fleet-murmur PR #3 (merged 2026-09-26T23:08:45Z, merge 8df75c6) lands tools/quality_gate_adapter.py rewritten against the LIVE quality-gate-stream API (the pre-merge adapter raised TypeError/AttributeError against the real package — stale-API broken at birth, the fix shipped in the same PR that named the source), citing SuperInstance/quality-gate-stream BY NAME in-repo at three anchored sites: the adapter module docstring, VERIFIED_CLAIMS.md VC10, and tests/test_qgs_adapter_glue.py (4 live pins run the real package, labeled skips when uninstalled, never fake green; an always-on pin asserts the citation string survives in source). Direction honesty: the merge is in fleet-murmur, so per the substrate receipt-repo rule the edge books qgs-strict-gate -> fm-qgs-adapter — currency flows INTO the citing repo, exactly the direction pre-booked when the lane opened. fleet-murmur is the first repo carrying two VERIFIED inbound edges; the exporter-in-consumer / live-verify-in-producer shape mirrors the R26 wal-export -> quilt-doctor seam.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#3",
+   "falsification_condition": "the fleet-murmur adapter scoring a rumor through a hand-rolled reimplementation while quality-gate-stream is installed, or the SuperInstance/quality-gate-stream citation removed from the adapter source / VC10 / the glue pins"
+  },
+  {
+   "from": "fm-honesty-receipts",
+   "to": "mw-floor-gate",
+   "claim": "fleet-murmur's transport-honesty contract is a scar other instruments must carry: a black-hole transport scored 100% coverage until the honesty REFUSAL receipt named it. moth-waveform's no-op health gate exists for exactly that reason. CURRENCY EARNED 2026-09-26: moth-waveform PR #1 (merged 2026-09-26T21:06:24Z, merge dc1a142) cites the scar BY NAME in-repo at code level — sensitivity.py: \"a gate that passes without a live floor measurement passes vacuously (fleet-murmur scar)\" — plus the README Receipts-doctrine section naming fleet-murmur (transport modes) among the doctrine lineage (pong-quilt honesty pins, hermit quilt-WAL, quilt-doctor moth-ledger trial balance, quality-gate-stream REFUSAL receipts). Load-bearing citation is the code-level scar; the README list is lineage, not technique. Second to-node born after the graph was seeded.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/moth-waveform#1",
+   "falsification_condition": "a moth-waveform sensitivity receipt whose no-op health gate passed without a live floor measurement (noop row absent from the receipt) or the fleet-murmur scar citation removed from sensitivity.py"
+  },
+  {
+   "from": "pq-session-wal",
+   "to": "fm-honesty-receipts",
+   "claim": "pong-quilt's receipt lineage — QA-REFUSAL honesty pins (a claim must name how it knows), the session-WAL exporter re-anchoring the live receipt panel into the fleet five-opcode quilt WAL, and the VERIFIED_CLAIMS + readme-count registry pinned two-way against the live suite — is exactly the contract a gossip mesh needs before it scores delivery coverage. CURRENCY EARNED 2026-09-26: fleet-murmur PR #2 (merged 2026-09-26T19:08:16Z, merge 5391ba56) cites SuperInstance/pong-quilt BY NAME in-repo, three times in CROSS-POLLINATE.md: the QA-REFUSAL seam (R23-R28 honesty pins) as the transport-honesty contract, tools/wal-session.js's session WAL as the receipt-ledger substrate (\"one verifier reads every fleet ledger\"), and the VERIFIED_CLAIMS + readme-count pin as the claims-registry shape. First edge whose to-node is a repo born after the graph was seeded; first outward currency from pong-quilt.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#2",
+   "falsification_condition": "a murmur gossip round scored 100% delivery coverage with a black-hole transport and no honesty REFUSAL receipt, or the pong-quilt citations removed from CROSS-POLLINATE.md"
+  },
+  {
+   "from": "jq-substance-noul",
+   "to": "qb-jev-gate",
+   "claim": "quilt-cowboy's admission proxy was length alone — 1,745 generated papers entered the canon on synthesis_len >= 300 and nothing else (RD_QUILT_3_0 admits the length-as-concreteness proxy is a stand-in). CURRENCY EARNED 2026-09-26: quilt-cowboy PR #1 (merged 2026-09-26T09:12:37Z, merge a3feccca) wires jev-quilt's substance noul + 0.6 admit threshold onto the v3 output gate, citing SuperInstance/jev-quilt BY NAME in-repo (README.md \"The JEV Substance Gate\" section + jev_substance_gate.py CITATION const + module docstring), judged through any duck-typed backend exposing available() + decide_batch() — jev_quilt's TypeSafeBackend satisfies the protocol directly. First jev-quilt OUTGOING edge: all prior currency flowed show/pong/quant/tools.",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/quilt-cowboy#1",
+   "falsification_condition": "a v3 worklog entry admitted to the canon with jev_substance present below 0.6 and no jev_admitted=False flag, or the CITATION naming SuperInstance/jev-quilt removed from the gate module"
+  },
+  {
+   "from": "quant-coin-toss",
+   "to": "qq-quantum-tiebreak",
+   "claim": "A champion-selection tie is a verdict: silent index order is an unwitnessed collapse. pong-quilt's R21 wires the makeEvaluator onTie seam to quilt-quant's coin-toss-v1 (seeded mock of the live engine, citation verified against quilt-quant lab/play.mjs, every flip journaled — R22 symmetrized the journal). CURRENCY EARNED 2026-09-26: pong-quilt PR #28 (merged 2026-09-26T05:27:42Z, merge b14791f) carries the coin-toss-v1 citation in-repo (core.js VERIFIED_CLAIMS 'quantum-tiebreak' entry + tools/prerun.js).",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/pong-quilt#28",
+   "falsification_condition": "a replayed prerun where equal-fitness champions are ordered by array index with no coin flip journaled"
+  },
+  {
+   "from": "qt-s2-driftwatch",
+   "to": "qs-ep2",
+   "claim": "S2 measured the exact wall behind E2's thesis: shape-beats-threshold cannot be asserted in a prompt — the episode's \"demonstrate, don't assert\" now has an api-lab receipt map under it. CURRENCY EARNED 2026-09-26: quilt-show PR #1 (merged 2026-09-25T19:14:08Z, merge a2f82a35) carries this citation in-repo (docs/E3-VERIFICATION.md referral-edge record + episode-3/sim.mjs header); quilt-show PR #3 (ep4-instruments, merged 21:30Z) re-cites it.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/quilt-tools#3",
+   "receipt": "SuperInstance/quilt-show#1",
+   "falsification_condition": "a replayed stream where the 0.80 threshold fires before shape on st02 slow drift"
+  },
+  {
+   "from": "qt-api-lab",
+   "to": "qs-ep2",
+   "claim": "E2 quantified persuasion risk: receipts flip credit 1/4 -> 4/4 whether or not the underlying claim is true — Episode 2's verifyChain discipline is the counter-move",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#5",
+   "falsification_condition": "a receipts-inline run where ground-truth agreement does not move vs bare"
+  },
+  {
+   "from": "qt-s3-tide",
+   "to": "qa-plugins",
+   "claim": "S3's witnessed pre-outcome states (PENDING/ENTANGLED/COLLAPSED) are the receipt shape a quantum coin plugin needs before its verdict drives game state",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-tools#4",
+   "falsification_condition": "a plugin event driven by a coin outcome with no pre-outcome witness row"
+  },
+  {
+   "from": "qa-negspace",
+   "to": "qt-api-lab",
+   "claim": "NEGATIVE_SPACE's declined-patch-12 doctrine is the same shape as E2's receipts-over-scores: document the divergence, never silently port it — the lab should score claims the same way",
+   "weight": "PENDING",
+   "provenance": "SuperInstance/quilt-arcade#2",
+   "falsification_condition": "a quilt-main PR merging the verbatim patch 12 with no cost-regression receipt"
+  },
+  {
+   "from": "qs-ep3",
+   "to": "qa-plugins",
+   "claim": "Episode 3's drag-to-reshape watcher loop is a playable reactive surface — the same seam the arcade plugins expose through run_all",
+   "weight": "PENDING",
+   "provenance": null,
+   "falsification_condition": "a watcher demo that cannot be re-expressed as a two-file plugin without losing behavior"
+  },
+  {
+   "from": "aw-quint-opcode",
+   "to": "ga-quilt-emit",
+   "claim": "AI-Writings/algebra.md defines the five-opcode spine and its laws (BIND idempotent; algebra.md says do not add opcodes); git-agent#1 (MERGED 2026-09-26T00:27:18Z, merge 6bc099a) built quilt_emit.py — vessel events mapped one-to-one to BIND/LINK/EFFECT/VIEW/TICK lines in a hash-chained WAL — on exactly that spine. git-agent#1's citation was DOCTRINAL only (\"the fleet quilt kernel speaks five opcodes\"), the source repo never named — so the edge was booked PENDING with the upgrade path recorded. CURRENCY EARNED 2026-09-26: git-agent PR #4 (merged 2026-09-26T09:11:41Z, merge 8d6c31a) lands the in-repo citation naming AI-Writings/algebra.md by name and URL (docs/GRAND-QUILT.md provenance block, live-verified on git-agent main), exactly the upgrade path booked here.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/git-agent#1",
+   "receipt": "SuperInstance/git-agent#4",
+   "falsification_condition": "git-agent quilt_emit.py shipping an opcode mapping that contradicts algebra.md semantics (e.g. VIEW given mutation semantics, or a 6th opcode added) with no algebra reference anywhere in the repo"
+  },
+  {
+   "from": "aw-jev-kat",
+   "to": "jq-kat-bridge",
+   "claim": "A fleet oracle instrument consumed by pin-and-digest is doctrine landing in the consumer's repo: AI-Writings#70 (MERGED 2026-09-29T21:26:53Z) shipped labs/jev-kat/jev_kat.mjs as the canonical KAT instrument, and SuperInstance/jev-quilt#47 (OPEN at booking 2026-09-30 — this pulse's commissioned bridge) names SuperInstance/AI-Writings in-repo at anchored sites: the bridge pins the instrument by repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5 as an executable constant, tests/test_jev_kat_bridge.py asserts the citation string survives in source (a drifted upstream cannot be bridged silently), and the module docstring records AI-Writings#70 as the instrument's canonical home. CURRENCY EARNED 2026-09-30: SuperInstance/jev-quilt PR #47 MERGED 2026-09-30T00:18:30Z (merge 45912589941ce29f02c8a6659bfe2b4e7abfccb9) — the weight law is met: a merged PR in the to-node's repo whose MAIN-tree source carries the load-bearing citation (verified by the 09:11 pulse: tools/jev_kat_bridge.mjs on jev-quilt main still pins repo + commit 3f8405888366e3697b3775017fa5fe13d6244226 + sha256 5f280b8b435852872fadeb449f4382275e80be56e80035da02274db8006e1cc5, and tests/test_jev_kat_bridge.py still asserts the citation string survives). The discovery watcher surfaced #47 among the candidates; the load-bearing check was done by hand, not self-upgraded. Precedent arc complete: aw-quint-opcode was booked PENDING on a merged-but-doctrinal citation and earned currency when a merge named the source — here the booking named the source from day one and the merge closed the loop one lifecycle step later.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/jev-quilt#47",
+   "receipt": "SuperInstance/jev-quilt#47",
+   "falsification_condition": "jev-quilt#47 merging with the SuperInstance/AI-Writings citation removed from tools/jev_kat_bridge.mjs source or the tests/test_jev_kat_bridge.py citation pin, or the bridge executing an instrument whose sha256 does not match the pinned digest 5f280b8b…e1cc5"
+  },
+  {
+   "from": "mm-sealed-receipts",
+   "to": "mgq-qcells-lab",
+   "claim": "A sealed receipt lineage nobody's experiment names is a ledger talking to itself: the qcells lab runs ON the MicroMoth substrate and consumes the ledger's sealed findings, and its merged work says so. CURRENCY EARNED 2026-09-30: micrograd-quilt PR #7 (\"qcells exp020-036: tie-band replication → two-regime desert hazard → triplet-stream rate-lane closure\", MERGED 2026-09-30T04:49:20Z, merge 44de605) is a merged PR IN THE TO-NODE'S REPO whose diff ADDS labs/qcells/FINDINGS.md citing SuperInstance/MicroMoth-quilt BY NAME at four anchored sites — the lab charter header (\"Lab for novel experimentation on SuperInstance/MicroMoth-quilt\"), the import-baseline manifest pin on MicroMoth-quilt main, the honest-limit gap posted on MicroMoth-quilt#3, and the receipts/ dir lane note — plus docs/synergy-scan-2026-09-30-0711.md consuming MicroMoth-quilt#23/#24's MERGED sealed findings to redirect the lab's own queue (\"the lab's follow-on items are now already answered cross-repo; do not re-run\"). The from-technique is the ledger those receipts seal into: fnv1a-64 import-baseline manifest + sha256 byte-match receipt tables with per-receipt FAIL-first pins (exp016 sealed receipt commit fba4ec7 via MicroMoth-quilt#22 is the exp019 data_provenance anchor). HONESTY: the 14:38 pulse's citation scan reported this repo cited ZERO times by micrograd-quilt main — that scan was a FALSE NEGATIVE; the re-audit that booked this edge found 5+ by-name citations in the merged tree, so no citation PR was opened (one would have been citation spam on a false premise) and the edge is booked directly on Casey's merge. Fourth and fifth repos born after seeding enter together; the lab is the producer, the ledger the seal — this edge books the ledger→lab direction, and the mirror (lab→ledger) is booked PENDING in the same hour.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/micrograd-quilt#7",
+   "falsification_condition": "the SuperInstance/MicroMoth-quilt citations removed from labs/qcells/FINDINGS.md or docs/synergy-scan-2026-09-30-0711.md, or a lab experiment consuming a sealed MicroMoth-quilt receipt with no receipt reference anywhere in the consuming artifact"
+  },
+  {
+   "from": "mgq-qcells-lab",
+   "to": "mm-sealed-receipts",
+   "claim": "The ledger's receipts seal the lab's work — and a seal that names its producer only by workspace path is a doctrinal citation, not a currency: it identifies the work, not the repo. MicroMoth-quilt PR #24 (\"exp018 receipt: hard-root autopsy — FITNESS DESERT AT THE BIRTH CLOUD\", MERGED 2026-09-29T21:25:32Z, merge 664506a5) seals the qcells lab's exp018 autopsy and names the producer as \"the qcells lab (workspace/labs/qcells)\" — a filesystem path, never the repo SuperInstance/micrograd-quilt. That was the git-agent#1 doctrinal-citation shape, booked PENDING for six hours. CURRENCY EARNED 2026-09-30 (17:56 pulse): **MicroMoth-quilt PR #29** (\"docs(audit): qcells lab canonical home = SuperInstance/micrograd-quilt — provenance note + citation pin\", MERGED 2026-09-30T09:27:01Z) is a merged PR IN THE TO-NODE'S REPO that adds an AUDIT.md \"Qcells lab — canonical home\" note naming SuperInstance/micrograd-quilt BY NAME as the lab's durable addressable home (labs/qcells tree; sealed lineage exp018–exp022 mirrored as receipt PRs #5–#7; MM↔mgq first lab↔ledger bidirectional pair), with tests/test_lab_home_citation.py pinning the citation in-repo (repo named; local path framed by citation — a drifted citation cannot pass silently). The graph's first bidirectional pair now carries VERIFIED mass in BOTH directions — mm→mgq earned by the lab's merged FINDINGS (micrograd-quilt#7), the mirror earned by the ledger's merged AUDIT note (MicroMoth-quilt#29). Sealed receipts untouched (immutable); the note amends provenance without rewriting history. Never self-upgraded — the merge in the target repo did the earning.",
+   "weight": "VERIFIED",
+   "provenance": "SuperInstance/MicroMoth-quilt#24",
+   "receipt": "SuperInstance/MicroMoth-quilt#29",
+   "falsification_condition": "a MicroMoth-quilt receipt sealing qcells-lab work that drops the workspace/labs/qcells producer reference entirely (the sealed bytes' provenance unmoored from any lab identity), or the upgrade PR merging with the SuperInstance/micrograd-quilt citation removed"
+  },
+  {
+   "from": "pq-named-refusals",
+   "to": "fm-refusal-ledger",
+   "claim": "pong-quilt's refusals are named, receipted, and prompt-content-free (QA-REFUSAL, byo-qpam-fallback, WAL-EXPORT/REFUSED, WAL-EXPORT/EMPTY, SEAL/REFUSED — and at R67 SAVE/COEV-EMPTY + LOAD/COEV-MALFORMED, with the SAVE/COEV-UNSTABLE R64 name surviving in claim prose as supersession lineage) — exactly the worked named-corpus substrate draft-kamimura-scitt-refusal-events-03's refusal-claim audit needs a real deployment to be read against. CURRENCY EARNED 2026-09-30: fleet-murmur PR #8 (\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 × pong-quilt named refusals\", MERGED 2026-09-30T19:31:12Z, merge b21a4a46) is a merged PR IN THE TO-NODE'S REPO citing SuperInstance/pong-quilt BY NAME at an anchored, pinned site: the ledger doc's PQ_PIN repo constant plus a corpus table pinned to pong-quilt main merge 52b42b4 — six named refusal kinds present-tense grepped at that pin with line-level sites recorded — and tests/test_refusal_events_ledger.py running a FAIL-first corpus pin (a main tree without the corpus trips RED naming the missing kind, so a drifted citation cannot pass silently). Direction honesty per the substrate's receipt-repo rule (edge #2 precedent): the merge is in fleet-murmur, so the edge books pq-named-refusals -> fm-refusal-ledger — currency flows INTO the citing repo. The 17:49 pulse's org note recorded \"mints pq->fm refusal-ledger edge\" at merge time; this booking lands the mint the merge earned — never self-upgraded. fleet-murmur becomes the fleet's first TRIPLE-inbound repo (honesty-receipts#2, qgs-adapter#3, refusal-ledger#8); pong-quilt's THIRD outgoing edge (session-wal honesty, stone-v1 forward-adoption, named refusals).",
+   "weight": "VERIFIED",
+   "provenance": null,
+   "receipt": "SuperInstance/fleet-murmur#8",
+   "falsification_condition": "the SuperInstance/pong-quilt citation removed from the ledger doc or the PQ_PIN corpus-pin test, or a re-audit of the pinned pong-quilt main merge where a named corpus kind is absent from the tree while the pin still reports green (a drifted citation passing silently)"
+  }
+ ]
+}

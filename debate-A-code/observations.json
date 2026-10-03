@@ -1,0 +1,64 @@
+[
+  {
+    "oid": "OBS-01",
+    "tier": "A",
+    "module": "chain-lint/chain_lint.py",
+    "repo": "chain-lint",
+    "task": "run the tool's own self-test",
+    "symptom": "`python3 chain_lint.py --self-test` printed all 7 self-test checks PASS, then died: ValueError: invalid literal for int() with base 10: '--self-test'. The flag that exists to prove the repair was never dispatched by main().",
+    "trace": "[{\"file\": \"chain_lint.py\", \"line\": 170, \"func\": \"<module>\"}, {\"file\": \"chain_lint.py\", \"line\": 139, \"func\": \"main\"}]",
+    "oracle": "chain-lint/chain_lint.py::main@131",
+    "reproduced": "executed this session",
+    "exit_code": 0,
+    "repair": "REPAIR-VERIFIED below: dispatch --self-test in main() -> exit 0"
+  },
+  {
+    "oid": "OBS-02",
+    "tier": "A",
+    "module": "readme-verifier/census.py",
+    "repo": "readme-verifier",
+    "task": "ask the census tool for its help text",
+    "symptom": "`python3 census.py --help` should print usage. Instead: ValueError: invalid literal for int() with base 10: '--help'. The tool reads sys.argv[1] positionally with no argument parser.",
+    "trace": "[{\"file\": \"census.py\", \"line\": 39, \"func\": \"<module>\"}]",
+    "oracle": "readme-verifier/census.py::<If>@38",
+    "reproduced": "executed this session",
+    "exit_code": 1,
+    "repair": "NOT repair-verified (no shipped self-test); the real frame is line 39, inside the top-level if-block enumerated as <If>@38"
+  },
+  {
+    "oid": "OBS-03",
+    "tier": "B",
+    "module": "chain-lint/chain_lint.py",
+    "repo": "chain-lint",
+    "task": "certify whether a repo's witness chain is in the DATA or only the SCHEMA",
+    "symptom": "Every cell in 550 live cells showed prev_hash uniformly zero, yet the linter reported the chain as PRESENT/linkage-complete. A field that is MISSING from the payload was counted as a live link, because is_zero('__MISSING__') is False and the caller only incremented on `not is_zero`.",
+    "trace": "[]",
+    "oracle": "chain-lint/chain_lint.py::is_zero@52",
+    "reproduced": "documented in-repo (BUG 2); self-test for it is REAL and runs",
+    "repair": "REPAIR-VERIFIED: self-test asserts None/MISSING/'' are ZERO, not LINKED"
+  },
+  {
+    "oid": "OBS-04",
+    "tier": "B",
+    "module": "chain-lint/chain_lint.py",
+    "repo": "chain-lint",
+    "task": "certify whether a repo's witness chain is in the DATA or only the SCHEMA",
+    "symptom": "Every zero hash fell through and was counted as a live link. The zero-set enumerated ONE exact 64-zero string, but the field carries 16 zeros, so the comparison was width-dependent and the tool called absent chain PRESENT.",
+    "trace": "[]",
+    "oracle": "chain-lint/chain_lint.py::is_zero@52",
+    "reproduced": "documented in-repo (BUG 1); self-test for it is REAL and runs",
+    "repair": "REPAIR-VERIFIED: self-test asserts a 16-zero hash is ZERO, not LINKED"
+  },
+  {
+    "oid": "OBS-05",
+    "tier": "B",
+    "module": "fleet-triage/resolver.py",
+    "repo": "fleet-triage",
+    "task": "resolve 6,729 citations across 2,295 documents and rank the failure categories",
+    "symptom": "The tool reports 73.9% resolution and 26.1% failure and names LINE_OOR as the sharpest, worst category. All 4 LINE_OOR findings are false positives produced by one bug; the category is EMPTY. A +/-140 character window is scanned and the FIRST line-number pattern in it is attached to the path, so in a numbered list the window spans adjacent items.",
+    "trace": "[]",
+    "oracle": "fleet-triage/resolver.py::extract_citations@384",
+    "reproduced": "documented post-mortem; a NEGATIVE CONTROL for it is REAL and runs",
+    "repair": "REPAIR-VERIFIED: test_resolver.py 'NEGATIVE CONTROL: the old code really did leak 977' reintroduces the legacy shim and proves the test catches it"
+  }
+]

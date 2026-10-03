@@ -1,0 +1,4192 @@
+{
+ "repo_root": "/run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/repos",
+ "note": "REPO-SIDE CLAIM SET. Built by reading .sql and wrangler configs only. No database was contacted. 'id_resolvable': false means the repo names a database but supplies no UUID, so the claim cannot be matched to any live database.",
+ "n_repos": 15,
+ "n_tables": 84,
+ "n_columns": 501,
+ "n_alters": 1,
+ "repos": [
+  {
+   "repo": "Tripartite1",
+   "database_name": "superinstance",
+   "database_id": "",
+   "id_resolvable": false,
+   "sql_files": [
+    "cloud/schema/001_initial.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "users",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "email",
+       "type": "TEXT",
+       "attrs": [
+        "UNIQUE"
+       ]
+      },
+      {
+       "name": "name",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "plan",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 'free'"
+       ]
+      },
+      {
+       "name": "settings",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT '{}'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "api_keys",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "key_hash",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "name",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "scopes",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT '[]'"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "last_used_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "expires_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "revoked",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "user_settings",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK",
+        "FK->users"
+       ]
+      },
+      {
+       "name": "settings",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT '{}'"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "billing_ledger",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "amount_cents",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "currency",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 'USD'"
+       ]
+      },
+      {
+       "name": "type",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "refund",
+       "type": "DESCRIPTION",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT '{}'"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "stripe_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "usage_records",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "type",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "lora_training",
+       "type": "TOKENS_IN",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "tokens_out",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "cost_cents",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "session_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT '{}'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "knowledge_documents",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "filename",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "checksum",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "r2_key",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "size_bytes",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "chunk_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "user_loras",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "name",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "base_model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "checksum",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "r2_key",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "size_bytes",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "public",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "price_cents",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT '{}'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chat_sessions",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "title",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "messages",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT '[]'"
+       ]
+      },
+      {
+       "name": "token_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "marketplace_listings",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "lora_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->user_loras"
+       ]
+      },
+      {
+       "name": "seller_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "title",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "description",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "price_cents",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "currency",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 'USD'"
+       ]
+      },
+      {
+       "name": "downloads",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "rating_sum",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "rating_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "status",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT 'pending'"
+       ]
+      },
+      {
+       "name": "suspended",
+       "type": "CREATED_AT",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "purchases",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "listing_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->marketplace_listings"
+       ]
+      },
+      {
+       "name": "buyer_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "seller_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "amount_cents",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "platform_fee_cents",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "seller_payout_cents",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "stripe_payment_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "reviews",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "listing_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->marketplace_listings"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "FK->users"
+       ]
+      },
+      {
+       "name": "rating",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "comment",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE(listing_id, user_id)"
+     ]
+    },
+    {
+     "table": "audit_log",
+     "source": "cloud/schema/001_initial.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "user_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "FK->users"
+       ]
+      },
+      {
+       "name": "action",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "resource_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "resource_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "details",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT '{}'"
+       ]
+      },
+      {
+       "name": "ip_address",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "user_agent",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (unixepoch()"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 103
+  },
+  {
+   "repo": "axum",
+   "database_name": null,
+   "database_id": null,
+   "id_resolvable": false,
+   "sql_files": [
+    "examples/diesel-async-postgres/migrations/2023-03-14-180127_add_users/down.sql",
+    "examples/diesel-async-postgres/migrations/2023-03-14-180127_add_users/up.sql",
+    "examples/diesel-postgres/migrations/2023-03-14-180127_add_users/down.sql",
+    "examples/diesel-postgres/migrations/2023-03-14-180127_add_users/up.sql"
+   ],
+   "has_migration_dir": true,
+   "n_migration_files": 4,
+   "tables": [
+    {
+     "table": "users",
+     "source": "examples/diesel-async-postgres/migrations/2023-03-14-180127_add_users/up.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "SERIAL",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "name",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "hair_color",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "users",
+     "source": "examples/diesel-postgres/migrations/2023-03-14-180127_add_users/up.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "SERIAL",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "name",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "hair_color",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 6
+  },
+  {
+   "repo": "fleet-memory",
+   "database_name": null,
+   "database_id": null,
+   "id_resolvable": false,
+   "sql_files": [
+    "migrations/0001_registry.sql",
+    "migrations/0002_index_template.sql"
+   ],
+   "has_migration_dir": true,
+   "n_migration_files": 2,
+   "tables": [
+    {
+     "table": "embedding_providers",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "provider_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "dims",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "endpoint",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "last_health_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE (kind, model, dims)"
+     ]
+    },
+    {
+     "table": "index_registry",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "index_name",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "db_path",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "doc_count",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "chunk_count",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      },
+      {
+       "name": "retired_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "CHECK (db_path NOT LIKE '/mnt/%')"
+     ]
+    },
+    {
+     "table": "reindex_runs",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "run_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "snapshot_manifest",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "started_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      },
+      {
+       "name": "finished_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "error",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "reindex_checkpoints",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "last_doc_path",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT ''"
+       ]
+      },
+      {
+       "name": "chunks_written",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "batches_done",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "peak_rss_bytes",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "creative_works",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "work_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "created_by",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "source_session",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "work_subjects",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "subject",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (work_id, subject)"
+     ]
+    },
+    {
+     "table": "work_renders",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "render_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "seq",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 1"
+       ]
+      },
+      {
+       "name": "location",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "sha256",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "size_bytes",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE (work_id, render_kind, seq)",
+      "CHECK (location_kind <> 'r2' OR location LIKE 'r2://%')",
+      "CHECK (location_kind <> 'ext4' OR location NOT LIKE '/mnt/%')",
+      "CHECK (render_kind NOT IN ('tts-audio','music','image','video') OR location_kind = 'r2' OR size_bytes <= 1048576) -- F6 "
+     ]
+    },
+    {
+     "table": "agent_decisions",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "decision_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "explicit",
+       "type": "AGENT",
+       "attrs": []
+      },
+      {
+       "name": "summary",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "loggable",
+       "type": "RATIONALE",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "reversibility",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "supersedes",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "FK->agent_decisions"
+       ]
+      },
+      {
+       "name": "session_ref",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "decision_links",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "target",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "index_meta",
+     "source": "migrations/0002_index_template.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "provider_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "dims",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "index_version",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "documents",
+     "source": "migrations/0002_index_template.sql",
+     "columns": [
+      {
+       "name": "doc_id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "path",
+       "type": "TEXT",
+       "attrs": [
+        "UNIQUE"
+       ]
+      },
+      {
+       "name": "mtime_ns",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "size_bytes",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "indexed_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chunks",
+     "source": "migrations/0002_index_template.sql",
+     "columns": [
+      {
+       "name": "chunk_id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "seq",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "text",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "content_hash",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "embedded_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE (doc_id, seq)",
+      "CHECK (end_offset > start_offset)"
+     ]
+    }
+   ],
+   "alters": [],
+   "n_columns": 54
+  },
+  {
+   "repo": "fleet-static-host",
+   "database_name": "quilt-fleet-db",
+   "database_id": "19d1d2f3-d6ef-48bb-9475-253f303bfb37",
+   "id_resolvable": true,
+   "sql_files": [
+    "migrations/0001_quilt_schema.sql",
+    "migrations/0002_forest.sql",
+    "migrations/0003_forest_walks.sql",
+    "migrations/0004_forest_walks_session.sql",
+    "migrations/0005_forest_refresh.sql",
+    "migrations/0006_mcp_audit.sql"
+   ],
+   "has_migration_dir": true,
+   "n_migration_files": 6,
+   "tables": [
+    {
+     "table": "cells",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "value_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, id)"
+     ]
+    },
+    {
+     "table": "edges",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "from_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "to_id",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, from_id, to_id)"
+     ]
+    },
+    {
+     "table": "history",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "old_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "new_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "listeners",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "watch",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "condition",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "action",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, cell_id)"
+     ]
+    },
+    {
+     "table": "ai_usage",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "tokens_in",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tokens_out",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "forest_nodes",
+     "source": "migrations/0002_forest.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "path",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "chunk",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "text",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "forest_edges",
+     "source": "migrations/0002_forest.sql",
+     "columns": [
+      {
+       "name": "src",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "dst",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "weight",
+       "type": "REAL",
+       "attrs": []
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (src, dst, kind)"
+     ]
+    },
+    {
+     "table": "forest_walks",
+     "source": "migrations/0003_forest_walks.sql",
+     "columns": [
+      {
+       "name": "ts",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "src",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "dst",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "forest_refresh",
+     "source": "migrations/0005_forest_refresh.sql",
+     "columns": [
+      {
+       "name": "ts",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "report_json",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "forest_refresh_history",
+     "source": "migrations/0005_forest_refresh.sql",
+     "columns": [
+      {
+       "name": "ts",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "summary",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "mcp_audit",
+     "source": "migrations/0006_mcp_audit.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "ts",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [
+    {
+     "table": "forest_walks",
+     "source": "migrations/0004_forest_walks_session.sql"
+    }
+   ],
+   "n_columns": 51
+  },
+  {
+   "repo": "keel-early-version",
+   "database_name": null,
+   "database_id": null,
+   "id_resolvable": false,
+   "sql_files": [
+    "docs/experiments/substrates/sql/schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "agents",
+     "source": "docs/experiments/substrates/sql/schema.sql",
+     "columns": [
+      {
+       "name": "name",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "tiles",
+     "source": "docs/experiments/substrates/sql/schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "tasks",
+     "source": "docs/experiments/substrates/sql/schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "title",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "description",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "DEFAULT ''"
+       ]
+      },
+      {
+       "name": "assignee",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "FK->agents"
+       ]
+      },
+      {
+       "name": "priority",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 5"
+       ]
+      },
+      {
+       "name": "status",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'pending'"
+       ]
+      },
+      {
+       "name": "deadline",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "trust",
+     "source": "docs/experiments/substrates/sql/schema.sql",
+     "columns": [
+      {
+       "name": "from_agent",
+       "type": "TEXT",
+       "attrs": [
+        "FK->agents"
+       ]
+      },
+      {
+       "name": "to_agent",
+       "type": "TEXT",
+       "attrs": [
+        "FK->agents"
+       ]
+      },
+      {
+       "name": "confidence",
+       "type": "REAL",
+       "attrs": [
+        "DEFAULT 0.5"
+       ]
+      },
+      {
+       "name": "ttl_seconds",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 3600"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 13
+  },
+  {
+   "repo": "mist-lab",
+   "database_name": "mist-lab-db",
+   "database_id": "c720fb84-09d1-4cf7-98f6-c0ed2daa7337",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "experiments",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "slug",
+       "type": "TEXT",
+       "attrs": [
+        "UNIQUE"
+       ]
+      },
+      {
+       "name": "verdict",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "headline_after",
+       "type": "REAL",
+       "attrs": []
+      },
+      {
+       "name": "headline_pct",
+       "type": "REAL",
+       "attrs": []
+      },
+      {
+       "name": "deltas_json",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "cached_answers",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 11
+  },
+  {
+   "repo": "mist-quilt",
+   "database_name": "mist-quilt-db",
+   "database_id": "9ee7851b-4bb4-4847-b0e8-eacc0ceeaba3",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "cells",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'value'"
+       ]
+      },
+      {
+       "name": "value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "value_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'game'"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, id)"
+     ]
+    },
+    {
+     "table": "history",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "old_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "new_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "sheet_meta",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tick_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chat_ledger",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "question",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "answer",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tokens",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 29
+  },
+  {
+   "repo": "rc-20260824-01",
+   "database_name": "quilt-fleet-db",
+   "database_id": "19d1d2f3-d6ef-48bb-9475-253f303bfb37",
+   "id_resolvable": true,
+   "sql_files": [
+    "migrations/0001_quilt_schema.sql"
+   ],
+   "has_migration_dir": true,
+   "n_migration_files": 1,
+   "tables": [
+    {
+     "table": "cells",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "value_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, id)"
+     ]
+    },
+    {
+     "table": "edges",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "from_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "to_id",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, from_id, to_id)"
+     ]
+    },
+    {
+     "table": "history",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "old_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "new_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "listeners",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "watch",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "condition",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "action",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, cell_id)"
+     ]
+    },
+    {
+     "table": "ai_usage",
+     "source": "migrations/0001_quilt_schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "tokens_in",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tokens_out",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT (strftime('%s'"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 34
+  },
+  {
+   "repo": "recovered-copy-20260824-fleet-memory",
+   "database_name": null,
+   "database_id": null,
+   "id_resolvable": false,
+   "sql_files": [
+    "migrations/0001_registry.sql",
+    "migrations/0002_index_template.sql"
+   ],
+   "has_migration_dir": true,
+   "n_migration_files": 2,
+   "tables": [
+    {
+     "table": "embedding_providers",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "provider_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "dims",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "endpoint",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "last_health_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE (kind, model, dims)"
+     ]
+    },
+    {
+     "table": "index_registry",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "index_name",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "db_path",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "doc_count",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "chunk_count",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      },
+      {
+       "name": "retired_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "CHECK (db_path NOT LIKE '/mnt/%')"
+     ]
+    },
+    {
+     "table": "reindex_runs",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "run_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "snapshot_manifest",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "started_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      },
+      {
+       "name": "finished_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "error",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "reindex_checkpoints",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "last_doc_path",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT ''"
+       ]
+      },
+      {
+       "name": "chunks_written",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "batches_done",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "peak_rss_bytes",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "creative_works",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "work_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "created_by",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "source_session",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "work_subjects",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "subject",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (work_id, subject)"
+     ]
+    },
+    {
+     "table": "work_renders",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "render_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "seq",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 1"
+       ]
+      },
+      {
+       "name": "location",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "sha256",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "size_bytes",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE (work_id, render_kind, seq)",
+      "CHECK (location_kind <> 'r2' OR location LIKE 'r2://%')",
+      "CHECK (location_kind <> 'ext4' OR location NOT LIKE '/mnt/%')",
+      "CHECK (render_kind NOT IN ('tts-audio','music','image','video') OR location_kind = 'r2' OR size_bytes <= 1048576) -- F6 "
+     ]
+    },
+    {
+     "table": "agent_decisions",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "decision_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "explicit",
+       "type": "AGENT",
+       "attrs": []
+      },
+      {
+       "name": "summary",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "loggable",
+       "type": "RATIONALE",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "reversibility",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "supersedes",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "FK->agent_decisions"
+       ]
+      },
+      {
+       "name": "session_ref",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "decision_links",
+     "source": "migrations/0001_registry.sql",
+     "columns": [
+      {
+       "name": "target",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "index_meta",
+     "source": "migrations/0002_index_template.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "provider_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "dims",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "index_version",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "documents",
+     "source": "migrations/0002_index_template.sql",
+     "columns": [
+      {
+       "name": "doc_id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "path",
+       "type": "TEXT",
+       "attrs": [
+        "UNIQUE"
+       ]
+      },
+      {
+       "name": "mtime_ns",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "size_bytes",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "indexed_at",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ'"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chunks",
+     "source": "migrations/0002_index_template.sql",
+     "columns": [
+      {
+       "name": "chunk_id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "seq",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "text",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "content_hash",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "embedded_at",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "UNIQUE (doc_id, seq)",
+      "CHECK (end_offset > start_offset)"
+     ]
+    }
+   ],
+   "alters": [],
+   "n_columns": 54
+  },
+  {
+   "repo": "recovered-copy-20260824-mist-lab",
+   "database_name": "mist-lab-db",
+   "database_id": "c720fb84-09d1-4cf7-98f6-c0ed2daa7337",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "experiments",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "slug",
+       "type": "TEXT",
+       "attrs": [
+        "UNIQUE"
+       ]
+      },
+      {
+       "name": "verdict",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "headline_after",
+       "type": "REAL",
+       "attrs": []
+      },
+      {
+       "name": "headline_pct",
+       "type": "REAL",
+       "attrs": []
+      },
+      {
+       "name": "deltas_json",
+       "type": "TEXT",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "cached_answers",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 11
+  },
+  {
+   "repo": "recovered-copy-20260824-mist-quilt",
+   "database_name": "mist-quilt-db",
+   "database_id": "9ee7851b-4bb4-4847-b0e8-eacc0ceeaba3",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "cells",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'value'"
+       ]
+      },
+      {
+       "name": "value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "value_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'game'"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, id)"
+     ]
+    },
+    {
+     "table": "history",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "old_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "new_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "sheet_meta",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tick_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chat_ledger",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "question",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "answer",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tokens",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 29
+  },
+  {
+   "repo": "recovered-copy-20260824-scrap-quilt",
+   "database_name": "scrap-quilt-db",
+   "database_id": "0e4399b7-9acc-4a16-aa5b-dd7b6ac31e3a",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "cells",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'value'"
+       ]
+      },
+      {
+       "name": "value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "value_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'game'"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, id)"
+     ]
+    },
+    {
+     "table": "history",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "old_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "new_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "sheet_meta",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tick_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "flash_log",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "hex_hash",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "board",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "size",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "source",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chat_ledger",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "question",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "answer",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tokens",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 37
+  },
+  {
+   "repo": "recovered-copy-20260824-scrap-voice",
+   "database_name": "scrap-voice-db",
+   "database_id": "601b91c0-3228-49f7-be36-26f258e9b4be",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "voice_media",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "emotion",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "route",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 8
+  },
+  {
+   "repo": "scrap-quilt",
+   "database_name": "scrap-quilt-db",
+   "database_id": "0e4399b7-9acc-4a16-aa5b-dd7b6ac31e3a",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "cells",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'value'"
+       ]
+      },
+      {
+       "name": "value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "value_type",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT 'game'"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "metadata",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (sheet_id, id)"
+     ]
+    },
+    {
+     "table": "history",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "cell_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "old_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "new_value",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "author",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "sheet_meta",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tick_count",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "updated_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "flash_log",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "sheet_id",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "hex_hash",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "board",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "size",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "source",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "t",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "chat_ledger",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "question",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "answer",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tokens",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    },
+    {
+     "table": "band_bars",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "room",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "bar",
+       "type": "INTEGER",
+       "attrs": []
+      },
+      {
+       "name": "voice",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "events_json",
+       "type": "TEXT",
+       "attrs": [
+        "DEFAULT '[]'"
+       ]
+      },
+      {
+       "name": "deadline_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "frozen_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": [
+      "PRIMARY KEY (room, bar, voice)"
+     ]
+    },
+    {
+     "table": "band_soaks",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "id",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "room",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "started_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "ended_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "tempo",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "bar_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "bars",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "stats_json",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "summary_json",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "created_at",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 53
+  },
+  {
+   "repo": "scrap-voice",
+   "database_name": "scrap-voice-db",
+   "database_id": "601b91c0-3228-49f7-be36-26f258e9b4be",
+   "id_resolvable": true,
+   "sql_files": [
+    "schema.sql"
+   ],
+   "has_migration_dir": false,
+   "n_migration_files": 0,
+   "tables": [
+    {
+     "table": "voice_media",
+     "source": "schema.sql",
+     "columns": [
+      {
+       "name": "hash",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE",
+        "PK"
+       ]
+      },
+      {
+       "name": "kind",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "emotion",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "model",
+       "type": "TEXT",
+       "attrs": []
+      },
+      {
+       "name": "route",
+       "type": "TEXT",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "duration_ms",
+       "type": "INTEGER",
+       "attrs": [
+        "NULLABLE"
+       ]
+      },
+      {
+       "name": "hits",
+       "type": "INTEGER",
+       "attrs": [
+        "DEFAULT 0"
+       ]
+      },
+      {
+       "name": "created",
+       "type": "INTEGER",
+       "attrs": []
+      }
+     ],
+     "constraints": []
+    }
+   ],
+   "alters": [],
+   "n_columns": 8
+  }
+ ]
+}

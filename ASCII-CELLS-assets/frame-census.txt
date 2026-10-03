@@ -1,0 +1,18 @@
+# cells total 2764800
+# cells where the enemy marker texture won the z-buffer: 142803
+# of those, how many the REAL frame also shows as colour 0x38 (marker code): 0
+# FALSE POSITIVES: marked cells whose real-frame colour is NOT the marker code: 142803
+# FALSE NEGATIVES: real-frame cells that are 0x38 but were not marked: 0
+# real-frame cells with colour 0x38: 0
+# distinct glyphs observed in real frames: char count
+#   ' '  187060
+#   '@'  67594
+#   '&'  27496
+#   '#'  77426
+#   '8'  369496
+#   'x'  520976
+#   '*'  419683
+#   ','  382576
+#   ':'  404506
+#   '.'  307987
+# distinct colours observed: 102

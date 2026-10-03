@@ -1,0 +1,11 @@
+# pack-refs with: peeled fully-peeled sorted 
+0666957a418de96a55f4bd9ce758e3949004c984 refs/heads/claude/audit-code-documentation-4Fyxx
+ed743d25cadcbfa6681f60366e0f1ccca581360d refs/heads/deps/onnxruntime-web-1.27.0-foldforward
+ec2213dca21dec5b75768e02f511fcf9f403c7f9 refs/heads/fix/ci-node-green-96
+f4c42f956f223b67f82190b54d477f843fde2c7c refs/heads/fix/personal-log-83-vitejs
+e09bed344a4117c63240999ebea0a9de15c4b182 refs/heads/fix/personal-log-88-testing-library-react
+c888725b089cac6ea68a25768cb06bd671fdf92c refs/heads/fix/personal-log-89-90-next
+38353e868448a47257704634cf94d50786bd9e57 refs/heads/fix/test-env-deadlocks
+40c2d5d869c397a7b89b5d48bb69db9c97191faa refs/heads/main
+9eda5f9a7b6456fa0d8208d23bbd50f22f54d1a5 refs/tags/v1.0.0
+^30df70f450c5040c2afbefeb280c88fefe464459

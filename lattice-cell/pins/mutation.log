@@ -1,0 +1,30 @@
+# lattice-cell mutation score — regenerated 2026-10-02T03:33:30Z
+# A green suite is not evidence. This is what the suite CONSTRAINS.
+# Rule: a kill requires a real FAIL line. A non-zero exit is NOT a kill —
+# the first version of this file read one and reported 6/6 for a suite
+# that had crashed on a missing import. See README and LATTICE.md.
+
+
+lattice-cell MUTATION SCORE
+=====================================================================
+KILLED   A  drop Dispatch-Id from the commit frame
+              expected to kill: I5a / I6a — the two planes can no longer be joined, so a lost outcome is unrecoverable
+              actually killed by: I5a
+KILLED   B  reconcile trusts the local object store instead of the remote
+              expected to kill: I6a — an unpushed local commit gets certified as delivered (this is the pinned false-repair bug)
+              actually killed by: I11b I11c
+KILLED   C  the dispatch row is written AFTER execute (the naive ordering)
+              expected to kill: I2 — the ledger stops being a pre-registration and becomes a receipt, which is the hole the design exists to remove
+              actually killed by: I10e
+KILLED   D  a no-op run is recorded as COMMIT
+              expected to kill: I7a — a passing test and a failing test emit the same code, the fleet signature
+              actually killed by: I7a I7d
+KILLED   E  the postcondition always holds
+              expected to kill: I8a — the frame degrades into a comment, which is the fiction-lane failure
+              actually killed by: I8a I8b
+KILLED   F  outcome accepted for an unknown dispatch id
+              expected to kill: I1b — a receipt with no work behind it
+              actually killed by: I1b
+---------------------------------------------------------------------
+SCORE: 6/6 killed (100%)
+No survivors. The suite constrains semantics, not just coverage.

@@ -1,0 +1,71 @@
+[1/7] claim 1 -- the variance identity and the F1 operator
+    identity            rel err = 4.46e-16   OK
+    iid halving         ratio   = 0.499500   OK
+    ACTUAL F1 variance  = 0.0   (paper predicts 0.4995)   <-- ERROR
+[2/7] claim 2a -- OU stationary variance in ONE degree of freedom
+    k=2.0   measured 0.25010 +/- 0.00249   exact 0.25025   z=-0.06   OK (sigma^2/2k is CORRECT in 1-D)
+    k=0.5   measured 0.99278 +/- 0.01960   exact 1.00025   z=-0.38   OK (sigma^2/2k is CORRECT in 1-D)
+    k=0.2   measured 2.36306 +/- 0.06776   exact 2.50025   z=-2.02   OK (sigma^2/2k is CORRECT in 1-D)
+[3/7] claim 2b/3 -- the d-dimensional GEOMETRY FACTOR
+    d(log v)/d(log k): {'paper_regime_d1_N1024': -1.0, 'paper_regime_d2_N32': -0.999, 'crossover_d1_N1024': -0.52, 'crossover_d2_N32': -0.2, 'far_IR_d1_N1024': -0.985, 'far_IR_d2_N32': -1.0}
+    paper predicts -1 everywhere.
+    Fourier-mode simulation of the paper's own equation, N=128:
+      k=0.1    dt=1.22e-01  simulated 100.74912   exact 99.95121   paper 5.00000   per-cell: 0.78087 vs paper 5.00000  (0.156x)
+      k=1.0    dt=1.00e-01  simulated 28.64700   exact 28.62167   paper 0.50000   per-cell: 0.22361 vs paper 0.50000  (0.447x)
+      k=100.0  dt=4.81e-03  simulated 0.62781   exact 0.62757   paper 0.00500   per-cell: 0.00490 vs paper 0.00500  (0.981x)
+[4/7] claim 4 -- discontinuous operators, and projectors
+    global mean (full consensus)             V_final=0            asym_halflife=nan       uniform_reachable=True
+    neighbour mean D=0.25 (diffusion)        V_final=0.005065     asym_halflife=1375      uniform_reachable=True
+    neighbour mean, max stable step          V_final=0.0039363    asym_halflife=1213      uniform_reachable=True
+    MEDIAN-3  (discontinuous, deterministic) V_final=0.31809      asym_halflife=inf       uniform_reachable=True
+    quantised mean  (discontinuous)          V_final=0            asym_halflife=nan       uniform_reachable=True
+    rank-1 projector  (= the average)        V_final=0            asym_halflife=nan       uniform_reachable=True
+    orthocomplement projector                V_final=0.94743      asym_halflife=inf       uniform_reachable=True
+    random rank-4 projector                  V_final=0.0021199    asym_halflife=2.163e+08 uniform_reachable=True
+    (the paper's claim 4 is 'unreachable rather than merely slow' --
+     'uniform_reachable' is the direct falsification test.)
+    diffusion: exact asymptotic variance half-life = 2301.3 gen  vs paper's 1.0  (2301x slower than claimed)
+    scaling: T = 0.0088 N^2/D, so MORE participants => SLOWER collapse, quadratically
+      bisection check  D=0.125 q=1*2pi/N: measured   4602.5  theory   4602.7  ratio 0.99996
+      bisection check  D=0.25  q=1*2pi/N: measured   2301.5  theory   2301.3  ratio 1.00011
+      bisection check  D=0.4   q=1*2pi/N: measured   1438.5  theory   1438.2  ratio 1.00020
+      bisection check  D=0.25  q=2*2pi/N: measured    575.5  theory    575.3  ratio 1.00040
+      bisection check  D=0.25  q=4*2pi/N: measured    143.5  theory    143.8  ratio 0.99809
+    neighbour mean D=0.25          fit over the last decade gives halflife   2301.1   exact   2301.3   (fit is an upper bound on the true rate)
+[5/7] part B -- does averaging collapse, does recombination hold it?
+    iid blend of 2 random parents (the paper's Var_0*2^-n) spread_final=0.0906    selfavg_final=0.0000   
+    Mendelian crossover / resampling (i.i.d. -- thesis-compliant) spread_final=1.0086    selfavg_final=0.0000   
+    crossover + independent recombination 0.01       spread_final=1.0121    selfavg_final=0.0000   
+    crossover + independent recombination 0.10       spread_final=0.9411    selfavg_final=0.0000   
+    theory: self-averaging halflife 21.8 gen,  WF allele-freq halflife 44.7 gen,  paper claims 1.0 gen
+[6/7] CONTROLS
+    w_Aa=1.00  (s=0.0 ) selfavg@final=0.0000   diversity halflife =     41.7 generations
+    w_Aa=1.10  (s=0.1 ) selfavg@final=0.0000   diversity halflife =     64.9 generations
+    w_Aa=1.30  (s=0.3 ) selfavg@final=0.0000   diversity halflife =    116.1 generations
+    w_Aa=2.00  (s=1.0 ) selfavg@final=0.0046   diversity halflife =    647.4 generations
+    w_Aa=4.00  (s=3.0 ) selfavg@final=0.0656   diversity halflife =   8444.0 generations
+    theory: neutral halflife = 21.8 gen
+    ^ the row the thesis licenses (s=0, independent) is the SHORTEST.
+      every extension of it requires a state-dependent operator,
+      i.e. recombination CORRELATED with the private signal.
+    independent crossover (thesis-compliant)           selfavg_final=0.0000     spread_final=0.9954    
+    DISASSORTATIVE: recomb correlated with private signal selfavg_final=2.2298     spread_final=3.3126    
+    ASSORTATIVE: recomb correlated the other way       selfavg_final=0.0000     spread_final=0.1603    
+    seed control (8 seeds, crossover): selfavg_final 1.963e-31 +/- 2.883e-32  (max 2.453e-31)
+    init gaussian                     V_init=0.9474     -> V_final=0.005065    
+    init bimodal +-1                  V_init=1          -> V_final=0           
+    init single spike                 V_init=38.91      -> V_final=0.1319      
+    init linear ramp                  V_init=0.3359     -> V_final=0.08412     
+    init constant (already uniform)   V_init=3.155e-30  -> V_final=3.155e-30   
+    ablation -- is any term inert?
+      k=0.0   D=0.0  k=0: NO stationary state, V grows ~ sigma^2 t V_field=inf          per-cell=inf         
+      k=0.0   D=1.0  k=0: NO stationary state, V grows ~ sigma^2 t V_field=inf          per-cell=inf         
+      k=0.5   D=0.0  no diffusion: each cell an independent OU     V_field=128          per-cell=1           
+      k=0.5   D=1.0  full equation                                 V_field=42.667       per-cell=0.33333     
+      k=2.0   D=0.0  no diffusion: each cell an independent OU     V_field=32           per-cell=0.25        
+      k=2.0   D=1.0  full equation                                 V_field=18.475       per-cell=0.14434     
+[7/7] claim 3 -- the projection
+    mean map: rank 1, fibre dim 5, identical means: True  (theorem, but true of every non-injective map)
+
+wrote /run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/F1/out/results.json
+wrote plots to /run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/projects/fleet-triage/F1/out/

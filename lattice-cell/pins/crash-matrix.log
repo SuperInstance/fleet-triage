@@ -1,0 +1,45 @@
+# lattice-cell crash matrix — regenerated 2026-10-02T03:33:30Z
+# node v22.19.0, git 2.39.5
+# Each row: a child process is killed HARD (exit 137) at one checkpoint.
+# No finally, no atexit, no flush. This is the liveness question measured,
+# not reasoned about.
+
+
+lattice-cell CRASH MATRIX — a hard kill (exit 137) at each checkpoint
+======================================================================
+CRASH     | EXIT | LEDGER                     | LOCAL_TIP | REMOTE_TIP | FRAME
+----------|------|----------------------------|---------|-----------|-----
+wake      | 137  | -                          | 5104dea | 5104dea | dispatch-ids-in-history:0
+dispatch  | 137  | 1/settled:                 | 5104dea | 5104dea | dispatch-ids-in-history:0
+execute   | 137  | 1/settled:                 | 5104dea | 5104dea | dispatch-ids-in-history:0
+commit    | 137  | 1/settled:                 | 0bdb34c | c6b7195 | dispatch-ids-in-history:1
+push      | 137  | 1/settled:                 | f218af6 | f218af6 | dispatch-ids-in-history:1
+outcome   | 137  | 1/settled:COMMIT           | 33104b3 | 33104b3 | dispatch-ids-in-history:1
+
+----------------------------------------------------------------------
+legend: LEDGER = dispatches/settled:<statuses>   LOCAL/REMOTE_TIP = short sha
+
+## RECONCILIATION AFTER EACH CRASH
+
+wake      open=0 | repaired: none | LOST: none | stillOpen=0
+dispatch  open=1 | repaired: none | LOST: none | stillOpen=1
+execute   open=1 | repaired: none | LOST: none | stillOpen=1
+commit    open=1 | repaired: none | LOST: d-0-6d344e@0bdb34c | stillOpen=0
+push      open=1 | repaired: d-0-407b06@f218af6 | LOST: none | stillOpen=0
+outcome   open=0 | repaired: none | LOST: none | stillOpen=0
+
+## READING THE TABLE
+  wake     — died before the dispatch row existed. ZERO trace. Unrecoverable
+             by design, and the reason the DISPATCHER must write the row,
+             not the cell.
+  dispatch — row is durable, work has not begun. An open lease: re-askable.
+  execute  — same, plus wasted work. Still an open lease.
+  commit   — THE QUESTION IN THE BRIEF. The commit exists in the worktree
+             and never reached the remote. Reconcile records LOST, a
+             NEGATIVE receipt. Without it this is indistinguishable from
+             a clean run. (An earlier version recorded COMMIT here; the
+             false repair is pinned in bug-false-repair.log and killed
+             by I11b/I11c.)
+  push     — the commit IS on the remote; only the outcome was lost.
+             Reconcile repairs it from Dispatch-Id. Recoverable.
+  outcome  — clean.

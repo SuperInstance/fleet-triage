@@ -1,0 +1,38 @@
+# A FALSE REPAIR: the reconciler agreed with itself. Found and fixed 2026-10-02.
+#
+# This is kept as a pin because it is the most instructive failure in this
+# repo, and because the fix is the only thing that makes `reconcile()` safe.
+#
+# THE BUG. The first version of reconcile() found commits carrying
+# `Dispatch-Id:` by scanning `git rev-list --all`, and recorded COMMIT for each
+# one it found. `--all` includes the LOCAL WORKTREE. So a commit the Worker had
+# made and never pushed — the exact window the whole design exists to cover —
+# was recorded as delivered.
+#
+# MEASURED, from the `commit` row of the crash matrix:
+#     remote refs : c6b7195 refs/heads/main
+#     local  HEAD : 0bdb34c            <- a different object
+#     ledger said : COMMIT @ 0bdb34c
+#     cold clone  : `git cat-file -e 0bdb34c` -> NO
+# A fresh clone of the remote could not see the object the ledger certified.
+# The reconciler was not verifying delivery; it was asking the agent whether it
+# had done the work, and the agent said yes.
+#
+# WHY IT MATTERS MORE THAN A CRASH. A hole in a hash chain is visible. This was
+# not a hole — it was a VALID ledger with a FALSE entry, which is strictly worse
+# than an absence, because absence is at least honest. It is the same shape as
+# the fleet's standing failure one level up: a chain that agrees with itself.
+# A receipt that re-hashes the system's own output is circular.
+#
+# THE FIX (src/cell.js, reconcile()). Evidence of delivery must come from a
+# witness the reconciler does not control:
+#     1. `git ls-remote origin` for the set of tips a stranger could fetch
+#     2. a direct `git fetch <remote> <sha>` probe for anything not obviously there
+#     3. if neither reaches the remote -> record LOST, a NEGATIVE receipt
+# `git log --all` and `git rev-list --all` are still used to enumerate
+# candidates, but a candidate is not a finding.
+#
+# THE REGRESSION TEST: tests/invariants.mjs I11a–I11d, which build the unpushed
+# case, ask a COLD CLONE whether the object is visible, and require LOST.
+# tests/mutation.mjs mutant B re-introduces the original bug and is killed by
+# I11b/I11c. The mutant is the receipt; the test is the claim.

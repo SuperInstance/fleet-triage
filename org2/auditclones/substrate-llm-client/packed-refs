@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+ccd36ededf96501975af7a48b0eedffbb0b4eb07 refs/heads/claude/model-roster-bootstrap
+dfb1329914181260acc9ab1f162978d4ef44e3d6 refs/heads/legibility/negative-space-audit
+9583227cacff0b302cda08c7cf1fb05d25db94dc refs/heads/main

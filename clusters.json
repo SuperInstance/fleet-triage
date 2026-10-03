@@ -1,0 +1,3865 @@
+[
+ {
+  "size": 206,
+  "members": [
+   "agent-handshake-rs",
+   "agent-manifest-rs",
+   "audio-mixer",
+   "band-agent-rs",
+   "band-ensemble-rs",
+   "band-midi-rs",
+   "capability-spec-rs",
+   "cocapn-health",
+   "cocapn-health-rs",
+   "codegen-llvm",
+   "competitive-intel",
+   "conservation-rhythm-rs",
+   "constraint-theory-core-cuda",
+   "constraint-theory-llvm",
+   "ct-bridge-npm",
+   "ct-demo",
+   "deadband-constrained",
+   "deadband-python",
+   "demo",
+   "dissertation",
+   "editors",
+   "ergodic-transport-c",
+   "ergodic-transport-rs",
+   "evolution-ternary",
+   "feedback-engine",
+   "fleet-audio",
+   "fleet-h1-router",
+   "fleet-health",
+   "fleet-midi-feed",
+   "flux-deploy",
+   "flux-esp32",
+   "flux-isa-c",
+   "flux-isa-edge",
+   "flux-isa-mini",
+   "flux-isa-std",
+   "flux-lucid",
+   "flux-sdk-python",
+   "for-fleet",
+   "forge-audio",
+   "forge-cli",
+   "forge-code",
+   "forge-data",
+   "forge-detect",
+   "forge-image",
+   "forge-meta",
+   "forge-sensor",
+   "forge-soniqo",
+   "forge-text",
+   "free-probability",
+   "free-probability-c",
+   "free-probability-rs",
+   "from-fleet",
+   "frontends",
+   "gpu-experiments",
+   "gpu-kernels",
+   "guard-constraints",
+   "guard-dsl",
+   "h1-emergence",
+   "health",
+   "health-monitoring-service",
+   "hodge-music-rs",
+   "hodge-theory",
+   "holodeck-session-manager",
+   "holonomy-bounded",
+   "i2i",
+   "integration_tests",
+   "intention-field-rs",
+   "kimi-swarm-results",
+   "kimi-swarm-results-2",
+   "lau-a2a-protocol",
+   "lau-control-theory-agents",
+   "lau-docs-voice-patterns",
+   "lau-event-bus",
+   "lau-feedback",
+   "lau-free-probability",
+   "lau-free-probability-agents",
+   "lau-fuzzy-logic",
+   "lau-hodge-decomposition-agents",
+   "lau-hodge-theory",
+   "lau-mirror-control",
+   "lau-sia2-engine",
+   "lau-sia2-engine-c",
+   "lau-sia2-engine-go",
+   "lau-sia2-engine-wasm",
+   "lau-signal-processing",
+   "lau-signal-processing-agents",
+   "lau-ts-bridge",
+   "lau-voice",
+   "lau-wasm-bridge",
+   "lighthouse-monitor",
+   "llvm-xconstr",
+   "memory",
+   "message-in-a-bottle",
+   "midi-flux-bridge",
+   "monitoring-dashboard",
+   "mud-agent",
+   "optimized-system-monitor",
+   "persistent-sheaf",
+   "persistent-sheaf-rs",
+   "plato-a2a",
+   "plato-address-bridge",
+   "plato-anomaly",
+   "plato-attention-tracker",
+   "plato-browser",
+   "plato-capability",
+   "plato-conserve",
+   "plato-coordination",
+   "plato-correlate",
+   "plato-dashboard",
+   "plato-diffusion",
+   "plato-distill",
+   "plato-downsample",
+   "plato-engine-block",
+   "plato-engine-block-gleam",
+   "plato-event",
+   "plato-filter",
+   "plato-fleet-chapel",
+   "plato-flux-compiler",
+   "plato-forge-bridge",
+   "plato-hardware-engine",
+   "plato-hdc-bridge",
+   "plato-kernel-constraints",
+   "plato-llvm-bridge",
+   "plato-predict",
+   "plato-room-phi",
+   "plato-rooms",
+   "plato-route",
+   "plato-scout",
+   "plato-soul-fingerprint",
+   "plato-spectral",
+   "plato-state",
+   "plato-studio",
+   "plato-tiles",
+   "plato-timing",
+   "plato-transform",
+   "plato-transport",
+   "plato-voice",
+   "plato-watch",
+   "playtest-results",
+   "plugin-dashboard",
+   "portfolio",
+   "products",
+   "proposals",
+   "quilt-bus",
+   "references",
+   "research",
+   "reviews",
+   "scripts",
+   "self-improving-band",
+   "sensor-plato-bridge",
+   "sheaf-persistence-bundle",
+   "si-feedback",
+   "skills",
+   "spectral-deadband-v2",
+   "spectral-est",
+   "state",
+   "superinstance-ternary-wavelet",
+   "swarm-code",
+   "templates",
+   "tensor-midi",
+   "terminal-forecast-harness",
+   "terminal-hodge-harness",
+   "terminal-sheaf-harness",
+   "ternary-circuit",
+   "ternary-color",
+   "ternary-compiler-v2",
+   "ternary-compression-v2",
+   "ternary-control",
+   "ternary-database",
+   "ternary-econ",
+   "ternary-envelope",
+   "ternary-event",
+   "ternary-failure",
+   "ternary-fuzzy",
+   "ternary-geometry",
+   "ternary-grain",
+   "ternary-graph",
+   "ternary-haar",
+   "ternary-hardware",
+   "ternary-lattice",
+   "ternary-logic",
+   "ternary-matrix",
+   "ternary-muse",
+   "ternary-music",
+   "ternary-pipeline",
+   "ternary-planning",
+   "ternary-register-file",
+   "ternary-ring",
+   "ternary-robotics",
+   "ternary-scheduling",
+   "ternary-scheduling-v2",
+   "ternary-search",
+   "ternary-sensor",
+   "ternary-signals",
+   "ternary-sort",
+   "ternary-streaming",
+   "ternary-transform",
+   "ternary-trees",
+   "ternary-visualization",
+   "tests",
+   "tools",
+   "topology-anomaly-detector",
+   "tropical-harmony-rs",
+   "vessel",
+   "vocabularies",
+   "wavelet-core"
+  ],
+  "key_tops": [
+   "superinstance",
+   "rust",
+   "plato",
+   "ternary",
+   "preserved",
+   "workspace",
+   "artifact",
+   "knowledge",
+   "stack",
+   "gpu",
+   "oxide",
+   "agent",
+   "fleet",
+   "agents"
+  ],
+  "langs": [
+   [
+    "Rust",
+    124
+   ],
+   [
+    "Python",
+    28
+   ],
+   [
+    null,
+    24
+   ],
+   [
+    "Makefile",
+    6
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 57,
+  "members": [
+   "caching-service",
+   "congestion-control",
+   "entropy-flow-rs",
+   "entropy-gradient",
+   "fleet-agent-early-version",
+   "fleet-auth",
+   "fleet-diffrhythm-connector",
+   "fleet-event-router",
+   "fleet-fugue-engine",
+   "fleet-hydra-connector",
+   "fleet-jam-engine",
+   "fleet-magenta-connector",
+   "fleet-maidi-connector",
+   "fleet-midee-connector",
+   "fleet-midi-articulation",
+   "fleet-midi-bridge",
+   "fleet-midi-collab",
+   "fleet-midi-dynamics",
+   "fleet-midi-expression",
+   "fleet-midi-filter",
+   "fleet-midi-flux",
+   "fleet-midi-foxdot",
+   "fleet-midi-fractal",
+   "fleet-midi-generator",
+   "fleet-midi-grammar",
+   "fleet-midi-graph",
+   "fleet-midi-juce",
+   "fleet-midi-looper",
+   "fleet-midi-markov",
+   "fleet-midi-monitor",
+   "fleet-midi-musiclang",
+   "fleet-midi-pattern",
+   "fleet-midi-pedagogy",
+   "fleet-midi-player",
+   "fleet-midi-pulse",
+   "fleet-midi-quantizer",
+   "fleet-midi-router",
+   "fleet-midi-script",
+   "fleet-midi-sonicpi",
+   "fleet-midi-symusic",
+   "fleet-midi-synth",
+   "fleet-midi-tidalcycles",
+   "fleet-midi-tokenizer",
+   "fleet-midi-velocity",
+   "fleet-midi-visualizer",
+   "fleet-music-theorist",
+   "fleet-osc-server",
+   "fleet-rave-connector",
+   "fleet-sheet-music",
+   "fleet-sound-toolkit",
+   "fleet-symmetry-analyzer",
+   "fleet-ternary-music",
+   "fleet-touchdesigner-connector",
+   "fleet-voice-leader",
+   "flow-control",
+   "mac-digest",
+   "network-flow"
+  ],
+  "key_tops": [
+   "fleet",
+   "superinstance",
+   "rust",
+   "distributed",
+   "systems",
+   "midi",
+   "service",
+   "integration",
+   "bridge",
+   "between",
+   "generation",
+   "agent",
+   "math",
+   "based"
+  ],
+  "langs": [
+   [
+    "Python",
+    27
+   ],
+   [
+    "Rust",
+    9
+   ],
+   [
+    "JavaScript",
+    9
+   ],
+   [
+    "Go",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 49,
+  "members": [
+   "caas-api",
+   "climate-conservation",
+   "code-conservation",
+   "conservation-api",
+   "conservation-art",
+   "conservation-conformance",
+   "conservation-spectral-ada",
+   "conservation-spectral-asm",
+   "conservation-spectral-core",
+   "conservation-spectral-fortran",
+   "conservation-spectral-js",
+   "conservation-spectral-mojo",
+   "conservation-spectral-opencl",
+   "conservation-spectral-pascal",
+   "conservation-spectral-ptx",
+   "conservation-spectral-python",
+   "conservation-spectral-v2",
+   "conservation-spectral-vulkan",
+   "conservation-spectral-webgpu",
+   "conservation-spectral-zig",
+   "cospectral-explorer",
+   "field-dynamics",
+   "field-dynamics-sim",
+   "grand-pattern-gpu",
+   "grand-pattern-java",
+   "grand-pattern-py",
+   "grand-pattern-swift",
+   "grand-pattern-ts",
+   "grand-pattern-zig",
+   "graph-neural",
+   "kernel-conservation",
+   "lattice-climate",
+   "linguistic-spectral",
+   "neural-conservation",
+   "openconstruct-cs",
+   "openconstruct-go",
+   "openconstruct-kernel",
+   "openconstruct-modular",
+   "openconstruct-python",
+   "openconstruct-ruby",
+   "openconstruct-rust",
+   "openconstruct-ts",
+   "openconstruct-zig",
+   "plato-protocol-test",
+   "protein-conservation",
+   "spectral-explorer",
+   "spectral-fleet",
+   "spectral-graph-agent-rs",
+   "spectral-graphing-calculator"
+  ],
+  "key_tops": [
+   "superinstance",
+   "spectral",
+   "openconstruct",
+   "conservation",
+   "graph",
+   "analysis",
+   "rust",
+   "sdk",
+   "agent",
+   "implementation",
+   "onboarding",
+   "experiment",
+   "grand",
+   "pattern"
+  ],
+  "langs": [
+   [
+    "Python",
+    16
+   ],
+   [
+    "Rust",
+    9
+   ],
+   [
+    "HTML",
+    4
+   ],
+   [
+    "TypeScript",
+    3
+   ]
+  ],
+  "date_range": [
+   "2026-05-29",
+   "2026-07-13"
+  ]
+ },
+ {
+  "size": 48,
+  "members": [
+   "beta-test-framework",
+   "beta-test-marcus",
+   "cicd-agent",
+   "clip-quantize",
+   "conservation-law",
+   "conservation-law-v2",
+   "conservation-matrix-c",
+   "conservation-verify",
+   "conservation-verify-c",
+   "flux-baton-test",
+   "lau-math-wasm",
+   "si-bench",
+   "ternary-activation",
+   "ternary-arithmetic",
+   "ternary-baum-welch",
+   "ternary-command-buffer",
+   "ternary-criticality",
+   "ternary-dropout",
+   "ternary-ear-training",
+   "ternary-em",
+   "ternary-event-pool",
+   "ternary-fence",
+   "ternary-forgiveness",
+   "ternary-game-of-life",
+   "ternary-grid-launch",
+   "ternary-kernel-launch",
+   "ternary-logistic",
+   "ternary-loss",
+   "ternary-memory-pool",
+   "ternary-norm",
+   "ternary-optimizer",
+   "ternary-quantize",
+   "ternary-regression",
+   "ternary-renormalize",
+   "ternary-runlength",
+   "ternary-shared-memory",
+   "ternary-stream-queue",
+   "ternary-surface-memory",
+   "ternary-texture-memory",
+   "ternary-thread-block",
+   "ternary-transformer",
+   "ternary-warp-block",
+   "test-pages-repo",
+   "test-repo",
+   "test-rs",
+   "test-runner-vessel",
+   "test-sdk-connection",
+   "test-tool-extract"
+  ],
+  "key_tops": [
+   "superinstance",
+   "ternary",
+   "rust",
+   "conservation",
+   "law",
+   "ecosystem",
+   "crate",
+   "test",
+   "fleet",
+   "agent",
+   "testing",
+   "laws",
+   "flux",
+   "memory"
+  ],
+  "langs": [
+   [
+    "Rust",
+    37
+   ],
+   [
+    null,
+    8
+   ],
+   [
+    "C",
+    2
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 37,
+  "members": [
+   "canonical-form",
+   "fleet-math",
+   "fleet-proto",
+   "fleet-proto-rs",
+   "fleet-protocol",
+   "fleet-types",
+   "gpu-persistent-homology",
+   "plato-room-acl",
+   "plato-room-analytics",
+   "plato-room-invite",
+   "plato-room-presence",
+   "plato-room-webhook",
+   "si-runtime-go",
+   "si-runtime-python",
+   "superinstance-core",
+   "ternary-agent",
+   "ternary-beacon",
+   "ternary-btree",
+   "ternary-cell",
+   "ternary-cell-python",
+   "ternary-classifier",
+   "ternary-consensus",
+   "ternary-core",
+   "ternary-entropy",
+   "ternary-esp32-firmware",
+   "ternary-experiment-workers",
+   "ternary-field",
+   "ternary-fitness",
+   "ternary-fitness-python",
+   "ternary-hash",
+   "ternary-homology",
+   "ternary-manifesto",
+   "ternary-protocol",
+   "ternary-protocol-python",
+   "ternary-topology",
+   "ternary-types",
+   "ternary-wasm"
+  ],
+  "key_tops": [
+   "ternary",
+   "rust",
+   "gpu",
+   "oxide",
+   "stack",
+   "superinstance",
+   "fleet",
+   "ecosystem",
+   "plato",
+   "types",
+   "core",
+   "protocol",
+   "field",
+   "systems"
+  ],
+  "langs": [
+   [
+    "Rust",
+    19
+   ],
+   [
+    "Python",
+    13
+   ],
+   [
+    "Cuda",
+    1
+   ],
+   [
+    "Go",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 31,
+  "members": [
+   "cocapn-abyss",
+   "cocapn-audit",
+   "cocapn-benchmark",
+   "cocapn-coliseum",
+   "cocapn-curriculum-forest",
+   "cocapn-dreamer",
+   "cocapn-dry-dock",
+   "cocapn-fleetmind",
+   "cocapn-garden",
+   "cocapn-horizon",
+   "cocapn-identity",
+   "cocapn-meta-lab",
+   "cocapn-nas",
+   "cocapn-observatory",
+   "cocapn-pipeline",
+   "cocapn-platonic-dial",
+   "cocapn-protocol",
+   "cocapn-telemetry",
+   "cocapn-training",
+   "cocapn-workshop",
+   "cocapn-worldmodel",
+   "dry-dock",
+   "ensign-protocol",
+   "fleet-status",
+   "garden",
+   "horizon",
+   "lucid-dreamer-interactive",
+   "lucid-tutor",
+   "lucid-tutor-c",
+   "observatory",
+   "workshop"
+  ],
+  "key_tops": [
+   "fleet",
+   "cocapn",
+   "crate",
+   "python",
+   "superinstance",
+   "module",
+   "dreamer",
+   "utilities",
+   "lucid",
+   "dry",
+   "dock",
+   "garden",
+   "horizon",
+   "observatory"
+  ],
+  "langs": [
+   [
+    null,
+    20
+   ],
+   [
+    "Python",
+    8
+   ],
+   [
+    "HTML",
+    1
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-26",
+   "2026-08-14"
+  ]
+ },
+ {
+  "size": 22,
+  "members": [
+   "agent-field",
+   "collective-ai",
+   "commit-predictor",
+   "coq-unified",
+   "flux-vm-classic",
+   "flywheel",
+   "fm-experiments",
+   "fm-papers",
+   "fm-research",
+   "fm-research-archive",
+   "forgemaster-docs",
+   "forgemaster-fleet-comms",
+   "forgemaster-memory-archive",
+   "plato-engine",
+   "snapkit-c",
+   "snapkit-cuda",
+   "snapkit-fortran",
+   "snapkit-rust",
+   "snapkit-zig",
+   "swarm-rooms",
+   "tensor-penrose",
+   "zeitgeist-protocol"
+  ],
+  "key_tops": [
+   "extracted",
+   "forgemaster",
+   "cocapn",
+   "fleet",
+   "component",
+   "rust",
+   "superinstance",
+   "plato",
+   "training",
+   "snapkit",
+   "research",
+   "tensor",
+   "agents",
+   "field"
+  ],
+  "langs": [
+   [
+    "Python",
+    10
+   ],
+   [
+    "Rust",
+    3
+   ],
+   [
+    "Cuda",
+    2
+   ],
+   [
+    "Rocq Prover",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-05-22",
+   "2026-08-21"
+  ]
+ },
+ {
+  "size": 22,
+  "members": [
+   "activeledger-ai-pages",
+   "activelog-ai-pages",
+   "businesslog-ai-pages",
+   "capitaine-ai-pages",
+   "capitaineai-com-pages",
+   "cocapn-ai-pages",
+   "cocapn-com-pages",
+   "deckboss-agent",
+   "deckboss-ai-pages",
+   "deckboss-net-pages",
+   "dmlog-ai-pages",
+   "fishinglog-ai-pages",
+   "luciddreamer-ai-pages",
+   "luciddreamer-prototype",
+   "lucineer-com-pages",
+   "makerlog-ai-pages",
+   "personallog-ai-pages",
+   "playerlog-ai-pages",
+   "purplepincher-org-pages",
+   "reallog-ai-pages",
+   "studylog-ai-pages",
+   "superinstance-ai-pages"
+  ],
+  "key_tops": [
+   "github",
+   "pages",
+   "superinstance",
+   "rust",
+   "web",
+   "website",
+   "agents",
+   "plato",
+   "deckboss.ai",
+   "luciddreamer.ai",
+   "activeledger.ai",
+   "git",
+   "html",
+   "activelog.ai"
+  ],
+  "langs": [
+   [
+    "HTML",
+    17
+   ],
+   [
+    "Python",
+    5
+   ]
+  ],
+  "date_range": [
+   "2026-05-03",
+   "2026-09-17"
+  ]
+ },
+ {
+  "size": 22,
+  "members": [
+   "constraint-hamiltonian",
+   "curvature-learning",
+   "fisher-information",
+   "gpu-symplectic-integrator",
+   "info-geo",
+   "information-geometry",
+   "lau-agent-topology",
+   "lau-information-geometry",
+   "lau-information-geometry-agents",
+   "lau-symplectic-agent",
+   "lau-tropical-geometry",
+   "lau-tropical-geometry-agents",
+   "si-tropical-transport",
+   "symplectic-geometry",
+   "symplectic-music",
+   "symplectic-opt",
+   "tropical-algebra",
+   "tropical-attention",
+   "tropical-geometry",
+   "tropical-geometry-rs",
+   "tropical-neural",
+   "tropical-synth"
+  ],
+  "key_tops": [
+   "superinstance",
+   "rust",
+   "tropical",
+   "geometry",
+   "information",
+   "symplectic",
+   "openconstruct",
+   "plus",
+   "hamiltonian",
+   "gradient",
+   "max",
+   "manifolds",
+   "natural",
+   "lau"
+  ],
+  "langs": [
+   [
+    "Rust",
+    20
+   ],
+   [
+    "Cuda",
+    1
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 21,
+  "members": [
+   "consensus-raft",
+   "crdt-core",
+   "gossip-protocol",
+   "observation-primitive-rs",
+   "partition-tolerance",
+   "substrate-attest-rs",
+   "substrate-bundle",
+   "substrate-canary-pin",
+   "substrate-contest",
+   "substrate-contest-rs",
+   "substrate-delegate",
+   "substrate-membership",
+   "substrate-merger",
+   "substrate-revoke",
+   "substrate-revoke-rs",
+   "substrate-trainer",
+   "substrate-traverse",
+   "substrate-withdraw",
+   "substrate-witness-log",
+   "substrate-witness-log-rs",
+   "vector-clock-rs"
+  ],
+  "key_tops": [
+   "substrate",
+   "primitive",
+   "observation",
+   "rust",
+   "distributed",
+   "systems",
+   "superinstance",
+   "crate",
+   "witness",
+   "log",
+   "contest",
+   "revoke",
+   "library",
+   "simulation"
+  ],
+  "langs": [
+   [
+    "JavaScript",
+    10
+   ],
+   [
+    "Rust",
+    9
+   ],
+   [
+    "Makefile",
+    1
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-09-22"
+  ]
+ },
+ {
+  "size": 19,
+  "members": [
+   "ast-builder",
+   "ast-diff",
+   "ast-visitor",
+   "cocapn-cli",
+   "diff-merge",
+   "diff-myers",
+   "diff-patch",
+   "diff-patience",
+   "diff-three-way",
+   "fleet-constraint",
+   "flux-ast",
+   "flux-bridge",
+   "flux-bytecode-diff",
+   "flux-diff",
+   "flux-verify-api",
+   "guard",
+   "guard2mask",
+   "guardc",
+   "ternary-diff"
+  ],
+  "key_tops": [
+   "flux",
+   "rust",
+   "diff",
+   "constraint",
+   "safety",
+   "library",
+   "superinstance",
+   "fleet",
+   "ast",
+   "bytecode",
+   "patch",
+   "compare",
+   "ternary",
+   "cocapn"
+  ],
+  "langs": [
+   [
+    "Rust",
+    15
+   ],
+   [
+    "Python",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-05-09",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 16,
+  "members": [
+   "b-tree",
+   "bigint-rs",
+   "braid-group-rs",
+   "cellular-automata-rs",
+   "complex-rs",
+   "coxeter-group-rs",
+   "l-system-rs",
+   "lsm-tree",
+   "matrix-rs",
+   "mvcc-tx",
+   "pincher",
+   "polynomial-rs",
+   "query-plan",
+   "rational-rs",
+   "wal-journal",
+   "young-tableau-rs"
+  ],
+  "key_tops": [
+   "rust",
+   "superinstance",
+   "research",
+   "grade",
+   "crate",
+   "library",
+   "pure",
+   "database",
+   "compiler",
+   "mathematics",
+   "bigint",
+   "complex",
+   "matrix",
+   "vector"
+  ],
+  "langs": [
+   [
+    "Rust",
+    16
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 14,
+  "members": [
+   "edge-benchmark",
+   "fleet-auto-ingest",
+   "fleet-conductor",
+   "fleet-edge-worker",
+   "fleet-metrics-cron",
+   "fleet-midi",
+   "knowledge-cron",
+   "plato-semantic-search",
+   "quilt-cloudflare",
+   "quilt-rust",
+   "search-superinstance-ai",
+   "superinstance-agent",
+   "superinstance-embedder",
+   "superinstance-vectorize"
+  ],
+  "key_tops": [
+   "cloudflare",
+   "workers",
+   "superinstance",
+   "vectorize",
+   "fleet",
+   "rust",
+   "semantic",
+   "search",
+   "edge",
+   "worker",
+   "runtime",
+   "embeddings",
+   "cron",
+   "repos"
+  ],
+  "langs": [
+   [
+    "TypeScript",
+    8
+   ],
+   [
+    "Rust",
+    5
+   ],
+   [
+    "HTML",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-13",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 12,
+  "members": [
+   "CognitiveEngine",
+   "ai-ranch",
+   "constraint-flow",
+   "constraint-ranch",
+   "constraint-theory-backup",
+   "constraint-theory-python",
+   "constraint-theory-research",
+   "constraint-theory-rust-python",
+   "constraint-theory-web",
+   "pasture-ai",
+   "si-conservation-python",
+   "si-conservation-wasm"
+  ],
+  "key_tops": [
+   "superinstance",
+   "constraint",
+   "artificial",
+   "intelligence",
+   "machine",
+   "learning",
+   "python",
+   "theory",
+   "mathematics",
+   "research",
+   "bindings",
+   "rust",
+   "tool",
+   "library"
+  ],
+  "langs": [
+   [
+    "Python",
+    4
+   ],
+   [
+    "Rust",
+    4
+   ],
+   [
+    "TypeScript",
+    3
+   ],
+   [
+    "JavaScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-29"
+  ]
+ },
+ {
+  "size": 12,
+  "members": [
+   "flux-coop-runtime",
+   "flux-ir",
+   "flux-runtime-deu",
+   "flux-runtime-kor",
+   "flux-runtime-lat",
+   "flux-runtime-san",
+   "flux-runtime-wasm",
+   "flux-runtime-wen",
+   "flux-runtime-zho",
+   "flux-vm-ts",
+   "flux-wasm",
+   "flux-wasm-gen"
+  ],
+  "key_tops": [
+   "flux",
+   "fleet",
+   "bytecode",
+   "execution",
+   "runtime",
+   "virtual",
+   "machine",
+   "python",
+   "engine",
+   "interpreter",
+   "support",
+   "language",
+   "processing",
+   "compilation"
+  ],
+  "langs": [
+   [
+    "Python",
+    9
+   ],
+   [
+    "TypeScript",
+    2
+   ],
+   [
+    "Makefile",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-05-08"
+  ]
+ },
+ {
+  "size": 12,
+  "members": [
+   "canon-claim",
+   "canon-graph",
+   "canon-hash",
+   "canon-paper",
+   "canon-suite",
+   "live-canon-npm",
+   "live-canon-pypi",
+   "quilt-canon-cli",
+   "quilt-canvas-demo",
+   "quilt-live-canon",
+   "quilt-live-canon-npm",
+   "quilt-live-canon-pypi"
+  ],
+  "key_tops": [
+   "canon",
+   "live",
+   "package",
+   "writings",
+   "node.js",
+   "npm",
+   "operations",
+   "hash",
+   "paper",
+   "claim",
+   "drill",
+   "read",
+   "navigable",
+   "cell"
+  ],
+  "langs": [
+   [
+    "JavaScript",
+    8
+   ],
+   [
+    "Python",
+    3
+   ],
+   [
+    "HTML",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-09-20",
+   "2026-09-24"
+  ]
+ },
+ {
+  "size": 12,
+  "members": [
+   "a2ui",
+   "conservation-enforcer",
+   "conservation-enforcer-rs",
+   "exocortex-rs",
+   "flux-compiler-rs",
+   "flux-policy-tester",
+   "flux-policy-tester-rs",
+   "flux-registry",
+   "flux-registry-rs",
+   "kennel",
+   "plato-core-rs",
+   "trawl"
+  ],
+  "key_tops": [
+   "flux",
+   "bytecode",
+   "working",
+   "animal",
+   "architecture",
+   "rust",
+   "superinstance",
+   "agent",
+   "conservation",
+   "policies",
+   "law",
+   "llm",
+   "framework",
+   "testing"
+  ],
+  "langs": [
+   [
+    "Python",
+    6
+   ],
+   [
+    "Rust",
+    6
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-08-20"
+  ]
+ },
+ {
+  "size": 12,
+  "members": [
+   "grand-pattern-c",
+   "grand-pattern-chapel",
+   "grand-pattern-claude",
+   "grand-pattern-cuda",
+   "grand-pattern-flux",
+   "grand-pattern-fortran",
+   "grand-pattern-go",
+   "grand-pattern-kimi",
+   "grand-pattern-mojo",
+   "grand-pattern-opencl",
+   "grand-pattern-ptx",
+   "grand-pattern-rs"
+  ],
+  "key_tops": [
+   "dual",
+   "rust",
+   "grand",
+   "pattern",
+   "fibonacci",
+   "direction",
+   "superinstance",
+   "architecture",
+   "implementation",
+   "jepa",
+   "double",
+   "entry",
+   "vectorized",
+   "chapel"
+  ],
+  "langs": [
+   [
+    "C",
+    3
+   ],
+   [
+    "Rust",
+    3
+   ],
+   [
+    "Chapel",
+    1
+   ],
+   [
+    "Cuda",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 11,
+  "members": [
+   "count-min-sketch",
+   "elliptic-curve-ops",
+   "galois-field",
+   "lattice-crypto",
+   "modular-arithmetic",
+   "number-theory-core",
+   "quilt-flow",
+   "quilt-time",
+   "quilt-vision",
+   "quilt-zk",
+   "ternary-sketch"
+  ],
+  "key_tops": [
+   "see",
+   "readme",
+   "sketch",
+   "rust",
+   "math",
+   "number",
+   "theory",
+   "superinstance",
+   "quilt",
+   "count",
+   "min",
+   "frequency",
+   "estimation",
+   "ternary"
+  ],
+  "langs": [
+   [
+    "Rust",
+    7
+   ],
+   [
+    "JavaScript",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-06-13",
+   "2026-08-27"
+  ]
+ },
+ {
+  "size": 10,
+  "members": [
+   "constraint-bench-suite",
+   "eisenstein",
+   "eisenstein-ai-landing",
+   "eisenstein-bench",
+   "eisenstein-triples",
+   "eisenstein-vs-z2",
+   "eisenstein-vs-z2-c",
+   "eisenstein-vs-z2-rs",
+   "hex-lattice-explorer",
+   "pythagorean-quantize"
+  ],
+  "key_tops": [
+   "hexagonal",
+   "eisenstein",
+   "lattice",
+   "rust",
+   "superinstance",
+   "benchmark",
+   "square",
+   "integers",
+   "integer",
+   "arithmetic",
+   "triples",
+   "suite",
+   "zero",
+   "constraints"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ],
+   [
+    "C",
+    2
+   ],
+   [
+    "HTML",
+    2
+   ],
+   [
+    "Python",
+    2
+   ]
+  ],
+  "date_range": [
+   "2026-05-09",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 10,
+  "members": [
+   "homology-engine",
+   "lau-sheaf-spectrum",
+   "lau-topological-data-analysis",
+   "sheaf-laplacian",
+   "simplicial-agent",
+   "step-back-operator",
+   "step-back-topology",
+   "tda-rs",
+   "topo-merge",
+   "topology-lab"
+  ],
+  "key_tops": [
+   "rust",
+   "superinstance",
+   "topological",
+   "data",
+   "analysis",
+   "persistent",
+   "homology",
+   "simplicial",
+   "complexes",
+   "agent",
+   "sheaf",
+   "step",
+   "back",
+   "computation"
+  ],
+  "langs": [
+   [
+    "Rust",
+    10
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 10,
+  "members": [
+   "crystal-lattice",
+   "distill-pipeline",
+   "dream-compiler",
+   "evolving-sheaf-rs",
+   "integration-rs",
+   "lau-docs-dream-compiler-spec",
+   "lau-ecosystem",
+   "lau-gateway-demo",
+   "lau-integration-test",
+   "lau-network"
+  ],
+  "key_tops": [
+   "superinstance",
+   "fleet",
+   "distributed",
+   "rust",
+   "cognitive",
+   "agents",
+   "ecosystem",
+   "part",
+   "agent",
+   "orchestration",
+   "compiler",
+   "integration",
+   "crystal",
+   "lattice"
+  ],
+  "langs": [
+   [
+    "Rust",
+    8
+   ],
+   [
+    null,
+    2
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 9,
+  "members": [
+   "constellation-map",
+   "cortex-bus-protocol",
+   "cortex-toml",
+   "dream-cycle",
+   "forgetting-curve",
+   "knowledge-compass",
+   "memory-plimpsest",
+   "shadow-cathedral",
+   "tiny-agent-protocol"
+  ],
+  "key_tops": [
+   "rust",
+   "exocortex",
+   "crate",
+   "superinstance",
+   "cortex",
+   "protocol",
+   "constellation",
+   "map",
+   "bus",
+   "toml",
+   "dream",
+   "cycle",
+   "forgetting",
+   "curve"
+  ],
+  "langs": [
+   [
+    "Rust",
+    9
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 8,
+  "members": [
+   "ActiveLog-MVP",
+   "LOG-Tensor",
+   "PersonalLog",
+   "StudyLog",
+   "UI",
+   "activelog-backend",
+   "activelog-claude",
+   "makerlog-ai"
+  ],
+  "key_tops": [
+   "fleet",
+   "logging",
+   "application",
+   "tools",
+   "flux",
+   "library",
+   "superinstance",
+   "typescript",
+   "activelog",
+   "activity",
+   "tracking",
+   "observability",
+   "companion",
+   "tensor"
+  ],
+  "langs": [
+   [
+    "TypeScript",
+    4
+   ],
+   [
+    null,
+    2
+   ],
+   [
+    "Python",
+    2
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 8,
+  "members": [
+   "lau-optimal-transport-agents",
+   "optimal-transport-agents-rs",
+   "optimal-transport-rs",
+   "si-wasserstein-fleet",
+   "wasserstein-agents",
+   "wasserstein-agents-rs",
+   "wasserstein-narrative",
+   "wasserstein-ot-c"
+  ],
+  "key_tops": [
+   "optimal",
+   "transport",
+   "wasserstein",
+   "superinstance",
+   "rust",
+   "sinkhorn",
+   "agent",
+   "gradient",
+   "algorithm",
+   "distribution",
+   "distance",
+   "jko",
+   "barycenters",
+   "flow"
+  ],
+  "langs": [
+   [
+    "Rust",
+    6
+   ],
+   [
+    "TypeScript",
+    1
+   ],
+   [
+    "C",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 8,
+  "members": [
+   "fundamental-group",
+   "renormalization",
+   "renormalization-agent",
+   "renormalization-group",
+   "renormalization-group-rs",
+   "renormalization-learning-rs",
+   "rg-flow",
+   "ternary-renormalization"
+  ],
+  "key_tops": [
+   "rust",
+   "group",
+   "renormalization",
+   "superinstance",
+   "multi",
+   "scale",
+   "ternary",
+   "library",
+   "agent",
+   "fleet",
+   "analysis",
+   "systems",
+   "fundamental",
+   "theory"
+  ],
+  "langs": [
+   [
+    "Rust",
+    7
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-09",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 8,
+  "members": [
+   "quilt-canon-explorer",
+   "quilt-canon-mcp",
+   "quilt-canon-search",
+   "quilt-fable",
+   "quilt-orchestrator",
+   "quilt-perception",
+   "quilt-substrate-walker",
+   "superinstance-mcp"
+  ],
+  "key_tops": [
+   "quilt",
+   "walker",
+   "substrate",
+   "canon",
+   "brewed",
+   "brewer",
+   "mcp",
+   "server",
+   "exposing",
+   "tools",
+   "a2a",
+   "friendly",
+   "archive",
+   "browser"
+  ],
+  "langs": [
+   [
+    "Python",
+    6
+   ],
+   [
+    "HTML",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-09-24"
+  ]
+ },
+ {
+  "size": 8,
+  "members": [
+   "fleet-arabic",
+   "fleet-chinese",
+   "fleet-english",
+   "fleet-finnish",
+   "fleet-japanese",
+   "fleet-latin",
+   "fleet-navajo",
+   "fleet-sanskrit"
+  ],
+  "key_tops": [
+   "fleet",
+   "cocapn",
+   "perspective",
+   "reasoned",
+   "natively",
+   "cultural",
+   "tradition",
+   "pelagic",
+   "superinstance",
+   "arabic",
+   "chinese",
+   "english",
+   "suomi",
+   "finnish"
+  ],
+  "langs": [
+   [
+    null,
+    8
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-04-14"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "dashboard-render",
+   "gem-conservation-guardian",
+   "gem-render-guardian",
+   "gem-storage-guardian",
+   "lau-git-render",
+   "room-render",
+   "spacedrive"
+  ],
+  "key_tops": [
+   "superinstance",
+   "rust",
+   "render",
+   "guardian",
+   "dashboard",
+   "gem",
+   "conservation",
+   "storage",
+   "library",
+   "multi",
+   "format",
+   "rendering",
+   "layer",
+   "one"
+  ],
+  "langs": [
+   [
+    "Rust",
+    3
+   ],
+   [
+    "Ruby",
+    3
+   ],
+   [
+    "TypeScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "coff-parser",
+   "elf-parser",
+   "expr-bytecode",
+   "expr-eval",
+   "expr-optimize",
+   "expr-parser",
+   "expr-typecheck"
+  ],
+  "key_tops": [
+   "rust",
+   "library",
+   "expr",
+   "parser",
+   "coff",
+   "elf",
+   "bytecode",
+   "eval",
+   "optimize",
+   "typecheck"
+  ],
+  "langs": [
+   [
+    "Rust",
+    7
+   ]
+  ],
+  "date_range": [
+   "2026-06-13",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "a2a-signal-chain",
+   "bathydata-map",
+   "game-chain",
+   "signal-chain",
+   "signal-chain-integration",
+   "tile-chain",
+   "universe-chain"
+  ],
+  "key_tops": [
+   "chain",
+   "signal",
+   "rust",
+   "superinstance",
+   "thesis",
+   "room",
+   "a2a",
+   "native",
+   "plato",
+   "communication",
+   "bathydata",
+   "map",
+   "game",
+   "why"
+  ],
+  "langs": [
+   [
+    "Python",
+    4
+   ],
+   [
+    "Rust",
+    3
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-08-19"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "anomaly-atlas",
+   "conservation-anomaly",
+   "conservation-regime",
+   "conservation-spectral-topology",
+   "lau-time-series",
+   "regime-detection",
+   "rusty-series"
+  ],
+  "key_tops": [
+   "superinstance",
+   "anomaly",
+   "detection",
+   "conservation",
+   "spectral",
+   "rust",
+   "openconstruct",
+   "analysis",
+   "unified",
+   "ratio",
+   "graph",
+   "laplacians",
+   "regime",
+   "forecasting"
+  ],
+  "langs": [
+   [
+    "Python",
+    3
+   ],
+   [
+    "Rust",
+    3
+   ],
+   [
+    null,
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "arithmetic-code",
+   "channel-capacity",
+   "entropy-flow-py",
+   "huffman-entropy",
+   "information-theory",
+   "lau-information-theory",
+   "rate-distortion"
+  ],
+  "key_tops": [
+   "information",
+   "rust",
+   "theory",
+   "compression",
+   "entropy",
+   "library",
+   "algorithms",
+   "shannon",
+   "mutual",
+   "coding",
+   "channel",
+   "capacity",
+   "superinstance",
+   "divergence"
+  ],
+  "langs": [
+   [
+    "Rust",
+    6
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-14",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "conservation-sheaf-flow-c",
+   "conservation-sheaf-flow-rs",
+   "conservation-spectral-forth",
+   "sheaf-agents",
+   "sheaf-agents-c",
+   "sheaf-coherence",
+   "sheaf-gossip"
+  ],
+  "key_tops": [
+   "sheaf",
+   "rust",
+   "superinstance",
+   "conservation",
+   "theoretic",
+   "spectral",
+   "agent",
+   "laws",
+   "graphs",
+   "gap",
+   "flow",
+   "framework",
+   "multi",
+   "knowledge"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ],
+   [
+    "C",
+    2
+   ],
+   [
+    "Forth",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-11",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "constraint-schedule",
+   "counterpoint-engine",
+   "counterpoint-engine-c",
+   "counterpoint-engine-rs",
+   "fleet-midi-harmonizer",
+   "sat-solver",
+   "ternary-counterpoint"
+  ],
+  "key_tops": [
+   "counterpoint",
+   "rust",
+   "superinstance",
+   "species",
+   "music",
+   "rules",
+   "midi",
+   "ternary",
+   "constraint",
+   "satisfaction",
+   "sat",
+   "harmony",
+   "voice",
+   "leading"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ],
+   [
+    "Python",
+    1
+   ],
+   [
+    "C",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 7,
+  "members": [
+   "lotka-beats",
+   "lotka-volterra-agents",
+   "lotka-volterra-agents-c",
+   "strategy-ecology",
+   "strategy-ecology-c",
+   "ternary-ecology",
+   "ternary-sampler"
+  ],
+  "key_tops": [
+   "ternary",
+   "dynamics",
+   "ecology",
+   "rust",
+   "lotka",
+   "volterra",
+   "superinstance",
+   "agent",
+   "strategy",
+   "species",
+   "populations",
+   "generative",
+   "music",
+   "genres"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ],
+   [
+    "C",
+    2
+   ]
+  ],
+  "date_range": [
+   "2026-06-09",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "compass-rose",
+   "coral-reef",
+   "holographic-storage",
+   "loom-weave",
+   "quantum-coin",
+   "quantum-thermo"
+  ],
+  "key_tops": [
+   "rust",
+   "superinstance",
+   "0.1.0",
+   "quantum",
+   "mathematics",
+   "thermodynamics",
+   "limits",
+   "computation",
+   "heat",
+   "information",
+   "physics"
+  ],
+  "langs": [
+   [
+    "Rust",
+    6
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "QuiltCanary.jl",
+   "QuiltEgg.jl",
+   "polyvocoder-sql",
+   "quilt-egg-rust",
+   "quilt-julia",
+   "superinstance-polyformalism-harness"
+  ],
+  "key_tops": [
+   "polyformalism",
+   "port",
+   "canary",
+   "quilt",
+   "julia",
+   "fleet",
+   "cell",
+   "superinstance",
+   "byte",
+   "exact",
+   "sql",
+   "sqlite",
+   "canon",
+   "archive"
+  ],
+  "langs": [
+   [
+    "Julia",
+    2
+   ],
+   [
+    "Python",
+    1
+   ],
+   [
+    "Rust",
+    1
+   ],
+   [
+    null,
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-08-20",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "quilt-classroom",
+   "quilt-claw-cells-game",
+   "quilt-jev-toolkit-push",
+   "quilt-makepad-demo",
+   "quilt-quantumaudio-demo-push",
+   "the-beyond"
+  ],
+  "key_tops": [
+   "quilt",
+   "fleet",
+   "member",
+   "auto",
+   "swept",
+   "local",
+   "commit",
+   "mavis",
+   "casey",
+   "session",
+   "line"
+  ],
+  "langs": [
+   [
+    "HTML",
+    4
+   ],
+   [
+    "Python",
+    2
+   ]
+  ],
+  "date_range": [
+   "2026-09-24",
+   "2026-09-24"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "agent-dna-rs",
+   "genetic-search",
+   "gpu-annealing",
+   "gpu-optimizer",
+   "particle-swarm",
+   "simulated-anneal"
+  ],
+  "key_tops": [
+   "rust",
+   "optimization",
+   "algorithms",
+   "genetic",
+   "crossover",
+   "mutation",
+   "superinstance",
+   "library",
+   "metaheuristics",
+   "simulated",
+   "annealing",
+   "agent",
+   "gpu",
+   "accelerated"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-05-29",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "attention-daemon-early-version",
+   "field-evolution-early-version",
+   "fleet-automation-early-version",
+   "plato-calibration-early-version",
+   "plato-hologram-early-version",
+   "the-plenum-early-version"
+  ],
+  "key_tops": [
+   "archived",
+   "early",
+   "scaffolding",
+   "only",
+   "superinstance",
+   "experiment",
+   "1kb",
+   "field",
+   "rust",
+   "knowledge",
+   "salience",
+   "plato",
+   "attention",
+   "evolution"
+  ],
+  "langs": [
+   [
+    "Python",
+    5
+   ],
+   [
+    "HTML",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "chaos-rs",
+   "dynamical-systems",
+   "lau-chaos-theory",
+   "lau-dynamical-systems",
+   "ternary-chaos",
+   "ternary-dynamics-python"
+  ],
+  "key_tops": [
+   "rust",
+   "chaos",
+   "attractors",
+   "bifurcation",
+   "analysis",
+   "superinstance",
+   "systems",
+   "dynamics",
+   "ternary",
+   "theory",
+   "dynamical",
+   "lyapunov",
+   "exponents",
+   "strange"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "cocapn-landing",
+   "cocapn.ai",
+   "domain-landing",
+   "flux-mesh",
+   "openconstruct-landing",
+   "sonar-vision-landing"
+  ],
+  "key_tops": [
+   "any",
+   "landing",
+   "page",
+   "fleet",
+   "rust",
+   "superinstance",
+   "cocapn",
+   "language",
+   "hardware",
+   "marketing",
+   "pages",
+   "agents",
+   "ecosystem",
+   "info"
+  ],
+  "langs": [
+   [
+    "HTML",
+    3
+   ],
+   [
+    "PHP",
+    1
+   ],
+   [
+    "JavaScript",
+    1
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-17"
+  ]
+ },
+ {
+  "size": 6,
+  "members": [
+   "plato-tile-export",
+   "plato-tile-feedback",
+   "plato-tile-governance",
+   "plato-tile-notifications",
+   "plato-tile-pinboard",
+   "plato-tile-relation"
+  ],
+  "key_tops": [
+   "plato",
+   "tile",
+   "framework",
+   "export",
+   "feedback",
+   "governance",
+   "notifications",
+   "pinboard",
+   "relationship",
+   "graph"
+  ],
+  "langs": [
+   [
+    "Python",
+    6
+   ]
+  ],
+  "date_range": [
+   "2026-05-08",
+   "2026-05-08"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "ACE-Step-1.5",
+   "study-smartcomponent",
+   "study-weird-roblox-ai",
+   "tap-frontend",
+   "the-listeners-ear"
+  ],
+  "key_tops": [
+   "auto",
+   "created",
+   "sync"
+  ],
+  "langs": [
+   [
+    "Python",
+    2
+   ],
+   [
+    "C#",
+    1
+   ],
+   [
+    "HTML",
+    1
+   ],
+   [
+    "JavaScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-08-14",
+   "2026-09-04"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "fleet-coordinate-js",
+   "fleet-math-go",
+   "fleet-math-py",
+   "fleet-math-ts",
+   "fleet-router-integration"
+  ],
+  "key_tops": [
+   "fleet",
+   "distributed",
+   "laman",
+   "rigidity",
+   "systems",
+   "constraint",
+   "rust",
+   "superinstance",
+   "holonomy",
+   "consensus",
+   "emergence",
+   "agents",
+   "math",
+   "zhc"
+  ],
+  "langs": [
+   [
+    "TypeScript",
+    2
+   ],
+   [
+    "Go",
+    1
+   ],
+   [
+    null,
+    1
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-09-17"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "agent-rhythm-c",
+   "agent-rhythm-rs",
+   "ternary-mutual-info",
+   "ternary-regex",
+   "ternary-tempo"
+  ],
+  "key_tops": [
+   "ternary",
+   "rhythm",
+   "detection",
+   "tempo",
+   "cadence",
+   "rust",
+   "sequences",
+   "gpu",
+   "oxide",
+   "stack",
+   "tracking",
+   "music",
+   "superinstance",
+   "pattern"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ],
+   [
+    "C",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-08-21"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "constraint-dynamics-rs",
+   "spectral-shape",
+   "ternary-distributed",
+   "ternary-dynamics",
+   "ternary-language-evolution"
+  ],
+  "key_tops": [
+   "ternary",
+   "rust",
+   "dynamics",
+   "how",
+   "agent",
+   "over",
+   "systems",
+   "gpu",
+   "oxide",
+   "stack",
+   "shape",
+   "behavior",
+   "superinstance",
+   "protocols"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-13"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "grand-pattern-mono",
+   "grand-pattern-mono-go",
+   "grand-pattern-mono-py",
+   "grand-pattern-mono-ts",
+   "grand-pattern-sim"
+  ],
+  "key_tops": [
+   "corrected",
+   "vibe",
+   "mono",
+   "rust",
+   "superinstance",
+   "architecture",
+   "port",
+   "grand",
+   "pattern",
+   "dimensional",
+   "jepa",
+   "weighted",
+   "reading",
+   "one"
+  ],
+  "langs": [
+   [
+    "Rust",
+    2
+   ],
+   [
+    "Go",
+    1
+   ],
+   [
+    "Python",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "slackwater-harmony",
+   "slackwater-lattice",
+   "slackwater-perception",
+   "slackwater-tempo",
+   "slackwater-tminus"
+  ],
+  "key_tops": [
+   "modular",
+   "component",
+   "slackwater",
+   "spatial",
+   "temporal",
+   "agent",
+   "framework"
+  ],
+  "langs": [
+   [
+    "Python",
+    5
+   ]
+  ],
+  "date_range": [
+   "2026-08-13",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "jepa-predict",
+   "plato-cortex",
+   "plato-jepa-dual",
+   "plato-perception",
+   "plato-prediction"
+  ],
+  "key_tops": [
+   "jepa",
+   "prediction",
+   "dual",
+   "superinstance",
+   "database",
+   "knowledge",
+   "plato",
+   "perception",
+   "cross",
+   "mapping",
+   "spaces",
+   "encoding",
+   "side",
+   "engine"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-08-19"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "plato-ternary-bridge",
+   "ternary-quorum",
+   "ternary-voting",
+   "warp-ternary-vote",
+   "warp-vote-consensus"
+  ],
+  "key_tops": [
+   "ternary",
+   "voting",
+   "gpu",
+   "consensus",
+   "oxide",
+   "stack",
+   "rust",
+   "warp",
+   "values",
+   "plato",
+   "quorum",
+   "experiment",
+   "bridges",
+   "room"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ]
+  ],
+  "date_range": [
+   "2026-06-10",
+   "2026-07-13"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "ga-core",
+   "ga-core-rs",
+   "gpu-ga-kernel",
+   "graphite-geometric-algebra",
+   "lau-conformal-agents"
+  ],
+  "key_tops": [
+   "algebra",
+   "conformal",
+   "geometric",
+   "rust",
+   "superinstance",
+   "rotors",
+   "spacetime",
+   "multivectors",
+   "embedding",
+   "agents",
+   "embeddings",
+   "sandwich",
+   "products",
+   "clifford"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ],
+   [
+    "Cuda",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "fibonacci-growth-v2",
+   "fleet",
+   "gpu-scaling",
+   "lau-fibonacci-growth",
+   "plato-fleet"
+  ],
+  "key_tops": [
+   "superinstance",
+   "fleet",
+   "agent",
+   "scaling",
+   "rust",
+   "fibonacci",
+   "growth",
+   "patterns",
+   "distributed",
+   "management",
+   "orchestration",
+   "coordination",
+   "plato",
+   "dynamics"
+  ],
+  "langs": [
+   [
+    "Rust",
+    3
+   ],
+   [
+    "Python",
+    2
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "bayesian-update",
+   "gradient-descent",
+   "markov-chain",
+   "multi-armed-bandit",
+   "reinforcement-grid"
+  ],
+  "key_tops": [
+   "package",
+   "math",
+   "rust",
+   "superinstance"
+  ],
+  "langs": [
+   [
+    "Rust",
+    5
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 5,
+  "members": [
+   "flux-0c476c",
+   "flux-9969b6",
+   "flux-agent-a0fa81",
+   "flux-via-keeper",
+   "flux-vm-agent"
+  ],
+  "key_tops": [
+   "agent",
+   "flux",
+   "fleet",
+   "bytecode",
+   "autonomous",
+   "virtual",
+   "machine",
+   "native",
+   "i2i",
+   "self",
+   "bootstrapped",
+   "a0fa81",
+   "keeper",
+   "0c476c"
+  ],
+  "langs": [
+   [
+    null,
+    4
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-13",
+   "2026-04-15"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "api-gateway",
+   "fleet-gateway",
+   "fleet-midi-gateway",
+   "rate-limiting-service"
+  ],
+  "key_tops": [
+   "fleet",
+   "api",
+   "gateway",
+   "rate",
+   "limiting",
+   "service",
+   "routing",
+   "request",
+   "unified",
+   "pelagic",
+   "superinstance",
+   "authentication",
+   "response",
+   "transformation"
+  ],
+  "langs": [
+   [
+    "Python",
+    3
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-25"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "evo-rs",
+   "fleet-midi-genetic",
+   "flux-genome-rs",
+   "lau-evolutionary-computation"
+  ],
+  "key_tops": [
+   "rust",
+   "genetic",
+   "superinstance",
+   "algorithm",
+   "evolution",
+   "evolutionary",
+   "computation",
+   "nsga",
+   "fitness",
+   "midi",
+   "agent",
+   "distributed",
+   "systems",
+   "fleet"
+  ],
+  "langs": [
+   [
+    "Rust",
+    3
+   ],
+   [
+    "Go",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-09-03"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "jepa-trait",
+   "plato-audio-jepa",
+   "plato-vision-jepa",
+   "project-JEPA"
+  ],
+  "key_tops": [
+   "superinstance",
+   "joint",
+   "embedding",
+   "predictive",
+   "architecture",
+   "plato",
+   "jepa",
+   "fleet",
+   "module",
+   "knowledge",
+   "trait",
+   "definitions",
+   "part",
+   "ecosystem"
+  ],
+  "langs": [
+   [
+    "Rust",
+    3
+   ],
+   [
+    "Go",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-08-21"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "flux-profiler",
+   "gpu-accelerator",
+   "hardware-capability-profiler",
+   "webgpu-profiler"
+  ],
+  "key_tops": [
+   "performance",
+   "profiler",
+   "flux",
+   "fleet",
+   "hardware",
+   "gpu",
+   "edge",
+   "optimization",
+   "webgpu",
+   "browser",
+   "computing",
+   "benchmarking",
+   "typescript",
+   "opcode"
+  ],
+  "langs": [
+   [
+    "Python",
+    2
+   ],
+   [
+    "Rust",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-09-29"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "quilt-base",
+   "quilt-core-os",
+   "quilt-k3s",
+   "quilt-swarm"
+  ],
+  "key_tops": [
+   "quilt",
+   "ecosystem",
+   "component"
+  ],
+  "langs": [
+   [
+    "TypeScript",
+    3
+   ],
+   [
+    "Shell",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-08-20",
+   "2026-09-29"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "cns-substrate",
+   "hermes-nmi-substrate",
+   "slackwater-substrate",
+   "turbovec-substrate"
+  ],
+  "key_tops": [
+   "substrate",
+   "cell",
+   "prev",
+   "hash",
+   "chain",
+   "integration",
+   "cells",
+   "fnv",
+   "cns",
+   "bus",
+   "every",
+   "uscp",
+   "packet",
+   "hermes"
+  ],
+  "langs": [
+   [
+    "Python",
+    3
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-09-22",
+   "2026-09-29"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "flux-certify",
+   "flux-compiler",
+   "flux-studio",
+   "guardc-v3"
+  ],
+  "key_tops": [
+   "flux",
+   "constraint",
+   "guard",
+   "rust",
+   "superinstance",
+   "compiler",
+   "proof",
+   "certificates",
+   "bytecode",
+   "theory",
+   "dsl",
+   "verified",
+   "generates",
+   "safety"
+  ],
+  "langs": [
+   [
+    "Python",
+    2
+   ],
+   [
+    "JavaScript",
+    1
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-05-08",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "plato-autonomy",
+   "plato-metrics",
+   "plato-signal-chain",
+   "ternary-metrics"
+  ],
+  "key_tops": [
+   "plato",
+   "metrics",
+   "knowledge",
+   "superinstance",
+   "reporting",
+   "rooms",
+   "collection",
+   "signal",
+   "chain",
+   "performance",
+   "ternary",
+   "autonomy",
+   "composable",
+   "layer"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-13"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "fleet-wiki",
+   "knowledge-agent",
+   "superinstance-wiki",
+   "wiki"
+  ],
+  "key_tops": [
+   "superinstance",
+   "deprecated",
+   "see",
+   "https",
+   "github.com",
+   "docs",
+   "documentation",
+   "wiki",
+   "knowledge",
+   "fleet",
+   "pelagic",
+   "agent",
+   "autonomous",
+   "graph"
+  ],
+  "langs": [
+   [
+    "Python",
+    3
+   ],
+   [
+    null,
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "agent-voice-leading",
+   "ternary-form",
+   "topo-sonata",
+   "topo-sonata-rs"
+  ],
+  "key_tops": [
+   "leading",
+   "musical",
+   "voice",
+   "topological",
+   "agent",
+   "transitions",
+   "counterpoint",
+   "form",
+   "rust",
+   "state",
+   "cadences",
+   "music",
+   "ternary",
+   "analysis"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-06-11",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "gossip-member",
+   "gossip-ping",
+   "gossip-seed",
+   "gossip-suspicion"
+  ],
+  "key_tops": [
+   "rust",
+   "library",
+   "gossip",
+   "member",
+   "ping",
+   "seed",
+   "suspicion"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-08-21",
+   "2026-09-30"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "jev-diffusion",
+   "jev-diffusion-npm",
+   "jev-diffusion-pypi",
+   "jev-diffusion-rust"
+  ],
+  "key_tops": [
+   "image",
+   "substrate",
+   "segmented",
+   "description",
+   "jev",
+   "diffusion",
+   "llms",
+   "gan",
+   "actual",
+   "generator",
+   "needed",
+   "npm",
+   "wrapper",
+   "pypi"
+  ],
+  "langs": [
+   [
+    "Python",
+    3
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-09-22",
+   "2026-09-22"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "jev-turbovec",
+   "madlibs-gan-turbovec",
+   "paradigm-edges-turbovec",
+   "peanut-gallery-turbovec"
+  ],
+  "key_tops": [
+   "turboquant",
+   "memory",
+   "similar",
+   "past",
+   "inform",
+   "paradigm",
+   "ones",
+   "edges",
+   "jev",
+   "diffusion",
+   "substrate",
+   "find",
+   "diffusions",
+   "madlibs"
+  ],
+  "langs": [
+   [
+    "Python",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-09-22",
+   "2026-09-22"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "quilt-forth",
+   "quilt-haskell",
+   "quilt-j",
+   "quilt-lua"
+  ],
+  "key_tops": [
+   "quilt",
+   "cell",
+   "fabric",
+   "runtime",
+   "sigma",
+   "polyformalism",
+   "port",
+   "forth",
+   "concatenative",
+   "stack",
+   "based",
+   "haskell",
+   "pure",
+   "functional"
+  ],
+  "langs": [
+   [
+    "Forth",
+    1
+   ],
+   [
+    "Haskell",
+    1
+   ],
+   [
+    "J",
+    1
+   ],
+   [
+    "Lua",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-09-08",
+   "2026-09-08"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "quilt-foundation",
+   "quilt-vm-haskell",
+   "quilt-vm-rust",
+   "quilt-vm-typescript"
+  ],
+  "key_tops": [
+   "opcode",
+   "quilt",
+   "cells",
+   "plugins",
+   "sheets",
+   "muds",
+   "ttrpgs",
+   "bay",
+   "dance",
+   "foundation",
+   "hosts",
+   "layer",
+   "haskell",
+   "algebraic"
+  ],
+  "langs": [
+   [
+    "Python",
+    1
+   ],
+   [
+    "Haskell",
+    1
+   ],
+   [
+    "Rust",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-08-26",
+   "2026-09-03"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "gc-pid-bridge",
+   "pid-control",
+   "sketch-gc-pid-feedback-loop",
+   "ternary-pid"
+  ],
+  "key_tops": [
+   "ternary",
+   "pid",
+   "controller",
+   "rust",
+   "between",
+   "disk",
+   "superinstance",
+   "control",
+   "systems",
+   "bridge",
+   "intelligent.sh",
+   "host",
+   "level",
+   "implementation"
+  ],
+  "langs": [
+   [
+    "Rust",
+    3
+   ],
+   [
+    null,
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-13"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "holodeck-c",
+   "holodeck-go",
+   "holodeck-studio",
+   "holodeck-zig"
+  ],
+  "key_tops": [
+   "fleet",
+   "holodeck",
+   "studio",
+   "flux",
+   "implementation",
+   "cocapn",
+   "rooms",
+   "zig",
+   "lightweight",
+   "embedded",
+   "edge",
+   "deployment",
+   "systems",
+   "programming"
+  ],
+  "langs": [
+   [
+    "C",
+    1
+   ],
+   [
+    "Go",
+    1
+   ],
+   [
+    "Python",
+    1
+   ],
+   [
+    "Zig",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-08-21"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "kintsugi-math",
+   "kintsugi-math-c",
+   "kintsugi-math-npm",
+   "kintsugi-math-wasm"
+  ],
+  "key_tops": [
+   "mathematics",
+   "rust",
+   "superinstance",
+   "fault",
+   "tolerance",
+   "beautiful",
+   "error",
+   "recovery",
+   "aesthetic",
+   "principle",
+   "golden",
+   "repair",
+   "c99",
+   "edge"
+  ],
+  "langs": [
+   [
+    "Python",
+    1
+   ],
+   [
+    "C",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-08-21"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "INTEGRATION_GUIDES",
+   "SuperInstanceCommunity",
+   "docs",
+   "lau-guides"
+  ],
+  "key_tops": [
+   "guides",
+   "documentation",
+   "integration",
+   "superinstance",
+   "ecosystem",
+   "docs",
+   "community",
+   "resources",
+   "contributing",
+   "discussion",
+   "templates",
+   "infrastructure",
+   "architecture",
+   "api"
+  ],
+  "langs": [
+   [
+    null,
+    3
+   ],
+   [
+    "Python",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-14",
+   "2026-08-21"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "dojo-alchemist",
+   "dojo-builder",
+   "dojo-scout",
+   "dojo-scribe"
+  ],
+  "key_tops": [
+   "agent",
+   "dojo",
+   "self",
+   "improving",
+   "git",
+   "fleet",
+   "tools"
+  ],
+  "langs": [
+   [
+    "Python",
+    3
+   ],
+   [
+    "Shell",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-04-26",
+   "2026-05-08"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "entropy-conservation-rs",
+   "hodge-consensus",
+   "hodge-consensus-rs",
+   "si-hodge-consensus-demo"
+  ],
+  "key_tops": [
+   "hodge",
+   "decomposition",
+   "rust",
+   "gradient",
+   "curl",
+   "harmonic",
+   "superinstance",
+   "agent",
+   "disagreements",
+   "conservation",
+   "fleet",
+   "agents",
+   "resolvable",
+   "cyclic"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-06-13",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "lau-morse-homology-agents",
+   "lau-morse-theory",
+   "morse-theory",
+   "si-morse-theory"
+  ],
+  "key_tops": [
+   "morse",
+   "theory",
+   "rust",
+   "superinstance",
+   "agent",
+   "critical",
+   "points",
+   "landscapes",
+   "state",
+   "fitness",
+   "spaces",
+   "gradient",
+   "flows",
+   "handlebody"
+  ],
+  "langs": [
+   [
+    "Rust",
+    4
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "quipu-math",
+   "quipu-math-c",
+   "quipu-math-npm",
+   "quipu-math-wasm"
+  ],
+  "key_tops": [
+   "mathematics",
+   "incan",
+   "knotted",
+   "cord",
+   "education",
+   "rust",
+   "superinstance",
+   "quipu",
+   "data",
+   "structures",
+   "encoding",
+   "base",
+   "positional",
+   "knots"
+  ],
+  "langs": [
+   [
+    "Python",
+    1
+   ],
+   [
+    "C",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ],
+   [
+    "Rust",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-07-12",
+   "2026-07-12"
+  ]
+ },
+ {
+  "size": 4,
+  "members": [
+   "si-core-c",
+   "si-runtime-js",
+   "si-runtime-wasm",
+   "si-runtime-zig"
+  ],
+  "key_tops": [
+   "constraint",
+   "aware",
+   "conservation",
+   "spectral",
+   "capability",
+   "discovery",
+   "rust",
+   "superinstance",
+   "general",
+   "purpose",
+   "runtime",
+   "budgets",
+   "ranking",
+   "cell"
+  ],
+  "langs": [
+   [
+    "C",
+    1
+   ],
+   [
+    "TypeScript",
+    1
+   ],
+   [
+    "JavaScript",
+    1
+   ],
+   [
+    "Zig",
+    1
+   ]
+  ],
+  "date_range": [
+   "2026-06-08",
+   "2026-07-12"
+  ]
+ }
+]

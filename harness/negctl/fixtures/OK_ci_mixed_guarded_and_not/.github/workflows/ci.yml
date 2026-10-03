@@ -1,0 +1,11 @@
+name: ci
+on: [push]
+jobs:
+  guarded:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pytest -q
+  unguarded:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "no gate here"

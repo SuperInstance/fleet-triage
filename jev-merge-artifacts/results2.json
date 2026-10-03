@@ -1,0 +1,3188 @@
+{
+ "claims": [
+  {
+   "id": "A1_pr32_counter",
+   "claim": "PR #32's own count is correct: after it landed, the referral graph held 18 edges, 14 VERIFIED and 4 PENDING.",
+   "truth": false,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "A2_pr33_counter",
+   "claim": "PR #33's own count is correct: after it landed, the referral graph held 18 edges, 14 VERIFIED and 4 PENDING.",
+   "truth": false,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "A3_both_agree",
+   "claim": "PRs #32 and #33 independently assert the same post-merge counter: 18 edges, 14 VERIFIED, 4 PENDING.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.\n\n============================================================\n\nGitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "A4_true_count",
+   "claim": "The referral graph on quilt-tools main holds 19 edges, 15 VERIFIED and 4 PENDING.",
+   "truth": true,
+   "evidence": "REFERRAL GRAPH \u2014 seed.mjs as it stands on quilt-tools main (post-merge of PR #32 and PR #33)\nTOTAL EDGES: 19\nVERIFIED: 15\nPENDING: 4\nNODES: 32\nREPOS: 17\n\nedge 1: qe-eproc-witness -> ds-esign-drift [VERIFIED] receipt=SuperInstance/delta-shape#1\nedge 2: stone-sign-lane -> pq-sign-pilot [VERIFIED] receipt=SuperInstance/pong-quilt#51\nedge 3: pq-stone-v1-export -> stone-forward-adopt [VERIFIED] receipt=SuperInstance/quilt-stone#1\nedge 4: jq-commons-g11 -> qt-trust-lever [VERIFIED] receipt=SuperInstance/quilt-tools#17\nedge 5: qgs-strict-gate -> fm-qgs-adapter [VERIFIED] receipt=SuperInstance/fleet-murmur#3\nedge 6: fm-honesty-receipts -> mw-floor-gate [VERIFIED] receipt=SuperInstance/moth-waveform#1\nedge 7: pq-session-wal -> fm-honesty-receipts [VERIFIED] receipt=SuperInstance/fleet-murmur#2\nedge 8: jq-substance-noul -> qb-jev-gate [VERIFIED] receipt=SuperInstance/quilt-cowboy#1\nedge 9: quant-coin-toss -> qq-quantum-tiebreak [VERIFIED] receipt=SuperInstance/pong-quilt#28\nedge 10: qt-s2-driftwatch -> qs-ep2 [VERIFIED] receipt=SuperInstance/quilt-show#1\nedge 11: qt-api-lab -> qs-ep2 [PENDING] receipt=none\nedge 12: qt-s3-tide -> qa-plugins [PENDING] receipt=none\nedge 13: qa-negspace -> qt-api-lab [PENDING] receipt=none\nedge 14: qs-ep3 -> qa-plugins [PENDING] receipt=none\nedge 15: aw-quint-opcode -> ga-quilt-emit [VERIFIED] receipt=SuperInstance/git-agent#4\nedge 16: aw-jev-kat -> jq-kat-bridge [VERIFIED] receipt=SuperInstance/jev-quilt#47\nedge 17: mm-sealed-receipts -> mgq-qcells-lab [VERIFIED] receipt=SuperInstance/micrograd-quilt#7\nedge 18: mgq-qcells-lab -> mm-sealed-receipts [VERIFIED] receipt=SuperInstance/MicroMoth-quilt#29\nedge 19: pq-named-refusals -> fm-refusal-ledger [VERIFIED] receipt=SuperInstance/fleet-murmur#8\n\n",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "claim": "The seed text on merged main records 15 VERIFIED edges.",
+   "truth": true,
+   "evidence": "REFERRAL GRAPH \u2014 seed.mjs as it stands on quilt-tools main (post-merge of PR #32 and PR #33)\nTOTAL EDGES: 19\nVERIFIED: 15\nPENDING: 4\nNODES: 32\nREPOS: 17\n\nedge 1: qe-eproc-witness -> ds-esign-drift [VERIFIED] receipt=SuperInstance/delta-shape#1\nedge 2: stone-sign-lane -> pq-sign-pilot [VERIFIED] receipt=SuperInstance/pong-quilt#51\nedge 3: pq-stone-v1-export -> stone-forward-adopt [VERIFIED] receipt=SuperInstance/quilt-stone#1\nedge 4: jq-commons-g11 -> qt-trust-lever [VERIFIED] receipt=SuperInstance/quilt-tools#17\nedge 5: qgs-strict-gate -> fm-qgs-adapter [VERIFIED] receipt=SuperInstance/fleet-murmur#3\nedge 6: fm-honesty-receipts -> mw-floor-gate [VERIFIED] receipt=SuperInstance/moth-waveform#1\nedge 7: pq-session-wal -> fm-honesty-receipts [VERIFIED] receipt=SuperInstance/fleet-murmur#2\nedge 8: jq-substance-noul -> qb-jev-gate [VERIFIED] receipt=SuperInstance/quilt-cowboy#1\nedge 9: quant-coin-toss -> qq-quantum-tiebreak [VERIFIED] receipt=SuperInstance/pong-quilt#28\nedge 10: qt-s2-driftwatch -> qs-ep2 [VERIFIED] receipt=SuperInstance/quilt-show#1\nedge 11: qt-api-lab -> qs-ep2 [PENDING] receipt=none\nedge 12: qt-s3-tide -> qa-plugins [PENDING] receipt=none\nedge 13: qa-negspace -> qt-api-lab [PENDING] receipt=none\nedge 14: qs-ep3 -> qa-plugins [PENDING] receipt=none\nedge 15: aw-quint-opcode -> ga-quilt-emit [VERIFIED] receipt=SuperInstance/git-agent#4\nedge 16: aw-jev-kat -> jq-kat-bridge [VERIFIED] receipt=SuperInstance/jev-quilt#47\nedge 17: mm-sealed-receipts -> mgq-qcells-lab [VERIFIED] receipt=SuperInstance/micrograd-quilt#7\nedge 18: mgq-qcells-lab -> mm-sealed-receipts [VERIFIED] receipt=SuperInstance/MicroMoth-quilt#29\nedge 19: pq-named-refusals -> fm-refusal-ledger [VERIFIED] receipt=SuperInstance/fleet-murmur#8\n\n",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "claim": "The seed text on merged main records 4 PENDING edges.",
+   "truth": true,
+   "evidence": "REFERRAL GRAPH \u2014 seed.mjs as it stands on quilt-tools main (post-merge of PR #32 and PR #33)\nTOTAL EDGES: 19\nVERIFIED: 15\nPENDING: 4\nNODES: 32\nREPOS: 17\n\nedge 1: qe-eproc-witness -> ds-esign-drift [VERIFIED] receipt=SuperInstance/delta-shape#1\nedge 2: stone-sign-lane -> pq-sign-pilot [VERIFIED] receipt=SuperInstance/pong-quilt#51\nedge 3: pq-stone-v1-export -> stone-forward-adopt [VERIFIED] receipt=SuperInstance/quilt-stone#1\nedge 4: jq-commons-g11 -> qt-trust-lever [VERIFIED] receipt=SuperInstance/quilt-tools#17\nedge 5: qgs-strict-gate -> fm-qgs-adapter [VERIFIED] receipt=SuperInstance/fleet-murmur#3\nedge 6: fm-honesty-receipts -> mw-floor-gate [VERIFIED] receipt=SuperInstance/moth-waveform#1\nedge 7: pq-session-wal -> fm-honesty-receipts [VERIFIED] receipt=SuperInstance/fleet-murmur#2\nedge 8: jq-substance-noul -> qb-jev-gate [VERIFIED] receipt=SuperInstance/quilt-cowboy#1\nedge 9: quant-coin-toss -> qq-quantum-tiebreak [VERIFIED] receipt=SuperInstance/pong-quilt#28\nedge 10: qt-s2-driftwatch -> qs-ep2 [VERIFIED] receipt=SuperInstance/quilt-show#1\nedge 11: qt-api-lab -> qs-ep2 [PENDING] receipt=none\nedge 12: qt-s3-tide -> qa-plugins [PENDING] receipt=none\nedge 13: qa-negspace -> qt-api-lab [PENDING] receipt=none\nedge 14: qs-ep3 -> qa-plugins [PENDING] receipt=none\nedge 15: aw-quint-opcode -> ga-quilt-emit [VERIFIED] receipt=SuperInstance/git-agent#4\nedge 16: aw-jev-kat -> jq-kat-bridge [VERIFIED] receipt=SuperInstance/jev-quilt#47\nedge 17: mm-sealed-receipts -> mgq-qcells-lab [VERIFIED] receipt=SuperInstance/micrograd-quilt#7\nedge 18: mgq-qcells-lab -> mm-sealed-receipts [VERIFIED] receipt=SuperInstance/MicroMoth-quilt#29\nedge 19: pq-named-refusals -> fm-refusal-ledger [VERIFIED] receipt=SuperInstance/fleet-murmur#8\n\n",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "B1_32_merged",
+   "claim": "SuperInstance/quilt-tools PR #32 has been merged into main.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B2_32_open",
+   "claim": "SuperInstance/quilt-tools PR #32 is still open and awaiting review.",
+   "truth": false,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B3_33_merged",
+   "claim": "SuperInstance/quilt-tools PR #33 has been merged into main.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B4_33_open",
+   "claim": "SuperInstance/quilt-tools PR #33 is still open and awaiting review.",
+   "truth": false,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B5_34_open",
+   "claim": "SuperInstance/quilt-tools PR #34 is currently open and unmerged.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #34\nTitle: referral-graph: book edges #16+#17 - fleet-triage resolver census pair VERIFIED\nState: open, merged=false\n\nLands the two mints Casey's 2026-10-01T20:07Z merge burst earned (filed CANDIDATE 2026-10-02 02:26 pulse, upgrade path recorded).\n\n**Weight law receipts (merged PR in each to-node's repo, citing SuperInstance/fleet-triage by name):**\n- `SuperInstance/quilt-research-canons#5` \u2014 MERGED 2026-10-01T20:07:58Z, merge `62f18ff7` \u2014 canon cluster's 222 FILE_MISSING surface\n- `SuperInstance/quilt-tournament#1` \u2014 MERGED 2026-10-01T20:07:46Z, merge `2f6daf21` \u2014 all 25 LINE_OOR citations family-wide\n\n**Changes:** seed +3 nodes +2 VERIFIED edges; pins 19\u219221 / 15\u219217 VERIFIED, +Pin 3q; 129/129 offline + 130/130 --live green; md log entry. Never self-upgraded. Main untouched.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B6_34_merged",
+   "claim": "SuperInstance/quilt-tools PR #34 has been merged into main.",
+   "truth": false,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #34\nTitle: referral-graph: book edges #16+#17 - fleet-triage resolver census pair VERIFIED\nState: open, merged=false\n\nLands the two mints Casey's 2026-10-01T20:07Z merge burst earned (filed CANDIDATE 2026-10-02 02:26 pulse, upgrade path recorded).\n\n**Weight law receipts (merged PR in each to-node's repo, citing SuperInstance/fleet-triage by name):**\n- `SuperInstance/quilt-research-canons#5` \u2014 MERGED 2026-10-01T20:07:58Z, merge `62f18ff7` \u2014 canon cluster's 222 FILE_MISSING surface\n- `SuperInstance/quilt-tournament#1` \u2014 MERGED 2026-10-01T20:07:46Z, merge `2f6daf21` \u2014 all 25 LINE_OOR citations family-wide\n\n**Changes:** seed +3 nodes +2 VERIFIED edges; pins 19\u219221 / 15\u219217 VERIFIED, +Pin 3q; 129/129 offline + 130/130 --live green; md log entry. Never self-upgraded. Main untouched.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B7_34_stacked",
+   "claim": "PR #34 is based on PR #33's merge commit.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n\n\n============================================================\n\nGitHub pull request SuperInstance/quilt-tools #34\nTitle: referral-graph: book edges #16+#17 - fleet-triage resolver census pair VERIFIED\nState: open, merged=false\n\nLands the two mints Casey's 2026-10-01T20:07Z merge burst earned (filed CANDIDATE 2026-10-02 02:26 pulse, upgrade path recorded).\n\n**Weight law receipts (merged PR in each to-node's repo, citing SuperInstance/fleet-triage by name):**\n- `SuperInstance/quilt-research-canons#5` \u2014 MERGED 2026-10-01T20:07:58Z, merge `62f18ff7` \u2014 canon cluster's 222 FILE_MISSING surface\n- `SuperInstance/quilt-tournament#1` \u2014 MERGED 2026-10-01T20:07:46Z, merge `2f6daf21` \u2014 all 25 LINE_OOR citations family-wide\n\n**Changes:** seed +3 nodes +2 VERIFIED edges; pins 19\u219221 / 15\u219217 VERIFIED, +Pin 3q; 129/129 offline + 130/130 --live green; md log entry. Never self-upgraded. Main untouched.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "claim": "PR #33 describes itself as booking the fourteenth VERIFIED edge.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "claim": "PR #32's body states the graph reached 14 VERIFIED edges.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B10_32_edge14",
+   "claim": "PR #32 books edge #14 (qe-eproc-witness -> ds-esign-drift) at VERIFIED.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "claim": "PR #33 asserts fleet-murmur becomes the first triple-inbound repo.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "state-authentic",
+   "kind": "state"
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "claim": "PRs #32 and #33 are rival claims to the same counter; one of them must be wrong about the final number.",
+   "truth": true,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.\n\n============================================================\n\nGitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "contested-authentic",
+   "kind": "counter"
+  },
+  {
+   "id": "C1",
+   "claim": "This PR is well written.",
+   "truth": null,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "nonfactual",
+   "kind": "opinion"
+  },
+  {
+   "id": "C2",
+   "claim": "This change should be merged quickly.",
+   "truth": null,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #34\nTitle: referral-graph: book edges #16+#17 - fleet-triage resolver census pair VERIFIED\nState: open, merged=false\n\nLands the two mints Casey's 2026-10-01T20:07Z merge burst earned (filed CANDIDATE 2026-10-02 02:26 pulse, upgrade path recorded).\n\n**Weight law receipts (merged PR in each to-node's repo, citing SuperInstance/fleet-triage by name):**\n- `SuperInstance/quilt-research-canons#5` \u2014 MERGED 2026-10-01T20:07:58Z, merge `62f18ff7` \u2014 canon cluster's 222 FILE_MISSING surface\n- `SuperInstance/quilt-tournament#1` \u2014 MERGED 2026-10-01T20:07:46Z, merge `2f6daf21` \u2014 all 25 LINE_OOR citations family-wide\n\n**Changes:** seed +3 nodes +2 VERIFIED edges; pins 19\u219221 / 15\u219217 VERIFIED, +Pin 3q; 129/129 offline + 130/130 --live green; md log entry. Never self-upgraded. Main untouched.",
+   "family": "nonfactual",
+   "kind": "opinion"
+  },
+  {
+   "id": "C3",
+   "claim": "The author of this PR is more trustworthy than the author of PR #32.",
+   "truth": null,
+   "evidence": "GitHub pull request SuperInstance/quilt-tools #32\nTitle: referral-graph: edge #14 VERIFIED on delta-shape#1 merge - qe-eproc-witness -> ds-esign-drift\nState: closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge commit fb2e041\n\nThe e-witness instrument-consumption lane earns its currency: **SuperInstance/delta-shape#1** merged 2026-09-30T19:31:08Z (merge `57c07426`) with the SuperInstance/quilt-ewitness citation load-bearing on main \u2014 byte-pinned vendored `eproc.mjs` (@ `61b9e04`, sha256 `aad90ac5\u2026`), `witnessDrift()` hash-gating before trust, by-name citations in README + SOURCE.txt + esign.mjs.\n\nHonest history in the commit: this edge was booked PENDING twice (7ddd151 \u2014 lost in a /tmp wipe; quilt-tools#31 / `812a644` \u2014 later reset off main, main now at `58e2a18`). The merge outran the booking, so this lands the edge directly at VERIFIED with the merge as receipt \u2014 the aw-jev-kat precedent, with the booking chased by the merge instead of preceding it.\n\n- 18 edges: **14 VERIFIED \u00b7 4 PENDING**; delta-shape enters the view at full VERIFIED mass (6th to-node born after seeding); quilt-ewitness is a from-node.\n- Pins: 114/114 offline green, 115/115 live green (incl. provenance audit of all 14 receipts) \u2014 run against this branch.\n- View: 13 mass-carrying repos; delta-shape ranks first among the single-VERIFIED tie.\n\nGitHub pull request SuperInstance/quilt-tools #33\nTitle: referral-graph: book edge #15 pq-named-refusals -> fm-refusal-ledger VERIFIED (fleet-murmur#8)\nState: closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge commit 0101409\nBase of this PR: fb2e041 (which is PR #32's merge commit)\n\n## What\n\nBooks the fourteenth VERIFIED edge: `pq-named-refusals -> fm-refusal-ledger`, receipt `SuperInstance/fleet-murmur#8`.\n\n**Currency event.** fleet-murmur PR #8 (*\"Refusal-events ledger: draft-kamimura-scitt-refusal-events-03 \u00d7 pong-quilt named refusals\"*, MERGED 2026-09-30T19:31:12Z, merge `b21a4a46`) lands `docs/ietf-kamimura-refusal-events-ledger.md` in the to-node's repo, citing **SuperInstance/pong-quilt by name** at an anchored, pinned site: PQ_PIN repo constant + corpus table pinned to pong-quilt main merge `52b42b4` (six named refusal kinds present-tense grepped at the pin), with `tests/test_refusal_events_ledger.py` running a FAIL-first corpus pin so a drifted citation trips RED instead of passing silently. Draft source re-verified current 2026-10-01 (still `-03`).\n\nWeight law met in the citing repo's merge (edge #2 precedent \u2014 the merge is in fleet-murmur, so the edge books **into** fleet-murmur). Never self-upgraded: Casey's merge earned the edge; this PR books it. The 17:49 pulse's org note recorded *\"mints pq->fm refusal-ledger edge\"* at merge time.\n\n## Changes\n- **seed.mjs**: +2 nodes (`pq-named-refusals`, `fm-refusal-ledger`), +1 VERIFIED edge \u2014 claim carries CURRENCY EARNED 2026-09-30 + merge sha `b21a4a4` + kill switch; provenance `null` (the corpus lives on pong-quilt main, the receipt is the fleet-murmur merge)\n- **pins.mjs**: 17\u219218 edges, 13\u219214 VERIFIED, fleet-murmur first **triple-inbound** repo (honesty#2 + qgs-adapter#3 + refusal-ledger#8), pong-quilt third outgoing edge, +**Pin 3o** (5 currency checks), panel prose updated\n- **REFERRAL_GRAPH.md**: fourteenth-edge log entry\n\n## Evidence\n- FAIL-first: new pins against pristine main tip \u2192 **11 RED** (edge not found, counts 17\u226018, view mass fm 2\u22603)\n- `node experiments/referral_graph.pins.mjs` \u2192 **113/113 green** (108 on main + 5 new)\n- `node experiments/referral_graph.pins.mjs --live` \u2192 **114/114 green** \u2014 25 receipts audited live, all MERGED (incl. fleet-murmur#8)\n\n## Ordering note\nThe ds-esign-drift booking (edge #14) rides open PR #32. Counts here assume main without it; if #32 lands first, this branch rebases (md ordinals follow merge order \u2014 the chain hash, not prose, is canonical). Casey-gated either way.\n",
+   "family": "nonfactual",
+   "kind": "opinion"
+  },
+  {
+   "id": "C4",
+   "claim": "19 edges is a better number than 18 edges.",
+   "truth": null,
+   "evidence": "REFERRAL GRAPH \u2014 seed.mjs as it stands on quilt-tools main (post-merge of PR #32 and PR #33)\nTOTAL EDGES: 19\nVERIFIED: 15\nPENDING: 4\nNODES: 32\nREPOS: 17\n\nedge 1: qe-eproc-witness -> ds-esign-drift [VERIFIED] receipt=SuperInstance/delta-shape#1\nedge 2: stone-sign-lane -> pq-sign-pilot [VERIFIED] receipt=SuperInstance/pong-quilt#51\nedge 3: pq-stone-v1-export -> stone-forward-adopt [VERIFIED] receipt=SuperInstance/quilt-stone#1\nedge 4: jq-commons-g11 -> qt-trust-lever [VERIFIED] receipt=SuperInstance/quilt-tools#17\nedge 5: qgs-strict-gate -> fm-qgs-adapter [VERIFIED] receipt=SuperInstance/fleet-murmur#3\nedge 6: fm-honesty-receipts -> mw-floor-gate [VERIFIED] receipt=SuperInstance/moth-waveform#1\nedge 7: pq-session-wal -> fm-honesty-receipts [VERIFIED] receipt=SuperInstance/fleet-murmur#2\nedge 8: jq-substance-noul -> qb-jev-gate [VERIFIED] receipt=SuperInstance/quilt-cowboy#1\nedge 9: quant-coin-toss -> qq-quantum-tiebreak [VERIFIED] receipt=SuperInstance/pong-quilt#28\nedge 10: qt-s2-driftwatch -> qs-ep2 [VERIFIED] receipt=SuperInstance/quilt-show#1\nedge 11: qt-api-lab -> qs-ep2 [PENDING] receipt=none\nedge 12: qt-s3-tide -> qa-plugins [PENDING] receipt=none\nedge 13: qa-negspace -> qt-api-lab [PENDING] receipt=none\nedge 14: qs-ep3 -> qa-plugins [PENDING] receipt=none\nedge 15: aw-quint-opcode -> ga-quilt-emit [VERIFIED] receipt=SuperInstance/git-agent#4\nedge 16: aw-jev-kat -> jq-kat-bridge [VERIFIED] receipt=SuperInstance/jev-quilt#47\nedge 17: mm-sealed-receipts -> mgq-qcells-lab [VERIFIED] receipt=SuperInstance/micrograd-quilt#7\nedge 18: mgq-qcells-lab -> mm-sealed-receipts [VERIFIED] receipt=SuperInstance/MicroMoth-quilt#29\nedge 19: pq-named-refusals -> fm-refusal-ledger [VERIFIED] receipt=SuperInstance/fleet-murmur#8\n\n",
+   "family": "nonfactual",
+   "kind": "opinion"
+  }
+ ],
+ "results": [
+  {
+   "id": "A1_pr32_counter",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.01,
+    "correct": 0.97,
+    "insufficient": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.97,
+    "cannot_tell": 0.02,
+    "contradicted": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.97,
+    "insufficient": 0.02,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.65,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.02,
+    "incorrect": 0.01,
+    "correct": 0.97
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.01,
+    "upheld": 0.98,
+    "cannot_tell": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.02,
+    "incorrect": 0.01,
+    "correct": 0.97
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.62,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.01,
+    "correct": 0.97,
+    "insufficient": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.02,
+    "contradicted": 0.01,
+    "upheld": 0.97
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "correct": 0.98,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A1_pr32_counter",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.63,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.84,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.09,
+    "correct": 0.84,
+    "incorrect": 0.07
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.79,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.08,
+    "cannot_tell": 0.13,
+    "upheld": 0.79
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.64,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.14,
+    "insufficient": 0.22,
+    "correct": 0.64
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.8,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.8,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.8,
+    "incorrect": 0.1,
+    "insufficient": 0.1
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.85,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.06,
+    "upheld": 0.85,
+    "cannot_tell": 0.09
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.68,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.11,
+    "insufficient": 0.21,
+    "correct": 0.68
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.81,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.8,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.12,
+    "incorrect": 0.08,
+    "correct": 0.8
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.82,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.11,
+    "upheld": 0.82,
+    "contradicted": 0.07
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.75,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.18,
+    "incorrect": 0.07,
+    "correct": 0.75
+   },
+   "err": null
+  },
+  {
+   "id": "A2_pr33_counter",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.8,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.64,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.34,
+    "insufficient": 0.02,
+    "incorrect": 0.64
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.62,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.36,
+    "contradicted": 0.62,
+    "cannot_tell": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.89,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.07,
+    "insufficient": 0.89,
+    "incorrect": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.49,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.65,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.33,
+    "incorrect": 0.65,
+    "insufficient": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.64,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.34,
+    "contradicted": 0.64,
+    "cannot_tell": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.88,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.08,
+    "insufficient": 0.88,
+    "incorrect": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.54,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.59,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.02,
+    "incorrect": 0.59,
+    "correct": 0.39
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.6,
+   "verdict": "incorrect",
+   "dist": {
+    "contradicted": 0.6,
+    "upheld": 0.38,
+    "cannot_tell": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.88,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.88,
+    "correct": 0.09,
+    "incorrect": 0.03
+   },
+   "err": null
+  },
+  {
+   "id": "A3_both_agree",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.53,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "choice",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "incorrect": 0.0,
+    "correct": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.0,
+    "upheld": 1.0,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.98,
+    "correct": 0.01,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.0,
+    "correct": 1.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "contradicted": 0.0,
+    "upheld": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.98,
+    "correct": 0.01,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "correct": 1.0,
+    "insufficient": 0.0,
+    "incorrect": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 1.0,
+    "contradicted": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.98,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A4_true_count",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "choice",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "incorrect": 0.0,
+    "correct": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 1.0,
+    "cannot_tell": 0.0,
+    "contradicted": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.97,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.97,
+    "insufficient": 0.02,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 1.0,
+    "incorrect": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.0,
+    "upheld": 1.0,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.98,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "correct": 1.0,
+    "incorrect": 0.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "contradicted": 0.0,
+    "upheld": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.02,
+    "correct": 0.0,
+    "incorrect": 0.98
+   },
+   "err": null
+  },
+  {
+   "id": "A5_merged_state_verified",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "choice",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "correct": 1.0,
+    "incorrect": 0.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 1.0,
+    "contradicted": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.69,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.69,
+    "insufficient": 0.08,
+    "incorrect": 0.23
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 1.0,
+    "incorrect": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "contradicted": 0.0,
+    "upheld": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.77,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.17,
+    "correct": 0.77,
+    "insufficient": 0.06
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.0,
+    "insufficient": 0.0,
+    "correct": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "contradicted": 0.0,
+    "upheld": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.68,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.25,
+    "correct": 0.68,
+    "insufficient": 0.07
+   },
+   "err": null
+  },
+  {
+   "id": "A6_merged_state_pending",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.94,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.94,
+    "incorrect": 0.05,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.98,
+    "cannot_tell": 0.0,
+    "contradicted": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.95,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.04,
+    "correct": 0.95,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.94,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.92,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.02,
+    "incorrect": 0.06,
+    "correct": 0.92
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.96,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.96,
+    "contradicted": 0.03,
+    "cannot_tell": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.94,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.94,
+    "incorrect": 0.05,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.94,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.95,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.95,
+    "incorrect": 0.04,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.96,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.96,
+    "cannot_tell": 0.01,
+    "contradicted": 0.03
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.95,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.95,
+    "insufficient": 0.01,
+    "incorrect": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "B1_32_merged",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.93,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "choice",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 0.0,
+    "incorrect": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 0.0,
+    "contradicted": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.0,
+    "insufficient": 0.0,
+    "incorrect": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.02,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.0,
+    "incorrect": 1.0,
+    "correct": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "contradicted": 1.0,
+    "upheld": 0.0,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.0,
+    "incorrect": 1.0,
+    "correct": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.02,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 1.0,
+    "insufficient": 0.0,
+    "correct": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "cannot_tell": 0.0,
+    "contradicted": 1.0,
+    "upheld": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 1.0,
+    "correct": 0.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B2_32_open",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.02,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.99,
+    "insufficient": 0.0,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 0.99,
+    "contradicted": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.64,
+   "verdict": "insufficient",
+   "dist": {
+    "incorrect": 0.36,
+    "correct": 0.0,
+    "insufficient": 0.64
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.93,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "correct": 1.0,
+    "insufficient": 0.0,
+    "incorrect": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.0,
+    "upheld": 1.0,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.66,
+   "verdict": "insufficient",
+   "dist": {
+    "incorrect": 0.34,
+    "correct": 0.0,
+    "insufficient": 0.66
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.94,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "correct": 1.0,
+    "insufficient": 0.0,
+    "incorrect": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 1.0,
+    "cannot_tell": 0.0,
+    "contradicted": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.64,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.64,
+    "correct": 0.0,
+    "incorrect": 0.36
+   },
+   "err": null
+  },
+  {
+   "id": "B3_33_merged",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.93,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "choice",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.0,
+    "incorrect": 1.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.0,
+    "cannot_tell": 0.0,
+    "contradicted": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.9,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.01,
+    "insufficient": 0.9,
+    "incorrect": 0.09
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.02,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 0.0,
+    "incorrect": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 0.0,
+    "contradicted": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.89,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.89,
+    "incorrect": 0.1,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.02,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.0,
+    "incorrect": 1.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.0,
+    "cannot_tell": 0.0,
+    "contradicted": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.91,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.01,
+    "incorrect": 0.08,
+    "insufficient": 0.91
+   },
+   "err": null
+  },
+  {
+   "id": "B4_33_open",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.02,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.89,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.1,
+    "correct": 0.89
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.94,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.94,
+    "contradicted": 0.06,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.94,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.94,
+    "incorrect": 0.05,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.88,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.92,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.07,
+    "correct": 0.92,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.89,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.89,
+    "cannot_tell": 0.01,
+    "contradicted": 0.1
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.95,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.95,
+    "incorrect": 0.04,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.85,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.96,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 0.96,
+    "incorrect": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.86,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.86,
+    "cannot_tell": 0.01,
+    "contradicted": 0.13
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.94,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.01,
+    "insufficient": 0.94,
+    "incorrect": 0.05
+   },
+   "err": null
+  },
+  {
+   "id": "B5_34_open",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.84,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "choice",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.0,
+    "incorrect": 1.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "contradicted": 1.0,
+    "cannot_tell": 0.0,
+    "upheld": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.63,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.63,
+    "correct": 0.0,
+    "incorrect": 0.37
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.03,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "choice",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.0,
+    "insufficient": 0.0,
+    "incorrect": 1.0
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "contradicted": 1.0,
+    "cannot_tell": 0.0,
+    "upheld": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.67,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.0,
+    "incorrect": 0.33,
+    "insufficient": 0.67
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.04,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "choice",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.0,
+    "incorrect": 1.0,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "incorrect",
+   "dist": {
+    "contradicted": 1.0,
+    "cannot_tell": 0.0,
+    "upheld": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.68,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.0,
+    "insufficient": 0.68,
+    "incorrect": 0.32
+   },
+   "err": null
+  },
+  {
+   "id": "B6_34_merged",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.04,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.56,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.56,
+    "incorrect": 0.09,
+    "correct": 0.35
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.47,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.14,
+    "upheld": 0.47,
+    "cannot_tell": 0.39
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.94,
+   "verdict": "insufficient",
+   "dist": {
+    "incorrect": 0.06,
+    "correct": 0.0,
+    "insufficient": 0.94
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.72,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.53,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.36,
+    "incorrect": 0.11,
+    "correct": 0.53
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.53,
+   "verdict": "insufficient",
+   "dist": {
+    "upheld": 0.37,
+    "cannot_tell": 0.53,
+    "contradicted": 0.1
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.94,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.0,
+    "insufficient": 0.94,
+    "incorrect": 0.06
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.73,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.56,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.09,
+    "insufficient": 0.35,
+    "correct": 0.56
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.48,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.13,
+    "upheld": 0.48,
+    "cannot_tell": 0.39
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.93,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.93,
+    "correct": 0.0,
+    "incorrect": 0.07
+   },
+   "err": null
+  },
+  {
+   "id": "B7_34_stacked",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.76,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 0.98,
+    "incorrect": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 0.98,
+    "contradicted": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.85,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.85,
+    "correct": 0.06,
+    "insufficient": 0.09
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.02,
+    "correct": 0.98,
+    "insufficient": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.02,
+    "upheld": 0.98,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.87,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.08,
+    "incorrect": 0.87,
+    "correct": 0.05
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.0,
+    "correct": 0.99,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.98,
+    "contradicted": 0.02,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.86,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.86,
+    "insufficient": 0.1,
+    "correct": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "B8_33_is_fourteenth",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.0,
+    "correct": 0.99
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.0,
+    "upheld": 1.0,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.99,
+    "incorrect": 0.0,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.96,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.98,
+    "insufficient": 0.01,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.0,
+    "upheld": 1.0,
+    "contradicted": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.99,
+    "incorrect": 0.0,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.96,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.01,
+    "correct": 0.98
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 1.0,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 1.0,
+    "contradicted": 0.0,
+    "cannot_tell": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.99,
+   "verdict": "correct",
+   "dist": {
+    "incorrect": 0.0,
+    "correct": 0.99,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B9_32_is_fourteenth",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.96,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.82,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.17,
+    "correct": 0.82
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.83,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.83,
+    "contradicted": 0.16,
+    "cannot_tell": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.86,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "correct": 0.86,
+    "incorrect": 0.13
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.86,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.82,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.82,
+    "insufficient": 0.01,
+    "incorrect": 0.17
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.82,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.82,
+    "contradicted": 0.17,
+    "cannot_tell": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.84,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "correct": 0.84,
+    "incorrect": 0.15
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.84,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.82,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "correct": 0.82,
+    "incorrect": 0.17
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.77,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.21,
+    "upheld": 0.77,
+    "cannot_tell": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.83,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.01,
+    "incorrect": 0.16,
+    "correct": 0.83
+   },
+   "err": null
+  },
+  {
+   "id": "B10_32_edge14",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.84,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.97,
+    "incorrect": 0.02,
+    "insufficient": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.98,
+    "contradicted": 0.01,
+    "cannot_tell": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.73,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.0,
+    "insufficient": 0.73,
+    "incorrect": 0.27
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.96,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.98,
+    "insufficient": 0.01,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.97,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.97,
+    "cannot_tell": 0.01,
+    "contradicted": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.77,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.77,
+    "correct": 0.0,
+    "incorrect": 0.23
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.96,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.98,
+    "insufficient": 0.01,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.98,
+   "verdict": "correct",
+   "dist": {
+    "upheld": 0.98,
+    "cannot_tell": 0.01,
+    "contradicted": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.75,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.0,
+    "incorrect": 0.25,
+    "insufficient": 0.75
+   },
+   "err": null
+  },
+  {
+   "id": "B11_33_fm_triple",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.96,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.92,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.92,
+    "correct": 0.06,
+    "insufficient": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.9,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.07,
+    "cannot_tell": 0.03,
+    "contradicted": 0.9
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.89,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.89,
+    "correct": 0.02,
+    "incorrect": 0.09
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "noul",
+   "rep": 0,
+   "p": 0.21,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.91,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.07,
+    "incorrect": 0.91,
+    "insufficient": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.89,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.07,
+    "cannot_tell": 0.04,
+    "contradicted": 0.89
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.9,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.9,
+    "correct": 0.02,
+    "incorrect": 0.08
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "noul",
+   "rep": 1,
+   "p": 0.19,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.91,
+   "verdict": "incorrect",
+   "dist": {
+    "incorrect": 0.91,
+    "correct": 0.07,
+    "insufficient": 0.02
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.89,
+   "verdict": "incorrect",
+   "dist": {
+    "upheld": 0.08,
+    "cannot_tell": 0.03,
+    "contradicted": 0.89
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.9,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.9,
+    "correct": 0.02,
+    "incorrect": 0.08
+   },
+   "err": null
+  },
+  {
+   "id": "B12_32_and_33_rival",
+   "arm": "noul",
+   "rep": 2,
+   "p": 0.22,
+   "verdict": null,
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.58,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.58,
+    "correct": 0.41,
+    "incorrect": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.58,
+   "verdict": "insufficient",
+   "dist": {
+    "contradicted": 0.01,
+    "cannot_tell": 0.58,
+    "upheld": 0.41
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.9,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.06,
+    "insufficient": 0.9,
+    "incorrect": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.64,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.35,
+    "incorrect": 0.01,
+    "insufficient": 0.64
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.52,
+   "verdict": "insufficient",
+   "dist": {
+    "upheld": 0.47,
+    "contradicted": 0.01,
+    "cannot_tell": 0.52
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.91,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.06,
+    "insufficient": 0.91,
+    "incorrect": 0.03
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.62,
+   "verdict": "insufficient",
+   "dist": {
+    "incorrect": 0.01,
+    "correct": 0.37,
+    "insufficient": 0.62
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.55,
+   "verdict": "insufficient",
+   "dist": {
+    "contradicted": 0.01,
+    "cannot_tell": 0.55,
+    "upheld": 0.44
+   },
+   "err": null
+  },
+  {
+   "id": "C1",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.92,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.92,
+    "incorrect": 0.03,
+    "correct": 0.05
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.53,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.53,
+    "correct": 0.35,
+    "incorrect": 0.12
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.66,
+   "verdict": "insufficient",
+   "dist": {
+    "contradicted": 0.12,
+    "upheld": 0.22,
+    "cannot_tell": 0.66
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.42,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.42,
+    "incorrect": 0.18,
+    "insufficient": 0.4
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.54,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.54,
+    "correct": 0.26,
+    "incorrect": 0.2
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.6,
+   "verdict": "insufficient",
+   "dist": {
+    "contradicted": 0.13,
+    "upheld": 0.27,
+    "cannot_tell": 0.6
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.45,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.37,
+    "incorrect": 0.18,
+    "insufficient": 0.45
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.64,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.23,
+    "incorrect": 0.13,
+    "insufficient": 0.64
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.6,
+   "verdict": "insufficient",
+   "dist": {
+    "upheld": 0.26,
+    "cannot_tell": 0.6,
+    "contradicted": 0.14
+   },
+   "err": null
+  },
+  {
+   "id": "C2",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.45,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.43,
+    "correct": 0.45,
+    "incorrect": 0.12
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.84,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.84,
+    "incorrect": 0.12,
+    "correct": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.88,
+   "verdict": "insufficient",
+   "dist": {
+    "upheld": 0.02,
+    "cannot_tell": 0.88,
+    "contradicted": 0.1
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.66,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.66,
+    "incorrect": 0.34,
+    "correct": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.86,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.03,
+    "insufficient": 0.86,
+    "incorrect": 0.11
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.88,
+   "verdict": "insufficient",
+   "dist": {
+    "contradicted": 0.09,
+    "upheld": 0.03,
+    "cannot_tell": 0.88
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.6900000000000001,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.6900000000000001,
+    "incorrect": 0.31,
+    "correct": 0.0
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.85,
+   "verdict": "insufficient",
+   "dist": {
+    "correct": 0.04,
+    "incorrect": 0.11,
+    "insufficient": 0.85
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.86,
+   "verdict": "insufficient",
+   "dist": {
+    "upheld": 0.02,
+    "contradicted": 0.12,
+    "cannot_tell": 0.86
+   },
+   "err": null
+  },
+  {
+   "id": "C3",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.66,
+   "verdict": "insufficient",
+   "dist": {
+    "insufficient": 0.66,
+    "incorrect": 0.33,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "choice",
+   "rep": 0,
+   "p": 0.58,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.37,
+    "incorrect": 0.05,
+    "correct": 0.58
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "shuffle",
+   "rep": 0,
+   "p": 0.61,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.03,
+    "upheld": 0.61,
+    "cannot_tell": 0.36
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "mismatch",
+   "rep": 0,
+   "p": 0.96,
+   "verdict": "incorrect",
+   "dist": {
+    "insufficient": 0.03,
+    "incorrect": 0.96,
+    "correct": 0.01
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "choice",
+   "rep": 1,
+   "p": 0.63,
+   "verdict": "correct",
+   "dist": {
+    "correct": 0.63,
+    "incorrect": 0.06,
+    "insufficient": 0.31
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "shuffle",
+   "rep": 1,
+   "p": 0.75,
+   "verdict": "correct",
+   "dist": {
+    "contradicted": 0.03,
+    "upheld": 0.75,
+    "cannot_tell": 0.22
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "mismatch",
+   "rep": 1,
+   "p": 0.95,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.01,
+    "incorrect": 0.95,
+    "insufficient": 0.04
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "choice",
+   "rep": 2,
+   "p": 0.63,
+   "verdict": "correct",
+   "dist": {
+    "insufficient": 0.32,
+    "correct": 0.63,
+    "incorrect": 0.05
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "shuffle",
+   "rep": 2,
+   "p": 0.62,
+   "verdict": "correct",
+   "dist": {
+    "cannot_tell": 0.35,
+    "upheld": 0.62,
+    "contradicted": 0.03
+   },
+   "err": null
+  },
+  {
+   "id": "C4",
+   "arm": "mismatch",
+   "rep": 2,
+   "p": 0.92,
+   "verdict": "incorrect",
+   "dist": {
+    "correct": 0.01,
+    "incorrect": 0.92,
+    "insufficient": 0.07
+   },
+   "err": null
+  }
+ ]
+}

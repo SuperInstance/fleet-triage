@@ -1,0 +1,27 @@
+REFERRAL GRAPH — seed.mjs as it stands on quilt-tools main (post-merge of PR #32 and PR #33)
+TOTAL EDGES: 19
+VERIFIED: 15
+PENDING: 4
+NODES: 32
+REPOS: 17
+
+edge 1: qe-eproc-witness -> ds-esign-drift [VERIFIED] receipt=SuperInstance/delta-shape#1
+edge 2: stone-sign-lane -> pq-sign-pilot [VERIFIED] receipt=SuperInstance/pong-quilt#51
+edge 3: pq-stone-v1-export -> stone-forward-adopt [VERIFIED] receipt=SuperInstance/quilt-stone#1
+edge 4: jq-commons-g11 -> qt-trust-lever [VERIFIED] receipt=SuperInstance/quilt-tools#17
+edge 5: qgs-strict-gate -> fm-qgs-adapter [VERIFIED] receipt=SuperInstance/fleet-murmur#3
+edge 6: fm-honesty-receipts -> mw-floor-gate [VERIFIED] receipt=SuperInstance/moth-waveform#1
+edge 7: pq-session-wal -> fm-honesty-receipts [VERIFIED] receipt=SuperInstance/fleet-murmur#2
+edge 8: jq-substance-noul -> qb-jev-gate [VERIFIED] receipt=SuperInstance/quilt-cowboy#1
+edge 9: quant-coin-toss -> qq-quantum-tiebreak [VERIFIED] receipt=SuperInstance/pong-quilt#28
+edge 10: qt-s2-driftwatch -> qs-ep2 [VERIFIED] receipt=SuperInstance/quilt-show#1
+edge 11: qt-api-lab -> qs-ep2 [PENDING] receipt=none
+edge 12: qt-s3-tide -> qa-plugins [PENDING] receipt=none
+edge 13: qa-negspace -> qt-api-lab [PENDING] receipt=none
+edge 14: qs-ep3 -> qa-plugins [PENDING] receipt=none
+edge 15: aw-quint-opcode -> ga-quilt-emit [VERIFIED] receipt=SuperInstance/git-agent#4
+edge 16: aw-jev-kat -> jq-kat-bridge [VERIFIED] receipt=SuperInstance/jev-quilt#47
+edge 17: mm-sealed-receipts -> mgq-qcells-lab [VERIFIED] receipt=SuperInstance/micrograd-quilt#7
+edge 18: mgq-qcells-lab -> mm-sealed-receipts [VERIFIED] receipt=SuperInstance/MicroMoth-quilt#29
+edge 19: pq-named-refusals -> fm-refusal-ledger [VERIFIED] receipt=SuperInstance/fleet-murmur#8
+

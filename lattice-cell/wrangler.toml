@@ -1,0 +1,43 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "lattice-cell"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+
+# Plane B — the lease table. One DO per (lattice, cell); the cell name is the
+# natural key and the DO's input gate is the serialization we would otherwise
+# have to hand-roll as a lockfile.
+[[durable_objects.bindings]]
+name = "CELL_LEDGER"
+class_name = "CellLedger"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["CellLedger"]
+
+[[kv_namespaces]]
+binding = "PLAN"
+id = "REPLACE_ME"
+
+[[kv_namespaces]]
+binding = "CELLS"
+id = "REPLACE_ME"
+
+# Discovery only. Nothing in the lattice reads its record from here; if this
+# namespace is empty the lattice still reconciles, because reconciliation is
+# a git walk, not a query.
+[[r2_buckets]]
+binding = "LATTICE"
+bucket_name = "lattice-cell"
+
+[[queues.producers]]
+binding = "LATTICE_Q"
+queue = "lattice-cell"
+
+[[queues.consumers]]
+queue = "lattice-cell"
+max_batch_size = 1
+max_batch_timeout = 1
+max_retries = 3
+
+[observability]
+enabled = true

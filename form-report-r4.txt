@@ -1,0 +1,59 @@
+==============================================================================
+formcheck-r4 — measured, not asserted
+==============================================================================
+### T1  halyard-and-ledger  —  sea shanty, call-and-response
+  lead lines            : 6
+  RESPONSE (crew) lines : 7   <- the call-and-response count
+  crew sections         : 4
+  per-half rhyme (last word -> phone key):
+    rhyme  VERSE 1 — LEAD   'all'          'call'         AE-CC / AE-CC
+    rhyme  VERSE 1 — CREW   'sound'        'ground'       OW-CC / OW-CC
+    rhyme  VERSE 2 — LEAD   'down'         'found'        OW-CC / OW-CC
+    rhyme  VERSE 2 — CREW   'show'         'know'         OW-CC / OW-CC
+    rhyme  CHORUS — LEAD    'claim'        'game'         EY-CC / EY-CC
+    rhyme  CHORUS — CREW    'chart'        'starts'       AE-CC / AE-CC
+  rhyme misses          : 0
+  RESULT: PASS
+### T2  nine-bars-to-town  —  country, 12-bar
+  chorus sections       : 3   (need 3)
+  chorus lines          : 12   (need 12 = 12 bars)
+  lines per chorus      : [4, 4, 4]
+  opening-word test — every line must open on 'Nine bars':
+    ok   chorus1.line1: Nine bars and the ledger is closed
+    ok   chorus1.line2: Nine bars and the number is whole
+    ok   chorus1.line3: Nine bars and the value's exposed
+    ok   chorus1.line4: Nine bars and the mile to the goal
+    ok   chorus2.line1: Nine bars and the ledger is closed
+    ok   chorus2.line2: Nine bars and the number is whole
+    ok   chorus2.line3: Nine bars and the value's exposed
+    ok   chorus2.line4: Nine bars and the mile to the goal
+    ok   chorus3.line1: Nine bars and the ledger is closed
+    ok   chorus3.line2: Nine bars and the number is whole
+    ok   chorus3.line3: Nine bars and the value's exposed
+    ok   chorus3.line4: Nine bars and the mile to the goal
+  opening-word misses   : 0
+  RESULT: PASS
+### T3  one-hundredth-of-the-value  —  HARD FORM, exactly 8 syllables/line
+    8    [VERSE 1] The colour is what you can see
+    8    [VERSE 1] The value is what you can read
+    8    [VERSE 1] Just one part in ninety is gone
+    8    [VERSE 1] The colour is one bit, so cheap
+    8    [VERSE 2] A hash is a perfect disguise
+    8    [VERSE 2] Sixty-four bits of even soup
+    8    [VERSE 2] The hash keeps no shape of the board
+    8    [VERSE 2] Sixty-four bits of noise, that's all
+    8    [VERSE 3] Nothing made later brings it back
+    8    [VERSE 3] Nowhere down the line can it mend
+    8    [VERSE 3] It kept the shape, it lost the paint
+    8    [VERSE 3] Now drop the colour, keep the game
+    8    [OUTRO] One part in ninety for the eye
+    8    [OUTRO] The colour is what you can see
+    8    [OUTRO] The value is what you can read
+    8    [OUTRO] Now drop the colour, keep the game
+  lines                 : 16
+  total syllables       : 128
+  mean syllables/line   : 8.000
+  lines NOT at 8      : 0
+  RESULT: PASS
+
+OVERALL: ALL CONSTRAINTS MET

@@ -1,0 +1,1344 @@
+[
+ {
+  "members": [
+   "fleet-midi-blend",
+   "fleet-midi-collab",
+   "fleet-midi-cycle",
+   "fleet-midi-decode",
+   "fleet-midi-delay",
+   "fleet-midi-drone",
+   "fleet-midi-encode",
+   "fleet-midi-feed",
+   "fleet-midi-filter",
+   "fleet-midi-genetic",
+   "fleet-midi-gliss",
+   "fleet-midi-grammar",
+   "fleet-midi-live",
+   "fleet-midi-mapper",
+   "fleet-midi-pattern",
+   "fleet-midi-pedagogy",
+   "fleet-midi-phase",
+   "fleet-midi-quantum",
+   "fleet-midi-resonance",
+   "fleet-midi-reverb",
+   "fleet-midi-script",
+   "fleet-midi-swarm",
+   "fleet-midi-tremolo",
+   "fleet-orchestra"
+  ],
+  "langs": {
+   "Go": 8,
+   "Makefile": 5,
+   "null": 4,
+   "Python": 5,
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.817,
+  "nonfork": 24
+ },
+ {
+  "members": [
+   "active-probe",
+   "cat-agent",
+   "collective-inference",
+   "desire-loop",
+   "egg",
+   "embryo",
+   "emergence-detector",
+   "fleet-intel",
+   "fleet-miner",
+   "flux-compiler-interpreter",
+   "gpu-scaling",
+   "horse-shell",
+   "mitochondria",
+   "model-breaking",
+   "plato-hardware-engine",
+   "prophet-agent",
+   "room-micro-models",
+   "scale-fold",
+   "tile-lifecycle"
+  ],
+  "langs": {
+   "Python": 19
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-08-26"
+  ],
+  "max_jaccard": 0.558,
+  "nonfork": 19
+ },
+ {
+  "members": [
+   "cell-doctrine",
+   "opcode-canon",
+   "substrate-attest",
+   "substrate-bundle",
+   "substrate-canary-pin",
+   "substrate-contest",
+   "substrate-delegate",
+   "substrate-membership",
+   "substrate-merger",
+   "substrate-revoke",
+   "substrate-traverse",
+   "substrate-withdraw",
+   "substrate-witness-log",
+   "three-forms-of-evidence",
+   "three-forms-of-forgetting",
+   "witness-is-prediction"
+  ],
+  "langs": {
+   "JavaScript": 16
+  },
+  "dates": [
+   "2026-09-22",
+   "2026-09-22"
+  ],
+  "max_jaccard": 0.808,
+  "nonfork": 16
+ },
+ {
+  "members": [
+   "fleet-midi-arp",
+   "fleet-midi-bass",
+   "fleet-midi-cc",
+   "fleet-midi-chord",
+   "fleet-midi-dynamics",
+   "fleet-midi-expression",
+   "fleet-midi-fx",
+   "fleet-midi-groove",
+   "fleet-midi-melody",
+   "fleet-midi-modulation",
+   "fleet-midi-pan",
+   "fleet-midi-register",
+   "fleet-midi-scale",
+   "fleet-midi-tempo",
+   "fleet-midi-velocity",
+   "fleet-midi-voicing"
+  ],
+  "langs": {
+   "Python": 16
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.467,
+  "nonfork": 16
+ },
+ {
+  "members": [
+   "cocapn-abyss",
+   "cocapn-audit",
+   "cocapn-coliseum",
+   "cocapn-dry-dock",
+   "cocapn-fleetmind",
+   "cocapn-garden",
+   "cocapn-horizon",
+   "cocapn-meta-lab",
+   "cocapn-nas",
+   "cocapn-observatory",
+   "cocapn-platonic-dial",
+   "cocapn-workshop",
+   "cocapn-worldmodel"
+  ],
+  "langs": {
+   "null": 13
+  },
+  "dates": [
+   "2026-06-08",
+   "2026-06-08"
+  ],
+  "max_jaccard": 0.713,
+  "nonfork": 13
+ },
+ {
+  "members": [
+   "attention-daemon-early-version",
+   "field-evolution-early-version",
+   "fleet-automation-early-version",
+   "flux-constraint-py-early-version",
+   "gatekeeper-as-flux-early-version",
+   "memory-crystal-early-version",
+   "plato-alignments-early-version",
+   "plato-calibration-early-version",
+   "plato-hologram-early-version",
+   "plato-stable-early-version",
+   "the-plenum-early-version",
+   "tile-memory-early-version"
+  ],
+  "langs": {
+   "Python": 10,
+   "Rust": 1,
+   "HTML": 1
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.793,
+  "nonfork": 12
+ },
+ {
+  "members": [
+   "axum",
+   "circuit-breaker-rs",
+   "connection-pool-rs",
+   "diffie-hellman-rs",
+   "digital-signature-rs",
+   "fractal-gen-rs",
+   "grand-pattern-mono-go",
+   "grand-pattern-mono-ts",
+   "lie-algebra",
+   "markov-chain-rs",
+   "noise-gen-rs",
+   "rate-limiter-rs"
+  ],
+  "langs": {
+   "Rust": 10,
+   "Go": 1,
+   "TypeScript": 1
+  },
+  "dates": [
+   "2026-06-08",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.8,
+  "nonfork": 11
+ },
+ {
+  "members": [
+   "capitaine-ai-pages",
+   "cocapn-com-pages",
+   "deckboss-ai-pages",
+   "deckboss-net-pages",
+   "dmlog-ai-pages",
+   "fishinglog-ai-pages",
+   "luciddreamer-ai-pages",
+   "makerlog-ai-pages",
+   "personallog-ai-pages",
+   "playerlog-ai-pages",
+   "reallog-ai-pages",
+   "studylog-ai-pages"
+  ],
+  "langs": {
+   "HTML": 12
+  },
+  "dates": [
+   "2026-05-03",
+   "2026-08-21"
+  ],
+  "max_jaccard": 0.843,
+  "nonfork": 12
+ },
+ {
+  "members": [
+   "lau-agent-unify",
+   "lau-animation",
+   "lau-bridge",
+   "lau-bridge-tutor",
+   "lau-camera",
+   "lau-category-theory",
+   "lau-challenge",
+   "lau-collections",
+   "lau-compilers",
+   "lau-construct-integration",
+   "lau-control-theory"
+  ],
+  "langs": {
+   "Rust": 11
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.772,
+  "nonfork": 11
+ },
+ {
+  "members": [
+   "cuda-adaptive-rate",
+   "cuda-bottleneck",
+   "cuda-bytecode-optimizer",
+   "cuda-context-window",
+   "cuda-fleet-health",
+   "cuda-fleet-topology",
+   "cuda-pipeline",
+   "cuda-semantic-router",
+   "cuda-workflow"
+  ],
+  "langs": {
+   "Rust": 9
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.631,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "LLMs-from-scratch-early-version",
+   "flux-consciousness-engine-early-version",
+   "flux-engine-early-version",
+   "greenhorn-runtime-early-version",
+   "keel-early-version",
+   "lighthouse-cli-early-version",
+   "penrose-memory-palace-early-version",
+   "zeroclaw-agent-early-version"
+  ],
+  "langs": {
+   "Jupyter Notebook": 1,
+   "null": 1,
+   "Python": 2,
+   "Go": 1,
+   "Rust": 2,
+   "HTML": 1
+  },
+  "dates": [
+   "2026-05-14",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.695,
+  "nonfork": 7
+ },
+ {
+  "members": [
+   "renormalization-learning-rs",
+   "spectral-graph-agent-rs",
+   "terminal-entropy-harness",
+   "terminal-forecast-harness",
+   "terminal-hodge-harness",
+   "terminal-sheaf-harness",
+   "terminal-spectral-harness",
+   "west-african-math-rs"
+  ],
+  "langs": {
+   "Rust": 8
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.867,
+  "nonfork": 8
+ },
+ {
+  "members": [
+   "categorical-agents",
+   "crab",
+   "exocortex",
+   "git-agent",
+   "git-agent-codespace",
+   "grand-pattern-rs"
+  ],
+  "langs": {
+   "Rust": 2,
+   "Python": 3,
+   "Shell": 1
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-09-29"
+  ],
+  "max_jaccard": 0.468,
+  "nonfork": 6
+ },
+ {
+  "members": [
+   "dojo-alchemist",
+   "dojo-builder",
+   "dojo-scout",
+   "dojo-scribe",
+   "git-agent-minimum"
+  ],
+  "langs": {
+   "Python": 3,
+   "Shell": 1,
+   "null": 1
+  },
+  "dates": [
+   "2026-04-26",
+   "2026-05-08"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 5
+ },
+ {
+  "members": [
+   "Tripartite1",
+   "synesis",
+   "tripartite-rs",
+   "usemeter"
+  ],
+  "langs": {
+   "Rust": 3,
+   "Makefile": 1
+  },
+  "dates": [
+   "2026-04-14",
+   "2026-09-22"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 4
+ },
+ {
+  "members": [
+   "context-lattice",
+   "context-limits",
+   "context-recycler",
+   "context-serializer"
+  ],
+  "langs": {
+   "TypeScript": 4
+  },
+  "dates": [
+   "2026-06-08",
+   "2026-06-08"
+  ],
+  "max_jaccard": 0.977,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "coq-unified",
+   "forgemaster-docs",
+   "forgemaster-fleet-comms",
+   "forgemaster-memory-archive"
+  ],
+  "langs": {
+   "Rocq Prover": 1,
+   "Python": 2,
+   "Rust": 1
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.684,
+  "nonfork": 4
+ },
+ {
+  "members": [
+   "cuda-config",
+   "cuda-logging",
+   "cuda-metrics",
+   "cuda-sandbox"
+  ],
+  "langs": {
+   "Rust": 4
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.494,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "cuda-crdt",
+   "cuda-decision",
+   "cuda-perception"
+  ],
+  "langs": {
+   "Rust": 3
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.479,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "cuda-rate-limit",
+   "cuda-resilience",
+   "cuda-retry"
+  ],
+  "langs": {
+   "Rust": 3
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.539,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "grand-pattern-chapel",
+   "grand-pattern-fortran",
+   "grand-pattern-mojo"
+  ],
+  "langs": {
+   "Chapel": 1,
+   "Fortran": 1,
+   "Mojo": 1
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.601,
+  "nonfork": 3
+ },
+ {
+  "members": [
+   "luciddreamer-os",
+   "secret-manager",
+   "workflow-engineer"
+  ],
+  "langs": {
+   "HTML": 1,
+   "Rust": 1,
+   "null": 1
+  },
+  "dates": [
+   "2026-04-14",
+   "2026-08-14"
+  ],
+  "max_jaccard": 0.432,
+  "nonfork": 3
+ },
+ {
+  "members": [
+   "plato-tile-cache",
+   "plato-tile-encoder",
+   "plato-tile-priority"
+  ],
+  "langs": {
+   "Rust": 3
+  },
+  "dates": [
+   "2026-05-08",
+   "2026-05-08"
+  ],
+  "max_jaccard": 0.662,
+  "nonfork": 3
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-DigitalTwin-RobotStudio-SmartComponent",
+   "recovered-copy-20260824-study-smartcomponent",
+   "study-smartcomponent"
+  ],
+  "langs": {
+   "C#": 3
+  },
+  "dates": [
+   "2026-08-14",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 3
+ },
+ {
+  "members": [
+   "ternary-criticality",
+   "ternary-forgiveness",
+   "ternary-renormalize"
+  ],
+  "langs": {
+   "Rust": 3
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.981,
+  "nonfork": 3
+ },
+ {
+  "members": [
+   "agent-writings-archive",
+   "recovered-copy-20260824-agent-writings-archive"
+  ],
+  "langs": {
+   "null": 2
+  },
+  "dates": [
+   "2026-08-22",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "api-doc-generator",
+   "multibot"
+  ],
+  "langs": {
+   "null": 1,
+   "Python": 1
+  },
+  "dates": [
+   "2026-04-14",
+   "2026-05-08"
+  ],
+  "max_jaccard": 0.434,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "conservation-enforcer-rs",
+   "si-exocortex-rs"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-22",
+   "2026-08-20"
+  ],
+  "max_jaccard": 0.547,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "constraint-theory-papers",
+   "fm-papers"
+  ],
+  "langs": {
+   "TeX": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-08-21"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "cuda-cache",
+   "cuda-schema"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.517,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "cuda-communication",
+   "cuda-tuple-space"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.472,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "cuda-learning",
+   "cuda-skill"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.439,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "cuda-metrics-v2",
+   "cuda-serializer"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.462,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "cuda-weather",
+   "cuda-world-model"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.46,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "dynamical-systems",
+   "lau-dynamical-systems"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.888,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "ecc-rs",
+   "lau-error-correcting-codes"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.958,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "edge-native-paper",
+   "nexus-integration-paper"
+  ],
+  "langs": {
+   "null": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-09-30"
+  ],
+  "max_jaccard": 0.545,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "elephant-sim-worker",
+   "recovered-copy-20260824-elephant-sim-worker"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-08-20",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "ergodic-theory",
+   "lau-ergodic-theory"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.68,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "fleet-embed",
+   "recovered-copy-20260824-fleet-embed"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-08-21",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "fleet-ensemble",
+   "recovered-copy-20260824-fleet-ensemble"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-08-21",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "fleet-jepa-midi",
+   "recovered-copy-20260824-fleet-jepa-midi"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-08-21",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "fleet-memory",
+   "recovered-copy-20260824-fleet-memory"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-08-21",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "fleet-static-host",
+   "rc-20260824-01"
+  ],
+  "langs": {
+   "HTML": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-09-28"
+  ],
+  "max_jaccard": 0.781,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "fleet-weather-agent",
+   "template-fleet-agent"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-06-09",
+   "2026-06-13"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "flux-reasoner",
+   "flux-reasoner-engine"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "free-probability",
+   "lau-free-probability"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.423,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "ideation-games",
+   "recovered-copy-20260824-ideation-games"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-21",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "knowledge-graph",
+   "si-knowledge-base"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-11",
+   "2026-08-11"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "lau-logic-foundations",
+   "logic-foundations"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.635,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "lau-number-theory",
+   "number-theory"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.416,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "lau-plato-tutor",
+   "lau-room-native"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.985,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "lau-renormalization",
+   "renormalization"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.754,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "lau-sheaf-spectrum",
+   "sheaf-spectral"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.572,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "live-canon-npm",
+   "live-canon-pypi"
+  ],
+  "langs": {
+   "JavaScript": 1,
+   "Python": 1
+  },
+  "dates": [
+   "2026-09-20",
+   "2026-09-20"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "madlibs-gan",
+   "madlibs-gan-npm"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-09-22",
+   "2026-09-22"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "mist-game",
+   "recovered-copy-20260824-mist-game"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-08-26"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "mist-lab",
+   "recovered-copy-20260824-mist-lab"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-08-23",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "mist-quilt",
+   "recovered-copy-20260824-mist-quilt"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-08-22",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "operational-fiction",
+   "recovered-copy-20260824-operational-fiction"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-08-30"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "peanut-gallery",
+   "peanut-gallery-npm"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-09-22",
+   "2026-09-22"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "plato-deadband",
+   "plato-tile-search"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-05-08",
+   "2026-05-08"
+  ],
+  "max_jaccard": 0.531,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "polychora",
+   "polychora-temporal"
+  ],
+  "langs": {
+   "Rust": 2
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.894,
+  "nonfork": 1
+ },
+ {
+  "members": [
+   "quf-vhdl",
+   "quilt-rust"
+  ],
+  "langs": {
+   "VHDL": 1,
+   "Rust": 1
+  },
+  "dates": [
+   "2026-09-08",
+   "2026-09-29"
+  ],
+  "max_jaccard": 0.797,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "quilt-jev-toolkit",
+   "quilt-jev-toolkit-push"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-09-24",
+   "2026-09-30"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "quilt-quantumaudio-demo",
+   "quilt-quantumaudio-demo-push"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-09-24",
+   "2026-09-24"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "rc-20260824-06",
+   "si-papers-new"
+  ],
+  "langs": {
+   "null": 1,
+   "HTML": 1
+  },
+  "dates": [
+   "2026-08-23",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "reallog-ai",
+   "studylog-ai-1"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-04-13",
+   "2026-04-13"
+  ],
+  "max_jaccard": 0.505,
+  "nonfork": 0
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-scrap-quilt",
+   "scrap-quilt"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-08-29"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-scrap-voice",
+   "scrap-voice"
+  ],
+  "langs": {
+   "TypeScript": 2
+  },
+  "dates": [
+   "2026-08-23",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-scrapcraft-world",
+   "scrapcraft-world"
+  ],
+  "langs": {
+   "null": 2
+  },
+  "dates": [
+   "2026-08-23",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-superinstance-ai",
+   "superinstance-ai"
+  ],
+  "langs": {
+   "HTML": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-09-02"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-tap-gamenight",
+   "tap-gamenight"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-08-31"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-ternary-rom",
+   "ternary-rom"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-22",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-wesley",
+   "wesley"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-21",
+   "2026-08-25"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "recovered-copy-20260824-zeroclaw-dissertation",
+   "zeroclaw-dissertation"
+  ],
+  "langs": {
+   "Python": 2
+  },
+  "dates": [
+   "2026-08-25",
+   "2026-09-04"
+  ],
+  "max_jaccard": 1.0,
+  "nonfork": 2
+ },
+ {
+  "members": [
+   "sheaf-agents-c",
+   "sheaf-agents-rs"
+  ],
+  "langs": {
+   "C": 1,
+   "Rust": 1
+  },
+  "dates": [
+   "2026-07-12",
+   "2026-07-12"
+  ],
+  "max_jaccard": 0.742,
+  "nonfork": 2
+ }
+]

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="560" viewBox="0 0 940 560">
+<rect width="940" height="560" fill="white"/>
+<line x1="92" y1="-0.1" x2="730" y2="-0.1" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="3.9" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">1</text>
+<line x1="92" y1="-30.1" x2="730" y2="-30.1" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-26.1" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">2</text>
+<line x1="92" y1="-69.7" x2="730" y2="-69.7" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-65.7" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">5</text>
+<line x1="92" y1="-99.7" x2="730" y2="-99.7" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-95.7" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">10</text>
+<line x1="92" y1="-129.7" x2="730" y2="-129.7" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-125.7" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">20</text>
+<line x1="92" y1="-169.3" x2="730" y2="-169.3" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-165.3" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">50</text>
+<line x1="92" y1="-199.3" x2="730" y2="-199.3" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-195.3" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">100</text>
+<line x1="92" y1="-229.3" x2="730" y2="-229.3" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-225.3" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">200</text>
+<line x1="92" y1="-269.0" x2="730" y2="-269.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-265.0" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">500</text>
+<line x1="92" y1="-298.9" x2="730" y2="-298.9" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-294.9" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">1000</text>
+<line x1="92" y1="-328.9" x2="730" y2="-328.9" stroke="#e5e7eb" stroke-width="1"/>
+<text x="84" y="-324.9" font-size="11" text-anchor="end" fill="#6b7280" font-family="monospace">2000</text>
+<line x1="92.0" y1="52" x2="92.0" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="92.0" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">1</text>
+<line x1="147.2" y1="52" x2="147.2" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="147.2" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">2</text>
+<line x1="220.3" y1="52" x2="220.3" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="220.3" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">5</text>
+<line x1="275.5" y1="52" x2="275.5" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="275.5" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">10</text>
+<line x1="330.7" y1="52" x2="330.7" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="330.7" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">20</text>
+<line x1="403.7" y1="52" x2="403.7" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="403.7" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">50</text>
+<line x1="459.0" y1="52" x2="459.0" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="459.0" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">100</text>
+<line x1="514.2" y1="52" x2="514.2" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="514.2" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">200</text>
+<line x1="587.2" y1="52" x2="587.2" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="587.2" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">500</text>
+<line x1="642.5" y1="52" x2="642.5" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="642.5" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">1000</text>
+<line x1="697.7" y1="52" x2="697.7" y2="498" stroke="#f3f4f6" stroke-width="1"/>
+<text x="697.7" y="516" font-size="11" text-anchor="middle" fill="#6b7280" font-family="monospace">2000</text>
+<rect x="92" y="52" width="638" height="446" fill="none" stroke="#9ca3af"/>
+<text x="411" y="546" font-size="13" text-anchor="middle" fill="#111827">generation</text>
+<text transform="translate(20,275) rotate(-90)" font-size="13" text-anchor="middle" fill="#111827">self-averaged variance</text>
+<text x="92" y="30" font-size="16" font-weight="600" fill="#111827">F2&#x27;s actual mechanism: diploid Wright-Fisher, random mating</text>
+<text x="740" y="66" font-size="11" fill="#374151" font-family="monospace">started MONOMORPHIC; only the operator</text>
+<text x="740" y="81" font-size="11" fill="#374151" font-family="monospace">can create diversity</text>
+<text x="740" y="96" font-size="11" fill="#374151" font-family="monospace"></text>
+<text x="740" y="111" font-size="11" fill="#374151" font-family="monospace">s=0  -&gt; independent stochasticity (what the</text>
+<text x="740" y="126" font-size="11" fill="#374151" font-family="monospace">       thesis licenses): diversity dies on a</text>
+<text x="740" y="141" font-size="11" fill="#374151" font-family="monospace">       ~N-generation timescale</text>
+<text x="740" y="156" font-size="11" fill="#374151" font-family="monospace">s&gt;0  -&gt; state-dependent (heterozygote</text>
+<text x="740" y="171" font-size="11" fill="#374151" font-family="monospace">       advantage = F2&#x27;s 1:2:1): diversity held</text>
+<text x="740" y="186" font-size="11" fill="#374151" font-family="monospace"></text>
+<text x="740" y="201" font-size="11" fill="#374151" font-family="monospace">max possible = 0.25,  HW 1:2:1 = 0.125</text>
+<path d="M-54953.5,896.5 L92.0,91.8 L147.2,91.7 L179.5,92.8 L202.5,92.6 L220.3,93.5 L234.8,94.3 L247.1,95.6 L257.7,95.9 L267.1,95.7 L275.5,97.2 L290.0,97.7 L296.4,98.9 L307.8,100.3 L317.8,101.4 L330.7,105.4 L341.9,106.5 L351.6,109.9 L363.0,113.4 L373.0,115.1 L383.9,119.3 L395.3,122.0 L405.3,124.7 L416.9,130.3 L427.1,133.7 L438.1,142.0 L448.8,152.8 L459.8,162.9 L470.8,170.5 L481.1,178.7 L492.3,186.5 L503.1,210.6 L513.8,223.9 L524.6,245.9 L535.4,267.2 L546.2,297.1 L557.0,365.6 L567.8,896.5 L578.6,896.5 L589.4,896.5 L600.3,896.5 L611.0,896.5 L621.8,896.5 L632.7,896.5 L643.5,896.5 L654.3,896.5 L665.1,896.5 L675.9,896.5 L686.7,896.5 L697.6,896.5 L708.4,896.5 L719.2,896.5 L730.0,896.5" fill="none" stroke="#2563eb" stroke-width="2.4"/>
+<path d="M-54953.5,896.5 L92.0,92.2 L147.2,92.8 L179.5,92.8 L202.5,94.3 L220.3,94.5 L234.8,95.8 L247.1,96.0 L257.7,96.6 L267.1,96.9 L275.5,97.6 L290.0,98.0 L296.4,100.3 L307.8,100.5 L317.8,101.9 L330.7,103.6 L341.9,104.4 L351.6,106.7 L363.0,110.1 L373.0,109.4 L383.9,111.2 L395.3,116.7 L405.3,118.0 L416.9,121.5 L427.1,126.1 L438.1,131.5 L448.8,136.2 L459.8,143.5 L470.8,146.3 L481.1,156.5 L492.3,163.7 L503.1,173.9 L513.8,180.9 L524.6,194.7 L535.4,208.0 L546.2,228.7 L557.0,245.5 L567.8,271.4 L578.6,273.3 L589.4,366.6 L600.3,896.5 L611.0,896.5 L621.8,896.5 L632.7,896.5 L643.5,896.5 L654.3,896.5 L665.1,896.5 L675.9,896.5 L686.7,896.5 L697.6,896.5 L708.4,896.5 L719.2,896.5 L730.0,896.5" fill="none" stroke="#dc2626" stroke-width="2.4"/>
+<path d="M-54953.5,896.5 L92.0,94.5 L147.2,95.5 L179.5,95.3 L202.5,95.9 L220.3,96.6 L234.8,97.5 L247.1,98.2 L257.7,99.0 L267.1,98.1 L275.5,97.2 L290.0,99.5 L296.4,99.8 L307.8,100.7 L317.8,101.1 L330.7,103.0 L341.9,104.0 L351.6,105.2 L363.0,106.1 L373.0,106.5 L383.9,108.7 L395.3,110.6 L405.3,113.7 L416.9,114.7 L427.1,118.6 L438.1,119.7 L448.8,123.6 L459.8,126.4 L470.8,128.6 L481.1,133.4 L492.3,139.4 L503.1,144.4 L513.8,155.6 L524.6,163.7 L535.4,174.8 L546.2,189.3 L557.0,194.4 L567.8,212.8 L578.6,229.3 L589.4,251.7 L600.3,276.5 L611.0,274.9 L621.8,309.2 L632.7,294.3 L643.5,340.3 L654.3,896.5 L665.1,896.5 L675.9,896.5 L686.7,896.5 L697.6,896.5 L708.4,896.5 L719.2,896.5 L730.0,896.5" fill="none" stroke="#059669" stroke-width="2.4"/>
+<path d="M-54953.5,896.5 L92.0,98.5 L147.2,99.9 L179.5,100.3 L202.5,100.5 L220.3,100.3 L234.8,99.9 L247.1,100.1 L257.7,100.9 L267.1,101.4 L275.5,101.2 L290.0,101.7 L296.4,101.3 L307.8,101.0 L317.8,102.2 L330.7,100.1 L341.9,103.0 L351.6,102.4 L363.0,102.2 L373.0,102.1 L383.9,101.3 L395.3,103.1 L405.3,104.2 L416.9,103.8 L427.1,104.3 L438.1,105.0 L448.8,106.4 L459.8,105.1 L470.8,107.7 L481.1,108.8 L492.3,108.5 L503.1,108.2 L513.8,109.0 L524.6,110.0 L535.4,111.0 L546.2,115.6 L557.0,115.8 L567.8,120.1 L578.6,121.7 L589.4,126.9 L600.3,131.9 L611.0,134.2 L621.8,140.7 L632.7,147.1 L643.5,155.5 L654.3,159.7 L665.1,168.4 L675.9,183.2 L686.7,188.1 L697.6,192.0 L708.4,202.4 L719.2,217.0 L730.0,232.7" fill="none" stroke="#d97706" stroke-width="2.4"/>
+<path d="M-54953.5,896.5 L92.0,107.4 L147.2,107.3 L179.5,106.4 L202.5,106.8 L220.3,106.8 L234.8,106.6 L247.1,106.9 L257.7,106.4 L267.1,106.0 L275.5,106.2 L290.0,108.0 L296.4,107.4 L307.8,106.7 L317.8,106.3 L330.7,107.5 L341.9,105.7 L351.6,106.2 L363.0,106.4 L373.0,108.1 L383.9,107.0 L395.3,106.2 L405.3,107.8 L416.9,106.8 L427.1,108.6 L438.1,105.1 L448.8,106.5 L459.8,108.6 L470.8,107.6 L481.1,107.2 L492.3,105.4 L503.1,107.0 L513.8,108.3 L524.6,107.4 L535.4,108.1 L546.2,108.5 L557.0,108.7 L567.8,107.7 L578.6,107.8 L589.4,109.2 L600.3,108.9 L611.0,107.1 L621.8,107.7 L632.7,109.6 L643.5,107.7 L654.3,109.8 L665.1,112.1 L675.9,111.7 L686.7,112.5 L697.6,113.8 L708.4,114.5 L719.2,117.5 L730.0,117.8" fill="none" stroke="#7c3aed" stroke-width="2.4"/>
+<line x1="740" y1="56" x2="764" y2="56" stroke="#2563eb" stroke-width="2.5"/>
+<text x="770" y="60" font-size="10.5" fill="#111827" font-family="monospace">w_Aa = 1.00 halflife 42 gen</text>
+<line x1="740" y1="74" x2="764" y2="74" stroke="#dc2626" stroke-width="2.5"/>
+<text x="770" y="78" font-size="10.5" fill="#111827" font-family="monospace">w_Aa = 1.10 halflife 65 gen</text>
+<line x1="740" y1="92" x2="764" y2="92" stroke="#059669" stroke-width="2.5"/>
+<text x="770" y="96" font-size="10.5" fill="#111827" font-family="monospace">w_Aa = 1.30 halflife 116 gen</text>
+<line x1="740" y1="110" x2="764" y2="110" stroke="#d97706" stroke-width="2.5"/>
+<text x="770" y="114" font-size="10.5" fill="#111827" font-family="monospace">w_Aa = 2.00 halflife 647 gen</text>
+<line x1="740" y1="128" x2="764" y2="128" stroke="#7c3aed" stroke-width="2.5"/>
+<text x="770" y="132" font-size="10.5" fill="#111827" font-family="monospace">w_Aa = 4.00 halflife 8444 gen</text>
+</svg>

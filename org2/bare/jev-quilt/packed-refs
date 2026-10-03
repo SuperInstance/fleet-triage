@@ -1,0 +1,18 @@
+# pack-refs with: peeled fully-peeled sorted 
+862cee2bc13edcd421a4bfb3ae7f7abf68996794 refs/heads/ci-and-stdlib
+a231d3579e6b614f692aa98dd187c514cb7a5a09 refs/heads/classifier-lab
+9d26522c9b4f1f38fd14be6e8edba5cab2df3a18 refs/heads/claude/frontier-calibrated-floor
+035236c3961a8047b2b45e77b466806e28fe0bc7 refs/heads/claude/g12-provable-forgetting
+fc2730252ccc9fefddb3c8d8b39cf33a7b95d491 refs/heads/claude/g17-attestation
+28cdb9f5ec086e3668ddd6d185e53f4e3e067d6f refs/heads/claude/g20b-second-reader
+5333e1aecd2f6253f31b21ea3f659b06f602f464 refs/heads/claude/g20c-deposit-reader
+47799ce84a45811d6410b3947bb015df2dc0a3f0 refs/heads/claude/r2-earned-standing
+43a4ff05f160e36e914459db68ce1dced8bdc803 refs/heads/feature/fix-typesafe-endpoint
+2b8cd3755f003f5b86619d8247b5deba79645601 refs/heads/frontier-positioning-0922
+9bfdec6fc3d3d83a3d5e183821b73557ba5def31 refs/heads/homeostatic-throttle
+bffe2c6bb8a1384eec903b0979f588f8df3b8be0 refs/heads/jev-kat-bridge
+c8172ccc31695a1fa940a2f61a7686a346b23c02 refs/heads/main
+d9e6350afe2312f57ba3513dae4be8288d31861a refs/heads/master
+235e5bbebb999ff626740c6df67335e451085b1e refs/heads/receipts-evidence-triptych
+bc488cc19eae616970fcb6935593e8dbb24d2430 refs/heads/rust-receipt-residue
+2c973464e990fe443f32f04d0010274cd662bedf refs/heads/watch-new-loops

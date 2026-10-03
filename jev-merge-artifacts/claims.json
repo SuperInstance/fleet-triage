@@ -1,0 +1,204 @@
+[
+ {
+  "id": "counter32",
+  "tier": "contested",
+  "claim": "After PR #32 (quilt-tools) landed, the referral-graph counter was 18 edges / 14 VERIFIED / 4 PENDING, as PR #32's own body states.",
+  "truth": false,
+  "evidence": "PR #32 body: '- 18 edges: **14 VERIFIED \u00b7 4 PENDING**'. Executed recount from merged main (node, ReferralGraph.book over SEED.edges): TOTAL EDGES 19, VERIFIED 15, PENDING 4.",
+  "family": "contested"
+ },
+ {
+  "id": "counter33",
+  "tier": "contested",
+  "claim": "After PR #33 (quilt-tools) landed, the referral-graph counter was 18 edges / 14 VERIFIED / 4 PENDING, as PR #33's own body states ('17->18 edges, 13->14 VERIFIED').",
+  "truth": false,
+  "evidence": "PR #33 body: 'pins.mjs: 17->18 edges, 13->14 VERIFIED'. Executed recount from merged main: TOTAL EDGES 19, VERIFIED 15, PENDING 4. Both PRs undercount by exactly one edge, each excluding the other.",
+  "family": "contested"
+ },
+ {
+  "id": "counter_union",
+  "tier": "contested",
+  "claim": "The merged referral graph on quilt-tools main has 19 total edges, 15 VERIFIED and 4 PENDING.",
+  "truth": true,
+  "evidence": "Executed: node count.mjs over merged main seed -> nodes 32, repos 17, TOTAL EDGES 19, VERIFIED 15, PENDING 4.",
+  "family": "contested"
+ },
+ {
+  "id": "fm_triple",
+  "tier": "contested",
+  "claim": "fleet-murmur is the first triple-inbound repo in the referral graph, with 3 VERIFIED inbound edges (receipts #2, #3, #8), exactly as PR #33 claims.",
+  "truth": true,
+  "evidence": "Executed inbound tally: fleet-murmur = 3 (all VERIFIED): qgs-strict-gate->fm-qgs-adapter (fleet-murmur#3), pq-session-wal->fm-honesty-receipts (fleet-murmur#2), pq-named-refusals->fm-refusal-ledger (fleet-murmur#8). pins.mjs Pin 3 asserts 3*VERIFIED_WEIGHT.",
+  "family": "contested"
+ },
+ {
+  "id": "fm_triple_pre",
+  "tier": "contested",
+  "claim": "fleet-murmur already had 3 VERIFIED inbound edges BEFORE PR #33 was merged.",
+  "truth": false,
+  "evidence": "PR #33 adds the third (fm-refusal-ledger, receipt fleet-murmur#8). Before #33, inbound receipts were only #2 and #3. The triple is created BY #33, not prior to it.",
+  "family": "contested"
+ },
+ {
+  "id": "pq_third",
+  "tier": "contested",
+  "claim": "pong-quilt has 3 outgoing edges in the merged referral graph, as PR #33 claims ('pong-quilt's THIRD outgoing edge').",
+  "truth": false,
+  "evidence": "Executed outbound tally from merged main: pong-quilt is a from-node on exactly 2 edges (pq-session-wal->fm-honesty-receipts, pq-named-refusals->fm-refusal-ledger).",
+  "family": "contested"
+ },
+ {
+  "id": "open_chiaroscuro_13",
+  "claim": "SuperInstance/chiaroscuro PR #13 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: kc_geo v4 RUN receipt: claim-bug closed by construction (G2 PASS), H1-H4 all FAI",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_12",
+  "claim": "SuperInstance/chiaroscuro PR #12 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: geometric-PN KC v4 pre-registration SEALED (R1): cone-math correction, one-const",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_11",
+  "claim": "SuperInstance/chiaroscuro PR #11 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: CAST v3 RUN receipt: H1 4/4 recovered, H2 FAIL on sealed delta gate \u2014 verdict FA",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_10",
+  "claim": "SuperInstance/chiaroscuro PR #10 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: kc_geo: geometric-PN KC layer RUN vs sealed spec (R1) \u2014 FAIL, receipted",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_9",
+  "claim": "SuperInstance/chiaroscuro PR #9 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: geometric-PN KC pre-registration (sealed before run, R1)",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_8",
+  "claim": "SuperInstance/chiaroscuro PR #8 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: CAST v3: vocab-expansion pre-registration (sealed, R1)",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_7",
+  "claim": "SuperInstance/chiaroscuro PR #7 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: Edge worker graph-port: worker.ts routes via synonym-graph router, parity-pinned",
+  "family": "state"
+ },
+ {
+  "id": "open_chiaroscuro_6",
+  "claim": "SuperInstance/chiaroscuro PR #6 is currently OPEN and has not been merged into its base branch.",
+  "truth": true,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false. Title: fly-stack v0: fruitfly CX \u00d7 JEV ternary \u00d7 KC layer \u00d7 Moth notary \u2014 1 PASS / 3 se",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_13",
+  "claim": "SuperInstance/chiaroscuro PR #13 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_12",
+  "claim": "SuperInstance/chiaroscuro PR #12 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_11",
+  "claim": "SuperInstance/chiaroscuro PR #11 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_10",
+  "claim": "SuperInstance/chiaroscuro PR #10 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_9",
+  "claim": "SuperInstance/chiaroscuro PR #9 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_8",
+  "claim": "SuperInstance/chiaroscuro PR #8 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_7",
+  "claim": "SuperInstance/chiaroscuro PR #7 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_chiaroscuro_6",
+  "claim": "SuperInstance/chiaroscuro PR #6 has been merged into its base branch.",
+  "truth": false,
+  "evidence": "Live GitHub API 2026-10-01: state='open', merged=false, merged_at=null. No merge commit exists for this PR.",
+  "family": "state"
+ },
+ {
+  "id": "merged_qt_32",
+  "claim": "SuperInstance/quilt-tools PR #32 has been merged into main.",
+  "truth": true,
+  "evidence": "Live API: state=closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge sha fb2e041. git merge-base --is-ancestor fb2e041 origin/main succeeds.",
+  "family": "state"
+ },
+ {
+  "id": "open_qt_32",
+  "claim": "SuperInstance/quilt-tools PR #32 is still open and awaiting review.",
+  "truth": false,
+  "evidence": "Live API: state=closed, merged=true, merged_at 2026-10-01T20:08:03Z, merge sha fb2e041 (confirmed ancestor of origin/main).",
+  "family": "state"
+ },
+ {
+  "id": "merged_qt_33",
+  "claim": "SuperInstance/quilt-tools PR #33 has been merged into main.",
+  "truth": true,
+  "evidence": "Live API: state=closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge sha 0101409. git merge-base --is-ancestor 0101409 origin/main succeeds.",
+  "family": "state"
+ },
+ {
+  "id": "open_qt_33",
+  "claim": "SuperInstance/quilt-tools PR #33 is still open and awaiting review.",
+  "truth": false,
+  "evidence": "Live API: state=closed, merged=true, merged_at 2026-10-01T20:29:03Z, merge sha 0101409 (confirmed ancestor of origin/main).",
+  "family": "state"
+ },
+ {
+  "id": "open_qt_34",
+  "claim": "SuperInstance/quilt-tools PR #34 is currently OPEN and has not been merged into main.",
+  "truth": true,
+  "evidence": "Live API: state=open, merged=false, base main @0101409, head 3fb2f85.",
+  "family": "state"
+ },
+ {
+  "id": "merged_qt_34",
+  "claim": "SuperInstance/quilt-tools PR #34 has been merged into main.",
+  "truth": false,
+  "evidence": "Live API: state=open, merged=false, merged_at=null. 3-dot diff origin/main...origin/pr/34 = 3 files, +129/-17 (non-empty => not contained in main).",
+  "family": "state"
+ }
+]

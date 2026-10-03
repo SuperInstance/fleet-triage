@@ -1,0 +1,46 @@
+# THE 64-BIT QUILT WORD HAS NO ARBITRABLE SPEC — regenerated 2026-10-02T03:33:30Z
+# SuperInstance/plato-tile-encoder, src/lib.rs, cold clone.
+# The object type the lattice's word is currently specified by.
+
+## the two comments, ten lines apart in the same function
+  // ── Binary Codec (384-byte compact) ────────────────────────────────
+  
+  const BINARY_SIZE: usize = 384;
+  
+  /// Encode tile to 384-byte binary format.
+  /// Layout: id(64) + question(128) + answer(128) + domain(32) + tags(24) + confidence(4) + ghost(4) + use_count(4) = 384
+  pub fn encode_binary(tile: &EncodedTile) -> [u8; BINARY_SIZE] {
+      let mut buf = [0u8; BINARY_SIZE];
+      let mut offset = 0;
+      write_str(&mut buf, &mut offset, &tile.id, 64);
+      write_str(&mut buf, &mut offset, &tile.question, 128);
+      write_str(&mut buf, &mut offset, &tile.answer, 128);
+      write_str(&mut buf, &mut offset, &tile.domain, 32);
+      // tags: comma-separated, 20 bytes
+      let tags_str = tile.tags.join(",");
+      write_str(&mut buf, &mut offset, &tags_str, 20);
+      let conf = tile.confidence as f32;
+
+## arithmetic on the doc's own layout
+  as DOCUMENTED  64+128+128+32+24+4+4+4 = 388 but the line asserts 384 -> off by 4
+  as CODED       64+128+128+32+20+4+4+4 = 384 and the line asserts 384 -> CONSISTENT
+
+## consequences, all three measured in the source
+  1. Follow the DOC and the offsets reach 388 in a 384-byte buffer.
+     The authoritative spec, if obeyed, breaks the type. The code is
+     right; the specification is wrong; and nothing says so.
+  2. write_str() truncates with min(s,max) and returns no error and no
+     flag, so tags is silently lossy at 20 bytes. A field that can drop
+     data without saying so is not a field, it is a hope.
+  3. The doctest asserts_eq!(bytes.len(), 384) — and bytes is a
+     [u8; BINARY_SIZE] with BINARY_SIZE = 384. It is 384 for ANY input
+     under ANY layout including a wrong one. THE TEST CANNOT FAIL.
+     This is the 6.8x constant's exact shape: a check that passes at any
+     value whatsoever.
+
+## verdict
+  A type whose spec cannot add up its own fields cannot arbitrate a
+  field width, so it cannot be the 64-Bit Quilt Word. This is what the
+  48-invariant programme in types-REGISTRY.md exists to fix, and the
+  lattice should treat the word as UNSPECIFIED until it carries a
+  stated invariant AND a relation that catches a wrong field width.
